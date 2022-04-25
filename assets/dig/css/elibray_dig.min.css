@@ -1,0 +1,567 @@
+.event_wrap {
+  min-width: 1200px;
+  font-family: "Noto Sans KR",Sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.event_wrap .txt_info {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+.event_wrap .section {
+  width: 1200px;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+.event_wrap .bg_01 {
+  background: #2289d7 url(http://image.kyobobook.co.kr/dwas/images/prom/eBook/2021/1013_library/bg_01.jpg) 50% 0 no-repeat fixed;
+}
+
+.event_wrap .bg_02 {
+  background: #fff none repeat-x 50% 0;
+}
+
+.event_wrap .bg_03 {
+  background: #e9eff3 none repeat-x 50% 0;
+}
+
+.event_wrap .bg_04 {
+  background: #fff none repeat-x 50% 0;
+}
+
+.event_wrap .slide {
+  min-height: 900px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.event_wrap #slide1 {
+  color: #fff;
+}
+
+.event_wrap #slide1 a {
+  color: #fff;
+}
+
+.event_wrap #slide1 .text_1 {
+  opacity: 0;
+  padding-top: 3em;
+  font-size: 250%;
+  letter-spacing: -0.02em;
+}
+
+.event_wrap #slide1 .text_2 {
+  opacity: 0;
+  margin-top: .4em;
+  font-size: 416%;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.event_wrap #slide1 .text_3 {
+  opacity: 0;
+  margin-top: 1.2em;
+  font-size: 125%;
+  color: #150035;
+}
+
+.event_wrap #slide1 .text_3 p {
+  margin-top: 1em;
+  font-size: 73%;
+}
+
+.event_wrap #slide1 .text_3:after {
+  content: "";
+  display: block;
+  height: 0;
+  margin-top: 2.5em;
+  padding-top: 1.25em;
+  background: url(http://image.kyobobook.co.kr/dwas/images/prom/eBook/2021/1013_library/icon_arrow.png) no-repeat center;
+  background-size: auto 100%;
+}
+
+.event_wrap #slide1.on .text_1 {
+  opacity: 1;
+  -webkit-animation: .8s text-in ease-out .4s both;
+  animation: .8s text-in ease-out .4s both;
+}
+
+.event_wrap #slide1.on .text_2 {
+  opacity: 1;
+  -webkit-animation: .8s slide-up ease-out .8s both;
+  animation: .8s slide-up ease-out .8s both;
+}
+
+.event_wrap #slide1.on .text_3 {
+  opacity: 1;
+  -webkit-animation: 1.2s fade-in 1.6s both;
+  animation: 1.2s fade-in 1.6s both;
+}
+
+.event_wrap #slide1.on .text_3:after {
+  -webkit-animation: 1s bounce infinite;
+  animation: 1s bounce infinite;
+}
+
+.event_wrap .btn_guide {
+  position: absolute;
+  z-index: 300;
+  left: 50%;
+  top: 115px;
+  margin-left: 575px;
+}
+
+.event_wrap .btn_guide a {
+  display: block;
+  width: 130px;
+  height: 0;
+  padding-top: 145px;
+  overflow: hidden;
+  background: url("http://image.kyobobook.co.kr/dwas/images/prom/eBook/2021/1013_library/btn_guide.png") no-repeat;
+}
+
+.event_wrap .btn_guide.on a {
+  background-image: url("http://image.kyobobook.co.kr/dwas/images/prom/eBook/2021/1013_library/btn_guide_on.png");
+}
+
+.event_wrap .layer_guide {
+  position: absolute;
+  z-index: 300;
+  left: 50%;
+  top: 115px;
+  margin-left: -575px;
+  width: 1150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+.event_wrap .layer_guide.on {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.event_wrap .fixed .btn_guide {
+  position: fixed;
+}
+
+.event_wrap .fixed .layer_guide {
+  position: fixed;
+}
+
+.event_wrap .layer_guide .inner {
+  padding: 75px;
+  background-color: #fff;
+  border: 5px solid #65b6ea;
+}
+
+.event_wrap .layer_guide .title_1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+.event_wrap .layer_guide .text_1 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 22px;
+  color: #7f7f7f;
+}
+
+.event_wrap .layer_guide .title_2 {
+  margin-top: 50px;
+  margin-left: 25%;
+  font-size: 22px;
+  font-weight: bold;
+  color: #4da6e3;
+  display: list-item;
+  list-style-type: disc;
+}
+
+.event_wrap .layer_guide .text_2 {
+  margin-top: 15px;
+  margin-left: 25%;
+  font-size: 20px;
+}
+
+.event_wrap .tab {
+  padding: 0 25px;
+}
+
+.event_wrap .tab ul {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  background-color: #eee;
+}
+
+.event_wrap .tab li {
+  display: table-cell;
+  border: 1px solid #b7b7b7;
+  border-width: 1px 0;
+  background-color: #eee;
+}
+
+.event_wrap .tab li:first-child {
+  border-left-width: 1px;
+}
+
+.event_wrap .tab li:last-child {
+  border-right-width: 1px;
+}
+
+.event_wrap .tab li a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  color: #767676;
+  transition: .2s;
+}
+
+.event_wrap .tab li a:hover {
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.event_wrap .tab li.on {
+  border-width: 1px 1px 0;
+  background-color: #fff;
+}
+
+.event_wrap .tab li.on a {
+  color: #3796d6;
+}
+
+.event_wrap .tab_cont {
+  display: none;
+  padding: 50px 25px;
+}
+
+.event_wrap .tab_cont.on {
+  display: block;
+}
+
+.event_wrap .tab_cont ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.event_wrap .tab_cont ul li {
+  float: left;
+  width: 19%;
+  padding-right: 1%;
+  height: 45px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.event_wrap .tab_cont ul li a:hover {
+  color: #3796d6;
+}
+
+.event_wrap .btn_guide {
+  position: absolute;
+  z-index: 300;
+  left: 50%;
+  top: 115px;
+  margin-left: 575px;
+}
+
+.event_wrap .btn_guide a {
+  display: block;
+  width: 130px;
+  height: 0;
+  padding-top: 145px;
+  overflow: hidden;
+  background: url("http://image.kyobobook.co.kr/dwas/images/prom/eBook/2021/1013_library/btn_guide.png") no-repeat;
+}
+
+.event_wrap .btn_guide.on a {
+  background-image: url("http://image.kyobobook.co.kr/dwas/images/prom/eBook/2021/1013_library/btn_guide_on.png");
+}
+
+.event_wrap .layer_guide {
+  position: absolute;
+  z-index: 300;
+  left: 50%;
+  top: 115px;
+  margin-left: -575px;
+  width: 1150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+.event_wrap .layer_guide.on {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.event_wrap .fixed .btn_guide,
+.event_wrap .fixed .layer_guide {
+  position: fixed;
+}
+
+.event_wrap .layer_guide .inner {
+  padding: 75px;
+  background-color: #fff;
+  border: 5px solid #65b6ea;
+}
+
+.event_wrap .layer_guide .title_1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+.event_wrap .layer_guide .text_1 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 22px;
+  color: #7f7f7f;
+}
+
+.event_wrap .layer_guide .title_2 {
+  margin-top: 50px;
+  margin-left: 25%;
+  font-size: 22px;
+  font-weight: bold;
+  color: #4da6e3;
+  display: list-item;
+  list-style-type: disc;
+}
+
+.event_wrap .layer_guide .text_2 {
+  margin-top: 15px;
+  margin-left: 25%;
+  font-size: 20px;
+}
+
+.event_wrap .tab {
+  padding: 0 25px;
+}
+
+.event_wrap .tab ul {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  background-color: #eee;
+}
+
+.event_wrap .tab li {
+  display: table-cell;
+  border: 1px solid #b7b7b7;
+  border-width: 1px 0;
+  background-color: #eee;
+}
+
+.event_wrap .tab li:first-child {
+  border-left-width: 1px;
+}
+
+.event_wrap .tab li:last-child {
+  border-right-width: 1px;
+}
+
+.event_wrap .tab li a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  color: #767676;
+  transition: .2s;
+}
+
+.event_wrap .tab li a:hover {
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.event_wrap .tab li.on {
+  border-width: 1px 1px 0;
+  background-color: #fff;
+}
+
+.event_wrap .tab li.on a {
+  color: #3796d6;
+}
+
+.event_wrap .tab_cont {
+  display: none;
+  padding: 50px 25px;
+}
+
+.event_wrap .tab_cont.on {
+  display: block;
+}
+
+.event_wrap .tab_cont ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.event_wrap .tab_cont ul li {
+  float: left;
+  width: 19%;
+  padding-right: 1%;
+  height: 45px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.event_wrap .tab_cont ul li a:hover {
+  color: #3796d6;
+}
+
+@-webkit-keyframes text-in {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+
+  100% {
+    letter-spacing: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes text-in {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+
+  100% {
+    letter-spacing: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
+  50% {
+    -webkit-transform: translate(0, 15px);
+            transform: translate(0, 15px);
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
+  50% {
+    -webkit-transform: translate(0, 15px);
+            transform: translate(0, 15px);
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@media (max-height: 900px) {
+  .event_wrap .bg_01 {
+    background-size: auto 144%;
+  }
+
+  .event_wrap .slide {
+    font-size: 2.66vh;
+  }
+}
+
+@media (min-height: 1297px) {
+  .event_wrap .bg_01 {
+    background-size: auto 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .event_wrap .bg_01 {
+    background-attachment: scroll;
+  }
+}
+/*# sourceMappingURL=elibray_dig.min.css.map */

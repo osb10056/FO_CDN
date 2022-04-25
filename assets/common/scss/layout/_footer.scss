@@ -1,0 +1,681 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+.wrapper {
+	/*&.docker{
+		!*padding-bottom: 74px;
+		padding-bottom: calc(constant(safe-area-inset-bottom) + 74px);
+		padding-bottom: calc(env(safe-area-inset-bottom) + 74px);*!
+	}*/
+
+	.footer_wrapper {
+		margin-top: 80px;
+		background-color: #fff;
+
+		.notice_wrap {
+			@include mixins.justify_width(center);
+			border-top: 1px solid variables.$colorGray03;
+			height: 60px;
+			padding: 0 20px;
+			background-color: variables.$colorGray06;
+			box-sizing: border-box;
+
+			.notice_text {
+				flex-shrink: 0;
+				display: inline-block;
+				@include mixins.font_size_sm;
+				font-weight: 700;
+				vertical-align: top;
+			}
+
+			.notice_link {
+				overflow: hidden;
+				display: inline-block;
+				margin-left: 20px;
+				@include mixins.ellipsis;
+				@include mixins.font_size_sm;
+				text-decoration: underline;
+				vertical-align: top;
+			}
+		}
+
+		.footer_body {
+			border-top: 1px solid variables.$colorGray03;
+			padding: 34px 20px 30px;
+
+			.logo_box {
+				display: block;
+				width: 110px;
+				height: 31px;
+				margin-bottom: 22px;
+
+				.logo_link {
+					display: block;
+					height: 100%;
+
+					img {
+						width: 100%;
+					}
+				}
+			}
+
+			.footer_info_box {
+				font-size: 0;
+
+				.info_text_multi {
+					.info_text {
+						display: inline-block;
+						margin-top: 0;
+						vertical-align: top;
+					}
+				}
+
+				.info_text {
+					display: block;
+					margin-top: 3px;
+					@include mixins.font_size_xs;
+					color: variables.$textColorGray;
+
+					.text_inner {
+						margin-right: 8px;
+					}
+
+					.btn_footer_link {
+						margin-top: -3px;
+
+						@include mixins.respond-to(mobileSm) {
+							margin-top: 3px;
+						}
+					}
+				}
+
+				.gap {
+					font-size: 0;
+
+					&:before {
+						content: '';
+						display: inline-block;
+						width: 1px;
+						height: 8px;
+						margin: 5px 8px 0;
+						background-color: variables.$colorGray03;
+						vertical-align: top;
+					}
+				}
+			}
+
+			.btn_footer_link {
+				display: inline-block;
+				padding: 5px 5px;
+				border: 1px solid variables.$colorGray02;
+				border-radius: 4px;
+				@include mixins.font_size_xxs;
+				font-weight: 500;
+				line-height: 1;
+				vertical-align: top;
+
+				&:after {
+					content: '';
+					display: inline-block;
+					width: 6px;
+					height: 6px;
+					margin: 2px 0 0 2px;
+					@include mixins.ratio_images('../images/arw_footer_link_mok', 'png', 6px, 6px);
+					vertical-align: top;
+				}
+			}
+
+			.footer_menu_box {
+				margin-top: 22px;
+
+				.footer_menu_list {
+					@include mixins.justify_width;
+					flex-wrap: wrap;
+
+					.footer_menu_item {
+						width: 50%;
+
+						.footer_menu_link {
+							@include mixins.font_size_sm;
+							font-weight: 500;
+						}
+
+						&.privacy {
+							.footer_menu_link {
+								font-weight: 700;
+							}
+						}
+
+						&:nth-child(n+3) {
+							margin-top: 12px;
+						}
+					}
+				}
+			}
+
+			.footer_call_box {
+				margin-top: 34px;
+				font-size: 0;
+
+				.call_text {
+					display: inline-block;
+					margin-top: 2px;
+					@include mixins.font_size_xs;
+					font-weight: variables.$fontWeightMedium;
+					vertical-align: top;
+				}
+
+				.call_num {
+					display: inline-block;
+					margin: 0 4px 0 6px;
+					font-size: variables.$fontSizeXl;
+					font-weight: variables.$fontWeightBold;
+					letter-spacing: variables.$letterSpacing;
+					color: variables.$textColorBlack;
+					vertical-align: top;
+					line-height: 1;
+				}
+
+				.call_text_sm {
+					display: inline-block;
+					margin-top: 1px;
+					@include mixins.font_size_xxs;
+					color: variables.$textColorLightGray;
+
+				}
+			}
+
+			.copyright_box {
+				@include mixins.justify_width(center, between);
+				margin-top: 38px;
+				padding-top: 20px;
+				border-top: 1px solid variables.$colorGray03;
+				flex-direction: row-reverse;
+
+				.copyright {
+					@include mixins.font_size_xs;
+					color: variables.$textColorLightGray;
+				}
+
+				.sns_share_box {
+					flex-shrink: 0;
+					//margin-left: 10px;
+					font-size: 0;
+
+					.btn_sns_share {
+						display: inline-block;
+						width: 32px;
+						height: 32px;
+						vertical-align: top;
+
+						&.youtube {
+							background: {
+								position: center;
+								repeat: no-repeat;
+							}
+							@include mixins.ratio_images('../images/btn_footer_sns_youtube_mok', 'png', 32px, 32px);
+						}
+
+						&.fb {
+							background: {
+								position: center;
+								repeat: no-repeat;
+							}
+							@include mixins.ratio_images('../images/btn_footer_sns_fb_mok', 'png', 32px, 32px);
+						}
+
+						&.insta {
+							background: {
+								position: center;
+								repeat: no-repeat;
+							}
+							@include mixins.ratio_images('../images/btn_footer_sns_insta_mok', 'png', 32px, 32px);
+						}
+
+						+ .btn_sns_share {
+							margin-left: 8px;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	.docker_wrapper {
+		position: fixed;
+		height: 74px;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		z-index: 100;
+		@include mixins.transform(translateY(0));
+		@include mixins.transition(transform .23s);
+
+		.docker_list {
+			position: relative;
+			@include mixins.justify_width;
+			padding: 0 12px 12px;
+			padding-bottom: calc(constant(safe-area-inset-bottom) + 12px);
+			padding-bottom: calc(env(safe-area-inset-bottom) + 12px);
+
+			.docker_item {
+				position: relative;
+				display: inline-block;
+				flex: 1;
+				height: 100%;
+				z-index: 2;
+
+				[class^=btn_docker]:not(.btn_docker_my) {
+					display: inline-block;
+					width: 100%;
+					padding: 16px 0 18px;
+					vertical-align: top;
+					box-sizing: border-box;
+
+					&:after {
+						content: '';
+						display: block;
+						width: 28px;
+						height: 28px;
+						margin: 0 auto;
+						background-repeat: no-repeat;
+						background-size: 100%;
+						background-position: 0 0;
+					}
+
+					&.btn_docker_home {
+						&:after {
+							@include mixins.ratio_images('../images/btn_docker_home_mok', 'png', 28px, 28px);
+						}
+					}
+
+					&.btn_docker_search {
+						&:after {
+							@include mixins.ratio_images('../images/btn_docker_search_mok', 'png', 28px, 28px);
+						}
+					}
+
+					&.btn_docker_my {
+						&:after {
+							@include mixins.ratio_images('../images/btn_docker_my_mok', 'png', 61px, 61px);
+						}
+					}
+
+					&.btn_docker_history {
+						&:after {
+							@include mixins.ratio_images('../images/btn_docker_history_mok', 'png', 28px, 28px);
+						}
+					}
+
+					&.btn_docker_menu {
+						&:after {
+							@include mixins.ratio_images('../images/btn_docker_menu_mok', 'png', 28px, 28px);
+						}
+					}
+				}
+
+				&.my {
+					padding: 0 21px;
+					text-align: center;
+					z-index: 1;
+
+					.btn_docker_my {
+						overflow: hidden;
+						position: relative;
+						display: inline-block;
+						width: 61px;
+						height: 61px;
+						vertical-align: top;
+						border-radius: 100%;
+						z-index: 1;
+						box-shadow: 0 5px 10px 0 rgba(77, 172, 39, 0.5);
+
+						.img_box {
+							display: none;
+						}
+
+						&:after {
+							content: '';
+							display: block;
+							width: 100%;
+							height: 100%;
+							border-radius: 100%;
+							@include mixins.ratio_images('../images/btn_docker_my_mok', 'png', 61px, 61px);
+						}
+					}
+
+					&:after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 50%;
+						display: block;
+						width: 136px;
+						height: 74px;
+						@include mixins.ratio_images('../images/bg_docker_shape_mok', 'png', 136px, 74px);
+						@include mixins.transform(translateX(-50%));
+					}
+
+					&.login {
+						.btn_docker_my {
+							box-shadow: 0 5px 10px 0 rgba(155, 160, 168, 0.5);
+
+							&:after {
+								content: none;
+							}
+
+							.img_box {
+								display: block;
+								border-radius: 100%;
+
+								img {
+									width: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&:before, &:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: 100%;
+				background-color: #fff;
+				border-top: 1px solid variables.$colorGray02;
+				margin-left: -60px;
+			}
+
+			&:after {
+				left: auto;
+				right: 0;
+				margin-left: 0;
+				margin-right: -60px;
+			}
+		}
+
+		.btn_xs {
+			position: absolute;
+			top: -109px;
+			right: -18px;
+			@include mixins.transform(translateY(calc(constant(safe-area-inset-bottom) * -1)));
+			@include mixins.transform(translateY(calc(env(safe-area-inset-bottom) * -1)));
+			z-index: 100;
+			opacity: 0;
+			background-color: #fff;
+			@include mixins.transition(right .23s, opacity .23s);
+
+			&.active {
+				opacity: 1;
+				right: 18px;
+			}
+		}
+
+		.btn_go_top, .btn_spec_compare_popup {
+			position: absolute;
+			top: -65px;
+			z-index: 100;
+		}
+		
+		.btn_go_top {
+			@include mixins.transform(translateY(calc(constant(safe-area-inset-bottom) * -1)));
+			@include mixins.transform(translateY(calc(env(safe-area-inset-bottom) * -1)));
+			right: -18px;
+			display: block;
+			width: 47px;
+			height: 47px;
+			border-radius: 100%;
+			background-color: #fff;
+			border: 1px solid variables.$colorGray03;
+			opacity: 0;
+			@include mixins.transition(right .23s, opacity .23s);
+			box-shadow: 0 5px 10px 0 rgba(variables.$textColorBlack, 0.1);
+
+			&:before {
+				content: '';
+				display: block;
+				width: 13px;
+				height: 18px;
+				margin: 13px auto 0;
+				@include mixins.ratio_images('../images/arw_go_top_mok', 'png', 13px, 18px);
+			}
+
+			&.active {
+				opacity: 1;
+				right: 18px;
+
+				+ .golden_time_link_box {
+					top: -122px;
+				}
+			}
+		}
+
+		// 스펙 비교 플로팅 버튼
+		.btn_spec_compare_popup {
+			@include mixins.justify_width(center, center, row, true);
+			@include mixins.transform(translate(-50%, calc(constant(safe-area-inset-bottom) * -1)));
+			@include mixins.transform(translate(-50%, calc(env(safe-area-inset-bottom) * -1)));
+			left: 50%;
+			color: #fff;
+			height: 36px;
+			padding: 0 15px 1px;
+			background: variables.$kyoboPurple;
+			border: 1px solid variables.$kyoboPurple;
+			border-radius: 18px;
+			box-shadow: 0 4px 8px 0 rgba(variables.$textColorPurple, 0.4);
+			@include mixins.font_size_xs;
+			@include mixins.transition(background-color 0.2s ease-out, border-color 0.2s ease-out);
+
+			.ico_compare {
+				display: inline-block;
+				width: 13px;
+				height: 13px;
+				margin-right: 4px;
+				background: {
+					position: center;
+					repeat: no-repeat;
+				}
+				@include mixins.ratio_images('../images/ico_compare_white_mok', 'png', 13px, 13px);
+				vertical-align: top;
+			}
+
+			.num {
+				margin-left: 3px;
+				font-weight: variables.$fontWeightBold;
+			}
+
+			&:not(.active) {
+				display: none;
+			}
+		}
+
+		.golden_time_link_box {
+			position: absolute;
+			@include mixins.justify_width(center, start, row, true);
+			height: 35px;
+			padding: 6px 10px 6px 14px;
+			border-radius: 24px;
+			background: #ffd41f;
+			font-size: 0;
+			top: -65px;
+			right: 18px;
+			z-index: 100;
+			@include mixins.transition(top .23s);
+
+			.link_golden_time {
+				display: block;
+				padding-left: 24px;
+				background: {
+					position: left center;
+					repeat: no-repeat;
+				}
+				@include mixins.ratio_images('../images/ico_golden_time_mok', 'png', 19px, 19px);
+				@include mixins.font_size_xxs;
+				font-weight: variables.$fontWeightMedium;
+
+				span {
+					display: block;
+				}
+
+				.remain_time {
+					margin-top: 1px;
+					font-weight: variables.$fontWeightBold;
+				}
+			}
+
+			.btn_close_golden_time {
+				width: 20px;
+				height: 20px;
+				margin-left: 7px;
+				background: {
+					position: center;
+					repeat: no-repeat;
+				}
+				@include mixins.ratio_images('../images/btn_golden_time_close_mok', 'png', 20px, 20px);
+			}
+		}
+
+		.floating_banner_box {
+			position: absolute;
+			left: 28px;
+			//right: 28px;
+			bottom: calc(100% + 18px);
+			@include mixins.justify_width(center, center);
+			min-height: 40px;
+			padding: 10px 10px;
+			min-width: 200px;
+			max-width: calc(100% - 54px);
+			//background-color: rgba(variables.$textColorGray, .95);
+			border: 1px solid variables.$kyoboGreen;
+			background-color: #fff;
+			border-radius: 22px;
+			text-align: center;
+			@include mixins.font_size_xs;
+			font-weight: variables.$fontWeightMedium;
+			box-sizing: border-box;
+			color: #3C9A17;
+			z-index: 101;
+			box-shadow: 0 5px 10px 0 rgba(variables.$textColorBlack, 0.16);
+
+			.btn_floating {
+				display: block;
+				vertical-align: top;
+			}
+
+			.btn_close_floating {
+				position: absolute;
+				display: block;
+				top: -12px;
+				right: -12px;
+				width: 30px;
+				height: 30px;
+				padding: 4px;
+				z-index: 2;
+				box-sizing: border-box;
+
+				.ico_floating_close {
+					width: 22px;
+					height: 22px;
+					@include mixins.ratio_images('../images/ico_floating_close_mok', 'png', 8px, 8px);
+					background-color: rgba(variables.$textColorDarkGray, .9);
+					border-radius: 100%;
+					background: {
+						position: center;
+						repeat: no-repeat;
+					};
+				}
+			}
+		}
+
+		&:not(.docker_fixed) {
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				padding-bottom: calc(constant(safe-area-inset-bottom));
+				padding-bottom: calc(env(safe-area-inset-bottom));
+				background-color: #fff;
+			}
+		}
+
+		&.scroll_down {
+			@include mixins.transform(translateY(100%));
+		}
+
+		&.docker_fixed {
+			height: auto;
+			padding-bottom: calc(constant(safe-area-inset-bottom));
+			padding-bottom: calc(env(safe-area-inset-bottom));
+			background-color: #fff;
+			border-top: 1px solid variables.$colorGray03;
+			box-sizing: border-box;
+
+			.docker_toggle_area {
+				display: none;
+			}
+
+			&.type_toggle {
+				border-radius: 16px 16px 0 0;
+				border: 1px solid variables.$colorGray03;
+				border-bottom: none;
+				width: calc(100% + 2px);
+				margin: 0 -1px;
+
+				.docker_toggle_area {
+					position: relative;
+					display: block;
+					padding: 30px 20px 0;
+
+					.btn_view_toggle {
+						position: absolute;
+						top: 0;
+						left: 50%;
+						display: block;
+						width: 30px;
+						height: 30px;
+						margin-left: -13px;
+						@include mixins.ratio_images('../images/ico_dialog_close_arw_mok', 'png', 25px, 25px);
+						background: {
+							position: center;
+							repeat: no-repeat;
+						};
+						@include mixins.transform(rotate(180deg));
+						@include mixins.transition(transform .23s);
+					}
+
+					.docker_detail_box {
+						display: none;
+						.info_text_box {
+							margin: {
+								left: 0;
+								right: 0;
+							}
+						}
+					}
+				}
+
+				&.active {
+					.docker_toggle_area {
+						z-index: 2;
+
+						.docker_detail_box {
+							display: block;
+						}
+
+						.btn_view_toggle {
+							@include mixins.transform(rotate(0deg));
+						}
+					}
+				}
+			}
+		}
+	}
+}

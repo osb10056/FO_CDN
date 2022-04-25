@@ -1,0 +1,191 @@
+.bookshop_wrap .top_visual_area {
+	background: url("/assets/mdig/images/common/bg/book_shop_bg.png") no-repeat left top;
+	background-size: 100%;
+}
+.bookshop_wrap .top_visual_area .title_box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.bookshop_wrap .top_visual_area .title_box .tit {
+	font-size: 26px;
+	color: #000;
+	line-height: 53px;
+	letter-spacing: -0.65px;
+}
+.bookshop_wrap .top_visual_area .title_box .right_box {
+	position: relative;
+	top: -2px;
+}
+.bookshop_wrap .top_visual_area .title_box .right_box ul {
+	display: flex;
+}
+.bookshop_wrap .top_visual_area .title_box .right_box ul li {
+	position: relative;
+	text-align: center;
+}
+.bookshop_wrap .top_visual_area .title_box .right_box ul li > p {
+	position: absolute;
+	top: 37px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 12px;
+	color: #000;
+	letter-spacing: -0.3px;
+	line-height: 18px;
+	font-weight: 500;
+	margin-top: 5px;
+}
+.bookshop_wrap .top_visual_area .title_box .right_box ul li ~ li {
+	margin-left: 8px;
+}
+.bookshop_wrap .top_visual_area .title_box .right_box .btn_share {
+	background-color: #fff;
+	width: 42px;
+	height: 42px;
+}
+.bookshop_wrap .top_visual_area .title_box .right_box .btn_share .ico_share {
+	background-image: url(/assets/common/images/ico_share_sm_mok@2x.png);
+}
+.bookshop_wrap .top_visual_area .family_shop {
+	margin-top: 47px;
+}
+.bookshop_wrap .top_visual_area .family_shop .tit {
+	font-size: 14px;
+	color: #000;
+	line-height: 20px;
+	letter-spacing: -0.35px;
+	font-weight: 500;
+}
+.bookshop_wrap .top_visual_area .family_shop ul {
+	display: flex;
+	flex-wrap: nowrap;
+	width: calc(100% + 20px);
+	overflow-x: auto;
+	padding: 10px 0;
+}
+.bookshop_wrap .top_visual_area .family_shop ul li {
+	width: auto;
+	max-width: 88px;
+	flex-shrink: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.bookshop_wrap .top_visual_area .family_shop ul li ~ li {
+	margin-left: 30px;
+}
+.bookshop_wrap .top_visual_area .family_shop ul li a span {
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: -0.35px;
+	color: #474c98;
+	text-decoration: underline;
+}
+.bookshop_wrap .top_visual_area .my_shop {
+	text-align: right;
+	margin-top: 19px;
+}
+.bookshop_wrap .top_visual_area .my_shop .form_sel {
+	display: inline-block;
+}
+.bookshop_wrap .top_visual_area .my_shop .form_sel > select {
+	background-color: rgba(0, 0, 0, 0);
+}
+.bookshop_wrap .bookshop_content_area {
+	padding: 0;
+}
+.bookshop_wrap .bookshop_content_area .bs_newbook {
+	margin-top: 0;
+}
+.bookshop_wrap .bookshop_content_area .bs_newbook .slide-wrap {
+	padding-top: 5vw;
+}
+.bookshop_wrap .bookshop_content_area .bs_newbook .slide-wrap:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 61.2%;
+	padding-top: 61.2%;
+	background-color: #b8badf;
+	margin-left: -30.6%;
+	border-radius: 50%;
+}
+.bookshop_wrap .bookshop_content_area .bs_newbook .slide-wrap .swiper-wrapper .swiper-slide {
+	margin: 0 30px;
+	width: 38.8%;
+	opacity: 0.5;
+}
+.bookshop_wrap .bookshop_content_area .bs_newbook .slide-wrap .swiper-wrapper .swiper-slide.swiper-slide-active {
+	margin-top: 2vw;
+	opacity: 1;
+}
+.bookshop_wrap .bookshop_content_area .bs_newbook .slide-wrap .swiper-wrapper .swiper-slide.swiper-slide-active .thum {
+	transform: scale(1.1541);
+	transform-origin: bottom center;
+	border: none;
+}
+.bookshop_wrap .bookshop_content_area .bs_newbook .slide-wrap .swiper-wrapper .swiper-slide.swiper-slide-active .info {
+	width: 120%;
+	margin-left: -10%;
+}
+.bookshop_wrap .bookshop_content_area .bs_best .slide-wrap .swiper-wrapper .swiper-slide {
+	width: 41%;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap {
+	padding-top: 18vw;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 14vw;
+	width: 54.66%;
+	padding-top: 54.66%;
+	background-color: #fff;
+	margin-left: -27.33%;
+	border-radius: 50%;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide {
+	margin: 0 30px;
+	width: 34.66%;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide .cate_text {
+	font-size: 14px;
+	color: #767676;
+	line-height: 20px;
+	letter-spacing: -0.35px;
+	font-weight: 500;
+	white-space: nowrap;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -20vw);
+	opacity: 0;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide .cate_text em {
+	font-size: 16px;
+	color: #000;
+	letter-spacing: -0.4px;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide .thum {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide.swiper-slide-active {
+	margin-top: 2vw;
+	opacity: 1;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide.swiper-slide-active .cate_text {
+	opacity: 1;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide.swiper-slide-active .thum {
+	transform: scale(1.1542);
+	transform-origin: bottom center;
+}
+.bookshop_wrap .bookshop_content_area .bs_recome .slide-wrap .swiper-wrapper .swiper-slide.swiper-slide-active .info {
+	width: 120%;
+	margin-left: -10%;
+}
+/*# sourceMappingURL=bookshop_mdig.css.map */

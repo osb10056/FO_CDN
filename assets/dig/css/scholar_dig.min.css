@@ -1,0 +1,443 @@
+.scl_top {
+  padding-top: 247px;
+  background: url(/assets/dig/images/scholar/img_visual.png) no-repeat center top;
+}
+
+.scl_top .info {
+  position: relative;
+  left: 50%;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  -webkit-transform: translateX(135px);
+          transform: translateX(135px);
+}
+
+.scl_top .info>span {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  opacity: .7;
+}
+
+.scl_top .info div {
+  margin: 23px 0 95px;
+}
+
+.scl_top .info div span {
+  display: block;
+  font-size: 50px;
+}
+
+.scl_top .info div strong {
+  display: block;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 130%;
+}
+
+.scl_top .info p {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.scl_top .info p+p {
+  margin-top: 15px;
+}
+
+.scl_top>ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 36px;
+  margin: 190px auto 78px;
+  width: 1200px;
+  color: #fff;
+}
+
+.scl_top>ul>li {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 376px;
+  height: 376px;
+  border-radius: 20px;
+  background-color: #959fb4;
+  background-repeat: no-repeat;
+  background-position: center 24px;
+}
+
+.scl_top>ul>li:nth-child(even) {
+  background-color: #78849f;
+}
+
+.scl_top>ul>li span {
+  display: block;
+  font-size: 500px;
+  font-size: 30px;
+  opacity: .7;
+}
+
+.scl_top>ul>li div {
+  display: flex;
+  font-weight: 700;
+  font-size: 60px;
+  height: 84px;
+  overflow: hidden;
+}
+
+.scl_top>ul>li div ul.rotate {
+  -webkit-animation: slot 1.2s 1;
+          animation: slot 1.2s 1;
+}
+
+.scl_top>ul>li div i {
+  display: inline-block;
+  font-style: normal;
+}
+
+.scl_top>ul>li em {
+  margin: 40px 0 0 5px;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.scl_top>ul>li:nth-child(1) {
+  margin-top: 24px;
+  background-image: url(/assets/dig/images/scholar/icon_list_01.png);
+}
+
+.scl_top>ul>li:nth-child(2) {
+  background-image: url(/assets/dig/images/scholar/icon_list_02.png);
+}
+
+.scl_top>ul>li:nth-child(3) {
+  margin-top: 24px;
+  background-image: url(/assets/dig/images/scholar/icon_list_03.png);
+}
+
+.scl_top>ul>li:nth-child(4) {
+  margin-top: 24px;
+  background-image: url(/assets/dig/images/scholar/icon_list_04.png);
+}
+
+.scl_top>ul>li:nth-child(5) {
+  margin-top: 12px;
+  background-image: url(/assets/dig/images/scholar/icon_list_05.png);
+}
+
+.scl_top>ul>li:nth-child(6) {
+  margin-top: 24px;
+  background-image: url(/assets/dig/images/scholar/icon_list_06.png);
+}
+
+.scl_top .bottom {
+  padding: 20px 0;
+  font-size: 20px;
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  background-color: #070707;
+}
+
+.scl_service {
+  position: relative;
+  padding: 140px 0 100px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.scl_service h4 {
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+
+.scl_service .service {
+  margin-top: 40px;
+  width: 1200px;
+}
+
+.scl_service .service .swiper-slide div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  height: 350px;
+  color: #fff;
+}
+
+.scl_service .swiper-pagination-bullet {
+  margin: 0 3px !important;
+  background: rgba(255,255,255,.5) !important;
+  opacity: 1 !important;
+}
+
+.scl_service .swiper-pagination-bullet-active {
+  background: #fff !important;
+}
+
+.scl_service .swiper-button-next,
+.scl_service .swiper-button-prev {
+  top: 400px;
+}
+
+.scl_service .swiper-button-next {
+  right: 50%;
+  -webkit-transform: translateX(672px);
+          transform: translateX(672px);
+}
+
+.scl_service .swiper-button-prev {
+  left: 50%;
+  -webkit-transform: translateX(-672px) rotate(180deg);
+          transform: translateX(-672px) rotate(180deg);
+}
+
+.scl_service strong {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 44px;
+}
+
+.scl_service p {
+  font-size: 20px;
+}
+
+.scl_useInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px 56px;
+  margin: 130px auto 0;
+  width: 1200px;
+}
+
+.scl_useInfo h4 {
+  width: 100%;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+  text-align: center;
+}
+
+.scl_useInfo>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px 30px 30px;
+  width: 572px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+}
+
+.scl_useInfo>div strong {
+  display: block;
+  margin-bottom: 35px;
+  padding-bottom: 22px;
+  font-weight: 600;
+  font-size: 24px;
+  color: #000;
+  line-height: 35px;
+  border-bottom: 1px solid #707070;
+}
+
+.scl_useInfo>div div b {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  line-height: 30px;
+}
+
+.scl_useInfo>div div p {
+  font-size: 15px;
+  color: #595959;
+}
+
+.scl_useInfo>div div+div {
+  margin-top: 25px;
+}
+
+.scl_useInfo>div>p {
+  font-size: 15px;
+  color: #595959;
+}
+
+.scl_useInfo>div>p+p {
+  margin: 30px 0 auto;
+}
+
+.scl_useInfo>div a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 183px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #292929;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.scl_inq {
+  margin: 130px auto 0;
+  width: 1200px;
+}
+
+.scl_inq h4 {
+  margin-bottom: 40px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+  text-align: center;
+}
+
+.scl_inq>div {
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-between;
+  gap: 0 56px;
+  height: 342px;
+}
+
+.scl_inq dl {
+  padding: 36px 30px 30px;
+  width: 572px;
+  height: 342px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+}
+
+.scl_inq dt {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+}
+
+.scl_inq dd {
+  position: relative;
+  padding-left: 16px;
+  font-size: 15px;
+  color: #595959;
+}
+
+.scl_inq dd a {
+  margin-left: 7px;
+  vertical-align: middle;
+}
+
+.scl_inq dd:before {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  vertical-align: top;
+  border-radius: 2px;
+  background-color: #595959;
+  content: "";
+}
+
+.scl_inq dd+dd {
+  margin-top: 10px;
+}
+
+.scl_inq div div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 36px 30px 30px;
+  width: 572px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+}
+
+.scl_inq div strong {
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+}
+
+.scl_inq div>span {
+  display: inline-block;
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #595959;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+.scl_inq div>span:nth-child(2) {
+  width: 100%;
+  font-size: 15px;
+  background-image: url(/assets/dig/images/scholar/icon_manager.png);
+}
+
+.scl_inq div>span:nth-child(3) {
+  background-image: url(/assets/dig/images/scholar/icon_tel.png);
+}
+
+.scl_inq div>span:nth-child(4) {
+  margin-left: 20px;
+  background-image: url(/assets/dig/images/scholar/icon_email.png);
+}
+
+.scl_inq div button {
+  margin-left: 7px;
+  width: 100px;
+  height: 30px;
+  font-size: 12px;
+  color: #000;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.scl_inq div input {
+  width: 1px;
+  height: 1px;
+}
+
+@-webkit-keyframes slot {
+  0% {
+    margin-top: 0;
+  }
+
+  100% {
+    margin-top: -756px;
+  }
+}
+
+@keyframes slot {
+  0% {
+    margin-top: 0;
+  }
+
+  100% {
+    margin-top: -756px;
+  }
+}
+/*# sourceMappingURL=scholar_dig.min.css.map */

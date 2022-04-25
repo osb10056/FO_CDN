@@ -1,0 +1,228 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+@use './assets/mdig/scss/abstracts/mixin';
+/* 타이틀 영역 */
+.title_box {
+  display: block;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  .text_box {
+	.main_tit {
+	  color: variables.$textColorBlack;
+	  font-weight: variables.$fontWeightBold;
+	  text-align: left;
+	  .pick_text{width:55px;}
+ 	}
+  }
+
+  &.align-c .text_box {
+	.main_tit, .sub_tit {
+	  text-align: center;
+	}
+  }
+  &.has-rightbox {
+	@include mixins.justify_width(center);
+	&.has-subtit-top {
+	  align-items: end;
+	}
+
+	&.has-subtit-btm {
+	  align-items: start;
+	}
+
+	.text_box .main_tit {
+	  display: inline-block;
+	}
+
+	.right_box {
+	  margin-left: auto;
+	  flex-shrink: 0;
+	  display: flex;
+	  display: -webkit-flex;
+	  justify-content: flex-start;
+	  align-items: center;
+	  flex-direction: row;
+	  button{
+		&~button,a{margin-left:5px;}
+	  }
+	  .btn_fold_toggle{
+		width:22px;
+		height:22px;
+		&.active{
+		}
+	  }
+	}
+
+	&.rightbox-align-bottom{
+	  align-items: end;
+	  .right_box{
+		.btn_more_view{
+		  &.type-bold{position:relative;top:-3px;}
+		}
+
+	  }
+
+	}
+  }
+  &.type-link{
+	.main_tit {
+	  a{
+		&:after{
+		  content:'';
+		  display: inline-block;
+		  position: relative;
+		  top: 4px;
+		  margin-left: 6px;
+		  width:19px;height:19px;
+		  background: url("/assets/common/images/arw_menu_category_mok@2x.png") no-repeat left top;background-size: 19px 19px;
+		}
+	  }
+	}
+  }
+  &.size-xxl {
+	padding-bottom: 30px;
+
+	.text_box {
+	  .main_tit {
+		font-size: var.$titleFontSizeTwoXLarge;
+		line-height: var.$titleFontSizeTwoXLargeLineHeight;
+		letter-spacing: var.$titleFontSizeTwoXLargeLetterSpacing;
+	  }
+	  .sub_tit {
+		font-size: var.$titleFontSizeTwoXLargeSub;
+		line-height: var.$titleFontSizeTwoXLargeSubLineHeight;
+		letter-spacing: var.$titleFontSizeTwoXLargeSubLetterSpacing;
+		font-weight: variables.$fontWeightMedium;
+	  }
+	}
+
+	.right_box .btn_more {
+	  display: inline-block;
+	  float: right;
+	  width: 26px;
+	  height: 34px;
+	  background: url(/assets/mdig/images/ebook_welcome/ew_btn_more.png) no-repeat left center;
+	  background-size: 100%;
+	}
+  }
+  &.size-xl{
+	padding-bottom: 20px;
+	.text_box {
+	  .main_tit {
+		font-size: var.$titleFontSizeXLarge;
+		line-height: var.$titleFontSizeXLargeLineHeight;
+		letter-spacing: var.$titleFontSizeXLargeLetterSpacing;
+	  }
+	}
+  }
+  &.size-l{
+	padding-bottom: 20px;
+	.text_box {
+	  .main_tit {
+		font-size: var.$titleFontSizeLarge;
+		line-height: var.$titleFontSizeLargeLineHeight;
+		letter-spacing: var.$titleFontSizeLargeLetterSpacing;
+	  }
+	  .sub_tit {
+		font-size: var.$titleFontSizeLargeSub;
+		line-height: var.$titleFontSizeLargeSubLineHeight;
+		letter-spacing: var.$titleFontSizeLargeSubLetterSpacing;
+		font-weight: variables.$fontWeightRegular;
+		color: var.$textColorGray01;
+		margin-top:6px;
+	  }
+	}
+  }
+  &.size-def{
+	padding-bottom: 10px;
+	.text_box {
+	  .main_tit {
+		font-size: var.$titleFontSizeDefault;
+		line-height: var.$titleFontSizeDefaultLineHeight;
+		letter-spacing: var.$titleFontSizeDefaultLetterSpacing;
+	  }
+	}
+  }
+  &.size-sm{
+	padding-bottom: 10px;
+	.text_box {
+	  .main_tit {
+		font-size: var.$titleFontSizeSmall;
+		line-height: var.$titleFontSizeSmallLineHeight;
+		letter-spacing: var.$titleFontSizeSmallLetterSpacing;
+	  }
+	}
+  }
+  &.size-xs{
+	padding-bottom: 10px;
+	.text_box {
+	  .main_tit {
+		font-size: var.$titleFontSizeXSmall;
+		line-height: var.$titleFontSizeXSmallLineHeight;
+		letter-spacing: var.$titleFontSizeXSmallLetterSpacing;
+	  }
+	  .sub_tit {
+		font-size: var.$titleFontSizeXSmallSub;
+		line-height: var.$titleFontSizeXSmallSubLineHeight;
+		letter-spacing: var.$titleFontSizeXSmallSubLetterSpacing;
+		font-weight: variables.$fontWeightRegular;
+		margin-top:6px;
+	  }
+	}
+  }
+}
+
+.conner_box {
+  &.type-wide .title_box {
+	width:100%;
+	padding: 0 20px 10px;
+	box-sizing:border-box;
+	&.size-xsm {
+	  padding-bottom: 10px;
+	}
+
+	&.size-sm {
+	  padding-bottom: 20px;
+	}
+
+	&.size-nor {
+	  padding-bottom: 30px;
+	}
+	&.size-l {
+	  padding-bottom: 20px;
+	}
+	&.size-xl {
+	  padding-bottom: 30px;
+	}
+  }
+}
+//font-family
+.ff_rbt{font-family: Roboto, sans-serif;}
+
+//font-color
+.fc_gray {color: var.$textColorGray !important;}
+.fc_gray_01{color: var.$textColorGray01 !important;}
+
+
+//font-set
+//16px
+.ft_sub{@include mixin.font_type_subcopy;}
+//15px
+.ft_b0{@include mixin.font_type_b0;}
+//14px
+.ft_b1{@include mixin.font_type_b1;}
+//13px
+.ft_b2{@include mixin.font_type_b2;}
+//13px
+.ft_info{@include mixin.font_type_info;}
+
+
+//font-decoration
+.fd_lt{text-decoration: line-through;}
+.fd_underline{text-decoration: underline;}

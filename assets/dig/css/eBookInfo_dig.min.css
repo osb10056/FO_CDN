@@ -1,0 +1,1310 @@
+.wrapper .container_wrapper .contents_wrap {
+  position: relative;
+  padding-top: 0;
+}
+
+.top_visual {
+  height: 871px;
+  background: url(../images/ebook-info/bg_topVisual.png) no-repeat center top;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.top_visual .ebook_guide_top_wrap {
+  padding-top: 288.9px;
+  padding-bottom: 178.5px;
+}
+
+.top_visual .ebook_guide_top_wrap .text_effect-wrap {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(700px) rotateX(-8deg);
+          transform: perspective(700px) rotateX(-8deg);
+}
+
+.top_visual .ebook_guide_top_wrap .text_effect-wrap .text_effect-inner {
+  width: 504.9px;
+  margin: 0 auto 0 49.5%;
+  text-align: center;
+  word-break: keep-all;
+  word-wrap: normal;
+  -webkit-transform: rotateX(9deg) rotateY(-8deg) rotateZ(1deg) translate(0.05px);
+          transform: rotateX(9deg) rotateY(-8deg) rotateZ(1deg) translate(0.05px);
+}
+
+.top_visual .ebook_guide_top_wrap .text_effect-wrap .text_effect-inner p {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.top_visual .ebook_guide_top_wrap .text_effect-wrap .text_effect-inner p:nth-child(1) {
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: -0.4px;
+  -webkit-transform: rotateX(8deg) rotateY(-13deg) translateZ(-0.07px);
+          transform: rotateX(8deg) rotateY(-13deg) translateZ(-0.07px);
+}
+
+.top_visual .ebook_guide_top_wrap .text_effect-wrap .text_effect-inner p:nth-child(2) {
+  font-weight: 700;
+  font-size: 100px;
+  letter-spacing: -1px;
+  -webkit-transform: rotateX(5deg) rotateY(-16deg);
+          transform: rotateX(5deg) rotateY(-16deg);
+}
+
+.top_visual .ebook_guide_top_wrap .text_effect-wrap .text_effect-inner p:nth-child(3) {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.44;
+  margin-top: 20px;
+  -webkit-transform: rotateY(-3deg);
+          transform: rotateY(-3deg);
+}
+
+.top_visual .ebook_guide_top_wrap .text_effect-wrap .text_effect-inner p:nth-child(4) {
+  width: 405px;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.btn_group {
+  font-size: 0;
+}
+
+.btn_group a {
+  display: inline-block;
+}
+
+.btn_group a span {
+  position: relative;
+  z-index: 0;
+}
+
+.btn_group a span:before {
+  display: inherit;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 100%;
+  height: 15px;
+  z-index: -1;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  content: "";
+}
+
+.btn_group a.is_active span:before {
+  background-color: #9efc78;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation: sort .1s linear;
+          animation: sort .1s linear;
+}
+
+.highlight:before {
+  content: "";
+  display: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: #9efc78;
+  z-index: -1;
+  -webkit-animation-name: highlighter;
+          animation-name: highlighter;
+  -webkit-animation-duration: .35s;
+          animation-duration: .35s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.ebook_useInfo {
+  display: none;
+}
+
+.guide_nav_wrap {
+  position: relative;
+}
+
+.guide_section_nav {
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 22px 0;
+  z-index: 100;
+}
+
+.guide_section_nav.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.guide_section_nav .ebook_guide_menu {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guide_section_nav .ebook_guide_menu .logo_box {
+  font-size: 0;
+}
+
+.guide_section_nav .ebook_guide_menu .logo_link {
+  display: inline-block;
+  width: 154px;
+  height: 45px;
+  background-image: url(../images/common/img_logo_eBook.png);
+  background-size: 154px 45px;
+  background-repeat: no-repeat;
+}
+
+.guide_section_nav .ebook_guide_menu .btn_group a span {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: -0.2px;
+  padding: 0 5px;
+}
+
+.guide_section_nav .ebook_guide_menu .btn_group a:last-child {
+  margin-left: 30px;
+}
+
+.guide_section_all,
+.guide_section_wrap,
+.guide_section_free {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.guide_section_all,
+.guide_section_free {
+  box-sizing: border-box;
+  height: 988px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.guide_section_all_inner,
+.guide_section_free_inner {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.guide_section_all h1,
+.guide_section_free h1 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.guide_section_all {
+  position: relative;
+  background-size: cover;
+}
+
+.guide_section_all.page_life {
+  background-image: url(../images/ebook-info/bg_section_life.png);
+}
+
+.guide_section_all.page_life .guide_section_all_inner {
+  padding-top: 180px;
+}
+
+.guide_section_all.page_life .guide_section_all_inner h1 {
+  margin-bottom: 108px;
+}
+
+.guide_section_all.page_life .guide_section_all_inner.mt {
+  margin-top: 90px;
+}
+
+.guide_section_all.page_info {
+  background-image: url(../images/ebook-info/bg_section_info.png);
+}
+
+.guide_section_all.page_info .guide_section_all_inner {
+  padding-top: 159px;
+}
+
+.guide_section_all.page_info .guide_section_all_inner h1 {
+  margin-bottom: 50px;
+}
+
+.guide_section_all.page_info .guide_section_all_inner p {
+  font-size: 25px;
+  line-height: 40px;
+  letter-spacing: -0.25px;
+  color: #666;
+  margin-bottom: 128px;
+}
+
+.guide_section_all.page_info .guide_section_all_inner.mt {
+  margin-top: 90px;
+}
+
+.guide_section_all .all_item {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.guide_section_all .all_item .all_list {
+  width: 220px;
+  position: relative;
+}
+
+.guide_section_all .all_item .all_list_img {
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 0 rgba(125,120,99,.1);
+  margin: 0 22px 40px 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.guide_section_all .all_item .all_list_text strong {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.guide_section_all .all_item .all_list_text p {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.16px;
+  color: #666;
+}
+
+.guide_section_all .all_item .all_list.add_arrow ::before {
+  content: url(../images/common/icon_arrow_line_white.png);
+  width: 25px;
+  height: 43px;
+  position: absolute;
+  top: 74px;
+  left: -90px;
+  margin-left: 30px;
+}
+
+.guide_section_all .all_item .all_list.add_arrow:first-child ::before {
+  display: none;
+}
+
+.guide_section_swiper_wrap {
+  background: url(../images/ebook-info/bg_section_align.png) no-repeat center top;
+  overflow: hidden;
+}
+
+.guide_section_wrap {
+  width: 1200px;
+  height: 988px;
+  margin: 0 auto;
+}
+
+.guide_section_wrap.guide_swiper .swiper-pagination {
+  top: 438px;
+  right: 0;
+  width: 12px;
+}
+
+.guide_section_wrap.guide_swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  margin: 13px 0;
+}
+
+.guide_section_wrap.guide_swiper .swiper-pagination-bullet-active {
+  background-color: #759fef;
+}
+
+.guide_section_wrap .guide_section {
+  margin: 0 auto;
+  position: relative;
+}
+
+.guide_section_wrap .guide_section_inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.guide_section_wrap .guide_section_inner img {
+  width: 282px;
+  height: 539px;
+}
+
+.guide_section_wrap .guide_section_inner>div {
+  margin-left: 70px;
+}
+
+.guide_section_wrap .guide_section_inner>div h2 {
+  font-size: 50px;
+  line-height: 65px;
+  letter-spacing: -0.5px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.guide_section_wrap .guide_section_inner>div h2 strong {
+  display: block;
+}
+
+.guide_section_wrap .guide_section_inner>div p {
+  font-size: 25px;
+  line-height: 40px;
+  letter-spacing: -0.25px;
+  color: #666;
+}
+
+.guide_section_free {
+  background-image: url(../images/ebook-info/bg_bottom.png);
+}
+
+.guide_section_free_inner {
+  padding-top: 180px;
+}
+
+.guide_section_free h1 {
+  margin-bottom: 80px;
+}
+
+.guide_section_free .btn_group {
+  margin-bottom: 61px;
+}
+
+.guide_section_free .btn_group a {
+  margin-left: 20px;
+}
+
+.guide_section_free .btn_group a span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  padding: 0 10px;
+}
+
+.guide_section_free .btn_group a:first-child {
+  margin-left: 0;
+}
+
+.guide_section_free .free_inner_list {
+  position: relative;
+  margin: 0 auto;
+  width: 1215px;
+  margin-left: -10px;
+}
+
+.guide_section_free .free_inner_list .list {
+  width: 100%;
+}
+
+.guide_section_free .free_inner_list .list .swiper-slide {
+  width: 16.6666666667%;
+  height: 260px;
+  font-size: 0;
+}
+
+.guide_section_free .free_inner_list .list .swiper-slide a {
+  position: relative;
+  display: inline-block;
+  border-radius: 7px 7px 7px 30px;
+  overflow: hidden;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+  width: 185px;
+  height: 260px;
+}
+
+.guide_section_free .free_inner_list .list .swiper-slide a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.guide_section_free .free_inner_list .swiper-button-prev {
+  top: calc(50% - 36px);
+  left: -40px;
+  margin-top: 0;
+  width: 20.6px;
+  height: 36px;
+  background-image: url(../images/common/icon_arrow_line.png);
+  background-size: 20.6px 36px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.guide_section_free .free_inner_list .swiper-button-next {
+  top: calc(50% - 36px);
+  right: -40px;
+  margin-top: 0;
+  width: 20.6px;
+  height: 36px;
+  background-image: url(../images/common/icon_arrow_line.png);
+  background-size: 20.6px 36px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap {
+  height: 60px;
+  border-bottom: none;
+  margin-bottom: 100px;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs {
+  border: 1px solid #ddd;
+  border-radius: 35px;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs .tab_item {
+  border-radius: 35px;
+  background-color: #fff;
+  padding: 0;
+  transition: background .3s ease-out,border-color .3s ease-out;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs .tab_item .tab_link {
+  padding: 0;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs .tab_item .tab_link .tab_text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  letter-spacing: -0.2px;
+  color: #000;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs .tab_item .tab_link:after {
+  display: none;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs .tab_item.ui-state-active {
+  background-color: #353f67;
+  border-color: #353f67;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs .tab_item.ui-state-active .tab_text {
+  color: #fff;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tabs .tab_item~.tab_item {
+  margin-left: -1px;
+}
+
+.tab_wrap.type_fill_btn>.tab_list_wrap .tab_list_inner {
+  height: 52px;
+}
+
+.tab_wrap.type_fill_btn {
+  width: 1200px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.device_info_section {
+  width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.device_info_section .ui-tabs .ui-tabs-panel {
+  padding-top: 0 !important;
+}
+
+.device_info_section .device_info_inner {
+  padding: 0;
+  margin-bottom: 260px;
+}
+
+.device_info_section .device_info_inner:last-child {
+  margin-bottom: 0;
+}
+
+.device_info_section .device_info_inner_top {
+  margin-bottom: 180px;
+}
+
+.device_info_section .device_info_inner_top h1 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 50px;
+}
+
+.device_info_section .device_info_inner_top p {
+  font-size: 25px;
+  line-height: 40px;
+  letter-spacing: -0.25px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.device_info_section .device_info_inner_top .btn_group button {
+  height: 80px;
+  background-color: #2cb5a7;
+  color: #fff;
+  padding: 22px 40px 21px;
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  border-radius: 38px;
+}
+
+.device_info_section .device_info_inner_top .btn_group button+button {
+  margin-left: 10px;
+}
+
+.device_info_section .reader_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.device_info_section .reader_row .info_text {
+  margin-bottom: 0;
+}
+
+.device_info_section .info_text {
+  margin-bottom: 80px;
+}
+
+.device_info_section .info_text>p {
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: -0.2px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.device_info_section h2 {
+  font-size: 36px;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  word-break: keep-all;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.device_info_section ul li {
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: -0.2px;
+  color: #666;
+}
+
+.device_info_section ul+small {
+  padding-top: 20px;
+}
+
+.device_info_section small {
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.18px;
+  color: #999;
+  display: block;
+}
+
+.device_info_section small+small {
+  padding-top: 18px;
+}
+
+.device_info_section small+small+.btn_square {
+  margin-top: 40px;
+  padding-top: 16px;
+}
+
+.device_info_section .btn_square {
+  display: inline-block;
+  width: 138px;
+  height: 138px;
+  text-align: center;
+  background-color: #353f67;
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.18px;
+  font-weight: 500;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px 0 rgba(125,120,99,.5);
+  padding: 30px 12px 55px;
+  box-sizing: border-box;
+}
+
+.device_info_section .btn_square::after {
+  content: url(../images/ebook-info/icon_arrow_right_long.png);
+  display: block;
+  padding-top: 10px;
+}
+
+.device_info_section .info_wrap {
+  display: flex;
+  align-items: flex-end;
+  flex: 0 0 auto;
+}
+
+.device_info_section .info_wrap_left {
+  width: 138px;
+  text-align: center;
+  margin-right: 127px;
+}
+
+.device_info_section .info_wrap_left span {
+  font-size: 16px;
+  line-height: 40px;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  padding-bottom: 16px;
+}
+
+.device_info_section .info_wrap_left img {
+  display: inline-block;
+  width: 138px;
+  height: 138px;
+  margin-bottom: 25px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px 0 rgba(125,120,99,.2);
+}
+
+.device_info_section .info_wrap_img {
+  font-size: 0;
+  position: relative;
+}
+
+.device_info_section .info_wrap_img div {
+  display: inline-block;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.15);
+  border-radius: 15px;
+  background-color: #fff;
+  border: 3px solid #fff;
+  box-sizing: border-box;
+}
+
+.device_info_section .info_wrap_img div+div {
+  margin-left: 80px;
+}
+
+.device_info_section .info_wrap_img.img_arrow {
+  position: relative;
+  white-space: nowrap;
+}
+
+.device_info_section .info_wrap_img.img_arrow::before {
+  content: url(../images/common/icon_arrow_line_gray.png);
+  width: 20px;
+  height: 35px;
+  position: absolute;
+  left: 280px;
+  top: calc(50% - 35px);
+}
+
+.device_info_section .info_wrap_img.img_arrow::after {
+  content: url(../images/common/icon_arrow_line_gray.png);
+  width: 20px;
+  height: 35px;
+  position: absolute;
+  right: 275px;
+  top: calc(50% - 35px);
+}
+
+.device_info_section .info_wrap_img.mobile img {
+  width: 245px;
+  height: 468px;
+}
+
+.device_info_section .info_wrap_img.reader {
+  margin-left: 48px;
+}
+
+.device_info_section .info_wrap_img.reader div {
+  background-color: transparent;
+  border: 0;
+}
+
+.device_info_section .info_wrap_img.reader img {
+  width: 470px;
+  height: 650px;
+}
+
+.device_info_section .info_wrap_img.pc {
+  margin-right: 50px;
+}
+
+.device_info_section .info_wrap_img.pc img {
+  width: 833px;
+  height: 574px;
+}
+
+.device_info_section .info_wrap_img img.store_logo {
+  position: absolute;
+  bottom: -48.6px;
+  left: 55.7px;
+  display: inline-block;
+  width: 133px !important;
+  height: 29px !important;
+}
+
+.device_info_section .listen_list {
+  margin-top: 80px;
+}
+
+.device_info_section .listen_list .listen_item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 50px;
+}
+
+.device_info_section .listen_list .listen_item .img_wrap {
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.device_info_section .listen_list .listen_item strong {
+  display: block;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.device_info_section .listen_list .listen_item p {
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  color: #666;
+}
+
+.device_info_section .gray_section {
+  width: 100%;
+  padding: 80px 60px;
+  background: #f3f3f3;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.device_info_section .gray_section_inner {
+  margin-bottom: 80px;
+}
+
+.device_info_section .gray_section_inner:last-child {
+  margin-bottom: 0;
+}
+
+.device_info_section .gray_section_inner h5 {
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: -0.24px;
+  margin-bottom: 10px;
+}
+
+.device_info_section .gray_section_inner p {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.1px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.device_info_section .gray_section_inner .downbutton-wrap {
+  display: flex;
+  width: 790px;
+  padding-top: 20px;
+}
+
+.device_info_section .gray_section_inner .downbutton-wrap .button-wrap h6 {
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: -0.2px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.device_info_section .gray_section_inner .downbutton-wrap .button-wrap button {
+  width: 360px;
+  height: 73px;
+  background-color: #fff;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  padding: 13px 30px;
+  text-align: left;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.device_info_section .gray_section_inner .downbutton-wrap .button-wrap button::after {
+  content: url(../images/ebook-info/icon_download.png);
+  position: absolute;
+  right: 30px;
+  top: 24px;
+}
+
+.device_info_section .gray_section_inner .downbutton-wrap .button-wrap button span {
+  color: #666;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.1px;
+}
+
+.device_info_section .gray_section_inner .downbutton-wrap .button-wrap:first-child {
+  margin-right: 70px;
+}
+
+.device_info_section .gray_section_inner .infotable-wrap table {
+  width: 100%;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.1px;
+  color: #666;
+  text-align: center;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #ddd;
+  box-sizing: border-box;
+}
+
+.device_info_section .gray_section_inner .infotable-wrap table thead {
+  background-color: #fbfbfb;
+}
+
+.device_info_section .gray_section_inner .infotable-wrap table thead th {
+  font-weight: 500;
+  padding: 13px 0;
+}
+
+.device_info_section .gray_section_inner .infotable-wrap table tbody {
+  background-color: #fff;
+}
+
+.device_info_section .gray_section_inner .infotable-wrap table tbody td {
+  padding: 12px 0;
+}
+
+.device_info_section .gray_section_inner .infotable-wrap table tbody .colorlight td {
+  color: #888;
+}
+
+.device_info_section .gray_section_inner .infotable-wrap table th,
+.device_info_section .gray_section_inner .infotable-wrap table td {
+  border: 1px solid #d6d6d6;
+}
+
+.bg_gray {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #fff;
+}
+
+.bg_gray .clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg_gray .clip.clip1 {
+  background-color: #fcf9f9;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 146px, 100% 696px, 100% 1740px, 0 1250px);
+          clip-path: polygon(0 146px, 100% 696px, 100% 1740px, 0 1250px);
+}
+
+.bg_gray .clip.clip2 {
+  background-color: #fcf9f9;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 3129px, 100% 2614px, 100% 100%, 0 100%);
+          clip-path: polygon(0 3129px, 100% 2614px, 100% 100%, 0 100%);
+}
+
+.customer_pop {
+  position: absolute;
+  right: calc(50% - 600px - 159px);
+  top: 1127px;
+  width: 159px;
+  height: 121px;
+  background: url(../images/ebook-info/bg_pop.png);
+  background-size: 100%;
+  background-position: top left;
+  z-index: 100;
+  transition: position 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.customer_pop>div {
+  position: relative;
+}
+
+.customer_pop span {
+  padding: 20px 15px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.16px;
+  color: #fff;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.customer_pop span::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin-bottom: 5px;
+  background: url(../images/common/icon_info_outline.png) no-repeat;
+  background-size: 30px 30px;
+}
+
+.customer_pop.fixed {
+  position: fixed;
+  top: 255px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay .customer_pop_wrap {
+  width: 1200px;
+  height: 804px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.overlay .customer_pop_wrap .pop_left {
+  height: 100%;
+  background-color: #485aa2;
+  padding: 0 30px;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_menu {
+  padding-top: 65px;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_menu li+li {
+  margin-top: 10px;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_menu a {
+  display: inline-block;
+  padding: 0;
+  font-size: 18px;
+  letter-spacing: -0.18px;
+  color: #fff;
+  opacity: .4;
+  cursor: pointer;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_menu .tab_item.ui-state-active a {
+  opacity: 1;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_info {
+  width: 157px;
+  border-top: 1px solid rgba(255,255,255,.3);
+  padding-top: 31px;
+  color: #fff;
+  margin-top: 447px;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_info span {
+  display: block;
+  white-space: nowrap;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_info .info_title {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.15px;
+  padding-bottom: 5px;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_info .info_tel {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  padding-bottom: 25px;
+}
+
+.overlay .customer_pop_wrap .pop_left .pop_info .info_hour,
+.overlay .customer_pop_wrap .pop_left .pop_info .info_holiday {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: -0.15px;
+  opacity: .6;
+}
+
+.overlay .customer_pop_wrap .pop_right {
+  background-color: #fff;
+  padding: 46px 50px 0;
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.overlay .customer_pop_wrap .pop_right .btn_close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 33px;
+  height: 33px;
+}
+
+.overlay .customer_pop_wrap .pop_right .btn_close .icon_close {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 33px;
+  height: 33px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../../common/images/btn_dialog_close@1.5x.png);
+  background-size: 33px 33px;
+}
+
+.overlay .customer_pop_wrap .pop_right h1 {
+  font-size: 30px;
+  letter-spacing: -0.3px;
+  color: #485aa2;
+  margin-bottom: 30px;
+}
+
+.overlay .customer_pop_wrap .pop_right h1_title {
+  padding-bottom: 22px;
+}
+
+.overlay .customer_pop_wrap .pop_right h2 {
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  font-weight: normal;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.overlay .customer_pop_wrap .pop_right .input_btn_box {
+  margin-bottom: 30px;
+  width: 843px;
+}
+
+.overlay .customer_pop_wrap .pop_right .input_btn_box input[type=text],
+.overlay .customer_pop_wrap .pop_right .input_btn_box button {
+  margin-bottom: 0;
+  margin-top: 0 !important;
+}
+
+.overlay .customer_pop_wrap .pop_right input[type=text],
+.overlay .customer_pop_wrap .pop_right textarea {
+  width: 843px;
+  padding: 12px 14px;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.14px;
+}
+
+.overlay .customer_pop_wrap .pop_right input[type=text] ::-webkit-input-placeholder, .overlay .customer_pop_wrap .pop_right textarea ::-webkit-input-placeholder {
+  color: #767676;
+}
+
+.overlay .customer_pop_wrap .pop_right input[type=text] ::-moz-placeholder, .overlay .customer_pop_wrap .pop_right textarea ::-moz-placeholder {
+  color: #767676;
+}
+
+.overlay .customer_pop_wrap .pop_right input[type=text] :-ms-input-placeholder, .overlay .customer_pop_wrap .pop_right textarea :-ms-input-placeholder {
+  color: #767676;
+}
+
+.overlay .customer_pop_wrap .pop_right input[type=text] ::-ms-input-placeholder, .overlay .customer_pop_wrap .pop_right textarea ::-ms-input-placeholder {
+  color: #767676;
+}
+
+.overlay .customer_pop_wrap .pop_right input[type=text] ::placeholder,
+.overlay .customer_pop_wrap .pop_right textarea ::placeholder {
+  color: #767676;
+}
+
+.overlay .customer_pop_wrap .pop_right input[type=text] {
+  height: 44px;
+  margin-bottom: 12px;
+  margin-top: 22px;
+}
+
+.overlay .customer_pop_wrap .pop_right textarea {
+  height: 320px;
+  margin-bottom: 18px;
+}
+
+.overlay .customer_pop_wrap .pop_right .btn_group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 6px;
+  margin-bottom: 68px;
+}
+
+.overlay .customer_pop_wrap .pop_right .btn_group button {
+  width: 140px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.small_info li {
+  list-style: none;
+  color: #666;
+  font-size: 15px;
+  line-height: 28px;
+  letter-spacing: -0.25px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.small_info li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin: 11px 8px 0 0;
+  background-color: #666;
+  vertical-align: top;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list {
+  width: 843px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 31px;
+  border: 1px solid #d5d5d5;
+  box-sizing: border-box;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li {
+  width: 20%;
+  list-style: none;
+  border-right: 1px solid #d5d5d5;
+  background-repeat: no-repeat;
+  background-position: center 10.5px;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li:last-child {
+  border-right: 0;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li a {
+  display: block;
+  padding-top: 70.5px;
+  width: 100%;
+  height: 102px;
+  font-size: 14px;
+  letter-spacing: -0.14px;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li:nth-child(1) {
+  background-image: url(../../dig/images/ebook-info/icon_pop_01.png);
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li:nth-child(2) {
+  background-image: url(../../dig/images/ebook-info/icon_pop_02.png);
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li:nth-child(3) {
+  background-image: url(../../dig/images/welcome/icon_welQuick_03.png);
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li:nth-child(4) {
+  background-image: url(../../dig/images/ebook-info/icon_pop_04.png);
+}
+
+.overlay .customer_pop_wrap .pop_right ul.qna_list li:nth-child(5) {
+  background-image: url(../../dig/images/ebook-info/icon_pop_05.png);
+}
+
+.overlay .customer_pop_wrap .pop_right ul.best_qna li {
+  list-style: none;
+  vertical-align: top;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.best_qna li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin: 18px 10px 0 0;
+  background-color: #000;
+  vertical-align: top;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.best_qna li a {
+  display: inline-block;
+  color: #000;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 40px;
+  letter-spacing: -0.16px;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.best_qna li:hover a {
+  color: #4aa126;
+}
+
+.overlay .customer_pop_wrap .pop_right ul.best_qna li:hover::before {
+  background-color: #4aa126;
+}
+/*# sourceMappingURL=eBookInfo_dig.min.css.map */

@@ -1,0 +1,126 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+/* tab - line 타입 */
+.tab_wrap.type_line_none {
+  .tab_list_wrap {
+	position: relative;
+	height: auto;
+	border-bottom: none;
+	margin-bottom: 20px;
+
+	&:after {display: none;}
+	.tabs {
+	  height: 100%;
+	  box-sizing: border-box;
+	  &.ui-helper-clearfix:before{content:none;}
+	  .tab_item {
+		padding: 0;
+		background: none;
+		border: none;
+		border-bottom: 0;
+		border-radius: 0;
+		.tab_link {
+		  padding: 0 14px;
+		  .tab_text {
+			padding-bottom: 2px;
+			@include mixins.font_size_sm;
+		  }
+		  &:before{content:'';display: inline-block;position: absolute;left: 0;top: 7px;width:1px;height:10px;background-color:#eaeaea;}
+		}
+		&:first-child{
+		  .tab_link{
+			padding-left:0;
+			&:before{display: none;}
+		  }
+		}
+		&.ui-state-active {
+		  border: none;
+		  border-bottom: 0;
+
+		  .tab_link {
+			.tab_text {
+			  color: variables.$textColorPurple;
+			}
+
+			&:after {
+			  background: #fff;
+			}
+		  }
+		}
+
+		& ~ .tab_item {
+		  margin-left: -1px;
+		}
+	  }
+	}
+  }
+}
+
+//기본 탭메뉴
+.tab_menu_box {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+.tab_menu_box.type-default {
+  ul {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 48px;
+	background-color: #fff;
+	border-bottom: 1px solid #d5d5d5;
+	padding: 0 20px;
+	box-sizing: border-box;
+	li {
+	  position: relative;
+	  height: 100%;
+	  margin: 0;
+	  box-sizing: border-box;
+	  padding: 0 14px;
+	  &:first-child {
+		padding-left: 0;
+	  }
+	  &:last-child {
+		padding-right: 0;
+	  }
+	  span {
+		position: relative;
+		display: inline-block;
+		height: 100%;
+		white-space: nowrap;
+		font-size: 15px;
+		color: #767676;
+		line-height: 46px;
+		letter-spacing: -0.01em;
+		font-family: "Noto Sans KR", sans-serif;
+		&:after {
+		  content: '';
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  z-index: 2;
+		  width: 100%;
+		  height: 2px;
+		  background-color: transparent;
+		}
+	  }
+	}
+	li.active {
+	  span {
+		font-weight: bold;
+		color: #000;
+		&:after {
+		  background-color: #000;
+		}
+	  }
+	}
+  }
+}

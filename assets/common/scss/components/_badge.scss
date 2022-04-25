@@ -1,0 +1,606 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+$badgeProps: (
+	'border-radius': 4px,
+	'border-radius-lg': 6px,
+	'height-xl': 26px,
+	'height-lg': 24px,
+	'height-md': 22px,
+	'height-sm': 20px,
+	'padding': 1px 5px,
+	'padding-sm' : 0 4px,
+);
+
+/* 뱃지 */
+[class^=badge_] {
+	display: inline-block;
+	box-sizing: border-box;
+	text-align: center;
+	vertical-align: top;
+
+	// 아이콘
+	[class^=ico_] {
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+	}
+
+	.text {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+/* 뱃지 - 사이즈 */
+.badge_xl {
+	min-height: map.get($badgeProps, 'height-xl');
+	padding: 4px 9px 0;
+	border-radius: map.get($badgeProps, 'border-radius');
+	@include mixins.font_size_xxs;
+	font-weight: variables.$fontWeightMedium;
+
+	&.badge_pill{
+		border-radius: map.get($badgeProps, 'height-xl');
+	}
+}
+.badge_lg {
+	min-height: map.get($badgeProps, 'height-lg');
+	padding: 2px 6px 0;
+	border-radius: map.get($badgeProps, 'border-radius');
+	@include mixins.font_size_xxs;
+	font-weight: variables.$fontWeightMedium;
+
+	&.badge_pill{
+		border-radius: map.get($badgeProps, 'height-lg');
+	}
+}
+.badge_md {
+	min-height: map.get($badgeProps, 'height-md');
+	padding: map.get($badgeProps, 'padding');
+	border-radius: map.get($badgeProps, 'border-radius');
+	@include mixins.font_size_xxs;
+
+	&.badge_pill{
+		border-radius: map.get($badgeProps, 'height-md');
+	}
+	
+	&.flag {
+		border-radius: 6px 0 6px 0 ;
+	}
+}
+.badge_sm {
+	min-height: map.get($badgeProps, 'height-sm');
+	padding: map.get($badgeProps, 'padding-sm');
+	border-radius: map.get($badgeProps, 'border-radius');
+	font-size: 11px;
+	line-height: variables.$fontSizeXxsLineHeight;
+	letter-spacing: variables.$letterSpacing;
+
+	&.badge_pill{
+		padding: 4px 7px 0;
+		@include mixins.font_size_xxs;
+		border-radius: map.get($badgeProps, 'height-sm');
+		line-height: 1;
+	}
+
+	&:not(.badge_pill) {
+		.text {
+			transform: translateY(1px);
+		}
+	}
+}
+
+.badge_xs {
+	min-height: map.get($badgeProps, 'height-sm');
+	padding: map.get($badgeProps, 'padding');
+	border-radius: map.get($badgeProps, 'border-radius');
+	font-weight: variables.$fontWeightMedium;
+	@include mixins.font_size_xxs;
+
+	// 뱃지 - pill
+	&.badge_pill {
+		padding: 2px 7px 0;
+		border-radius: map.get($badgeProps, 'height-sm');
+		line-height: 1;
+
+		.fc_black {
+			font-weight: variables.$fontWeightMedium;
+		}
+	}
+
+}
+
+/* 뱃지 - 리스트 */
+.badge_list_box {
+	margin-top: -4px;
+	font-size: 0;
+	text-align: left;
+
+	[class^=badge_] {
+		margin-right: 4px;
+		margin-top: 4px;
+	}
+}
+
+/* 뱃지 - 채널별 색상 */
+.badge_kyobo {
+	color: variables.$textColorLightGray;
+	border: 1px solid transparent;
+	background: rgba(#1717ED, .1);
+	font-weight: variables.$fontWeightMedium;
+}
+.badge_ebook {
+	color: variables.$textColorLightGray;
+	border: 1px solid #e7f0fc;
+	background: #e7f0fc;
+	font-weight: variables.$fontWeightMedium;
+}
+//.badge_sam {
+//	color: variables.$textColorLightGray;
+//	background: #fff;
+//	border: 1px solid variables.$colorGray02;
+//}
+//
+.badge_hottracks {
+	color: variables.$textColorLightGray;
+	border: 1px solid #FBEEED;
+	background: #FBEEED;
+	font-weight: variables.$fontWeightMedium;
+}
+
+.badge_caster_partner {
+	color: #fff;
+	border: 1px solid variables.$kyoboPurple;
+	background: variables.$kyoboPurple;
+
+	.ico_caster_partner {
+		width: 12px;
+		height: 15px;
+		margin-right: 3px;
+		vertical-align: top;
+		background: {
+			position: center;
+			repeat: no-repeat;
+		}
+		@include mixins.ratio_images('../images/ico_grade_partner_mok', 'png', 12px, 15px);
+	}
+}
+.badge_caster_popular {
+	color: #fff;
+	border: 1px solid #50b19e;
+	background: #50b19e;
+
+	.ico_caster_popular {
+		width: 12px;
+		height: 15px;
+		margin-right: 3px;
+		vertical-align: top;
+		background: {
+			position: center;
+			repeat: no-repeat;
+		}
+		@include mixins.ratio_images('../images/ico_grade_popular_mok', 'png', 12px, 15px);
+	}
+}
+
+/* 태그 */
+.tag_wrap {
+	margin: -3px -3px;
+	font-size: 0;
+
+	.tag {
+		display: inline-block;
+		margin: 3px;
+		@include mixins.font_size_xs;
+		color: variables.$textColorGray;
+		padding: 5px 14px 6px;
+		background-color: variables.$colorGray06;
+		border: 1px solid variables.$colorGray06;
+		border-radius: 20px;
+		box-sizing: border-box;
+		@include mixins.transition(background-color .23s, border-color .23s, color .23s);
+		text-align: center;
+		vertical-align: top;
+
+		.text{
+			position: relative;
+		}
+
+		.gap {
+			display: inline-block;
+			width: 5px;
+			font-size: 0;
+			margin: 0 4px;
+			background: {
+				position: center;
+				repeat: no-repeat;
+			}
+			vertical-align: top;
+			@include mixins.ratio_images('../images/ico_field_gap_mok', 'png', 5px, 9px);
+		}
+	}
+
+	button.tag{
+		&:hover{
+			cursor: pointer;
+		}
+
+		&.active{
+			background-color: variables.$textColorGray;
+			border-color: variables.$textColorGray;
+			color: #fff;
+		}
+
+		&.size_lg{
+			&.active{
+				color: #fff;
+			}
+		}
+	}
+
+	&.size_sm {
+		margin: -2px;
+
+		.tag {
+			padding: 2px 10px;
+			margin: 2px;
+			@include mixins.font_size_xxs;
+		}
+	}
+
+	&.size_md {
+		margin: -4px -4px;
+
+		.tag {
+			padding: 8px 14px 7px;
+			margin: 4px;
+		}
+	}
+
+	&.size_lg {
+		.tag {
+			padding: 9px 16px 7px;
+			@include mixins.font_size_sm;
+			border-color: variables.$colorGray04;
+			color: variables.$textColorBlack;
+		}
+	}
+
+	&.type_white {
+		.tag{
+			color: variables.$textColorGray;
+			background-color: #fff;
+			border: 1px solid #fff;
+		}
+	}
+
+	&.type_line_white {
+		.tag{
+			color: variables.$textColorGray;
+			background-color: #fff;
+			border: 1px solid variables.$colorGray03;
+
+			&.active {
+				background-color: #fff;
+				border-color: variables.$textColorBlack;
+				color: variables.$textColorBlack;
+				font-weight: variables.$fontWeightBold;
+			}
+		}
+	}
+	&.type_line_black {//cart 사용 활성화시 블랙 Todo 가이드 추가필요
+		.tag{
+			color: variables.$textColorGray;
+			background-color: #fff;
+			border: 1px solid variables.$colorGray03;
+
+			&.active {
+				background-color: variables.$textColorBlack;
+				border-color: variables.$textColorBlack;
+				color: #fff;
+				font-weight: variables.$fontWeightBold;
+			}
+		}
+	}
+
+	&.col3{
+		.tag{
+			width: calc((100% - 18px) / 3);
+		}
+	}
+
+	&.scroll{
+		margin: 0;
+		padding: 0 20px;
+		@include mixins.scrollX;
+		white-space: nowrap;
+
+		.tag{
+			margin: 0;
+
+			~ .tag{
+				margin-left: 6px;
+			}
+		}
+
+		&.size_sm{
+			.tag{
+				margin: 0;
+
+				~ .tag{
+					margin-left: 4px;
+				}
+			}
+		}
+	}
+
+	.tag_list {
+		display: block;
+
+		.tag {
+			display: block;
+		}
+	}
+
+	&.type_fixed{
+		height: 36px;
+		position: relative;
+		padding: 10px 0 24px;
+
+		.tag_list_inner{
+			padding: 0 20px;
+		}
+	}
+}
+
+// flag state
+.flag_state {
+	display: inline-block;
+	padding: 4px 10px 3px;
+	@include mixins.font_size_xxs;
+	color: #fff;
+	border-radius: 13px 13px 13px 0;
+	vertical-align: middle;
+
+	&.ing {
+		background-color: variables.$kyoboGreen;
+	}
+
+	&.end {
+		background-color: #767675;
+	}
+}
+
+.badge_flag{
+	display: inline-block;
+	min-width: 20px;
+	padding: 3px 3px 3px;
+	font-size: variables.$fontSizeXxs;
+	letter-spacing: variables.$letterSpacing;
+	font-weight: variables.$fontWeightBold;
+	line-height: 1;
+	color: #fff;
+	border-radius: 6px 0;
+	vertical-align: top;
+	text-align: center;
+
+	&.size_lg{
+		padding: 5px 8px;
+		border-radius: 8px 0;
+		font-weight: variables.$fontWeightRegular;
+	}
+	&.size_xl {
+		padding: 3px 12px 4px;
+		border-radius: 16px 0;
+		@include mixins.font_size_xs;
+	}
+
+	&.badge_primary{
+		border: 1px solid variables.$kyoboPurple;
+		background-color: variables.$kyoboPurple;
+
+		.text {
+			color: #fff;
+		}
+	}
+
+	&.best{
+		position: relative;
+		padding-left: 17px;
+		margin: 8px 0 0 14px;
+
+		.text{
+			font-weight: variables.$fontWeightMedium;
+		}
+
+		&:before{
+			content: '';
+			position: absolute;
+			bottom: -1px;
+			left: -14px;
+			display: block;
+			width: 28px;
+			height: 27px;
+			@include mixins.ratio_images('../images/ico_best_badge_mok', 'png', 28px, 27px);
+			vertical-align: top;
+		}
+	}
+}
+
+/* 뱃지 - 색상 */
+.badge_gray {
+	color: #fff;
+	background: variables.$textColorGray;
+	border: 1px solid variables.$textColorGray;
+}
+.badge_light_gray {
+	color: #fff;
+	background: variables.$textColorLightGray;
+	border: 1px solid variables.$textColorLightGray;
+}
+.badge_green {
+	color: #fff;
+	background: variables.$kyoboGreen;
+	border: 1px solid variables.$kyoboGreen;
+}
+.badge_light_green{
+	color: variables.$textColorGreen;
+	background: #F2F8F0;
+	border: 1px solid #F2F8F0;
+}
+.badge_line_primary {
+	color: variables.$textColorPurple;
+	border: 1px solid variables.$textColorPurple;
+	background: #fff;
+}
+.badge_line_gray {
+	color: variables.$textColorLightGray;
+	background: #fff;
+	border: 1px solid variables.$colorGray02;
+}
+.badge_line_green {
+	color: variables.$textColorGreen;
+	background: #fff;
+	border: 1px solid variables.$kyoboGreen;
+}
+.badge_line_red {
+	color: variables.$textColorRed;
+	background: #fff;
+	border: 1px solid #d93938;
+}
+.badge_red {
+	color: variables.$textColorRed;
+	background: #fef1f2;
+	border: 1px solid #fef1f2;
+}
+.badge_primary {
+	color: variables.$textColorPurple;
+	border: 1px solid #ededf7;
+	background: #ededf7;
+}
+.badge_lighten_gray {
+	color: variables.$textColorGray;
+	background: #f0f0f0;
+	border: 1px solid #f0f0f0;
+}
+
+// 라이브러리 메인 배너 뱃지 (종이책,동영상,이북)
+.badge_blue {
+	border: 1px solid #3471C1;
+	background-color: #3471C1;
+
+	.text {
+		color: #fff;
+	}
+}
+
+.badge_mint {
+	border: 1px solid #06BBC0;
+	background-color: #06BBC0;
+
+	.text {
+		color: #fff;
+	}
+}
+
+// 주문, 장바구니 한정 primary badge 컬러
+.badge_primary_ord{
+	border-color: variables.$kyoboPurple;
+	background-color: variables.$kyoboPurple;
+
+	.text{
+		color: #fff;
+	}
+}
+
+.badge_black{
+	border-color: variables.$textColorBlack;
+	background-color: variables.$textColorBlack;
+
+	.text {
+		color: #fff;
+	}
+}
+
+.badge_primary_speech {
+	position: relative;
+	border: 1px solid variables.$kyoboPurple;
+	background-color: variables.$kyoboPurple;
+
+	.text {
+		color: #fff;
+	}
+
+	&:after{
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		right: 13px;
+		display: block;
+		width: 6px;
+		height: 4px;
+		@include mixins.ratio_images('../images/bg_bubble_speech_primary_pill_mok', 'png', 6px, 4px);
+	}
+}
+.badge_gray_speech {
+	position: relative;
+	border: 1px solid variables.$textColorGray;
+	background-color: variables.$textColorGray;
+	
+	.text {
+		color: #fff;
+	}
+	
+	&:after{
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		right: 13px;
+		display: block;
+		width: 6px;
+		height: 4px;
+		@include mixins.ratio_images('../images/bg_bubble_speech_gray_pill_mok', 'png', 6px, 4px);
+	}
+}
+
+
+// 등급 컬러
+.badge_grade_friends {
+	border: 1px solid #06BBC0;
+	background-color: #06BBC0;
+
+	.text {
+		color: #fff;
+	}
+}
+
+// 디자인 수급 후 컬러변경
+.badge_grade_silver {
+	border: 1px solid #06BBC0;
+	background-color: #06BBC0;
+
+	.text {
+		color: #fff;
+	}
+}
+
+.badge_grade_gold {
+	border: 1px solid #06BBC0;
+	background-color: #06BBC0;
+
+	.text {
+		color: #fff;
+	}
+}
+
+.badge_grade_platinum {
+	border: 1px solid #06BBC0;
+	background-color: #06BBC0;
+
+	.text {
+		color: #fff;
+	}
+}

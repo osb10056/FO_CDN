@@ -1,0 +1,61 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+.wrapper{
+	&.error{
+		height: 100%;
+
+		.container_wrapper{
+			height: 100%;
+			padding-top: 0;
+
+			.contents_wrap{
+				height: 100%;
+
+				.contents_inner{
+					height: 100%;
+
+					/* 에러 팝업 */
+					.error_wrap {
+						@include mixins.justify_width(center,center,column);
+						position: relative;
+						height: 100%;
+						text-align: center;
+
+						.error_text_wrap{
+							@include mixins.justify_width(center,center,column);
+							flex: 1;
+							.ico_error {
+								display: block;
+								width: 132px;
+								height: 132px;
+								margin: 0 auto;
+								background: rgba(255,0,0,.3);
+							}
+
+							.error_text_bold {
+								margin-top: 40px;
+								@include mixins.font_size_xl;
+								color: variables.$textColorBlack;
+								font-weight: variables.$fontWeightBold;
+							}
+							.error_text {
+								margin-top: 12px;
+								@include mixins.font_size_def;
+								color: variables.$textColorGray;
+							}
+
+						}
+
+						.btn_wrap {
+							width: 100%;
+							padding-bottom: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

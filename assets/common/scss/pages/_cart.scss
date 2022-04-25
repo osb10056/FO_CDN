@@ -1,0 +1,702 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+@import 'order_cjh';
+@import 'order_dmh';
+
+.wrapper.contents_cart {
+	.header_wrapper {
+		.header_left, .header_right{
+			min-width: 30px;
+		}
+
+		&.has_switch {
+			.header_left, .header_right{
+				min-width: 83px;
+			}
+		}
+	}
+	.round_green_box {
+		border: 1px solid rgba(variables.$kyoboGreen, .3);
+		.right_area {
+			flex-shrink: 0;
+		}
+	}
+	
+	.info_text_box.type_purple {
+		padding: 20px;
+		&:first-child {
+			margin-top: 10px;
+		}
+	}
+}
+
+.cart_body {
+	
+	.cart_body_inner {
+		.contents_inner{
+			&:first-child {
+				> .title_wrap.title_size_lg {
+					&:only-child {
+						/*SCR-BIZ06-04-M005.html 여기서 여백 안죽이면 여백 두배되서 수정함
+						같은 경우의수가 SCR-BIZ06-04-M001.html 도 있고 여긴 추가 컨텐츠가 있어
+						단독 컨텐츠일때만 적용하도록 해놨으니 추가 케이스 발견시 수정필요함
+						by han 0321
+						*/
+						padding-bottom: 4px;
+					}
+				}
+			}
+			
+			.btn_ip {
+				height: 44px;
+			}
+		}
+	}
+	
+	.contents_gap_area {
+		&:before {
+			margin-bottom: 30px;
+		}
+		& + .contents_gap_area {
+			margin-top: 30px;
+		}
+	}
+
+	.fold_box_wrap {
+		&.type_order {
+			
+			& + .contents_gap_area {
+				margin-top: 0;
+			}
+		}
+	}
+	// 주문결제 공통 상품 리스트
+	.prod_list {
+		&.type_order {
+			.prod_item {
+				width: calc((100% - 28px)/3);
+				margin-left: 14px;
+
+				.form_chk, .form_rdo{
+					margin-bottom: 10px;
+					text-align: left;
+				}
+
+				&:nth-child(2n+1){
+					margin-left: 14px;
+				}
+
+				&:nth-child(n+3){
+					margin-top: 0;
+				}
+
+				&:nth-child(3n+1) {
+					margin-left: 0;
+				}
+
+				&:nth-child(n+4) {
+					margin-top: 20px;
+				}
+
+				@include mixins.respond-to(mobileLandscape){
+					width: calc((100% - 42px)/4);
+
+					&:nth-child(3n+1){
+						margin-left: 14px;
+					}
+
+					&:nth-child(4n+1){
+						margin-left: 0;
+					}
+
+					&:nth-child(n+4) {
+						margin-top: 0;
+					}
+
+					&:nth-child(n+5){
+						margin-top: 20px;
+					}
+				}
+
+				@include mixins.respond-to(tablet){
+					width: calc((100% - 56px)/5);
+
+					&:nth-child(3n+1), &:nth-child(4n+1){
+						margin-left: 12px;
+					}
+
+					&:nth-child(5n+1){
+						margin-left: 0;
+					}
+
+					&:nth-child(n+4), &:nth-child(n+5){
+						margin-top: 0;
+					}
+
+					&:nth-child(n+6){
+						margin-top: 20px;
+					}
+				}
+
+				.prod_area{
+					max-width: map.get(variables.$prodProps, 'thumb-v-xs');
+					text-align: left;
+
+					.prod_thumb_box {
+						.img_box{
+							img{
+								max-height: calc(#{map.get(variables.$prodProps, 'thumb-v-xs')} * 1.618 - 10px);
+							}
+						}
+					}
+				}
+			}
+
+			& + .btn_wrap {
+				margin-top: 24px;
+			}
+		}
+	}
+
+	// cart_body 내 앵커탭 공통 (데이터 값 입력 시 .has_data 클래스 추가 필요)
+	.tag_wrap.type_line_white {
+		.tag {
+			min-width: 32px;
+			height: 32px;
+			padding: 6px 5px 6px;
+			text-align: center;
+
+			&.has_data {
+				padding: 6px 14px 6px;
+			}
+		}
+	}
+	
+	// 바로드림 round_green_box add
+	.standard_store {
+		@include mixins.justify_width(center);
+		width: calc(100% - 90px);
+		font-size: 0;
+		.label {
+			@include mixins.font_size_sm;
+			font-weight: variables.$fontWeightMedium;
+			flex-shrink: 0;
+		}
+		.gap {
+			display: inline-block;
+			font-size: 0;
+			width: 1px;
+			height: 10px;
+			background-color: variables.$colorGray03;
+			margin: 0 8px 0 8px;
+			vertical-align: top;
+			box-sizing: border-box;
+		}
+		.location_store {
+			@include mixins.font_size_sm;
+			font-weight: variables.$fontWeightBold;
+			@include mixins.ellipsis();
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 15px;
+				height: 20px;
+				margin-right: 4px;
+				@include mixins.ratio_images('../images/ico_location_store_mok', 'png', 15px, 20px);
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+/* 선물하기 */
+.sel_gift_card_wrap {
+	display: block;
+	padding: 0 20px;
+	@include mixins.scrollX;
+
+	.gift_card_list {
+		white-space: nowrap;
+
+		.gift_card_item {
+			&:last-child {
+				margin-right: 20px;
+			}
+
+			.img_box {
+				position: relative;
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					border: 2px solid variables.$textColorBlack;
+					border-radius: 12px;
+					box-sizing: border-box;
+					opacity: 0;
+					@include mixins.transition(opacity 0.2s ease-out);
+				}
+			}
+
+			.info_box {
+				.gift_card_name {
+					@include mixins.transition(color 0.2s ease-out, font-weight 0.2s ease-out);
+				}
+			}
+
+			.btn_gift_card {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+			}
+
+			&.active {
+				.img_box {
+					&:after {
+						opacity: 1;
+					}
+				}
+				.info_box {
+					.gift_card_name {
+						color: variables.$textColorBlack;
+						font-weight: variables.$fontWeightBold;
+					}
+				}
+			}
+		}
+	}
+}
+
+//SCR-BIZ06-05-M001.html 선물하기 카드메시지
+.gift_msg_wrap {
+	display: block;
+
+	.gift_msg_btn_wrap {
+		& + .gift_msg_swiper_wrap {
+			margin-top: 24px;
+		}
+	}
+	
+	& + .form_wrap {
+		margin-top: 50px;
+	}
+	
+	
+	
+}
+
+.gift_msg_swiper_wrap {
+	position: relative;
+	box-sizing: border-box;
+	margin: 0 -20px;
+	
+	.swiper-container {
+		padding: 0 20px;
+		
+		.swiper-wrapper {
+			.swiper-slide {
+				width: 100%;
+				max-width: 335px;
+				margin-right: 12px;
+				border-radius: 16px;
+				overflow: hidden;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+
+.gift_msg_box {
+	position: relative;
+	width: 100%;
+	height: 290px;
+	border-radius: 16px;
+	background-color: rgba(46,98,201,.1);
+	padding: 0 20px 20px;
+	box-sizing: border-box;
+	
+	.msg_box {
+		position: relative;
+		height: 110px;
+		background-color: #fff;
+		border-radius: 6px;
+		z-index: 1;
+	}
+	
+	.form_textarea {
+		height: 76px;
+		border: 0;
+	}
+	
+	.from {
+		margin: {
+			top: 10px;
+			left: 10px;
+			right: 10px;
+		}
+		text-align: right;
+		font-size: 0;
+		.label {
+			@include mixins.font_size_xxs;
+			font-weight: variables.$fontWeightBold;
+		}
+		.value {
+			@include mixins.font_size_xxs;
+			font-weight: variables.$fontWeightBold;
+		}
+	}
+	
+	&:before {
+		content: '';
+		display: block;
+		width: auto;
+		height: 160px;
+		margin: {
+			left: -20px;
+			right: -20px;
+		}
+		background: {
+			position: center;
+			repeat: no-repeat;
+		}
+	}
+	
+	&.type_basic { &:before { @include mixins.ratio_images('../images/gift_msg_img_01_mok', 'png', auto, 160px); } }
+	&.type_thanks { background-color: rgba(236,31,45,.1); &:before { @include mixins.ratio_images('../images/gift_msg_img_02_mok', 'png', auto, 160px); } }
+	&.type_congrats { background-color: rgba(252,241,170,.8); &:before { @include mixins.ratio_images('../images/gift_msg_img_03_mok', 'png', auto, 160px); } }
+	&.type_cheerup { background-color: rgba(0,13,255,.1); &:before { @include mixins.ratio_images('../images/gift_msg_img_04_mok', 'png', auto, 160px); } }
+	&.type_thanksgiving {
+		padding-top: 160px;
+		&:before {
+			position: absolute;
+			height: auto;
+			margin: {
+				left: auto;
+				right: auto;
+			}
+			top:0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			@include mixins.ratio_images('../images/gift_msg_img_05_mok', 'png', 100%, 100%);
+		}
+	}
+	&.type_christmas {
+		padding-top: 160px;
+		&:before {
+			position: absolute;
+			height: auto;
+			margin: {
+				left: auto;
+				right: auto;
+			}
+			top:0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			@include mixins.ratio_images('../images/gift_msg_img_06_mok', 'png', 100%, 100%);
+		}
+	}
+	&.type_newyear {
+		padding-top: 160px;
+		&:before {
+			position: absolute;
+			height: auto;
+			margin: {
+				left: auto;
+				right: auto;
+			}
+			top:0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			@include mixins.ratio_images('../images/gift_msg_img_07_mok', 'png', 100%, 100%);
+		}
+	}
+	
+}
+
+/* 배송국가 선택 리스트 */
+.country_select_list {
+	.country_item {
+
+		& ~ .country_item {
+			margin-top: 10px;
+		}
+
+		.btn_text_link {
+			.text {
+				text-decoration: none;
+			}
+
+			&:focus, &:active {
+				.text {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+.country_select_wrap {
+	display: block;
+	width: 100%;
+	position: relative;
+	padding-right: 28px;
+	box-sizing: border-box;
+
+	.alphabet_nav_area {
+		position: absolute;
+		right: 0;
+		top: 0;
+		max-height: 100%;
+		padding-top: 1px;
+		@include mixins.scrollY;
+		box-sizing: border-box;
+
+		.alphabet_nav {
+			.btn_alphabet {
+				display: block;
+				width: 28px;
+				height: 28px;
+				@include mixins.font_size_xxs;
+				line-height: 28px;
+				color: variables.$textColorLightGray;
+				text-align: center;
+				box-sizing: border-box;
+			}
+		}
+	}
+
+	.country_select_area {
+		padding: 7px 0 14px;
+		max-height: 100%;
+		overflow-y: auto;
+		box-sizing: border-box;
+
+		.country_select_box {
+			& ~ .country_select_box {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+/* 사용가능한 혜택(쿠폰, e교환권 등) 텍스트 영역 */
+.benefit_summary {
+	@include mixins.justify_width(center);
+	font-size: 0;
+
+	.form_chk, .form_rdo {
+		& + .price {
+			margin-left: 6px;
+		}
+	}
+
+	.desc {
+		@include mixins.font_size_sm;
+		color: variables.$textColorBlack;
+		font-weight: variables.$fontWeightMedium;
+	}
+
+	.price {
+		display: inline-block;
+		font-size: 0;
+		vertical-align: top;
+
+		.val {
+			display: inline-block;
+			margin-right: 2px;
+			@include mixins.font_size_md;
+			color: variables.$textColorPurple;
+			font-weight: variables.$fontWeightBold;
+			vertical-align: top;
+		}
+
+		.unit {
+			display: inline-block;
+			padding-top: 2px;
+			@include mixins.font_size_sm;
+			color: variables.$textColorBlack;
+			vertical-align: top;
+		}
+	}
+
+	.right_area {
+		margin-left: auto;
+	}
+}
+
+.title_wrap {
+	& + .recipient_info_wrap {
+		margin-top: 0;
+	}
+}
+.recipient_info_wrap {
+	margin-top: 24px;
+
+	.recipient_header_area {
+		height: 48px;
+		padding-bottom: 16px;
+		box-sizing: border-box;
+		.recipient_header_box {
+			background-color: #fff;
+		}
+
+		.recipient_header_inner {
+			@include mixins.justify_width;
+			align-items: stretch;
+		}
+
+		.right_area {
+			flex-shrink: 0;
+			position: relative;
+			margin-left: auto;
+			padding: 0 20px;
+			box-sizing: border-box;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -20px;
+				top: 0;
+				width: 20px;
+				height: 100%;
+				background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 20px);
+			}
+
+			.form_sel {
+				margin-top: 6px;
+			}
+		}
+
+		&.sps-blw {
+
+			.recipient_header_box {
+				position: fixed;
+				left: 0;
+				top: 60px;
+				width: 100%;
+				padding: 10px 0 16px;
+				border-bottom: 1px solid variables.$colorGray04;
+				z-index: 2;
+			}
+		}
+	}
+
+	.recipient_contents_area {
+		.btn_wrap {
+			& + .form_wrap {
+				margin-top: 24px;
+			}
+		}
+		.form_wrap {
+			&.has_line {
+				padding-bottom: 0;
+				border-bottom: 0;
+			}
+
+			& + .form_wrap {
+				&.has_line {
+					border-top: 0;
+				}
+			}
+			
+			& ~ .bul_item_dot.font_size_xs {
+				margin-top: 16px;
+			}
+		}
+	}
+}
+
+.valid_check {
+	&.fail {
+		.valid_desc {
+			button {
+				cursor: pointer;
+				&:after {
+					content: '';
+					display: inline-block;
+					width: 5px;
+					height: 9px;
+					margin-left: 4px;
+					@include mixins.ratio_images('../images/arw_shop_mok', 'png', 5px, 9px);
+				}
+			}
+		}
+	}
+}
+
+
+//사은품 선택 10명 이상시 탭 SCR-BIZ06-06-M002_1.html
+.multi_gifts_wrap {
+	margin-top: 20px;
+	height: 48px;
+	padding-bottom: 16px;
+	box-sizing: border-box;
+	.multi_gifts_box {
+		background-color: #fff;
+		
+		
+		.multi_gifts_inner {
+			@include mixins.justify_width;
+			align-items: stretch;
+		}
+		
+		
+		
+		.right_area {
+			flex-shrink: 0;
+			position: relative;
+			margin-left: auto;
+			padding: 0 20px;
+			box-sizing: border-box;
+			
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -20px;
+				top: 0;
+				width: 20px;
+				height: 100%;
+				background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 20px);
+			}
+			
+			.form_sel {
+				margin-top: 6px;
+			}
+		}
+		
+	}
+	
+	
+	&.sps-blw {
+		.multi_gifts_box {
+			position: fixed;
+			left: 0;
+			top: 60px;
+			width: 100%;
+			padding: 10px 0 16px;
+			border-bottom: 1px solid variables.$colorGray04;
+			z-index: 3;
+		}
+	}
+}

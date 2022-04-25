@@ -1,0 +1,77 @@
+@use 'sass:map';
+@use '../../common/scss/abstracts/variables';
+@use '../../common/scss/abstracts/functions';
+@use '../../common/scss/abstracts/mixins';
+@use '../../common/scss/abstracts/placeholders';
+
+.samBest{
+    .eBook_list_header_title{
+        position: relative;
+        button {
+            color: #000;
+            &:after{
+                content: "";
+                display: inline-block;
+                margin: 9px 0 0 10px;
+                width: 22px;
+                height: 22px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 22px 22px;
+                background-image: url(../../common/images/btn_more_cont.png);
+                vertical-align: top;
+                transition: background-image .23s;
+            }
+
+            &.open {
+                &:after{
+                    background-image: url(../../common/images/btn_more_cont_active.png);
+                }
+            }
+        }
+        
+        ul {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            display: none;
+            width: 240px;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            z-index: 10;
+            li {
+                a {
+                    display: block;
+                    padding: 0 20px;
+                    height: 44px;
+                    font-size: 14px;
+                    color: #000;
+                    line-height: 44px;
+                    box-sizing: border-box;
+                }
+
+                &.current {
+                    a {
+                        font-weight: 600;
+                        &:after {
+                            display: inline-block;
+                            margin-left: 4px;
+                            width: 18px;
+                            height: 18px;
+                            vertical-align: middle;
+                            background: url(../../common/images/arw_filter_depth1_integrate_active.png) no-repeat center;
+                            content: "";
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+            }
+        }
+    }
+}

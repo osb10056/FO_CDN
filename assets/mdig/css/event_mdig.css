@@ -1,0 +1,433 @@
+.dialog_wrap .dialog_contents .chk_list_box {
+	border: 1px solid #000;
+	border-radius: 8px;
+	max-height: 300px;
+	overflow-y: auto;
+}
+.dialog_wrap .dialog_contents .chk_list_box ul li + li {
+	border-top: 1px solid #eaeaea;
+}
+.dialog_wrap .dialog_contents .chk_list_box ul li .form_chk {
+	width: 100%;
+	box-sizing: border-box;
+}
+.dialog_wrap .dialog_contents .chk_list_box ul li .form_chk input:checked + label {
+	background-color: #f5f5f5;
+}
+.dialog_wrap .dialog_contents .chk_list_box ul li .form_chk input:checked + label:focus {
+	background-color: red;
+}
+.dialog_wrap .dialog_contents .chk_list_box ul li .form_chk input + label {
+	width: 100%;
+	height: 50px;
+	padding: 14px 13px 14px 42px;
+}
+.dialog_wrap .dialog_contents .chk_list_box ul li .form_chk input + label:before {
+	left: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.dialog_wrap .dialog_contents .chk_list_box ul li .form_chk input + label:after {
+	left: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.ebook_event_wrap {
+	padding-top: 24px;
+}
+.ebook_event_wrap .event_box .tab_box {
+	border-top: 10px solid #f7f7f7;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab {
+	font-size: 0;
+	border: solid #d5d5d5;
+	border-width: 1px 0;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab li {
+	display: inline-block;
+	width: 25%;
+	text-align: center;
+	border-right: 1px solid #d5d5d5;
+	box-sizing: border-box;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab li:nth-child(4n) {
+	border-right: none;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab li:nth-child(4) ~ li {
+	border-top: 1px solid #d5d5d5;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab li button {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	padding: 12px 0;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab li button span {
+	font-size: 14px;
+	color: #000;
+	font-weight: 500;
+	line-height: 22px;
+	letter-spacing: -0.14px;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab li.active button {
+	background-color: #5055b1;
+}
+.ebook_event_wrap .event_box .tab_box ul.main_tab li.active button span {
+	color: #fff;
+}
+.ebook_event_wrap .event_box .tab_box ul.sub_tab {
+	width: 100%;
+	font-size: 0;
+	padding: 14px 20px 4px;
+	box-sizing: border-box;
+}
+.ebook_event_wrap .event_box .tab_box ul.sub_tab li {
+	display: inline-block;
+	margin: 6px 6px 0 0;
+}
+.ebook_event_wrap .event_box .tab_box ul.sub_tab li button {
+	text-align: center;
+	padding: 9px 16px;
+	background-color: #f7f7f7;
+	border-radius: 18px;
+}
+.ebook_event_wrap .event_box .tab_box ul.sub_tab li button span {
+	font-size: 13px;
+	color: #595959;
+	line-height: 19px;
+	letter-spacing: -0.13px;
+}
+.ebook_event_wrap .event_box .tab_box ul.sub_tab li.active button {
+	background-color: #595959;
+}
+.ebook_event_wrap .event_box .tab_box ul.sub_tab li.active button span {
+	color: #fff;
+}
+.ebook_event_wrap .event_box .event_tab_wrap {
+	border-top: 10px solid #f7f7f7;
+}
+.ebook_event_wrap .event_box .event_tab_wrap.type_fill > .tab_list_wrap {
+	margin-bottom: 0;
+}
+.ebook_event_wrap .event_box .event_tab_wrap.type_fill > .tab_list_wrap .tabs {
+	padding: 0;
+}
+.ebook_event_wrap .event_box .list_result_wrap, .ebook_event_wrap .event_box .list-result-wrap {
+	padding: 0 20px;
+	border-bottom: none;
+	margin-bottom: 0;
+	box-sizing: border-box;
+}
+.ebook_event_wrap .event_box .list_result_wrap .sps, .ebook_event_wrap .event_box .list-result-wrap .sps {
+	position: absolute !important;
+	width: 100%;
+	left: 0;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.ebook_event_wrap .event_box .list_result_wrap .sps .sps_inner, .ebook_event_wrap .event_box .list-result-wrap .sps .sps_inner {
+	border-bottom: none;
+	padding: 0 !important;
+}
+.ebook_event_wrap .event_box .list_result_wrap .sps .sps_inner .event_date, .ebook_event_wrap .event_box .list-result-wrap .sps .sps_inner .event_date {
+	font-size: 20px;
+	color: #000;
+	line-height: 26px;
+	letter-spacing: -0.2px;
+}
+.ebook_event_wrap .event_box .list_result_wrap .right_area .select_btn span, .ebook_event_wrap .event_box .list-result-wrap .right_area .select_btn span {
+	width: auto;
+	height: 19px;
+	text-align: right;
+	padding: 0 11px 0 0;
+	font-size: 13px;
+	line-height: 19px;
+	letter-spacing: -0.01em;
+	background: url("/assets/common/images/arw_select_xs_mok@2x.png") no-repeat right 6px;
+	background-size: 7px 4px;
+}
+.ebook_event_wrap .event_box .list_result_wrap .right_area .select_btn + .select_btn, .ebook_event_wrap .event_box .list-result-wrap .right_area .select_btn + .select_btn {
+	margin-left: 22px;
+}
+.ebook_event_wrap .event_box .list_result_wrap .right_area .select_btn + .select_btn:before, .ebook_event_wrap .event_box .list-result-wrap .right_area .select_btn + .select_btn:before {
+	content: "";
+	display: inline-block;
+	width: 1px;
+	height: 9px;
+	background-color: #d5d5d5;
+	vertical-align: top;
+	transform: translate(-12px, 6px);
+}
+.ebook_event_wrap .event_box .list_result_wrap .right_area .form_sel, .ebook_event_wrap .event_box .list-result-wrap .right_area .form_sel {
+	margin-right: 0;
+}
+.ebook_event_wrap .event_box .list_result_wrap .right_area .form_sel + .select_btn, .ebook_event_wrap .event_box .list-result-wrap .right_area .form_sel + .select_btn {
+	margin-left: 22px;
+}
+.ebook_event_wrap .event_box .list_result_wrap .right_area .form_sel + .select_btn:before, .ebook_event_wrap .event_box .list-result-wrap .right_area .form_sel + .select_btn:before {
+	content: "";
+	display: inline-block;
+	width: 1px;
+	height: 9px;
+	background-color: #d5d5d5;
+	vertical-align: top;
+	transform: translate(-12px, 6px);
+}
+.ebook_event_wrap .event_box .event_list_box {
+	padding: 0 20px;
+}
+.ebook_event_wrap .event_box .event_list_box ul li ~ li {
+	margin-top: 24px;
+}
+.ebook_event_wrap .event_box .event_list_box ul li .info_text {
+	margin-top: 12px;
+}
+.ebook_event_wrap .event_box .event_list_box ul li a {
+	display: block;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.ebook_event_wrap .event_box .event_list_box ul li a img {
+	display: block;
+	width: 100%;
+}
+.ebook_event_wrap .event_box .event_list_box .btn_box {
+	text-align: center;
+	margin-top: 30px;
+}
+.ebook_event_wrap .event_box .event_list_box .no_data {
+	border-bottom: 1px solid #eaeaea;
+}
+.ebook_event_wrap .event_box .event_notice {
+	margin-top: 50px;
+	padding: 0 20px;
+}
+.ebook_event_wrap .event_box .event_notice .info_text_box .info_text_inner .title_wrap {
+	padding-left: 0;
+}
+.ebook_event_wrap .event_box .calender_wrap .evenColor00 {
+	background-color: #e7787f !important;
+}
+.ebook_event_wrap .event_box .calender_wrap .evenColor01 {
+	background-color: #efa563 !important;
+}
+.ebook_event_wrap .event_box .calender_wrap .evenColor02 {
+	background-color: #c3c86c !important;
+}
+.ebook_event_wrap .event_box .calender_wrap .evenColor03 {
+	background-color: #6cc892 !important;
+}
+.ebook_event_wrap .event_box .calender_wrap .evenColor04 {
+	background-color: #6c8fc8 !important;
+}
+.ebook_event_wrap .event_box .calender_wrap .evenColor05 {
+	background-color: #6c73c8 !important;
+}
+.ebook_event_wrap .event_box .calender_wrap .evenColor06 {
+	background-color: #9d8cf5 !important;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box {
+	border-bottom: 10px solid #f7f7f7;
+	padding-bottom: 14px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .week_list {
+	display: flex;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .week_list li {
+	width: 100%;
+	text-align: center;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .week_list li p {
+	font-size: 13px;
+	color: #767676;
+	letter-spacing: -0.13px;
+	line-height: 19px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .week_list li .weekend p {
+	color: #ec1f2d;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list {
+	display: flex;
+	flex-wrap: wrap;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li {
+	position: relative;
+	width: 14.2857142857%;
+	text-align: center;
+	padding-top: 5px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li .date {
+	width: 100%;
+	height: 28px;
+	font-size: 13px;
+	color: #000;
+	line-height: 29px;
+	letter-spacing: -0.13px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li .event_line {
+	width: 100%;
+	height: 4px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li .event_line + .event_line {
+	margin-top: 1px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li .btn_date_select {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li .event_line.start {
+	border-radius: 2px 0 0 2px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li .event_line.end {
+	border-radius: 0 2px 2px 0;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li .event_line.single {
+	border-radius: 2px;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li.weekend .date {
+	color: #ec1f2d;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li.today .date {
+	color: #fff;
+	width: 28px;
+	background-color: #5055b1;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li.disable .date {
+	color: #ccc;
+}
+.ebook_event_wrap .event_box .calender_wrap .calender_box .calendar_list li.selected {
+	background-color: #fcfbec;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_schedule_box {
+	padding: 24px 20px 0;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_schedule_box .today {
+	font-size: 15px;
+	color: #000;
+	font-weight: 500;
+	line-height: 23px;
+	letter-spacing: -0.15px;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_schedule_box .schedule_list li {
+	border-bottom: 1px solid #eaeaea;
+	padding: 20px 0;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_schedule_box .schedule_list li a {
+	display: block;
+	position: relative;
+	height: 40px;
+	padding-left: 10px;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_schedule_box .schedule_list li a .tit {
+	width: 100%;
+	font-size: 16px;
+	color: #000;
+	line-height: 23px;
+	letter-spacing: -0.16px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_schedule_box .schedule_list li a .line_box {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background-color: #ddd;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_schedule_box .btn_box {
+	text-align: center;
+	margin-top: 30px;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_link_box {
+	margin-top: 50px;
+	padding: 0 20px;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_link_box .title_box {
+	border-bottom: 1px solid #000;
+	padding: 0 0 20px;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_link_box ul li {
+	border-bottom: 1px solid #eaeaea;
+}
+.ebook_event_wrap .event_box .calender_wrap .event_link_box ul li a p {
+	width: 100%;
+	font-size: 14px;
+	color: #000;
+	line-height: 22px;
+	letter-spacing: -0.14px;
+	padding: 20px 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.ebook_event_wrap .event_box .newbook_wrap .list_result_wrap {
+	border-bottom: 1px solid #eaeaea;
+}
+.ebook_event_wrap .event_box .newbook_wrap .category_tab {
+	width: 100%;
+	font-size: 0;
+	padding: 14px 20px 4px;
+	box-sizing: border-box;
+}
+.ebook_event_wrap .event_box .newbook_wrap .category_tab li {
+	display: inline-block;
+	margin: 6px 6px 0 0;
+}
+.ebook_event_wrap .event_box .newbook_wrap .category_tab li button {
+	text-align: center;
+	padding: 9px 16px;
+	background-color: #f7f7f7;
+	border-radius: 18px;
+}
+.ebook_event_wrap .event_box .newbook_wrap .category_tab li button span {
+	font-size: 13px;
+	color: #595959;
+	line-height: 19px;
+	letter-spacing: -0.13px;
+}
+.ebook_event_wrap .event_box .newbook_wrap .category_tab li.active button {
+	background-color: #595959;
+}
+.ebook_event_wrap .event_box .newbook_wrap .category_tab li.active button span {
+	color: #fff;
+}
+.ebook_event_wrap .event_box .newbook_wrap .newbook_box .newbook_list_box {
+	padding: 28px 20px 0;
+}
+.ebook_event_wrap .event_box .newbook_wrap .newbook_box .newbook_list_box .date {
+	font-size: 15px;
+	color: #000;
+	font-weight: 500;
+	line-height: 23px;
+	letter-spacing: -0.15px;
+	padding: 24px 0 20px;
+}
+.ebook_event_wrap .event_box .newbook_wrap .newbook_box .newbook_list_box .swiper-container {
+	overflow: visible;
+}
+.ebook_event_wrap .event_box .newbook_wrap .newbook_box .newbook_list_box .swiper-container .swiper-wrapper .swiper-slide {
+	width: 40%;
+}
+.ebook_event_wrap .event_box .newbook_wrap .newbook_box .newbook_list_box .swiper-container .swiper-wrapper .swiper-slide ~ .swiper-slide {
+	margin-left: 16px;
+}
+
+.ebook_event_wrap .event_box .list_result_wrap .sps .sps_inner {
+	border-bottom: none;
+}
+.ebook_event_wrap .event_box .list_result_wrap .sps .sps_inner .event_date {
+	font-size: 20px;
+	color: #000;
+	line-height: 26px;
+	letter-spacing: -0.2px;
+}
+/*# sourceMappingURL=event_mdig.css.map */

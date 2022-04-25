@@ -1,0 +1,98 @@
+@use 'sass:map';
+@use 'abstracts/variables';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+
+// ios safari 전용 css
+@supports (-webkit-touch-callout: inherit) {
+	// 뱃지 사이즈
+	.badge_sm {
+		&:not(.badge_pill) {
+			.text {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	// 주소 아이템
+	.address_item {
+		.address_info_box {
+			.address_name {
+				.desc {
+					margin-bottom: 3px;
+				}
+			}
+		}
+	}
+
+	// 검색 영역
+	.contents_search_wrap {
+		.contents_search_box {
+			.form_ip_search {
+				.btn_sel_category {
+					.text {
+						//padding-top: 1px;
+					}
+				}
+			}
+		}
+
+		& + .related_contents_area {
+			margin-top: 24px;
+		}
+	}
+
+	// 탭 (flex + scroll 내부 padding-right 적용)
+	.tab_wrap {
+		&:not(.justify){
+			.tab_list_wrap {
+				.tabs {
+					&:after {
+						content: '';
+						display: block;
+						padding-right: 20px;
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+	.contents_inner {
+		.tab_wrap {
+			&:not(.justify){
+				.tab_list_wrap {
+					.tabs {
+						&:after {
+							padding-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wrapper {
+		.container_wrapper {
+			// 상품상세 상단
+			.prod_detail_header {
+				.header_contents_inner {
+					.prod_detail_view_wrap {
+
+						.prod_detail_info_area {
+							.prod_info_wrap {
+								.prod_author_box {
+									.auto_overflow_footer {
+										.btn_more_detail {
+											margin-top: 1px;
+										}
+									}
+								}
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+}

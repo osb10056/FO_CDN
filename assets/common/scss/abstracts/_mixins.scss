@@ -1,0 +1,327 @@
+@use '../abstracts/variables';
+
+// float하는 상위 DOM에 선언
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 0;
+		clear: both;
+	}
+}
+
+// 한줄 말줄임표
+@mixin ellipsis($autoWidth: true, $isInline: true, $clearLineHeight: true) {
+	@if ($isInline) {
+		display: inline-block;
+	}@else{
+		display: block;
+	}
+	overflow: hidden;
+	@if ($autoWidth) {
+		width: 100%;
+	}
+	max-width: 100%;
+	@include clear_multi_ellipsis; // 멀티 라인 값 클리어
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// n줄 말줄임표
+@mixin multi_ellipsis($line-height, $lines: 2, $useHeight: true) {
+	display: block;
+	display: -webkit-box;
+	overflow: hidden;
+	@if $useHeight {
+		height: $line-height * $lines;
+	}
+	max-height: $line-height * $lines;
+	line-height: $line-height;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+	text-overflow: -o-ellipsis-lastline;
+	white-space: normal;
+}
+
+// 멀티 라인 값 클리어
+@mixin clear_multi_ellipsis {
+	height: auto;
+	max-height: none;
+	-webkit-box-orient: inherit;
+	-webkit-line-clamp: inherit;
+}
+
+// Display Flex를 활용한 영역대비 사이즈 자동 조절
+// $colAlign : align-items, $rowAlign : justify-contents, $direction: fles-direction, $isInline : display
+@mixin justify_width($colAlign: start, $rowAlign: start, $direction: row, $isInline: false) {
+	@if ($isInline) {
+		display: -ms-inline-flexbox;
+		display: -webkit-inline-box;
+		display: inline-flex;
+		display: -webkit-inline-flex;
+	} @else {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		display: -webkit-flex;
+	}
+
+	@if ($rowAlign == between) {
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-justify-content: space-between;
+	}  @else if ($rowAlign == center) {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-justify-content: center;
+	} @else if ($rowAlign == start) {
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	} @else if ($rowAlign == end) {
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+	}
+
+	@if ($colAlign == center) {
+		-webkit-box-align: center;
+		-moz-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+	} @else if ($colAlign == start) {
+		-webkit-box-align: start;
+		-moz-box-align: start;
+		-ms-flex-align: start;
+		-webkit-align-items: flex-start;
+		align-items: flex-start;
+	} @else if ($colAlign == end) {
+		-webkit-box-align: end;
+		-moz-box-align: end;
+		-ms-flex-align: end;
+		-webkit-align-items: flex-end;
+		align-items: flex-end;
+	}
+
+	@if ($direction == row) {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-moz-box-orient: horizontal;
+		-moz-box-direction: normal;
+		-ms-flex-direction: row;
+		-webkit-flex-direction: row;
+		flex-direction: row;
+	} @else if($direction == column) {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		-moz-box-orient: vertical;
+		-moz-box-direction: reverse;
+		-ms-flex-direction: column;
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
+@mixin set_placeholder_color($color: rgba(255, 255, 255, .65)) {
+	&::-webkit-input-placeholder {
+		font-size: inherit;
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		font-size: inherit;
+		color: $color;
+	}
+
+	&::-ms-input-placeholder {
+		font-size: inherit;
+		color: $color;
+	}
+
+	&::placeholder {
+		font-size: inherit;
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		font-size: inherit;
+		color: $color;
+	}
+
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		font-size: inherit;
+		color: $color;
+	}
+}
+
+@mixin no_select_text {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@mixin transition($props...) {
+	-webkit-transition: $props;
+	-moz-transition: $props;
+	-ms-transition: $props;
+	-o-transition: $props;
+	transition: $props;
+}
+
+@mixin transform($props...) {
+	-webkit-transform: $props;
+	-moz-transform: $props;
+	-ms-transform: $props;
+	-o-transform: $props;
+	transform: $props;
+}
+
+@mixin scrollX{
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
+	&::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
+	}
+}
+
+@mixin scrollY{
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	&::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
+	}
+}
+
+@mixin ratio_images($file, $type, $width, $height: '') {
+	//background-image: url($file + '.' + $type);
+
+	@if($width == 'cover'){
+		background-size: cover;
+	}@else{
+		background-size: $width $height;
+	}
+
+	/*@media (-webkit-min-device-pixel-ratio: 2) {
+		& {*/
+			background-image: url($file + '@2x.' + $type);
+		/*}
+	}
+	@media (-webkit-min-device-pixel-ratio: 3) {
+		& {
+			background-image: url($file + '@3x.' + $type);
+		}
+	}*/
+}
+
+// ==== 프로젝트 MIXIN ====
+
+// 텍스트 레벨별 설정
+// H1, font-size: 22px
+@mixin font_size_xxl {
+	font-size: variables.$fontSizeXxl;
+	line-height: variables.$fontSizeXxlLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+// H2, font-size: 20px
+@mixin font_size_xl {
+	font-size: variables.$fontSizeXl;
+	line-height: variables.$fontSizeXlLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+// H3, font-size: 18px
+@mixin font_size_lg {
+	font-size: variables.$fontSizeLg;
+	line-height: variables.$fontSizeLgLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+// H4, font-size: 16px
+@mixin font_size_md {
+	font-size: variables.$fontSizeMd;
+	line-height: variables.$fontSizeMdLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+// sub copy, font-size: 15px
+@mixin font_size_def {
+	font-size: variables.$fontSizeDef;
+	line-height: variables.$fontSizeDefLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+// B1, font-size: 14px
+@mixin font_size_sm {
+	font-size: variables.$fontSizeSm;
+	line-height: variables.$fontSizeSmLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+// B2 font-size: 13px
+@mixin font_size_xs {
+	font-size: variables.$fontSizeXs;
+	line-height: variables.$fontSizeXsLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+// info, font-size: 12px
+@mixin font_size_xxs {
+	font-size: variables.$fontSizeXxs;
+	line-height: variables.$fontSizeXxsLineHeight;
+	letter-spacing: variables.$letterSpacing;
+}
+
+
+// 모바일 기본해상도 이하 처리용 미디어쿼리 mixin
+/// @access public
+/// @param {String} $breakpoint - 브레이크포인트
+/// @requires $breakpoints
+
+// 미디어쿼리
+$breakpoints: (
+	'mobileSm': (max-width: 374px),
+	'mobileXs': (max-width: 359px),
+	'mobileMin': (max-width: 320px),
+	'mobileMinAbove': (min-width: 320px),
+	'mobileLandscape': (orientation: landscape),
+	'tablet': (min-width: 768px),
+);
+
+@mixin respond-to($breakpoint) {
+	$raw-query: map-get($breakpoints, $breakpoint);
+
+	@if $raw-query {
+		$query: if(
+			type-of($raw-query) == 'string',
+			unquote($raw-query),
+			inspect($raw-query)
+		);
+
+		@media #{$query} {
+			@content;
+		}
+	} @else {
+		@error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+@mixin focus_within {
+	&:focus-within {
+		@include focus_outline;
+	}
+}
+
+@mixin focus_outline {
+	outline: 2px solid Highlight;
+	outline: 2px solid -webkit-focus-ring-color;
+}

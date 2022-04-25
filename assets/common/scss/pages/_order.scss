@@ -1,0 +1,556 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+// 작업 화면 : SCR-BIZ06-03-M005
+// TODO : 디자인 변경된 영역으로 기존 퍼블 작업대로 임시 적용, (** 공통 여백 아니므로 디자인 변경 적용 후 삭제 필요)
+.form_wrap {
+	.form_box {
+		.form_cont {
+			& + .bul_item_asterisk {
+				margin-top: 8px;
+			}
+		}
+	}
+}
+
+// 주문서 팝업 작업 - 추후 공통으로 처리해야할 것들은 정리 필요 =====================================
+// btn_ip : 주문서 팝업 테이블 내부에서 44px로 통일 전체
+.form_wrap, .tbl_row_wrap {
+	.btn_ip {
+		height: 44px;
+	}
+	.form_sel {
+		height: 44px;
+		select {
+			height: 44px;
+		}
+	}
+	.form_ip {
+		height: 44px;
+	}
+	.form_filter_box {
+		.form_filter {
+			input {
+				+ label {
+					height: 44px;
+				}
+			}
+		}
+	}
+	.form_box {
+		.form_cont {
+			.bubble_speech_wrap {
+				.form_filter_box {
+					.form_filter {
+						.bubble_speech_box {
+							visibility: hidden;
+							top: 58px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.btn_form_sel {
+	height: 44px;
+
+	.text {
+		line-height: 42px;
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-P009
+.fold_box_wrap {
+	&.type_coupon {
+		.fold_box {
+			border: 1px solid variables.$colorGray03;
+			border-radius: 0;
+
+			.fold_box_header {
+				position: relative;
+				@include mixins.justify_width;
+				padding: 17px 34px 17px 17px;
+				background-color: variables.$colorGray06;
+
+				.label, .text {
+					display: inline-block;
+					@include mixins.font_size_sm;
+					font-weight: variables.$fontWeightMedium;
+					vertical-align: top;
+					box-sizing: border-box;
+				}
+				.label {
+					flex-shrink: 0;
+					padding-right: 10px;
+				}
+				.text {
+					margin-left: 0;
+				}
+
+				&:after {
+					right: 20px;
+					width: 10px;
+					height: 5px;
+					@include mixins.ratio_images('../images/arw_fold_toggle_black_mok', 'png', 10px, 5px);
+				}
+			}
+
+			.fold_box_contents {
+				padding: 0 23px;
+			}
+
+			&.expanded {
+				.fold_box_contents {
+					padding-top: 23px;
+					padding-bottom: 23px;
+					border-top: 1px solid variables.$colorGray03;
+				}
+			}
+
+			& + .fold_box {
+				margin-top: -1px;
+			}
+
+			&:first-child {
+				border-radius: 10px 10px 0 0;
+			}
+			&:last-child {
+				border-radius: 0 0 10px 10px;
+			}
+			&:only-child {
+				border-radius: 10px;
+			}
+		}
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-P012
+.title_wrap {
+	.right_area	{
+		.count_box {
+			@include mixins.justify_width(center);
+			margin-bottom: 1px;
+
+			.count_val {
+				display: inline-block;
+				margin-right: 2px;
+				vertical-align: top;
+				font-size: 0;
+				color: variables.$textColorLightGray;
+				@include mixins.font_size_md;
+				line-height: 1;
+
+				.val {
+					color: variables.$textColorPurple;
+					font-weight: variables.$fontWeightMedium;
+				}
+			}
+
+			.unit {
+				display: inline-block;
+				padding-top: 2px;
+				color: variables.$textColorBlack;
+				@include mixins.font_size_sm;
+				font-weight: variables.$fontWeightMedium;
+				line-height: 1;
+				vertical-align: top;
+			}
+		}
+	}
+
+	& + .use_gift_card_wrap {
+		margin-top: 20px;
+	}
+}
+
+.use_gift_card_wrap {
+	display: block;
+	box-sizing: border-box;
+
+	.gift_card_list {
+		padding: 0 20px;
+		@include mixins.scrollX;
+		white-space: nowrap;
+
+		.gift_card_item {
+			max-width: 260px;
+
+			.img_box {
+				position: relative;
+				border-radius: 10px;
+				overflow: hidden;
+			}
+
+			.info_box {
+				text-align: left;
+
+				.gift_card_name {
+					font-weight: variables.$fontWeightMedium;
+				}
+			}
+
+			.btn_check_gift_card {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+
+				.text {
+					display: block;
+					visibility: hidden;
+					position: absolute;
+					left: 0;
+					top: 0;
+					height: 23px;
+					padding: 6px 10px 0 18px;
+					color: #fff;
+					font-size: variables.$fontSizeXxs;
+					line-height: 1;
+					font-weight: variables.$fontWeightMedium;
+					background-color: rgba(0, 0, 0, 0.8);
+					border-radius: 10px 0 10px 0;
+					box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+					vertical-align: top;
+					box-sizing: border-box;
+
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						left: 8px;
+						top: 9px;
+						width: 8px;
+						height: 6px;
+						background: {
+							repeat: no-repeat;
+						};
+						@include mixins.ratio_images('../images/ico_check_white_mok', 'png', 8px, 6px);
+					}
+				}
+			}
+
+			&.active {
+				.img_box {
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						z-index: 1;
+						border: 2px solid #000;
+						border-radius: 10px;
+					}
+				}
+
+				.btn_check_gift_card {
+					.text {
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+
+	.card_shape_wrap {
+		display: block;
+		text-align: center;
+
+		.card_shape_area {
+			display: inline-block;
+			max-width: 335px;
+			padding: 34px 19px 23px;
+			background: {
+				color: variables.$colorGray06;
+				position: calc(100% - 11px) 20px;
+				repeat: no-repeat;
+			};
+			@include mixins.ratio_images('../images/img_card_logo_mok', 'png', 62px, 24px);
+			border: 1px solid variables.$colorGray04;
+			border-radius: 16px;
+			vertical-align: top;
+			box-sizing: border-box;
+
+			.form_wrap {
+				.form_cont {
+					.input_btn_box {
+						.btn_ip {
+							width: 92px;
+						}
+					}
+				}
+			}
+		}
+
+		+ .gift_card_bottom {
+			.form_wrap {
+				margin-top: 20px;
+			}
+
+		}
+	}
+
+	.gift_card_bottom {
+		display: block;
+
+		.form_wrap {
+			margin-top: 16px;
+
+			& + .btn_wrap {
+				margin-top: 20px;
+			}
+
+			.form_cont {
+				.text_btn_box {
+					.btn_ip {
+						width: 91px;
+						padding: 0 18px 1px;
+					}
+				}
+			}
+		}
+
+		& + .info_text_box {
+			margin-top: 20px;
+		}
+	}
+
+	.no_data {
+		padding-top: 76px;
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-01-M012
+.address_item {
+	// My 기본매장 타입
+	&.my_store {
+		background-color: variables.$colorGray06;
+		border-color: variables.$colorGray04;
+		
+		.info_text {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+
+// by - yeji
+// 작업 화면 : SCR-BIZ06-07-P059
+.point_conversion_info_wrap {
+	display: block;
+	word-break: break-all;
+
+	.point_conversion_title {
+		display: block;
+		margin-bottom: 30px;
+		@include mixins.font_size_def;
+		color: variables.$textColorGray;
+		text-align: center;
+	}
+
+	.img_box {
+		display: block;
+		margin-bottom: 30px;
+		text-align: center;
+
+		img {
+			width: 100%;
+			max-width: 335px;
+		}
+	}
+
+	.payment_price_wrap {
+		border-bottom: 1px solid variables.$colorGray04;
+
+		.payment_price_list {
+			.payment_price_item {
+				.right_box {
+					.price {
+						.val {
+							@include mixins.font_size_md;
+							font-weight: variables.$fontWeightBold;
+						}
+
+						.unit {
+							margin-top: 2px;
+						}
+					}
+				}
+
+				~.payment_price_item {
+					margin-top: 12px;
+				}
+			}
+		}
+
+		.payment_price_total {
+			padding-bottom: 20px;
+
+			.label {
+				font-weight: variables.$fontWeightMedium;
+			}
+
+			.right_box {
+				.price {
+					.unit {
+						margin-top: 2px;
+						@include mixins.font_size_sm;
+					}
+				}
+			}
+		}
+	}
+
+	+.info_text_box {
+		margin-top: 20px;
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-M087
+.postcard_img_box {
+	display: block;
+	border-radius: 10px;
+	overflow: hidden;
+	font-size: 0;
+	text-align: center;
+
+	img {
+		max-width: 100%;
+	}
+
+	& + .byte_check_wrap {
+		margin-top: 20px;
+	}
+}
+
+.byte_check_wrap {
+	+ .form_chk {
+		margin-top: 10px;
+	}
+}
+
+.form_chk {
+	+.info_text_box {
+	margin-top: 20px;
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-M005
+// 작업 화면 : SCR-BIZ06-07-M070
+.info_text_box {
+	+ .bul_list {
+		margin-top: 20px;
+	}
+
+	+.fold_box_wrap {
+		margin-top: 10px;
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-M027
+.bul_list {
+	+ .info_text {
+		margin-top: 10px;
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-M030, SCR-BIZ06-01-M019
+.line_list_wrap {
+	&.type_box {
+		border: none;
+
+		.line_list_box {
+			padding: 20px 16px 20px 50px;
+			border: 1px solid variables.$colorGray04;
+			border-radius: 10px;
+			background: #fff;
+
+			.due_data {
+				color: variables.$textColorBlack;
+				font-weight: variables.$fontWeightRegular;
+			}
+
+			.form_chk {
+				left: 16px;
+			}
+
+			.line_list_title {
+				.title {
+					font-weight: variables.$fontWeightRegular;;
+				}
+			}
+
+			~ .line_list_box {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-M036
+/* 적립예상포인트 안내 박스 */  // TODO : 디자인 변경 후 공통으로 뽑아야하면 수정 필요함
+.earn_point_info_box {
+	display: block;
+	padding: 18px 18px;
+	margin-top: 10px;
+	background-color: rgba(variables.$kyoboPurple, 0.06);
+	border-radius: 6px;
+	box-sizing: border-box;
+
+	.earn_point_text {
+		display: block;
+		@include mixins.font_size_md;
+		color: variables.$textColorBlack;
+		text-align: center;
+
+		.val {
+			color: variables.$textColorPurple;
+			font-weight: variables.$fontWeightBold;
+		}
+	}
+
+	& + .info_text_box {
+		margin-top: 20px;
+	}
+}
+
+// 작업 화면 : SCR-BIZ06-07-M083
+.form_search_box {
+	+.address_wrap {
+		margin-top: 20px;
+	}
+}
+
+.map_wrap {
+	display: none;
+	width: 100%;
+	margin-top: 12px;
+	font-size: 0;
+	text-align: center;
+	border-radius: 6px;
+	overflow: hidden;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+
+// 작업 화면 : SCR-BIZ06-07-M081
+.info_text  {
+	&.font_size_def {
+		+.agree_chk_wrap {
+			margin-top: 12px;
+		}
+	}
+}

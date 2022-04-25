@@ -1,0 +1,517 @@
+.wrapper .container_wrapper .contents_wrap {
+  padding-top: 0;
+}
+
+.partnership h1,
+.partnership h2 {
+  font-size: 42px;
+  letter-spacing: -0.01em;
+}
+
+.partnership h1 span,
+.partnership h2 span {
+  color: #5055b1;
+  position: relative;
+  z-index: 0;
+}
+
+.partnership h1 span::before,
+.partnership h2 span::before {
+  content: "";
+  display: inherit;
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  width: 101%;
+  height: 16px;
+  background-color: rgba(80,85,177,.1);
+  z-index: -1;
+  -webkit-animation-name: highlighter;
+          animation-name: highlighter;
+  -webkit-animation-duration: .35s;
+          animation-duration: .35s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.partnership button::after {
+  content: url(../images/common/arrow_btn_h22.png);
+  padding-left: 3px;
+}
+
+.partnership_visual {
+  width: 100%;
+  height: 400px;
+  background: url(../images/partnership/bg_top.png) no-repeat center top;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.partnership_visual_text {
+  width: 1200px;
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 82px;
+}
+
+.partnership_visual_text span {
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: #474c98;
+  padding-bottom: 6px;
+}
+
+.partnership_visual_text h1 {
+  line-height: 62px;
+  margin-bottom: 30px;
+}
+
+.partnership_visual_text p {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #292929;
+}
+
+.partnership_contents {
+  background-color: rgba(80,85,177,.06);
+  padding: 100px 0;
+}
+
+.partnership_contents h2 {
+  text-align: center;
+  margin: 0 auto 80px;
+}
+
+.partnership_contents_list {
+  width: 970px;
+  margin: 0 auto;
+}
+
+.partnership_contents_item {
+  padding: 89px 0;
+  background-repeat: no-repeat;
+  background-size: 394px 394px;
+  margin-bottom: 80px;
+}
+
+.partnership_contents_item:nth-child(1) {
+  background-image: url(../images/partnership/img_dgcon_01.png);
+  background-position: top left;
+}
+
+.partnership_contents_item:nth-child(2) {
+  background-image: url(../images/partnership/img_dgcon_02.png);
+  background-position: top right;
+}
+
+.partnership_contents_item:nth-child(3) {
+  background-image: url(../images/partnership/img_dgcon_03.png);
+  background-position: top left;
+}
+
+.partnership_contents_item:nth-child(4) {
+  background-image: url(../images/partnership/img_dgcon_04.png);
+  background-position: top right;
+}
+
+.partnership_contents_item span {
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: #474c98;
+  text-decoration: underline;
+  display: block;
+  margin-bottom: 11px;
+}
+
+.partnership_contents_item strong {
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+
+.partnership_contents_item p {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #767676;
+  margin: 24px 0;
+}
+
+.partnership_contents_item button {
+  width: 153px;
+}
+
+.partnership_contents_item.left {
+  text-align: left;
+  padding-left: 484px;
+}
+
+.partnership_contents_item.right {
+  text-align: right;
+  padding-right: 484px;
+}
+
+.partnership_tab {
+  box-sizing: border-box;
+}
+
+.partnership_tab.tab_wrap>.tab_list_wrap {
+  justify-content: center;
+  margin-bottom: 0 !important;
+}
+
+.partnership_tab .tab_list_inner {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.partnership_tab_con {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.partnership_tab_con .swiper-slide {
+  height: 778px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+}
+
+.partnership_tab_con .left {
+  width: 400px;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.partnership_tab_con .left p {
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  color: #767676;
+  margin-top: 20px;
+}
+
+.partnership_tab_con .left div {
+  width: 350px;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  padding: 18px 20px 18px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  color: #767676;
+  margin-top: 34px;
+}
+
+.partnership_tab_con .left button {
+  margin-top: 34px;
+  padding: 12px 24px;
+}
+
+.partnership_tab_con .right {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px;
+  text-align: center;
+  position: relative;
+}
+
+.partnership_tab_con .right .tip_round {
+  position: absolute;
+  top: 124px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  background-color: #5055b1;
+  border-radius: 15px;
+  padding: 6px 12px;
+  display: inline-block;
+}
+
+.partnership_tab_con .right .tip_round::after {
+  content: url(../../common/images/arw_anb_category_tab.png);
+  padding-left: 6px;
+}
+
+.partnership_tab_con .right img {
+  width: 500px;
+  height: 500px;
+}
+
+.partnership_tab_con .right span {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+
+.partnership_tab_con .right .point_text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #474c98;
+  padding-top: 10px;
+}
+
+.partnership_tab_con .right .tooltip_wrap {
+  margin-left: 6px;
+}
+
+.partnership_tab_con .right .tooltip_wrap button::after {
+  display: none;
+}
+
+.partnership_tab_con .right .tooltip_inner {
+  margin-top: 0;
+}
+
+.partnership_tab_con .right .tooltip_inner .tooltip_contents {
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: -0.01em;
+  color: #292929;
+}
+
+.partnership_tab_con .slide_ebook .tooltip_inner {
+  top: calc(-175px - 8px);
+  left: -230px;
+}
+
+.partnership_tab_con .slide_sam .tooltip_inner {
+  top: calc(-137px - 8px);
+  left: -224px;
+}
+
+.partnership_tab_con .slide_ecash .tooltip_inner {
+  top: calc(-175px - 8px);
+  left: -240px;
+}
+
+.partnership_tab .swiper-button-prev {
+  top: calc(50% - 36px);
+  left: 0px;
+  margin-top: 0;
+  width: 20.6px;
+  height: 36px;
+  background-image: url(../images/common/icon_arrow_line.png);
+  background-size: 20.6px 36px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.partnership_tab .swiper-button-next {
+  top: calc(50% - 36px);
+  right: 0x;
+  margin-top: 0;
+  width: 20.6px;
+  height: 36px;
+  background-image: url(../images/common/icon_arrow_line.png);
+  background-size: 20.6px 36px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.partnership_tab .swiper-pagination {
+  left: calc(50% - 30px);
+  bottom: 60px;
+}
+
+.partnership_tab .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.partnership_tab .swiper-pagination-bullet+.swiper-pagination-bullet {
+  margin-left: 12px;
+}
+
+.partnership_tab .swiper-pagination-bullet-active {
+  background-color: #595959;
+}
+
+.partnership_tip {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.partnership_tip h2 {
+  margin-bottom: 80px;
+}
+
+.partnership_tip_con {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.partnership_tip_con .box {
+  width: calc(33.3333333333% - 16.6666666667px);
+  height: 590px;
+  padding-top: 50px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 40px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.partnership_tip_con .box .num {
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: #474c98;
+  background-color: rgba(80,85,177,.06);
+  padding: 5px 14px 4px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.partnership_tip_con .box .tit {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.partnership_tip_con .box .tit>span {
+  color: #474c98;
+}
+
+.partnership_tip_con .box1 .tit20 {
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+  display: inline-block;
+  margin: 214px auto 16px;
+}
+
+.partnership_tip_con .box1 .pwbox {
+  width: 238px;
+  height: 51px;
+  margin: 0 auto;
+  background-color: #f5f5fb;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 51px;
+  letter-spacing: -0.01em;
+}
+
+.partnership_tip_con .box1::after {
+  content: "이용권 교환번호를 발급받았다면?";
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #474c98;
+  width: 359px;
+  height: 133px;
+  background: url(../images/partnership/tip_02.png) no-repeat;
+  background-size: 359px 133px;
+  position: absolute;
+  left: calc(50% - 179.5px);
+  bottom: 47.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partnership_tip_con .box1::before {
+  content: "";
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  background: url(../images/partnership/tip_01.png) no-repeat;
+  background-size: 140px 140px;
+  position: absolute;
+  left: calc(50% - 70px);
+  top: 100px;
+}
+
+.partnership_tip_con .box2::after {
+  content: "";
+  display: inline-block;
+  width: 331px;
+  height: 388px;
+  background: url(../images/partnership/tip_03.png) no-repeat;
+  background-size: 331px 388px;
+  position: absolute;
+  left: calc(50% - 165.5px);
+  bottom: 0;
+}
+
+.partnership_tip_con .box2 p {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #767676;
+  margin-top: 10px;
+}
+
+.partnership_tip_con .box3::after {
+  content: "";
+  display: inline-block;
+  width: 337px;
+  height: 209px;
+  background: url(../images/partnership/tip_04.png) no-repeat;
+  background-size: 337px 209px;
+  position: absolute;
+  left: calc(50% - 168.5px);
+  top: 172px;
+}
+
+.partnership_tip_con .box3 p {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.13px;
+  color: #767676;
+  margin-top: 269px;
+}
+
+.partnership_bottom {
+  height: 395px;
+  padding: 100px 0;
+  box-sizing: border-box;
+  background: url(../images/partnership/bg_bottom.png) center top no-repeat;
+  text-align: center;
+}
+
+.partnership_bottom h2 {
+  margin-bottom: 14px;
+}
+
+.partnership_bottom p {
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  color: #292929;
+  margin-bottom: 40px;
+}
+
+.partnership_bottom button {
+  width: 236px;
+}
+
+.partnership_bottom button::after {
+  display: none;
+}
+/*# sourceMappingURL=partnership_dig.min.css.map */

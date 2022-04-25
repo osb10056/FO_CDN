@@ -1,0 +1,149 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+//나의 혜택/포인트 > 기프트카드 > 기프트카드 등록
+.my_benefit_giftcard_registration {
+	margin-bottom: 30px;
+	border-radius: 10px;
+	background-color: rgba(variables.$kyoboPurple, .06);
+	padding: 0 20px;
+
+	.example {
+		width: 100%;
+		padding: 20px 0;
+
+
+		.img_box{
+			display: block;
+			border: 1px solid #D5D5D5;
+			border-radius: 10px;
+			overflow: hidden;
+
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.desc{
+		text-align: center;
+		@include mixins.font_size_def;
+		font-weight: variables.$fontWeightMedium;
+	}
+
+	.giftcard_form_wrap {
+		display: block;
+
+		.giftcard_form_inner {
+			padding: 24px 0 20px 0;
+
+			.form_wrap {
+				border-top: 1px solid #eaeaea;
+				padding-top: 24px;
+			}
+		}
+	}
+
+	~ .btn_wrap {
+		margin-top: 34px;
+	}
+
+}//my_benefit_giftcard_registration
+
+//나의 혜택/포인트 > 기프트카드 > 기프트카드 교환
+.my_benefit_giftcard_exchange {
+	padding: 24px;
+	margin-bottom: 30px;
+	border-radius: 10px;
+	background-color: rgba(variables.$kyoboPurple, .06);
+
+	.tab_wrap.type_line_round {
+
+		> .tab_list_wrap {
+			background: transparent;
+			.tabs {
+				background: transparent;
+
+				.tab_item {
+					height: 36px;
+					.tab_link {
+						.tab_text {
+							color: variables.$textColorBlack;
+						}
+					}
+
+					&.ui-state-active {
+						.tab_link {
+							.tab_text {
+								color: variables.$textColorPurple;
+								font-weight: variables.$fontWeightMedium;
+							}
+						}
+					}
+				}
+			}
+
+			&.col2 {
+				.tabs {
+					.tab_item {
+						&:nth-child(n+3) {
+							margin-top: 8px;
+						}
+					}
+				}
+			}
+		}
+		.tab_content {
+			background: transparent;
+
+			.form_wrap {
+
+				+.form_wrap {
+					margin-top: 20px;
+				}
+
+				.bul_list {
+					margin-top: 6px;
+				}
+			}
+
+		}
+
+	}
+
+	.exchange_price {
+		display: inline-block;
+		margin-top: 8px;
+		font-size: 0;
+		color: variables.$textColorGray;
+		.unit,
+		.label {
+			@include mixins.font_size_xs;
+			padding-right: 3px;
+		}
+		.val {
+			@include mixins.font_size_xs;
+			font-weight: variables.$fontWeightBold;
+			color: variables.$kyoboPurple;
+		}
+		.unit {
+			color: variables.$textColorBlack;
+		}
+	}
+
+	+.info_text_box {
+		margin-top: 30px;
+	}
+
+	~ .info_box_line {
+		margin-top: 30px;
+	}
+
+	~ .btn_wrap {
+		margin-top: 34px;
+	}
+
+}//my_benefit_giftcard_exchange

@@ -1,0 +1,551 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+
+//공통 검색 input 스타일
+.store_form_search_wrap {
+    .form_search_box {
+        height: 40px;
+        border-radius: 25px;
+        box-sizing: border-box;
+
+        .form_ip {
+            height: 38px;
+            padding: 0 74px 0 18px;
+            border-radius: 25px;
+            font-size: variables.$fontSizeXs;
+            line-height: 38px;
+        }
+
+        .btn_ip_search {
+            right: 14px;
+            width: 16px;
+            height: 16px;
+            @include mixins.ratio_images('../images/btn_store_holding_book_search', 'png', 16px, 16px);
+        }
+    }
+}
+
+// 매장안내 메인
+.store_info_cont_wrap {
+    // 보유도서 검색 input
+    .store_detail_info_area {
+        // 공지
+        .notice_banner_box {
+            margin-top: 30px;
+            height: 19px;
+
+            .store_notice_rolling_wrap {
+                margin-top: 0;
+                .store_notice_rolling_swiper_wrap {
+                    .store_notice_list {
+                        .store_notice_item {
+                            a {
+                                &.btn_text_link {
+                                    color: variables.$textColorBlack;
+                                }
+                            }
+                        }
+                    }
+
+                    .swiper-pagination {
+                        &.swiper-pagination-fraction {
+                            .swiper-pagination-current {
+                                color: variables.$textColorBlack;
+                            }
+
+                            .swiper-pagination-total {
+                                color: variables.$textColorLightGray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 시설/서비스
+    .store_detail_induce_tab_content_inner {
+        .store_environment_swiper_wrap {
+
+            .swiper-container {
+                position: relative;
+                border-radius: 10px;
+
+                .swiper-wrapper {
+                    .swiper-slide {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+
+                .swiper-pagination {
+                    &.swiper-pagination-fraction {
+                        transform: none;
+                        left: auto;
+                        right: 12px;
+                        bottom: 12px;
+                    }
+                }
+            }
+        }
+
+        .store_environment_desc {
+            margin-top: 20px;
+            @include mixins.font_size_xs;
+            color: variables.$textColorGray;
+        }
+
+        .store_detail_induce_service_wrap {
+            .store_service_list {
+                .store_service_item {
+                    padding: 20px;
+                    border: 1px solid variables.$colorGray04;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+
+                    .service_title_wrap {
+                        @include mixins.justify_width(center);
+
+                        .title_box {
+                            @include mixins.justify_width(center);
+                            flex: 1;
+                            word-break: break-all;
+
+                            [class^=ico_store]{
+                                display: inline-block;
+                                flex-shrink: 0;
+                                width: 30px;
+                                height: 30px;
+                                background: {
+                                    position: center;
+                                    repeat: no-repeat;
+                                };
+                            }
+
+                            .ico_store_pickup {
+                                @include mixins.ratio_images('../images/ico_store_pickup_mok', 'png', 30px, 30px);
+                            }
+                            .ico_store_reservation {
+                                @include mixins.ratio_images('../images/ico_store_reservation_mok', 'png', 30px, 30px);
+                            }
+                            .ico_store_deli_today {
+                                @include mixins.ratio_images('../images/ico_store_deli_today_mok', 'png', 30px, 30px);
+                            }
+                            .ico_store_unmanned_search {
+                                @include mixins.ratio_images('../images/ico_store_unmanned_search_mok', 'png', 30px, 30px);
+                            }
+                            .ico_store_giftcard {
+                                @include mixins.ratio_images('../images/ico_store_giftcard_mok', 'png', 30px, 30px);
+                            }
+
+                            .title {
+                                margin-left: 6px;
+                                @include mixins.font_size_sm;
+                                font-weight: variables.$fontWeightMedium;
+                            }
+                        }
+                    }
+
+                    + .store_service_item {
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//바로드림
+.store_immediately_give_wrap {
+
+    .store_search_area {
+        padding-top: 30px;
+
+        .search_title {
+            @include mixins.font_size_lg;
+            text-align: center;
+        }
+
+        .store_search_step_list {
+            @include mixins.justify_width();
+            margin-top: 26px;
+
+            .store_search_step_item {
+                width: calc(100%/3);
+
+                .search_icon_box {
+                    position: relative;
+                    text-align: center;
+
+                    [class^=ico_search]{
+                        display: inline-block;
+                        width: 72px;
+                        height: 72px;
+                        background: {
+                            position: center;
+                            repeat: no-repeat;
+                        }
+                        vertical-align: top;
+
+                        &.ico_search_step01 { @include mixins.ratio_images('../images/ico_search_step01_mok', 'png', 72px, 72px); }
+                        &.ico_search_step02 { @include mixins.ratio_images('../images/ico_search_step02_mok', 'png', 72px, 72px); }
+                        &.ico_search_step03 { @include mixins.ratio_images('../images/ico_search_step03_mok', 'png', 72px, 72px); }
+                    }
+
+                }
+
+                .search_text {
+                    margin-top: 11px;
+                    font-size: variables.$fontSizeXs;
+                    line-height: 17px;
+                    text-align: center;
+                }
+
+                + .store_search_step_item {
+
+                    .search_icon_box:before {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -3px;
+                        width: 6px;
+                        height: 10px;
+                        background: {
+                            repeat: no-repeat;
+                        }
+                        vertical-align: top;
+                        @include mixins.ratio_images('../images/ico_store_search_step_paging_arr_mok', 'png', 6px, 10px);
+                    }
+                }
+            }
+        }
+
+        .store_form_search_wrap {
+            margin-top: 31px;
+
+            .form_search_box {
+                .form_ip_search {
+
+                    .btn_store_change {
+                        display: none;
+                        position: absolute;
+                        right: 39px;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        .text {
+                            @include mixins.font_size_xs;
+                            color: variables.$textColorLightGray;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    &.value {
+                        .form_ip {
+                            padding-right: 40px;
+                        }
+                        .btn_store_change {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tab_wrap {
+        margin-top: 30px;
+
+        .tab_list_wrap {
+            margin-bottom: 4px;
+            padding: 0 20px;
+        }
+
+        .tab_content {
+
+            .selected_filter_box {
+                margin-bottom: 0;
+
+                .selected_filter_list {
+                    padding: 11px 0 15px 20px;
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 10px;
+                    background-color: variables.$colorGray06;
+                }
+
+            }
+            .store_list {
+
+                .store_item {
+                    @include mixins.justify_width();
+                    padding: 20px 0;
+
+                    .store_thumb_box {
+                        overflow: hidden;
+                        flex-shrink: 0;
+
+                        .img_box {
+                            overflow: hidden;
+                            display: inline-block;
+                            width: 84px;
+                            height: 84px;
+                            border: 1px solid variables.$colorGray04;
+                            border-radius: 10px;
+                            box-sizing: border-box;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .store_info_box {
+                        flex: 1;
+                        margin-left: 12px;
+
+                        .store_name {
+                            @include mixins.font_size_sm;
+                            font-weight: variables.$fontWeightMedium;
+                        }
+                        .store_location {
+                            margin-top: 4px;
+                            font-size: variables.$fontSizeXs;
+                            line-height: variables.$fontSizeSmLineHeight;
+                            color: variables.$textColorGray;
+
+                        }
+                        .store_option {
+                            @include mixins.clearfix;
+                            margin-top: 10px;
+
+                            [class^=ico_store] {
+                                display: inline-block;
+                                float: left;
+                                width: 22px;
+                                height: 22px;
+                                background: {
+                                    position: center;
+                                    repeat: no-repeat;
+                                }
+                                + [class^=ico_store] {
+                                    margin-left: 8px;
+                                }
+
+                                &.ico_store_pickup { @include mixins.ratio_images('../images/ico_store_pickup_22x22_mok', 'png', 22px, 22px); }
+                                &.ico_store_reservation { @include mixins.ratio_images('../images/ico_store_reservation_22x22_mok', 'png', 22px, 22px); }
+                                &.ico_store_deli_today { @include mixins.ratio_images('../images/ico_store_deli_today_22x22_mok', 'png', 22px, 22px); }
+                                &.ico_store_unmanned_search { @include mixins.ratio_images('../images/ico_store_unmanned_search_22x22_mok', 'png', 22px, 22px); }
+                                &.ico_store_giftcard { @include mixins.ratio_images('../images/ico_store_giftcard_22x22_mok', 'png', 22px, 22px); }
+                                &.ico_store_payment { @include mixins.ratio_images('../images/ico_store_payment_22x22_mok', 'png', 22px, 22px); }
+                                &.ico_store_save { @include mixins.ratio_images('../images/ico_store_save_22x22_mok', 'png', 22px, 22px); }
+                                &.ico_store_smart_receipt { @include mixins.ratio_images('../images/ico_store_smart_receipt_22x22_mok', 'png', 22px, 22px); }
+                            }
+                        }
+                    }
+
+                    + .store_item {
+                        border-top: 1px solid variables.$colorGray04;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 스마트 영수증 설정 팝업
+.smart_receipt_header_wrap {
+    padding-bottom: 16px;
+    @include mixins.justify_width(center);
+
+    .header_title {
+        @include mixins.font_size_md;
+        font-weight: variables.$fontWeightMedium;
+    }
+
+    .right_area {
+        flex-shrink: 0;
+        margin-left: auto;
+        padding-left: 15px;
+    }
+}
+
+// 북캐쉬팝업
+.ico_book_cash {
+    width: 50px;
+    height: 50px;
+    background: {
+        position: center;
+        repeat: no-repeat;
+    };
+
+    @include mixins.ratio_images('../images/ico_book_cash_mok', 'png', 50px, 50px);
+}
+
+// 뱃지획득팝업
+.ico_obtained_badge {
+    width: 128px;
+    height: 66px;
+    background: {
+        position: center;
+        repeat: no-repeat;
+    };
+    @include mixins.ratio_images('../images/ico_obtained_badge_mok', 'png', 128px, 66px);
+}
+
+.badge_date {
+    margin-top: 10px;
+    @include mixins.font_size_xs;
+}
+
+// 체크인 > 혜택팝업
+.pop_checkin_benefit_wrap {
+
+    .title_wrap {
+
+        &.has_sub_title {
+            padding-bottom: 24px;
+
+            .title_heading {
+
+                & + .info_text {
+                    margin-top: 11px;
+                    font-size: variables.$fontSizeXs;
+                    line-height: 21px;
+                }
+            }
+        }
+    }
+
+    .coupon_list_box {
+
+        .coupon_list {
+
+            .coupon_item {
+
+                .coupon_info_box {
+
+                    .info_text {
+                        margin-top: 16px;
+                        font-size: variables.$fontSizeSm;
+                        font-weight: variables.$fontWeightBold;
+                        letter-spacing: variables.$letterSpacing;
+                        color: variables.$textColorBlack;
+                    }
+                }
+
+                & ~ .coupon_item {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    .info_text_box {
+        margin-top: 30px;
+    }
+}
+
+// 바로드림 > 옵션선택 팝업
+.immediate_delivery_option_wrap {
+
+    .list_header_wrap {
+        @include mixins.justify_width(center, between);
+
+        .form_chk {
+            input {
+                & + label {
+                    @include mixins.font_size_def;
+                    font-weight: variables.$fontWeightBold;
+                }
+            }
+        }
+
+        .right_area {
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+    }
+
+    .immediate_delivery_option_list {
+        margin-top: 20px;
+
+        .delivery_option_item {
+            @include mixins.justify_width(center);
+            padding: 24px 14px;
+            border: 1px solid variables.$colorGray04;
+            border-radius: 10px;
+
+            .option_chk_box {
+                display: inline-block;
+                flex: 0 auto;
+                margin-right: 6px;
+            }
+
+            .option_info_box {
+                @include mixins.justify_width(center);
+                flex: 1;
+                word-break: break-all;
+
+                [class^=ico_store]{
+                    display: inline-block;
+                    flex-shrink: 0;
+                    width: 30px;
+                    height: 30px;
+                    background: {
+                        position: center;
+                        repeat: no-repeat;
+                    };
+
+                }
+
+                .ico_store_pickup {
+                    @include mixins.ratio_images('../images/ico_store_pickup_mok', 'png', 30px, 30px);
+                }
+                .ico_store_reservation {
+                    @include mixins.ratio_images('../images/ico_store_reservation_mok', 'png', 30px, 30px);
+                }
+                .ico_store_deli_today {
+                    @include mixins.ratio_images('../images/ico_store_deli_today_mok', 'png', 30px, 30px);
+                }
+                .ico_store_unmanned_search {
+                    @include mixins.ratio_images('../images/ico_store_unmanned_search_mok', 'png', 30px, 30px);
+                }
+                .ico_store_giftcard {
+                    @include mixins.ratio_images('../images/ico_store_giftcard_mok', 'png', 30px, 30px);
+                }
+                .ico_store_payment {
+                    @include mixins.ratio_images('../images/ico_store_payment_mok', 'png', 30px, 30px);
+                }
+                .ico_store_save {
+                    @include mixins.ratio_images('../images/ico_store_save_mok', 'png', 30px, 30px);
+                }
+                .ico_store_smart_receipt {
+                    @include mixins.ratio_images('../images/ico_store_smart_receipt_mok', 'png', 30px, 30px);
+                }
+
+                .option_title {
+                    margin-left: 6px;
+                    @include mixins.font_size_sm;
+                    font-weight: variables.$fontWeightMedium;
+                }
+            }
+
+            + .delivery_option_item {
+                margin-top: 8px;
+            }
+        }
+    }
+}

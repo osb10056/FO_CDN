@@ -1,0 +1,80 @@
+.pay_change{
+    &_header{
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-bottom: 20px;
+
+        em{
+            color: #3c9a17;
+        }
+    }
+    &_tbl{
+        .tbl_col_line tbody tr{
+            td{
+                color: #767676;                    
+                padding: 28px 0;
+                label{
+                    font-size: 15px;
+                    color: #000;
+                }
+                strong{
+                    font-size: 16px;
+                }
+                span.state{
+                    font-size: 12px;
+                    font-weight: 500;
+                    letter-spacing: -0.01em;
+                    padding: 0 8px;
+                    display: inline-block;
+                    height: 19px;
+                    line-height: 19px;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    &.waiting{
+                        color: #474c98;
+                        background-color: 
+                        rgba(80, 85, 177, 0.06);
+                    }
+                    &.ing{
+                        color: #474c98;
+                        background-color: #fff;
+                        border: 1px solid #5055b1
+                    }
+                    &.expired{
+                        color: #595959;
+                        background-color: 
+                        #f0f0f0;
+                    }
+                }
+                em{
+                    display: block;
+                    color: #000;
+                    margin-bottom: 4px;
+                }
+                &:first-child{
+                    text-align: left;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    &_info{
+        padding: 120px 0;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #000;
+        border-bottom: 1px solid #eaeaea;
+        button{
+            margin: 50px auto 0;
+        }
+    }
+    &_text_box.info_text_box{
+        padding: 16px;
+        margin-top: 68px;
+        [class^=bul_item_]{
+            color: #767676;
+        }
+    }
+}

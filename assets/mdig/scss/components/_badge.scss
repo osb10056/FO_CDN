@@ -1,0 +1,58 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+.badge {
+  display: inline-block;
+  min-width: 35px;
+  height: 18px;
+  border-radius: 6px 0px 6px 0px;
+  text-align: center;
+  color: white;
+  border:1px solid rgba(0,0,0,0);
+  box-sizing: border-box;;
+  > span {
+    display: inherit;
+    padding: 0 0.5em;
+    line-height: 16px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  &.case-sam {color:#66c4c7;border-color:#66c4c7;}
+  &.case-series {color:#84bde0;border-color:#84bde0;}
+  &.case-rent {color:#f8bd38;border-color:#f8bd38;}
+  &.case-comic {color:#ff9821;border-color:#ff9821;}
+  &.case-cartoon {color:#e892ce;border-color:#e892ce;}
+  &.case-webtoon {color:#cb8b49;border-color:#cb8b49;}
+  &.case-unlimited {color:#6ebaac;border-color:#6ebaac;}
+  &.case-premium {color:#cb98bd;border-color:#cb98bd;}
+  &.case-new {color:#7da6d5; border-color:#7da6d5; }
+  &.case-best {color:#938dd9; border-color:#938dd9; }
+  &.case-event {color:#96c346; border-color:#96c346; }
+  &.case-free {color:#f79393; border-color:#f79393; }
+  &.case-set {color:#6ed16a; border-color:#6ed16a; }
+  &.case-up {
+    color:#fff;background-color:#4dac27;min-width:auto;
+    .text{padding: 0 3px;font-size: 11px;line-height: 17px;}
+  }
+}
+.badge_state{
+  font-size:12px;color:#474c98;letter-spacing:-0.12px;line-height:18px;
+  padding:1px 6px;border:1px solid #474c98;border-radius:4px;box-sizing: border-box;
+  &.case-gray{border-color:#D5D5D5;color:#767676;}
+  &.case-gray-bg{background-color:#767675;color:#fff;}
+  &.case-green{border-color:#4DAC27;color:#4DAC27;}
+  &.case-green-bg{background-color:#4DAC27;color:#fff;}
+  &.case-red{background-color:#D93938;color:#D93938;}
+}
+.badge_round{
+  font-size:12px;color:#474c98;letter-spacing:-0.12px;line-height:16px;
+  padding:1px 8px;border:1px solid #474c98;border-radius:10px;box-sizing: border-box;
+  &.case-green{border-color:#4DAC27;color:#4DAC27;}
+}
+

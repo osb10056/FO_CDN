@@ -1,0 +1,68 @@
+.samBest .eBook_list_header_title {
+  position: relative;
+}
+
+.samBest .eBook_list_header_title button {
+  color: #000;
+}
+
+.samBest .eBook_list_header_title button:after {
+  content: "";
+  display: inline-block;
+  margin: 9px 0 0 10px;
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-image: url(../../common/images/btn_more_cont.png);
+  vertical-align: top;
+  transition: background-image .23s;
+}
+
+.samBest .eBook_list_header_title button.open:after {
+  background-image: url(../../common/images/btn_more_cont_active.png);
+}
+
+.samBest .eBook_list_header_title ul {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  display: none;
+  width: 240px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.samBest .eBook_list_header_title ul li a {
+  display: block;
+  padding: 0 20px;
+  height: 44px;
+  font-size: 14px;
+  color: #000;
+  line-height: 44px;
+  box-sizing: border-box;
+}
+
+.samBest .eBook_list_header_title ul li.current a {
+  font-weight: 600;
+}
+
+.samBest .eBook_list_header_title ul li.current a:after {
+  display: inline-block;
+  margin-left: 4px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  background: url(../../common/images/arw_filter_depth1_integrate_active.png) no-repeat center;
+  content: "";
+}
+
+.samBest .eBook_list_header_title ul li:hover {
+  background-color: #f5f5f5;
+}
+/*# sourceMappingURL=samBest_dig.min.css.map */

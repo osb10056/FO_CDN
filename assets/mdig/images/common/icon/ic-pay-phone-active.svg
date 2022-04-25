@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+  <g id="pay-icon_phone" data-name="pay-icon/phone" transform="translate(0.5 0.5)">
+    <g id="document">
+      <g id="사각형_3360" data-name="사각형 3360" transform="translate(6 2)" fill="#fff" stroke="#5055b1" stroke-width="1.5">
+        <rect width="24" height="32" rx="5" stroke="none"/>
+        <rect x="0.75" y="0.75" width="22.5" height="30.5" rx="4.25" fill="none"/>
+      </g>
+      <path id="Vector" d="M36,0V36H0V0Z" fill="none" stroke="#5055b1" stroke-width="1" opacity="0"/>
+      <path id="패스_13928" data-name="패스 13928" d="M6.321,26.857h15.4" transform="translate(7.279 -1)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-width="1.5"/>
+      <path id="패스_13930" data-name="패스 13930" d="M6.321,26.857h3" transform="translate(0.679 -1)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-width="1.5"/>
+      <circle id="타원_235" data-name="타원 235" cx="1.5" cy="1.5" r="1.5" transform="translate(17 28)"/>
+    </g>
+  </g>
+</svg>

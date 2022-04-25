@@ -1,0 +1,376 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+
+//공통취합 완료
+/*
+SCR-BIZ16-01-M002.html
+뱃지모으기 첫번째 박스에 박스 디자인해놓았고
+store_badge_body > store_badge_body_inner 추가되었으니
+확인하고 나머지 박스 수정할것!
+
+>>store_badge_bot 약어금지 -->> store_badge_bottom 으로 수정필요
+>> bot_desc_wrap -->> msg_box 수정필요
+-->> 넵 확인하고 수정했습니다!
+*/
+
+//뱃지 모으기
+.store_badge_wrap {
+	padding-top: 20px;
+	
+	.store_badge_box {
+		width: 100%;
+		height: auto;
+		
+		.store_badge_header {
+			position: relative;
+			width: 100%;
+			height: 134px;
+			padding: 30px 0;
+			border-radius: 14px 14px 0 0;
+			background: variables.$kyoboPurple;
+			text-align: center;
+			box-sizing: border-box;
+			overflow: hidden;
+			
+			.desc {
+				@include mixins.font_size_def;
+				color: #fff;
+			}
+			
+			.btn_more_view {
+				margin-top: 10px;
+				opacity: .7;
+			}
+			
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: -8px;
+				left: -8px;
+				width: 16px;
+				height: 16px;
+				background: #fff;
+				border-radius: 8px;
+			}
+			
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -8px;
+				right: -8px;
+				width: 16px;
+				height: 16px;
+				background: #fff;
+				border-radius: 8px;
+			}
+		}
+		
+		.store_badge_body {
+			position: relative;
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+			border-radius: 0 0 14px 14px;
+			box-shadow: 0 10px 12px rgba(0, 0, 0, .06);
+			-webkit-box-shadow: 0 10px 12px rgba(0, 0, 0, .06);
+			-moz-box-shadow: 0 10px 12px rgba(0, 0, 0, .06);
+			
+			.store_badge_body_inner {
+				padding: 40px 30px 26px;
+				border: 1px solid variables.$colorGray04;
+				border-radius: 0 0 14px 14px;
+				border-top: 0;
+				box-sizing: border-box;
+				background: #fff;
+			}
+			
+			+ .btn_wrap {
+				margin-top: 20px;
+			}
+			
+			.store_badge_top {
+				width: 100%;
+				height: auto;
+				text-align: center;
+				
+				.trophy_wrap {
+					width: 100%;
+					height: auto;
+					text-align: center;
+					
+					.trophy_img {
+						position: relative;
+						display: inline-block;
+						width: 70px;
+						height: 70px;
+						@include mixins.ratio_images('../images/ico_store_trophy_mok', 'png', 70px, 70px);
+						
+						&.active {
+							@include mixins.ratio_images('../images/ico_store_trophy_active_mok', 'png', 70px, 70px);
+						}
+					}
+					
+					
+					.badge_gray_speech, .badge_primary_speech {
+						position: absolute;
+						top: -10px;
+						right: -19px;
+						white-space: nowrap;
+					}
+					
+				}
+				.mission_info {
+					display: inline-block;
+					width: auto;
+					height: auto;
+					margin-top: 12px;
+					padding: 8px 16px 9px;
+					border-radius: 18px;
+					background: variables.$colorGray06;
+					@include mixins.font_size_xs;
+				}
+				
+			}
+			
+			.store_badge_bottom {
+				margin-top: 26px;
+				padding-top: 26px;
+				border-top: 1px dashed variables.$colorGray04;
+				text-align: center;
+				
+				.msg_box {
+					
+					.desc {
+						@include mixins.font_size_sm;
+						font-weight: variables.$fontWeightMedium;
+						color: variables.$textColorBlack;
+						
+						+ .btn_more_view {
+							margin-top: 6px;
+						}
+					}
+					
+					.sub_desc {
+						margin-top: 6px;
+						@include mixins.font_size_xs;
+						color: variables.$textColorGray;
+					}
+					
+				}
+				
+				.store_badge_list {
+					display: flex;
+					justify-content: center;
+					flex-wrap: wrap;
+					margin: 16px auto 0;
+					
+					.store_badge {
+						display: inline-block;
+						width: 70px;
+						height: 70px;
+						margin: 0 7px;
+						@include mixins.ratio_images('../images/ico_store_badge_mok', 'png', 70px, 70px);
+						
+						&.active {
+							@include mixins.ratio_images('../images/ico_store_badge_active_mok', 'png', 70px, 70px);
+						}
+						
+					}
+				}
+			}
+			
+			.corner_box {
+				position: absolute;
+				top: 0;
+				width:  8px;
+				height:  8px;
+				background: #fff;
+				z-index: 1;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: -9px;
+					width: 16px;
+					height: 16px;
+					background: #fff;
+					border: solid 1px variables.$colorGray04;
+					border-radius: 8px;
+				}
+				
+				&.left {
+					left: 0;
+					&:before {
+						left: -9px;
+					}
+				}
+				&.right {
+					right: 0;
+					&:before {
+						right: -9px;
+					}
+				}
+			}
+		}
+		
+		+.store_badge_box {
+			margin-top: 30px;
+		}
+	}
+}
+
+
+//이벤트&공지사항
+.store_notice_wrap {
+	padding-top: 20px;
+
+	.tab_wrap {
+		.tab_content {
+			.contents_inner {
+				padding-top: 20px;
+
+				.list_result_wrap {
+					height: auto;
+					margin-bottom: 20px;
+					padding: 0;
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+
+//이벤트&공지사항 상세
+.store_notice_detail_wrap {
+
+	.view_detail_wrap {
+		.view_detail_header {
+			margin-bottom: 30px;
+
+			.title_wrap.title_size_xxl {
+				padding-bottom: 15px;
+			}
+
+			.edit_header_util {
+				margin-top: 0;
+			}
+		}
+
+		.btn_wrap {
+			margin-top: 40px;
+			padding: 0 20px;
+		}
+	}
+}
+
+
+//체크인
+.store_checkin_wrap {
+
+	.checkin_gps_icon_box {
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom: 16px;
+		text-align: center;
+
+		.ico_checkin_gps_able {
+			display: inline-block;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	//위치 허용시
+	.location_allowed_wrap {
+
+		.ico_checkin_gps_able {
+			width: 227px;
+			height: 227px;
+		}
+
+		.checkin_welcome_msg {
+			+ .checkin_btn_wrap {
+				margin-top: 30px;
+			}
+		}
+
+		.btn_store_checkin_wrap {
+			text-align: center;
+
+			.btn_store_checkin {
+				@include mixins.justify_width(center);
+				display: -ms-inline-flexbox;
+				display: inline-flex;
+				display: -webkit-inline-flex;
+				border-radius: 34px;
+				border: solid 1px variables.$colorGray04;
+				padding: 4px 20px 4px 4px;
+				font-size: 0;
+
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 46px;
+					height: 46px;
+					margin-right: 10px;
+					@include mixins.ratio_images('../images/ico_store_checkin_thumbnail_mok', 'png', 46px, 46px);
+				}
+
+				.text {
+					color: variables.$textColorBlack;
+					@include mixins.font_size_sm;
+				}
+
+				.ico_arw {
+					width: 5px;
+					height: 9px;
+					margin-top: -2px;
+					margin-left: 8px;
+					@include mixins.ratio_images('../images/btn_more_view_black_mok', 'png', 5px, 9px);
+				}
+			}
+
+			+ .info_text_box {
+				margin-top: 80px;
+			}
+		}
+
+	}
+
+
+	//영업종료
+	.store_closed_wrap {
+
+		.checkin_gps_icon_box {
+			margin-top: 58px;
+
+			.ico_checkin_gps_able {
+				width: 151px;
+				height: 151px;
+			}
+		}
+
+		.info_text_box {
+			margin: 0 10px;
+			padding: 14px 20px 15px;
+		}
+
+		.btn_wrap.auto {
+			margin-top: 30px;
+
+			.btn_md.btn_pill {
+				min-width: 140px;
+				font-weight: variables.$fontWeightMedium;
+				@include mixins.font_size_sm;
+			}
+		}
+	}
+
+}

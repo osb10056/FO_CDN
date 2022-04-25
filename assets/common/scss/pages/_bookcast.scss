@@ -1,0 +1,1751 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+.wrapper.contents_bc {
+	/* 북캐스트 메인 라이브 배너 swiper 영역 */
+	.bookcast_live_banner_wrap{
+		//overflow: hidden;
+		position: relative;
+
+		.bookcast_live_thumb {
+			position: relative;
+			width: 100%;
+			padding: 80px 30px 40px;
+			background: rgba(0, 0, 0, 0.7);
+			backdrop-filter: blur(30px) brightness(110%);
+			-webkit-backdrop-filter: blur(30px) brightness(110%);
+			z-index: 2;
+			box-sizing: border-box;
+
+			.swiper-container{
+				border-radius: 8px;
+
+				.swiper-slide{
+					.live_banner_box {
+						.bookcast_live_link {
+							display: block;
+							height: 100%;
+						}
+
+						.bookcast_video_box {
+							position: relative;
+							width: 100%;
+
+							img {
+								width: 100%;
+							}
+
+							video {
+								width: 100%;
+							}
+
+							&:before {
+								content: '';
+								position: absolute;
+								left: 0;
+								bottom: 0;
+								width: 100%;
+								height: 115px;
+								background: linear-gradient(180deg, rgba(variables.$textColorBlack, 0), rgba(variables.$textColorBlack, 1) 115px);
+								opacity: .8;
+							}
+						}
+
+						.flag {
+							position: absolute;
+							top: 0;
+							left: 0;
+							display: inline-block;
+							height: 30px;
+							padding: 5px 14px 0 8px;
+							border-radius: 8px 0 16px 0;
+							background-color: #ff393b;
+							font-size: variables.$fontSizeSm;
+							font-weight: variables.$fontWeightBold;
+							letter-spacing: variables.$letterSpacing;
+							vertical-align: top;
+							color: #fff;
+							box-sizing: border-box;
+							z-index: 2;
+
+							&:before {
+								content: '';
+								display: inline-block;
+								width: 5px;
+								height: 5px;
+								margin: 7px 6px 0 0;
+								border-radius: 100%;
+								background-color: #fff;
+								vertical-align: top;
+							}
+						}
+
+						.prod_area {
+							position: absolute;
+							left: 8px;
+							bottom: 8px;
+							max-width: calc(100% - 16px);
+
+							.prod_thumb_box {
+								width: 59px;
+								height: 59px;
+
+								.img_box {
+									border-radius: 4px;
+
+									&:before{
+										content: none;
+									}
+								}
+							}
+
+							.prod_info_box {
+								margin-left: 11px;
+
+								.prod_name {
+									@include mixins.font_size_def;
+									color: #fff;
+								}
+
+								.prod_price {
+									margin-top: 0;
+
+									.price {
+										.val, .unit {
+											@include mixins.font_size_def;
+											color: #fff;
+											line-height: 1;
+										}
+
+										.unit {
+											@include mixins.font_size_sm;
+										}
+									}
+
+									.percent {
+										@include mixins.font_size_def;
+										margin-right: 7px;
+										color: #ff393b;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.swiper_control_box {
+				.progress_bar{
+					width: 70px;
+				}
+			}
+
+			.swiper_progress_control_area{
+				position: static;
+				display: block;
+				margin-top: 30px;
+
+				.swiper_control_box{
+					margin: 0;
+				}
+			}
+		}
+
+		.bookcast_live_blur{
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+
+			.blur_img_box{
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+
+				img {
+					position: absolute;
+					width: 160%;
+					left: 50%;
+					top: 0;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+
+	/* 북캐스트 컨텐츠 공통 area */
+	.bookcast_main_content_area{
+		margin-top: 50px;
+
+		.title_wrap{
+			+ .tag_wrap{
+				margin-bottom: 24px;
+			}
+		}
+
+		&.login_induce{
+			background-color: #DDEFD8;
+
+			.login_induce_link{
+				display: block;
+				height: 100%;
+				padding: 39px 36px 39px 50px;
+				text-align: center;
+
+				.login_induce_desc{
+					position: relative;
+					display: inline-block;
+					padding-right: 88px;
+					@include mixins.font_size_md;
+					font-weight: variables.$fontWeightBold;
+					color: #8DA088;
+					word-break: keep-all;
+					text-align: left;
+
+					&:before {
+						content: '';
+						position: absolute;
+						bottom: -69px;
+						right: 0;
+						display: block;
+						width: 90px;
+						height: 128px;
+						@include mixins.ratio_images('../images/img_bookcast_login_before_mok', 'png', 90px, 128px);
+					}
+				}
+
+			}
+		}
+
+		&.subscribe{
+			position: relative;
+			padding-top: 50px;
+
+			&:before{
+				content: '';
+				position: absolute;
+				top: -0;
+				left: 0;
+				display: block;
+				width: 100%;
+				height: 460px;
+				//padding-top: 122.6666%;
+				background-color: variables.$colorGray05;
+
+				@include mixins.respond-to(mobileXs) {
+					height: 393px;
+				}
+				@include mixins.respond-to(mobileMin){
+					height: 344px;
+				}
+			}
+
+			.my_subscribe_detail{
+				> .prod_area{
+					margin: 0 20px;
+
+					.prod_thumb_box{
+						width: 100%;
+
+						.btn_wish{
+							right: 11px;
+							bottom: 11px;
+						}
+					}
+				}
+
+				.prod_swiper_wrap{
+					position: relative;
+					margin-top: 24px;
+					padding: 24px 20px 0;
+
+
+					.prod_list{
+						.prod_item{
+							margin: 0 16px 0 0;
+
+							&:last-child{
+								margin-right: 0;
+							}
+						}
+					}
+
+					.prod_area{
+						.prod_thumb_box {
+							width: 100%;
+						}
+					}
+
+					&:before{
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 20px;
+						right: 20px;
+						display: block;
+						height: 1px;
+						border-top: 1px dashed variables.$colorGray03;
+					}
+				}
+			}
+		}
+
+		&.original{
+			padding: 50px 0;
+			@include mixins.ratio_images('../images/bg_kyobo_original_mok', 'png', 'cover');
+
+			.bookcast_original_swiper_wrap{
+				.prod_list{
+					.prod_item{
+						width: calc(100% + 18px);
+						@include mixins.justify_width(start, center);
+						margin: 0 -9px;
+
+						.prod_area{
+							//flex-shrink: 0;
+							//width: 100px;
+							max-width: 159px;
+							margin: 0 9px;
+
+							.prod_info_box{
+								.prod_name{
+									font-weight: variables.$fontWeightRegular;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.k_class{
+			.kclass_swiper_wrap{
+				padding: 0 20px;
+
+				.prod_list{
+					.prod_item{
+						width: 240px;
+						margin: 0 17px 0 0;
+
+						.prod_area{
+							max-width: none;
+						}
+
+						&:last-child{
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* 북캐스트 이벤트 */
+	.bookcast_event_banner_wrap {
+		.swiper-container {
+			border-radius: 16px;
+
+			.bookcast_event_link {
+				display: block;
+				height: 100%;
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		.swiper-pagination {
+			&.swiper-pagination-fraction {
+				transform: none;
+				left: auto;
+				right: 12px;
+				bottom: 12px;
+			}
+		}
+	}
+
+	/* 라이브 편성표 */
+	.live_timeline_wrap{
+		.swiper-container{
+			padding: 0 20px;
+		}
+
+		.prod_list{
+			.prod_item{
+				width: calc(100% - 20px);
+				max-width: 315px;
+				margin: 0 16px 0 0;
+
+				.prod_area{
+					width: 100%;
+					max-width: none;
+				}
+
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+
+	}
+	.live_timeline_box {
+		overflow: hidden;
+		position: relative;
+		border-radius: 16px;
+
+		.blur_img_box {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: 18px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				filter: blur(30px);
+			}
+
+			&:after {
+				display: block;
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				background: {
+					color: #fff;
+				}
+				opacity: .9;
+			}
+		}
+
+		.prod_area.type_bookcast {
+			position: relative;
+			box-sizing: border-box;
+			padding: 54px 24px 34px;
+			border-radius: 0;
+			box-shadow: none;
+
+			.prod_flag_group {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+
+			}
+
+			.prod_onair {
+				position: absolute;
+				left: 0;
+				top: 0;
+				border-radius: 16px 0 20px 0;
+				margin-top: 0;
+				padding: 4px 11px 5px;
+			}
+
+			.btn_alarm {
+				position: absolute;
+				right: 12px;
+				top: 12px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			&.horizontal {
+				.prod_thumb_box {
+					width: 70px;
+					border-radius: 8px;
+				}
+			}
+		}
+	}
+
+	// 시청중인 영상
+	.watching_history_wrap{
+		.prod_area{
+			&.box_shadow{
+				margin: 0 20px;
+			}
+		}
+
+		.history_more_area{
+			margin-top: 34px;
+			padding: 0 20px;
+
+			.history_item{
+				width: calc(100% - 51px);
+				max-width: 284px;
+				margin: 0 16px 0 0;
+
+				.prod_area{
+					.prod_thumb_box{
+						width: 100%;
+						max-width: none;
+					}
+				}
+
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	// 가입 유도 배너
+	.join_induce_box {
+		@include mixins.justify_width(center);
+		height: 100px;
+		@include mixins.ratio_images('../images/bg_join_induce_mok', 'png', cover);
+		border-radius: 16px;
+
+		.join_induce_link {
+			display: block;
+			height: 100%;
+			width: 100%;
+			padding: 0 24px;
+			@include mixins.justify_width(center);
+		}
+
+		.join_induce_desc {
+			@include mixins.font_size_sm;
+			color: #fff;
+		}
+	}
+
+	.header_wrapper {
+		.header_left, .header_right{
+			min-width: 30px;
+		}
+
+		// 북캐스트 홈 헤더
+		&.bc_home{
+			~ .container_wrapper {
+				padding-top: 0;
+
+				.contents_wrap{
+					padding-top: 0;
+				}
+			}
+		}
+	}
+
+	.contents_wrap {
+		padding-top: 20px;
+
+		.title_size_xxl {
+			padding-bottom: 24px;
+		}
+
+		.title_wrap {
+			// 페이지 타이틀 바로 아래 버튼
+			&.has_bottom_btn {
+				display: block;
+				.title_heading {
+					display: block;
+					width: 100%;
+				}
+				.btn_wish {
+					width: auto;
+					margin-top: 9px;
+					color: variables.$textColorBlack;
+					.ico_wish {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+
+		.comment_wrap {
+			margin-top: 24px;
+		}
+	}
+
+	/* tab */
+	.tab_wrap:not(.type_cont_divide) {
+		margin-top: -12px;
+		// tab - tab_list_wrap
+		.tab_list_wrap {
+			margin-bottom: 23px;
+
+			.tabs {
+				.tab_item {
+					.tab_link{
+
+						&:after {
+
+						}
+
+						.tab_text{
+							.num {
+							}
+						}
+					}
+
+					&.ui-state-disabled {
+						.tab_link {
+							.tab_text {
+							}
+						}
+					}
+
+					&.ui-state-active, &.active {
+						.tab_link {
+							&:after {
+								// Todo 탭 공통 가이드 스타일 다름 체크필요 by han 1/11
+								background-color: #595959;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.contents_inner {
+		.list_result_wrap{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.list_select_wrap{
+		margin-top: 1px;
+
+		+ .list_result_wrap{
+			margin-top: 27px;
+		}
+	}
+
+	// 상단 리스트 결과 정보 박스
+
+	&:not(.bc_search) {
+		.list_result_wrap {
+			height: auto;
+			//padding: 0 20px;
+			border-bottom: 0;
+			margin-bottom: 15px;
+		}
+
+		.contents_inner {
+			.list_result_wrap{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+	.list_result_wrap {
+
+		.right_area{
+			//align-items: flex-end;
+
+			.btn_filter {
+				//margin-right: 0;
+				//margin-left: 12px;
+			}
+
+			.form_chk, .form_sel {
+				//margin-bottom: 5px;
+				//min-height: 0;
+			}
+
+			.form_chk{
+				min-height: 0;
+
+				&:last-child{
+					margin-right: 12px;
+				}
+			}
+		}
+
+		.result_count {
+			display: inline-block;
+			@include mixins.font_size_md;
+
+			/*
+            &.size_xs {
+                @include mixins.font_size_xs();
+            }
+            */
+		}
+
+		/*.right_area {
+			margin-left: auto;
+			flex-shrink: 0;
+			@include mixins.justify_width(center, start, row);
+
+			> [class^='btn_']{
+				+ [class^='btn_'], + .switch_list_btn_wrap{
+					margin-left: 4px;
+				}
+
+				+ .form_sel{
+					margin-left: 10px;
+				}
+			}
+
+			.form_sel{
+				margin-bottom: 3px;
+
+				+ [class^='btn_'], + .switch_list_btn_wrap{
+					margin-left: 4px;
+				}
+			}
+
+			.form_chk{
+				+ .form_chk {
+					margin-left: 10px;
+				}
+				+ .form_sel {
+					margin-left: 20px;
+				}
+				//체크박스 스타일 수정
+				input {
+					& + label {
+						padding-left: 14px;
+						white-space: nowrap;
+						vertical-align: -3px;
+						@include mixins.font_size_xs;
+						color: variables.$textColorLightGray;
+
+						&:before {
+							display: none;
+						}
+						&:after {
+							top: 5px;
+							width: 10px;
+							height: 7px;
+							border-radius: 0;
+							border: none;
+							background: {
+								position: center;
+								repeat: no-repeat;
+							}
+						}
+					}
+
+					&:checked {
+						& + label {
+							color: variables.$kyoboPurple;
+							&:after {
+								background: {
+									color: transparent;
+									position: center;
+									repeat: no-repeat;
+								}
+								@include mixins.ratio_images('../../common/images/ico_checkbox_purple_mok', 'png', 10px, 7px);
+								border: none;
+							}
+						}
+					}
+				}
+			}
+
+			.form_chk,
+			.form_sel {
+				& + .btn_filter {
+					margin-left: 20px;
+				}
+			}
+		}*/
+
+	}
+
+	.selected_filter_wrap {
+		padding-bottom: 24px;
+	}
+
+	.product_detail_area{
+		margin-top: 40px;
+	}
+
+	.keyword_wrap{
+		margin-top: 40px;
+
+		.title_wrap {
+			&.title_size_xl{
+				padding-bottom: 17px;
+			}
+
+		}
+	}
+
+	//관련상품
+	.prod_related_wrap {
+		margin-top: 40px;
+		.prod_swiper_wrap {
+			margin: 0 -20px;
+		}
+	}
+
+	//배너
+	.bookcast_detail_banner_wrap {
+		margin: 40px 0 0;
+
+		.swiper-container {
+			.swiper-wrapper {
+				.swiper-slide {
+					a {
+						display: block;
+						overflow: hidden;
+						border-radius: 16px;
+
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.swiper-pagination {
+				&.swiper-pagination-fraction {
+					left: auto;
+					bottom: 10px;
+					right: 10px;
+					background-color: rgba(0, 0, 0, .4);
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+
+	//댓글
+	.reply_wrap {
+		margin-top: 40px;
+		padding-top: 0;
+		border-top: 0;
+	}
+}
+
+// 북캐스트 관련컨텐츠
+.bookcast_detail_related_wrap {
+	margin: 40px 0 0;
+
+	@at-root .no_data + & {
+		padding-top: 50px;
+		border-top: 1px solid variables.$colorGray04;
+	}
+
+	.prod_swiper_wrap {
+		margin: 0 -20px;
+	}
+
+	.prod_row_swiper_wrap {
+		margin: 0 -20px;
+	}
+
+	.related_prod_list_wrap {
+		box-sizing: border-box;
+		padding: 0 20px;
+
+		> ul {
+			@include mixins.justify_width();
+			> li {
+				position: relative;
+				box-sizing: border-box;
+				padding-right: 16px;
+				scroll-snap-align: start;
+
+				.prod_area {
+					width: 110px;
+					.prod_thumb_box {
+						width: auto;
+					}
+				}
+
+				&:last-child {
+					padding-right: 20px;
+				}
+
+				&:after {
+					content: '전시 템플릿 정의 후 작업';
+					position: absolute;
+					display: inline-block;
+					color: #fff;
+					bottom: 0;
+					right: 16px;
+					left: 0;
+					top: 0;
+					@include mixins.font_size_sm;
+					background-color: rgba(255, 0, 0, .5);
+					pointer-events: none;
+					z-index: 2;
+				}
+			}
+		}
+	}
+
+	.related_content_list_wrap {
+		box-sizing: border-box;
+		padding: 0 20px;
+		> ul {
+			@include mixins.justify_width();
+			> li {
+				position: relative;
+				box-sizing: border-box;
+				padding-right: 30px;
+				scroll-snap-align: start;
+				.prod_area {
+					width: 292px;
+				}
+
+				&:last-child {
+					padding-right: 20px;
+				}
+
+				&:after {
+					content: '전시 템플릿 정의 후 작업';
+					position: absolute;
+					display: inline-block;
+					color: #fff;
+					bottom: 0;
+					right: 30px;
+					left: 0;
+					top: 0;
+					@include mixins.font_size_sm;
+					background-color: rgba(255, 0, 0, .5);
+					pointer-events: none;
+					z-index: 2;
+				}
+			}
+		}
+	}
+}
+
+.prod_row_list {
+	&.bc_horizontal {
+		.prod_item {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		&.has_line {
+			.prod_item~.prod_item{
+				margin-top: 20px;
+				padding-top: 20px;
+			}
+		}
+	}
+}
+
+
+.bookcast_header_wrap {
+	margin-top: -20px;
+	margin-bottom: 40px;
+
+	.visual {
+		position: relative;
+		min-height: 274px;
+		max-height: calc(35vh); //임시
+		margin-right: 20px;
+		border-top-right-radius: 16px;
+		border-bottom-right-radius: 16px;
+		overflow: hidden;
+		text-align: right;
+		z-index: 1;
+
+		.bg_visual {
+			display: inline-block;
+			min-width: 100%;
+			min-height: 274px;
+		}
+
+		.text_box {
+			position: absolute;
+			color: #fff;
+			text-align: left;
+			right: 24px;
+			left: 24px;
+			top: 50px;
+
+			.visual_title {
+				@include mixins.font_size_xl;
+				@include mixins.multi_ellipsis(variables.$fontSizeXlLineHeight, 2, false);
+				font-weight: variables.$fontWeightBold;
+			}
+
+			.visual_desc {
+				margin-top: 12px;
+				@include mixins.font_size_xs;
+
+				br {
+					display: none;
+
+					@include mixins.respond-to(mobileLandscape){
+						display: block;
+					}
+				}
+			}
+
+			.btn_subscribe, .series_end {
+				margin-top: 20px;
+			}
+
+			// 연재완료된 시리즈 입니다.
+			.series_end {
+				display: inline-block;
+				color: rgba(255, 255, 255, .7);
+				border: 1px solid rgba(255, 255, 255, .5);
+				border-radius: 18px;
+				font-size: variables.$fontSizeXs;
+				line-height: 36px;
+				padding: 0 14px;
+
+				.ico_subscribe {
+					display: inline-block;
+					width: 12px;
+					height: 12px;
+					margin: {
+						right: 4px;
+						bottom: 2px;
+					}
+					background: {
+						position: center;
+						repeat: no-repeat;
+					}
+					font-size: 0;
+					vertical-align: middle;
+					@include mixins.ratio_images('../images/ico_subscribe_check_xs_w_mok', 'png', 12px, 12px);
+					opacity: .7;
+				}
+			}
+
+		}
+	}
+
+
+	//.caster_profile_wrap
+	.publisher_author_wrap {
+		position: relative;
+		padding: 80px 20px 0;
+		background: {
+			repeat: no-repeat;
+			size: auto 230px;
+			position: center top;
+		}
+
+		.publisher_profile_background {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			height: 230px;
+			background: {
+				repeat: no-repeat;
+				size: cover;
+				position: center;
+			}
+		}
+
+		.publisher_profile_inner {
+			position: relative;
+			z-index: 2;
+			padding: 24px;
+			color: #fff;
+			border-radius: 16px;
+			background-color: rgba(0, 0, 0, .6);
+			backdrop-filter: blur(40px);
+		}
+
+		.publisher_img {
+			overflow: hidden;
+			width: 70px;
+			height: 70px;
+			border-radius: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.publisher_tit_area {
+			margin-top: 12px;
+			.name {
+				display: inline;
+				margin-right: 8px;
+				@include mixins.font_size_xl;
+				font-weight: variables.$fontWeightBold;
+				vertical-align: middle;
+			}
+
+			// 인기 파트너 뱃지 가이드화 작업 필요
+			//.btn_min {
+			//	&.cast_popular, &.cast_partner {
+			//		height: 20px;
+			//	}
+			//}
+		}
+
+		.publisher_info_area {
+			@include mixins.clearfix;
+			margin-top: 4px;
+
+			dl.cnt_group {
+				float: left;
+
+				dt {
+					display: inline-block;
+					@include mixins.font_size_xs;
+				}
+
+				dd {
+					display: inline-block;
+					@include mixins.font_size_xs;
+					font-weight: variables.$fontWeightMedium;
+				}
+			}
+
+			.gap {
+				float: left;
+				display: block;
+				width: 1px;
+				height: 10px;
+				overflow: hidden;
+				margin: 5px 10px 0;
+				background-color: rgba(255, 255, 255, 0.5);
+				font-size: 0;
+				text-indent: -9999px;
+			}
+		}
+
+		.publisher_intro_area{
+			margin-top: 15px;
+			@include mixins.font_size_sm;
+
+			.auto_overflow_wrap{
+				.auto_overflow_contents {
+					max-height: variables.$fontSizeSmLineHeight * 5;
+
+					.auto_overflow_inner {
+						@include mixins.multi_ellipsis(variables.$fontSizeSmLineHeight, 5, false);
+					}
+				}
+
+				&.active {
+					.auto_overflow_contents {
+						.auto_overflow_inner {
+							@include mixins.clear_multi_ellipsis;
+						}
+					}
+				}
+			}
+
+			.btn_more_body {
+				.text {
+					color: #fff;
+				}
+			}
+		}
+
+		.btn_subscribe {
+			position: absolute;
+			right: 24px;
+			top: 24px;
+			.ico_subscribe {
+				@include mixins.ratio_images('../images/ico_subscribe_white_xs_mok', 'png', 12px, 12px);
+			}
+
+		}
+	}
+}
+
+
+// 븍캐스트 상단 추천글 슬라이드 영역
+.bookcast_recommend_banner_wrap {
+	margin-bottom: 40px;
+	padding: 0 20px;
+	.swiper-container {
+		border-radius: 10px;
+
+		.swiper-wrapper {
+			.swiper-slide {
+				a {
+					display: block;
+					box-sizing: border-box;
+					max-height: 78px;
+					height: 100%;
+					padding: 18px;
+					background-color: variables.$colorGray06;
+
+					&.img{//이미지 케이스 이미지 클래스 추가시 가능
+						padding:0;
+						img{
+							max-width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+// 북캐스트 정보 박스
+.publisher_author_box {
+	@include mixins.justify_width(center);
+	position: relative;
+	margin: 30px 0 0;
+	padding: 16px 90px 16px 16px;
+	border-radius: 16px;
+	background-color: variables.$colorGray06;
+
+	.publisher_img {
+		flex-shrink: 0;
+		overflow: hidden;
+		width: 54px;
+		height: 54px;
+		margin-right: 8px;
+		border-radius: 100%;
+		vertical-align: middle;
+
+		img {
+			width: 100%;
+		}
+	}
+	.publisher_info {
+
+		.name {
+			display: block;
+			margin-bottom: 6px;
+			@include mixins.font_size_md;
+		}
+
+		.publisher_data {
+			margin-bottom: 11px;
+			.data_item {
+				display: inline-block;
+				color: variables.$textColorLightGray;
+				@include mixins.font_size_xxs;
+
+				+ .data_item {
+					position: relative;
+					margin-left: 3px;
+					padding-left: 7px;
+
+					&:before {
+						content: '';
+						position: absolute;
+						display: inline-block;
+						width: 2px;
+						height: 2px;
+						border-radius: 1px;
+						background: #595959;
+						left: 0;
+						top: calc(50% - 1px);
+					}
+				}
+			}
+		}
+	}
+
+	.btn_subscribe {
+		position: absolute;
+		top: 50%;
+		right: 16px;
+		margin: -18px 0 0;
+	}
+}
+
+.cast_info_area {
+	margin-top: 4px;
+	@include mixins.font_size_xs;
+	font-weight: variables.$fontWeightRegular;
+	.name {
+		display: inline-block;
+		color: variables.$textColorGray;
+		vertical-align: middle;
+	}
+	.date {
+		display: inline-block;
+		color: variables.$textColorLightGray;
+		vertical-align: middle;
+	}
+	.gap {
+		display: inline-block;
+		width: 1px;
+		height: 10px;
+		overflow: hidden;
+		margin: 0 5px;
+		background-color: variables.$colorGray03;
+		font-size: 0;
+		text-indent: -9999px;
+		vertical-align: middle;
+	}
+}
+
+
+/*
+TODO 게시판 리스트 당첨자 발표 and
+- 북캐스트 이벤트 당첨자 발표 리스트
+- 북캐스트 시리즈 탭 목록
+
+ */
+.board_list_box {
+	padding: 0 20px;
+	> ul {
+		border-top: 1px solid #000;
+		> li {
+			padding: 20px 0;
+			border-bottom: 1px solid variables.$colorGray04;
+		}
+	}
+
+	.board_list_item {
+		.board_type {
+			color: variables.$textColorLightGray;
+			@include mixins.font_size_xs;
+			margin-bottom: 5px;
+		}
+		.board_title {
+			display: block;
+			@include mixins.font_size_sm;
+			font-weight: variables.$fontWeightMedium;
+		}
+
+		.board_info {
+			margin-top: 12px;
+
+			.date {
+				display: inline-block;
+				@include mixins.font_size_xs;
+				color: variables.$textColorLightGray;
+				vertical-align: middle;
+			}
+			.gap {
+				display: inline-block;
+				margin: 0 1px;
+				font-size: 9px;
+				vertical-align: middle;
+			}
+			.name {
+				display: inline-block;
+				@include mixins.font_size_xs;
+				color: variables.$textColorGray;
+				vertical-align: middle;
+			}
+
+		}
+
+		.board_subscribe_info {
+			@include mixins.clearfix;
+
+			margin-top: 10px;
+
+			.cnt {
+				display: inline-block;
+				margin-right: 10px;
+				@include mixins.font_size_xs;
+				color: variables.$textColorGray;
+				vertical-align: middle;
+			}
+
+			.btn_subscribe {
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.no_data {
+		padding: 110px 15px 60px
+	}
+}
+
+// K-CLASS
+.fold_box_wrap {
+	&.k_class {
+		padding: 0 20px;
+		.fold_box {
+			border: 1px solid variables.$colorGray03;
+			background-color: #fff;
+			.fold_box_header {
+				padding: 20px 20px 19px 20px;
+				@include mixins.font_size_sm;
+				font-weight: variables.$fontWeightMedium;
+			}
+
+			.fold_box_contents {
+				padding: 0;
+				.scroll_horizontal_wrap {
+					margin: 0;
+					padding: 11px 20px 20px;
+
+					> ul {
+						@include mixins.justify_width();
+						> li {
+							position: relative;
+							box-sizing: border-box;
+							padding-right: 20px;
+							scroll-snap-align: start;
+							.prod_area {
+								&.type_bookcast {
+									&.horizontal {
+										width: 276px;
+
+										.prod_thumb_box {
+											width: 124px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.expanded {
+				border: 1px solid #000;
+			}
+		}
+	}
+}
+
+
+
+/*
+TODO 이하 공통을 빼야히는지 검토 필요!! by han
+*/
+/*
+TODO 상세 컨텐츠
+edit 씨리즈는 이벤트 상세 같은용도임
+이벤트와 동일사용 가능한지 확인필요
+*/
+.edit_header_wrap {
+	position: relative;
+	@include mixins.font_size_sm();
+
+	.flag_cate {
+		display: inline-block;
+		font-weight: variables.$fontWeightBold;
+		color: variables.$textColorLightGray;
+	}
+
+	.edit_title_case {
+		margin: 6px 0 0;
+
+		.name {
+			@include mixins.font_size_xl();
+			font-weight: variables.$fontWeightBold;
+		}
+
+		&:first-child {
+			margin: 0;
+		}
+	}
+
+	.edit_header_util {
+		@include mixins.justify_width(center, between);
+		margin: 15px 0 0;
+
+		.edit_util_case {
+			.sns_share_wrap {
+				display: inline-block;
+			}
+			& > a, .sns_share_wrap {
+				margin: 0 6px 0 0;
+
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+	// 게시판 상세 > 상단 타이틀 하단 info 텍스트 영역
+	.edit_info_case {
+		span {
+			position: relative;
+			margin: 0 0 0 3px;
+			padding: 0 0 0 7px;
+			@include mixins.font_size_sm;
+			vertical-align: top;
+
+			&:after {
+				display: block;
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 1px;
+				height: 10px;
+				margin: -6px 0 0;
+				background-color: variables.$colorGray03;
+			}
+
+			&:first-child {
+				margin: 0;
+				padding: 0;
+
+				&:after {
+					display: none;
+				}
+			}
+		}
+
+		.gap {
+			display: none;
+		}
+
+		.date {
+			display: inline-block;
+			@include mixins.font_size_sm;
+			color: variables.$textColorLightGray;
+			vertical-align: top;
+		}
+
+		.flag_state {
+			@include mixins.font_size_sm;
+			background: none;
+			border-radius: 0;
+
+			&.ing {
+				color: variables.$textColorGreen;
+			}
+			&.end {
+				color: variables.$textColorLightGray;
+			}
+		}
+
+		.view {
+			@include mixins.justify_width(start, start, row, true);
+			align-items: center;
+			color: variables.$textColorLightGray;
+
+			&:before {
+				display: block;
+				flex-shrink: 0;
+				content: "";
+				width: 14px;
+				height: 10px;
+				margin: 0 2px 0 0;
+				background: {
+					repeat: no-repeat;
+					position: center;
+				}
+				@include mixins.ratio_images('../images/ico_item_view_mok', 'png', 14px, 10px);
+			}
+		}
+	}
+}
+
+// EDIT 상세
+.edit_container_wrap {
+	margin-top: 30px;
+
+	.edit_content_box {
+		padding: 17px 0;
+		border-top: 1px solid variables.$colorGray04;
+		border-bottom: 1px solid variables.$colorGray04;
+	}
+
+	.event_content_box {
+		text-align: center;
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.view_item {
+		display: block;
+		margin: 20px 0 0;
+		text-align: center;
+
+		img {
+			max-width: 100%;
+		}
+
+		&:first-child {
+			margin: 0;
+		}
+	}
+
+	+ .title_wrap{
+		margin-top: 40px;
+	}
+
+	.view_content_box {
+		text-align: center;
+		img {
+			max-width: 100%;
+		}
+
+		.video_area {
+			overflow: hidden;
+			width: 100%;
+			height: 50.13vw;
+			border-radius: 20px;
+		}
+
+		.video_script_wrap{
+			margin-top: 20px;
+			text-align: left;
+			@include mixins.font_size_xs();
+
+			.auto_overflow_wrap{
+				.auto_overflow_contents {
+					max-height: variables.$fontSizeSmLineHeight * 3;
+
+					.auto_overflow_inner {
+						@include mixins.multi_ellipsis(variables.$fontSizeSmLineHeight, 3, false);
+					}
+				}
+
+				&.active {
+					.auto_overflow_contents {
+						.auto_overflow_inner {
+							@include mixins.clear_multi_ellipsis;
+						}
+					}
+				}
+			}
+
+
+		}
+	}
+
+	
+
+
+}
+
+
+// 찜하기 버튼은 기존 14px 하트 이미지 사용 확인필요합니다.
+.btn_wish_circle {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+	border-radius: 100%;
+	border: 1px solid variables.$colorGray02;
+	vertical-align: top;
+	@include mixins.transition(background 0.2s ease-out);
+
+	.ico_wish{
+		width: 14px;
+		height: 14px;
+		@include mixins.ratio_images('../images/ico_heart_h14_mok', 'png', 14px, 14px);
+	}
+
+	&.active {
+		.ico_wish {
+			@include mixins.ratio_images('../images/ico_heart_h14_active_mok', 'png', 14px, 14px);
+		}
+	}
+}
+// TODO : 좋아요는 active이미지 없음
+.btn_like_circle {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+	border-radius: 100%;
+	border: 1px solid variables.$colorGray02;
+	@include mixins.ratio_images('../images/ico_like_black_mok', 'png', 14px, 14px);
+	vertical-align: top;
+
+	&.active {
+		@include mixins.ratio_images('../images/ico_like_black_active_mok', 'png', 14px, 14px);
+	}
+}
+
+
+
+/*
+// 필터 선택 팝업 내 알약모양 버튼타입 체크박스
+TODO 공통 가이드로 빼야하는지 검토필요
+*/
+.form_chk {
+	&.type_pill {
+		input {
+			+ label {
+				// btn_xs 기준으로 작업됨
+				@include mixins.justify_width(center, center, row, true);
+				height: 36px;
+				padding: 0 13px 1px;
+				border-radius: 36px;
+				background-color: variables.$colorGray06;
+				border: 1px solid variables.$colorGray06;
+				@include mixins.font_size_xs;
+				font-family: variables.$fontKor;
+				@include mixins.transition(background-color 0.2s ease-out, border-color 0.2s ease-out);
+				text-align: center;
+				color: variables.$textColorGray;
+
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+
+			&:checked {
+				+ label {
+					background-color: variables.$kyoboPurple;
+					border-color: variables.$kyoboPurple;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+.wrapper.bc_search {
+	.tab_wrap.type_cont_divide {
+		.list_result_wrap {
+			//padding: 0 20px;
+			.sps {
+				//width: calc(100% - 40px);
+				&.sps-blw {
+					width: 100%;
+					height: 60px;
+
+					.sps_inner {
+						//padding: 0 20px;
+					}
+				}
+			}
+		}
+		.tab_content {
+			.book_cast_search {
+				//margin-top: 20px;
+			}
+		}
+	}
+	.container_wrapper {
+		.contents_wrap {
+			padding-top: 0;
+		}
+	}
+
+}
+
+.book_caster_wrap {
+	.book_caster_list {
+		.book_caster_item {
+			.publisher_author_box {
+				margin-top: 0;
+
+			}
+
+			+ .book_caster_item {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+
+// TODO : book_cast_wrap - 삭제 / by han 1/11

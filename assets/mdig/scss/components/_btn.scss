@@ -1,0 +1,175 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+button,input,label{outline: none !important;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+.btn_more_view{
+  &.btn_publish_shop:before {
+	content: '';
+	display: inline-block;
+	position: relative;
+	top: 2px;
+	width: 13px;
+	height: 14px;
+	margin-right: 4px;
+	background: url("/assets/mdig/images/common/icon/ico_pb_shop.png") no-repeat left top;
+	background-size: 100%;
+  }
+}
+.btn_audio{
+  display:inline-block;width:40px;height:40px;background:url("/assets/mdig/images/common/btn/btn_audio_circle_80x160.png")no-repeat left top;background-size:100% auto;
+  &.active{
+	background-position-y:-40px;
+  }
+}
+
+/* 알림 on/off 버튼 */
+a.btn_alarm, button.btn_alarm {
+
+  .text {
+	position: relative;
+	padding-right: 1px;
+  }
+  &.white_type{
+	.ico_alarm {
+	}
+	&.active {
+	  color: #fff;
+	  border-color: #fff;
+	}
+  }
+}
+.btn_slide_more {
+  min-width: 25px;
+  text-align: center;
+  &:before {
+	content: '';
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin-bottom: 6px;
+	background: url("/assets/mdig/images/common/icon/ico_plus_round_50x50_fff.png") no-repeat left top;
+	background-size: 100%;
+  }
+}
+
+//공유 버튼
+.btn_share {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid variables.$colorGray02;
+
+  .ico_share {
+	width: 14px;
+	height: 14px;
+	margin-top: 3px;
+	background: {
+	  repeat: no-repeat;
+	  position: center;
+	}
+	@include mixins.ratio_images('../images/ico_share_sm_mok', 'png', 14px, 14px);
+  }
+  &.size-s{
+	width:28px;
+	height:28px;
+	border: 1px solid rgba(255,255,255,0.3);
+	.ico_share{
+	  margin-top:0;
+	  background: url("/assets/mdig/images/common/icon/ico_share_28x28_fff.png") no-repeat center center;background-size:100%;
+	}
+  }
+}
+
+//리스트 토글 버튼
+.list_sort_btn {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  &:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	left: 9px;
+	top: 9px;
+	width: 14px;
+	height: 14px;
+	background: url("/assets/mdig/images/common/icon/icon_product_list_toggle.png")no-repeat left top;
+	background-size: 100% auto;
+  }
+  &.active{
+	&:after {
+	  background-position-y: -14px;
+	}
+  }
+}
+
+//더보기 버튼 볼드
+.btn_more_view.type-bold {
+  .text {
+	font-size: 14px;
+	color: #000;
+	line-height: 24px;
+	letter-spacing: -0.14px;
+	font-weight: bold;
+  }
+  .ico_arw {
+	width: 10px;
+	height: 10px;
+	background: url("/assets/mdig/images/common/icon/ico_plus_10x10_000.png") no-repeat left top;
+	background-size: 100%;
+	margin:5px 0 0 5px;
+  }
+}
+
+
+
+a.btn_xs, button.btn_xs {
+  .ico_calendar{
+	width: 13px;
+	margin-top:1px;
+	background: url("/assets/mdig/images/common/icon/ico_calender_13x13_black.png") no-repeat center center;background-size:100%;
+  }
+  .ico_notice{
+	width: 13px;
+	margin-top:1px;
+	background: url("/assets/mdig/images/common/icon/ico_notice_13x13_black.png") no-repeat center center;background-size:100%;
+  }
+  .ico_event{
+	width: 13px;
+	margin-top:1px;
+	background: url("/assets/mdig/images/common/icon/ico_event_13x13_black.png") no-repeat center center;background-size:100%;
+  }
+}
+.btn_like_circle {
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  .ico_like {
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20px 20px;
+	background-image: url("/assets/mdig/images/common/icon/ico_like_20x20_000.png");
+  }
+}
+.btn_like_circle.active {
+  .ico_like {
+	background-image: url("/assets/common/images/ico_like_active_mok@2x.png");
+  }
+}
+
+
+a.btn_cyan, button.btn_cyan {
+  color: #fff;
+  background-color: #11a8ac;
+  @include mixins.transition(background-color 0.2s ease-out, border-color 0.2s ease-out);
+}
+button[class^=btn_] .text, a[class^=btn_] .text{white-space: nowrap;}

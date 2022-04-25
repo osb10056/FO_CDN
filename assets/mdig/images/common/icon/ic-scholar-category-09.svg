@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <clipPath id="avnrunm88a">
+            <path data-name="Rectangle 3762" style="fill:none" d="M0 0h28v12H0z"/>
+        </clipPath>
+    </defs>
+    <g style="opacity:.8">
+        <path data-name="icon area" style="fill:none" d="M0 0h28v28H0z"/>
+        <g data-name="Group 2031" transform="translate(0 8)" style="clip-path:url(#avnrunm88a)">
+            <path data-name="Path 14078" d="M22.909 0H5.091C2.279 0 0 2.687 0 6s2.279 6 5.091 6h17.818C25.721 12 28 9.314 28 6s-2.279-6-5.091-6M5.091 6a1.4 1.4 0 0 1-1.273-1.5A1.4 1.4 0 0 1 5.091 3a1.4 1.4 0 0 1 1.273 1.5A1.4 1.4 0 0 1 5.091 6m3.182 1.5a.7.7 0 0 1-.636-.75.7.7 0 0 1 .636-.75.7.7 0 0 1 .636.75.7.7 0 0 1-.636.75m14.636 3h-8.273v-9h8.273c2.109 0 3.818 2.015 3.818 4.5s-1.709 4.5-3.818 4.5" style="fill:#292929"/>
+        </g>
+    </g>
+</svg>

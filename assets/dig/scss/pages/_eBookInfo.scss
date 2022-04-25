@@ -1,0 +1,1166 @@
+@use 'sass:map';
+@use '../../common/scss/abstracts/variables';
+@use '../../common/scss/abstracts/functions';
+@use '../../common/scss/abstracts/mixins';
+@use '../../common/scss/abstracts/placeholders';
+.wrapper .container_wrapper .contents_wrap {
+    position: relative;
+    padding-top: 0;
+}
+.top_visual {
+    height: 871px;
+    background: url(../images/ebook-info/bg_topVisual.png) no-repeat center top;    
+    border-bottom: 1px solid #eaeaea;
+
+    .ebook_guide_top_wrap{
+        padding-top: 288.9px;
+        padding-bottom: 178.5px;
+        
+        .text_effect-wrap {    
+            transform-style: preserve-3d;
+            transform: perspective(700px) rotateX(-8deg);
+        
+            .text_effect-inner {
+                width: 504.9px;
+                margin: 0 auto 0 49.5%;
+                text-align: center;
+                word-break: keep-all;
+                word-wrap: normal;
+                transform: rotateX(9deg) rotateY(-8deg) rotateZ(1deg) translate(0.05px);
+                p {
+                    display: inline-block;
+                    position: relative;
+                    z-index: 1;
+                    &:nth-child(1) {
+                        font-weight: 300;
+                        font-size: 40px;
+                        letter-spacing: -0.4px;
+                        transform: rotateX(8deg) rotateY(-13deg) translateZ(-0.07px);
+                    }
+                    &:nth-child(2) {
+                        font-weight: 700;
+                        font-size: 100px;
+                        letter-spacing: -1px;
+                        transform: rotateX(5deg) rotateY(-16deg);
+                    }
+                    &:nth-child(3) {
+                        font-weight: 700;
+                        font-size: 25px;
+                        line-height: 1.44;
+                        margin-top: 20px;
+                        transform: rotateY(-3deg);
+                    }
+                    &:nth-child(4) {
+                        width: 405px;
+                        font-weight: 400;
+                        font-size: 25px;
+                        line-height: 1.6;
+                        margin-top: 15px;
+                    }
+                }
+            }        
+        }
+    }
+}
+
+//버튼_하이라이트
+.btn_group{
+    font-size: 0;
+    a{  
+        display: inline-block;            
+        span{
+            position: relative;
+            z-index: 0;
+            &:before {
+                display: inherit;
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                width: 100%;
+                height: 15px;
+                z-index: -1;
+                transform: translateX(-50%);
+                content: "";
+            }
+        }
+        &.is_active{
+            span:before{
+                background-color: #9efc78;
+                animation-fill-mode: forwards;
+                animation: sort .10s linear;
+            }
+        }
+    }
+}
+
+.highlight:before{
+    content: "";
+    display: inherit;
+    position: absolute;
+    bottom: 0; //다른건 -2px
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #9efc78;
+    z-index: -1;
+    animation-name: highlighter;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards;
+}
+
+.ebook {
+    &_useInfo {
+        display: none;
+    }
+}
+.guide_nav_wrap{
+    position: relative;
+}
+.guide_section{
+    &_nav{   
+        background-color: #fff;
+        border-bottom: 1px solid #eaeaea;
+        padding: 22px 0;
+        z-index: 100;
+
+        &.fixed {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+        
+        .ebook_guide_menu{    
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo_box{
+                font-size: 0;
+            }
+            .logo_link{
+                display: inline-block;
+                width: 154px;
+                height: 45px;
+                background-image: url(../images/common/img_logo_eBook.png);
+                background-size: 154px 45px;
+                background-repeat: no-repeat;
+            }   
+            .btn_group{
+                a{          
+                    span{
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 29px;
+                        letter-spacing: -0.2px;
+                        padding: 0 5px;
+                    }
+                    &:last-child{
+                        margin-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+    &_all,
+    &_wrap,
+    &_free{
+        border-bottom: 1px solid #eaeaea;
+    }   
+    &_all,
+    &_free{      
+        box-sizing: border-box;
+        height: 988px;       
+        background-repeat: no-repeat;
+        background-position: top;
+        &_inner{
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1{
+            font-size: 50px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+    }
+    &_all{
+        position: relative;
+        background-size: cover;
+        &.page_life{
+            background-image: url(../images/ebook-info/bg_section_life.png);
+            .guide_section_all_inner{        
+                padding-top: 180px;
+                h1{        
+                    margin-bottom: 108px;
+                }            
+                &.mt{
+                    margin-top: 90px;
+                }
+            }
+        }
+        &.page_info{
+            background-image: url(../images/ebook-info/bg_section_info.png);
+            .guide_section_all_inner{        
+                padding-top: 159px;
+                h1{        
+                    margin-bottom: 50px;
+                }
+                p{
+                    font-size: 25px;
+                    line-height: 40px;
+                    letter-spacing: -0.25px;
+                    color: #666;
+                    margin-bottom: 128px;
+                }            
+                &.mt{
+                    margin-top: 90px;
+                }
+            }
+        }    
+        .all_item{
+            width: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            .all_list{
+                width: 220px;
+                position: relative;
+                &_img{
+                    width: 176px;
+                    height: 176px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    box-shadow: 0 3px 10px 0 rgba(125, 120, 99, 0.1);
+                    margin: 0 22px 40px 22px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 0 0 auto;
+                    
+                }
+                &_text{
+                    strong{
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 26px;
+                        letter-spacing: -0.2px;
+                        display: block;
+                        margin-bottom: 20px;
+                    }
+                    p{
+                        font-size: 16px;
+                        line-height: 28px;
+                        letter-spacing: -0.16px;
+                        color: #666;
+                    }
+                }
+                &.add_arrow{
+                    ::before{
+                        content: url(../images/common/icon_arrow_line_white.png);
+                        width: 25px;
+                        height: 43px;
+                        position: absolute;
+                        top: 74px;
+                        left: -65px - 25px;
+                        margin-left: 30px;
+                    }
+                    &:first-child{
+                        ::before{
+                            display:none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &_swiper_wrap{    
+        background: url(../images/ebook-info/bg_section_align.png) no-repeat center top;
+        overflow: hidden;  
+    }
+    &_wrap{        
+        width: 1200px;
+        height: 988px;  
+        margin: 0 auto;
+        &.guide_swiper{
+            .swiper-pagination{
+                top: calc(988px / 2 - 56px);
+                right: 0;
+                width: 12px;
+            }
+            .swiper-pagination-bullet{
+                width: 12px;
+                height: 12px;
+                margin: 13px 0;
+            }
+            .swiper-pagination-bullet-active{
+                background-color: #759fef;
+            }
+        }
+        .guide_section{
+            margin: 0 auto;
+            position: relative;
+            
+        }
+        .guide_section_inner{  
+            height: 100%;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            img{
+                width: 282px;
+                height: 539px;
+            }
+            >div{
+                margin-left: 70px;
+                h2{
+                    font-size: 50px;
+                    line-height: 65px;
+                    letter-spacing: -0.5px;
+                    margin-bottom: 30px;
+                    font-weight: 400;
+                    strong{
+                        display: block;
+                    }
+                }
+                p{
+                    font-size: 25px;
+                    line-height: 40px;
+                    letter-spacing: -0.25px;
+                    color: #666;
+                }
+            }
+        }
+    }
+    &_free{
+        background-image: url(../images/ebook-info/bg_bottom.png);
+        &_inner{
+            padding-top: 180px;
+        }
+        h1{
+            margin-bottom: 80px;
+        }
+        .btn_group{
+            margin-bottom: 61px;
+            a{          
+                margin-left: 20px;
+                span{
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 26px;
+                    letter-spacing: -0.2px;
+                    padding: 0 10px;
+                } 
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
+        .free_inner_list {
+            position: relative;
+            margin: 0 auto;
+            width: 1200px + 15px;
+            margin-left: -10px;
+            .list {
+                width: 100%;
+                .swiper-slide {
+                    width: calc(100% / 6);
+                    height: 260px;
+                    font-size: 0;
+                    a {
+                        position: relative;
+                        display: inline-block;
+                        border-radius: 7px 7px 7px 30px;
+                        overflow: hidden;         
+                        border: 1px solid #d0d0d0;  
+                        box-sizing: border-box;
+                        width: 185px;
+                        height: 260px;
+        
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+            .swiper-button-prev {
+                top: calc(50% - 36px);
+                left: -40px;
+                margin-top: 0;
+                width: 20.6px;
+                height: 36px;
+                background-image: url(../images/common/icon_arrow_line.png);
+                background-size: 20.6px 36px;
+                background-color: transparent;
+                border-radius: 0;        
+            }
+        
+            .swiper-button-next {
+                top: calc(50% - 36px);
+                right: -40px;
+                margin-top: 0;   
+                width: 20.6px;
+                height: 36px;
+                background-image: url(../images/common/icon_arrow_line.png);
+                background-size: 20.6px 36px;
+                background-color: transparent;
+                border-radius: 0;                     
+            }
+        }
+    }
+}
+
+/* tab - fill_btn 타입 */
+.tab_wrap.type_fill_btn {
+	> .tab_list_wrap {
+		height: 60px;
+		border-bottom: none;
+		margin-bottom: 100px;
+
+		.tabs {        
+            border: 1px solid #ddd;
+            border-radius: 35px;
+			.tab_item {
+                border-radius: 35px;
+				background-color: #fff;
+				padding: 0;
+				@include mixins.transition(background .3s ease-out, border-color .3s ease-out);
+
+				.tab_link {
+					padding: 0;
+
+					.tab_text {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 60px;
+                        letter-spacing: -0.2px;
+                        color: #000;
+					}
+
+					&:after {
+						display: none;
+					}
+				}
+
+				&.ui-state-active {
+					background-color: #353f67;
+                    border-color: #353f67;
+
+					.tab_text {
+						color: #fff;
+					}
+				}
+
+				& ~ .tab_item {
+					margin-left: -1px;
+				}
+			}
+		}
+
+		.tab_list_inner {
+			height: 52px;
+		}
+	}
+}
+.tab_wrap.type_fill_btn{
+    width:1200px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.device_info_section{
+    width: 1200px;
+    margin: 0 auto;      
+    box-sizing: border-box;
+    .ui-tabs .ui-tabs-panel{
+        padding-top: 0 !important;
+    }
+    
+    .device_info_inner{
+        padding: 0;
+        margin-bottom: 260px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &_top{
+            margin-bottom: 180px;
+            h1{
+                font-size: 50px;
+                font-weight: 700;
+                letter-spacing: -0.5px;
+                margin-bottom: 50px;
+            }
+            p{
+                font-size: 25px;
+                line-height: 40px;
+                letter-spacing: -0.25px;
+                color: #666;
+                margin-bottom: 50px;
+            }
+            .btn_group{
+                button{
+                    height: 80px;
+                    background-color: 
+                    #2cb5a7;
+                    color: #fff;
+                    padding: 22px 40px 21px;
+                    font-size: 25px;
+                    line-height: 40px;
+                    font-weight: 500;
+                    letter-spacing: -0.25px;
+                    border-radius: 38px;
+                    & + button{
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .reader_row{
+        display: flex;
+        justify-content: space-between;
+        .info_text{
+            margin-bottom: 0;
+        }
+    }
+    .info_text{
+        margin-bottom: 80px;
+
+        >p{
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: -0.2px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    }
+    h2{
+        font-size: 36px;
+        line-height: normal;
+        letter-spacing: -0.36px;
+        word-break: keep-all;
+        color: #000;
+        margin-bottom: 40px;
+    }
+    ul{
+        li{
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: -0.2px;
+            color: #666;
+        }
+        & + small{
+            padding-top: 20px;
+        }
+    }
+    small{
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: -0.18px;
+        color: #999;
+        display: block;
+    }
+    small + small{
+        padding-top: 18px;
+
+        & + .btn_square{
+            margin-top: 40px;
+            padding-top: 16px;
+        }
+    }
+    .btn_square{
+        display: inline-block;
+        width: 138px;
+        height: 138px;
+        text-align: center;
+        background-color: #353F67;
+        color: #fff;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -0.18px;
+        font-weight: 500;
+        border-radius: 20px;
+        box-shadow: 0 3px 10px 0 rgba(125, 120, 99, 0.5);
+        padding: 30px 12px 55px;
+        box-sizing: border-box;
+        &::after{
+            content: url(../images/ebook-info/icon_arrow_right_long.png);
+            display: block;                    
+            padding-top: 10px;
+        }
+    }
+    .info_wrap{        
+        display: flex;
+        align-items: flex-end;
+        flex: 0 0 auto;
+        &_left{
+            width: 138px;
+            text-align: center;
+            margin-right: 127px;
+            span{
+                font-size: 16px;
+                line-height: 40px;
+                font-weight: 500;
+                letter-spacing: -0.16px;
+                padding-bottom: 16px;
+            }
+            img{
+                display: inline-block;
+                width: 138px;
+                height: 138px;
+                margin-bottom: 25px;
+                background-color: #fff;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 3px 10px 0 rgba(125, 120, 99, 0.2);
+            }            
+        }
+        &_img{
+            font-size: 0;
+            position: relative;
+            div{
+                display: inline-block;
+                box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+                border-radius: 15px;
+                background-color: #fff;
+                border:3px solid #fff;
+                box-sizing: border-box;
+                & + div{
+                    margin-left: 80px;
+                }
+            }
+            &.img_arrow{
+                position: relative;
+                white-space: nowrap;
+                &::before{
+                    content: url(../images/common/icon_arrow_line_gray.png);
+                    width: 20px;
+                    height: 35px;
+                    position: absolute;
+                    left: 245px + 30px + 5px;
+                    top: calc(50% - 35px);
+                }
+                &::after{
+                    content: url(../images/common/icon_arrow_line_gray.png);
+                    width: 20px;
+                    height: 35px;
+                    position: absolute;
+                    right: 245px + 30px;
+                    top: calc(50% - 35px);
+                }
+            }
+            &.mobile{
+                img{
+                    width: 245px;
+                    height: 468px; 
+                }
+            }
+            &.reader{                        
+                margin-left: 48px;   
+                div{             
+                    background-color: transparent;
+                    border: 0;
+                }
+                img{
+                    width: 470px;
+                    height: 650px;
+                }
+            }
+            &.pc{   
+                margin-right: 50px;
+                img{
+                    width: 833px;
+                    height: 574px;   
+                }
+            }
+            img.store_logo{ //스토어 로고
+                position: absolute;
+                bottom: -19.6px - 29px;
+                left: 55.7px;
+                display: inline-block;
+                width: 133px !important;
+                height: 29px !important;
+            }
+        }
+        
+    }
+    
+    .listen_list{
+        margin-top: 80px;
+        .listen_item{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-bottom: 50px;
+            .img_wrap{
+                width: 102px;
+                height: 102px;
+                border-radius: 50%;
+                background-color: #f3f3f3;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 20px;
+            }
+            strong{
+                display: block;
+                font-size: 20px;
+                line-height: 40px;
+                letter-spacing: -0.2px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            p{
+                font-size: 16px;
+                letter-spacing: -0.2px;
+                color: #666;
+            }
+    
+        }
+    }
+    .gray_section{
+        width: 100%;
+        padding: 80px 60px;
+        background: #f3f3f3;
+        border-radius: 15px;
+        box-sizing: border-box;
+        &_inner{
+            margin-bottom: 80px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            h5{
+                font-size: 24px;
+                line-height: 40px;
+                letter-spacing: -0.24px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 16px;
+                line-height: 28px;
+                letter-spacing: -0.1px;
+                color: #666;
+                margin-bottom: 30px;
+            }
+            .downbutton-wrap{
+                display: flex;
+                width: 790px;
+                padding-top: 20px;
+                .button-wrap{
+                    h6{
+                        font-size: 20px;
+                        line-height: 40px;
+                        letter-spacing: -0.2px;
+                        margin-bottom: 10px;
+                        display: inline-block;
+                    }
+                    button{
+                        width: 360px;
+                        height: 73px;
+                        background-color: #fff;
+                        border: 1px solid #d6d6d6;
+                        box-sizing: border-box;
+                        border-radius: 10px;
+                        position: relative;
+                        padding: 13px 30px;
+                        text-align: left;
+                        margin-top: 20px;
+                        cursor: pointer;
+                        &::after{
+                            content: url(../images/ebook-info/icon_download.png);
+                            position: absolute;
+                            right: 30px;
+                            top: 24px;
+                        }
+                        span{
+                            color: #666;
+                            font-size: 16px;
+                            line-height: 22px;
+                            letter-spacing: -0.1px;
+                        }
+                    }
+                    &:first-child{
+                        margin-right: 70px;
+                    }
+                }
+            }    
+            .infotable-wrap{
+               table{
+                    width: 100%;
+                    font-size: 16px;
+                    line-height: 22px;
+                    letter-spacing: -0.1px;
+                    color: #666;
+                    text-align: center;
+                    border-collapse: collapse;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    border-style: hidden;
+                    box-shadow: 0 0 0 1px #ddd;
+                    box-sizing: border-box;
+                    thead{
+                        background-color: #fbfbfb;
+                        th{
+                            font-weight: 500;
+                            padding: 13px 0;
+                        }
+                    }
+                    tbody{
+                        background-color: #fff;
+                        td{
+                            padding: 12px 0;
+                        }
+                        .colorlight{
+                            td{
+                                color: #888;
+                            }
+                        }
+                    }
+                    th,td{
+                        border: 1px solid #d6d6d6;
+                    }
+                }
+            }        
+        }        
+    }
+}
+.bg_gray{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #fff;
+    .clip{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &.clip1{
+            background-color: #fcf9f9;
+            background-size: cover;
+            clip-path: polygon(0 146px, 100% 696px, 100% 1740px, 0 1250px);
+        }
+        &.clip2{
+            background-color: #fcf9f9;
+            background-size: cover;
+            clip-path: polygon(0 3129px, 100% 2614px, 100% 100%, 0 100%);
+        }
+    }
+}
+
+//고객문의/제안
+.customer_pop{
+    position: absolute;
+    right: calc(50% - 600px - 159px);
+    top: 1127px;
+    width: 159px;
+    height: 121px;
+    background: url(../images/ebook-info/bg_pop.png);
+    background-size: 100%;
+    background-position: top left;
+    z-index: 100;
+    transition: position 200ms ease-in-out;
+    cursor: pointer;   
+    
+    >div{        
+        position: relative;
+    }
+    span{
+        padding: 20px 15px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 26px;
+        letter-spacing: -0.16px;      
+        color: #fff;  
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+        margin: 0;
+        &::before{
+            content: '';
+            width: 30px;
+            height: 30px;
+            display: block;
+            margin-bottom: 5px;
+            background: url(../images/common/icon_info_outline.png) no-repeat;
+            background-size: 30px 30px;
+        }
+    }
+    &.fixed{
+        position: fixed;
+        top: 165px + 90px;
+    }
+}
+//고객문의 및 제안 팝업
+.overlay{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .4);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;  
+    .customer_pop_wrap{
+        width: 1200px;
+        height: 804px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;    
+        .pop_left{
+            height: 100%;
+            background-color: #485aa2;
+            padding: 0 30px; 
+            .pop_menu{
+                padding-top: 65px;
+                li + li{
+                    margin-top: 10px;
+                }
+                a{
+                    display: inline-block;
+                    padding:0;
+                    font-size: 18px;
+                    letter-spacing: -0.18px;
+                    color: #fff;
+                    opacity: 0.4;
+                    cursor: pointer;
+                }
+                
+                .tab_item{
+                    &.ui-state-active {
+                        a{
+                            opacity: 1;
+                        }
+        
+                    }
+                }
+            }
+            .pop_info{
+                width: 157px;
+                border-top: 1px solid rgba(255,255,255,0.3);
+                padding-top: 31px;
+                color: #fff;
+                margin-top: 387px + 60px;
+                span{
+                    display: block;
+                    white-space: nowrap;
+                }
+                .info_title{
+                    font-size: 15px;
+                    font-weight: 500;
+                    letter-spacing: -0.15px;
+                    padding-bottom: 5px;
+                }
+                .info_tel{
+                    font-size: 30px;
+                    font-weight: 700;
+                    letter-spacing: -0.3px;
+                    padding-bottom: 25px;
+                }
+                .info_hour,
+                .info_holiday{
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 25px;
+                    letter-spacing: -0.15px;
+                    opacity: 0.6;
+                }
+            }
+        }
+        .pop_right{
+            background-color: #fff;
+            padding: 46px 50px 0;
+            width: 100%;
+            flex: 1;            
+            position: relative;
+            .btn_close{
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                width: 33px;
+                height: 33px;
+                .icon_close{
+                    position: relative;
+                    z-index: 3;
+                    display: block;
+                    width: 33px;
+                    height: 33px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-image: url(../../common/images/btn_dialog_close@1.5x.png);
+                    background-size: 33px 33px;
+                }            
+            }
+            h1{
+                font-size: 30px;
+               // line-height: 80px;
+                letter-spacing: -0.3px;
+                color: #485aa2;
+                margin-bottom: 30px;
+                &_title{
+                    padding-bottom: 22px;
+                }
+            }
+            h2{
+                font-size: 20px;
+               // line-height: 80px;
+                letter-spacing: -0.2px;
+                font-weight: normal;
+                color: #999;
+                margin-bottom: 20px;
+            }
+            .input_btn_box{
+                margin-bottom: 30px;
+                width: 843px;
+                input[type="text"],
+                button{
+                    margin-bottom: 0;
+                    margin-top: 0 !important;
+                }
+            }
+            input[type="text"],
+            textarea{
+                width: 843px;
+                padding: 12px 14px;
+                border: 1px solid #d5d5d5;
+                border-radius: 6px;            
+                box-sizing: border-box;            
+                font-size: 14px;
+                line-height: 22px;
+                letter-spacing: -0.14px;
+                ::placeholder{
+                    color: #767676;
+                }
+            }
+            input[type="text"]{
+                height: 44px;            
+                margin-bottom: 12px;
+                margin-top: 22px;
+            }
+            textarea{
+                height: 320px;
+                margin-bottom: 18px;
+            }
+            .btn_group{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0 6px;
+                margin-bottom: 68px;
+                button{
+                    width: 140px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+            }
+            ul.small_info{
+                li{
+                    list-style: none;
+                    color: #666;
+                    font-size: 15px;
+                    line-height: 28px;
+                    letter-spacing: -0.25px;
+                    display: inline-block;
+                    vertical-align: top;
+                    &::before{
+                        content: '';
+                        display: inline-block;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        margin: 11px 8px 0 0;
+                        background-color: #666;
+                        vertical-align: top;
+                    }
+                }
+            }
+            ul.qna_list {
+                width: 843px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 31px;
+                border: 1px solid #d5d5d5;
+                box-sizing: border-box;
+                li {
+                    width: calc(100% / 5);
+                    list-style: none;
+                    border-right: 1px solid #d5d5d5;
+                    background-repeat: no-repeat;
+                    background-position: center 10.5px;
+                    &:last-child{
+                        border-right: 0;
+                    }       
+                    a {
+                        display: block;
+                        padding-top: 70.5px;
+                        width: 100%;
+                        height: 102px;
+                        font-size: 14px;
+                        letter-spacing: -0.14px;
+                        font-weight: 500;
+                        color: #000;
+                        text-align: center;
+                        box-sizing: border-box;
+                    }
+                    &:nth-child(1) {
+                        background-image: url(../../dig/images/ebook-info/icon_pop_01.png);
+                    }
+                    &:nth-child(2) {
+                        background-image: url(../../dig/images/ebook-info/icon_pop_02.png);
+                    }
+                    &:nth-child(3) {
+                        background-image: url(../../dig/images/welcome/icon_welQuick_03.png);
+                    }
+                    &:nth-child(4) {
+                        background-image: url(../../dig/images/ebook-info/icon_pop_04.png);
+                    }
+                    &:nth-child(5) {
+                        background-image: url(../../dig/images/ebook-info/icon_pop_05.png);
+                    }
+                }
+            }
+            ul.best_qna{
+                li{
+                    list-style: none;
+                    vertical-align: top;
+                    &::before{
+                        content: '';
+                        display: inline-block;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        margin: 18px 10px 0 0;
+                        background-color: #000;
+                        vertical-align: top;
+                    }
+                    a{
+                        display: inline-block;
+                        color: #000;
+                        font-size: 16px;
+                        font-weight: normal;
+                        line-height: 40px;
+                        letter-spacing: -0.16px;
+                    }
+                    &:hover{
+                        a{
+                            color: #4aa126
+                        }
+                        &::before{
+                            background-color:#4aa126; 
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.notice_wrap .form_search_box {
+	margin-top: 20px;
+}
+.notice_wrap .quick_button_wrap {
+	margin-top: 80px;
+}
+.notice_wrap .quick_button_wrap dl {
+	display: block;
+	align-items: center;
+}
+.notice_wrap .quick_button_wrap dl dt {
+	font-size: 14px;
+	line-height: 28px;
+	letter-spacing: -0.14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.notice_wrap .quick_button_wrap dl dd {
+	margin: auto;
+	font-size: 0;
+}
+.notice_wrap .quick_button_wrap dl dd button {
+	margin-right: 3px;
+}
+.notice_wrap .view_detail_wrap .view_detail_header .edit_header_util .edit_info_case .cate_txt {
+	display: inline-block;
+	position: relative;
+	font-size: 14px;
+	line-height: 22px;
+	letter-spacing: -0.01em;
+	color: #767676;
+	vertical-align: top;
+	padding-right: 8px;
+	margin-right: 8px;
+}
+.notice_wrap .view_detail_wrap .view_detail_header .edit_header_util .edit_info_case .cate_txt:after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 5px;
+	width: 1px;
+	height: 9px;
+	background-color: #d5d5d5;
+}
+.notice_wrap .view_detail_wrap .view_detail_body .download_list {
+	margin-bottom: 20px;
+}
+.notice_wrap .view_detail_wrap .view_list_wrap {
+	border-bottom: 1px solid #eaeaea;
+}
+.notice_wrap .view_detail_wrap .view_list_wrap a {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	font-size: 14px;
+	line-height: 23px;
+	letter-spacing: -0.14px;
+	color: #000;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 20px 0 20px 32px;
+	box-sizing: border-box;
+}
+.notice_wrap .view_detail_wrap .view_list_wrap a:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	margin-top: -2px;
+	width: 8px;
+	height: 5px;
+	background: url("/assets/mdig/images/common/icon/ico_updown_16x10_000.png") no-repeat left top;
+	background-size: 100% auto;
+}
+.notice_wrap .view_detail_wrap .view_list_wrap a + a {
+	border-top: 1px solid #eaeaea;
+}
+.notice_wrap .view_detail_wrap .view_list_wrap a span.none_item {
+	color: #767676;
+}
+.notice_wrap .view_detail_wrap .view_list_wrap a.next:before {
+	background-position-y: -6px;
+}
+/*# sourceMappingURL=notice_mdig.css.map */

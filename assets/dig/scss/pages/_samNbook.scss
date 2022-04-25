@@ -1,0 +1,115 @@
+.sam_n_book{
+    &_visual {
+        width: 100%;
+        height: 400px;
+        background: #d6dede url(../../dig/images/sam/img_sam_n_ekook.png) no-repeat center top;
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 50px;
+        span{
+            display: block;
+            padding-top: 149px;
+            font-size: 20px;
+            color: #000;
+        }
+        strong{
+            display: block;
+            font-size: 50px;
+            color: #000;
+            margin-top: 2px;
+        }
+    }
+    .eBook_list{
+        >.header{
+            .form_search_box{
+                width: 400px;
+                margin-left: auto;
+            }
+        }
+        &_header{
+            strong{
+                font-size: 20px;
+                display: block;
+                width: 1200px;
+                margin: 50px auto 0;
+            }
+        }
+        &_body{
+            border-top: 0;
+            padding-top: 20px;
+            .prodDt{
+                strong{
+                    font-size: 16px;
+                }
+                &_info{
+                    span{
+                        font-size: 14px;
+                    }
+                }
+            }
+            &:last-child{
+                border-bottom: 0;
+            }
+        }
+    }
+    &_info{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-top: 1px solid #d8d8d8;
+        width: 1200px;
+        margin: 30px auto 50px;
+        div{            
+            padding: 30px 0;
+            strong{
+                font-size: 15px;
+                color: #000;
+                font-weight: 700;
+            }
+            ul{
+                margin-top: 12px;
+                li{
+                    font-size: 14px;
+                    color: #595959;
+                    position: relative;
+                    padding-left: 9px;
+                    &::before{
+                        position: absolute;
+                        left: 0;
+                        top: 8px;
+                        display: inline-block;
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 50%;
+                        background-color: #767676;
+                        content: "";
+                    }
+
+                    & + li{
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            &:nth-child(1){
+                position: relative;
+                width: calc(100% / 2);
+            }
+            &:nth-child(3){
+                width: 100%;
+                border-top: 1px solid #eaeaea;
+                position: relative;
+                overflow: hidden;
+                list-style: none;
+                z-index: 1;
+            }
+        }
+        
+    }
+    &_banner {
+        width: 100%;
+        height: 150px;
+        background: url(../../dig/images/sam/img_sam_n_ekook_bottom.png) no-repeat center top;
+        box-sizing: border-box;
+    }
+}

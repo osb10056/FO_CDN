@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+  <g id="pay-icon_card" data-name="pay-icon/card" transform="translate(0.5 0.5)">
+    <g id="vuesax_broken_card-pos" data-name="vuesax/broken/card-pos">
+      <g id="card-pos">
+        <path id="Vector" d="M0,17.925,17.925,0" transform="translate(5.895 5.895)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" stroke-dasharray="0 0"/>
+        <path id="Vector-2" data-name="Vector" d="M0,1.8,1.8,0" transform="translate(16.649 25.62)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" stroke-dasharray="0 0"/>
+        <path id="Vector-3" data-name="Vector" d="M0,3.585,3.585,0" transform="translate(20.684 19.8)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" stroke-dasharray="0 0"/>
+        <path id="Vector-4" data-name="Vector" d="M27.641,9.716c3.15,3.15,3.135,4.74-.045,7.92l-9.96,9.96c-3.18,3.18-4.77,3.2-7.92.045L2.351,20.276c-3.15-3.15-3.135-4.74.045-7.92l9.96-9.96c3.18-3.18,4.77-3.195,7.92-.045l2.85,2.85" transform="translate(3.003 3.004)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0 0"/>
+        <path id="Vector-5" data-name="Vector" d="M0,0H30" transform="translate(3 33)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0 0"/>
+        <path id="Vector-6" data-name="Vector" d="M36,0V36H0V0Z" fill="none" stroke="#5055b1" stroke-width="1" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,176 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+// 배송지 추가 아이콘 버튼
+a.btn_ip, button.btn_ip {
+	.ico_add_white {
+		width:14px;
+		height:14px;
+		background: {
+			repeat: no-repeat;
+			position:center;
+		}
+		@include mixins.ratio_images('../images/ico_add_white', 'png', 14px, 14px);
+	}
+}
+
+// 배송지 변경 박스
+.change_delivery_addressBox {
+	> a.btn_ip,
+	> button.btn_ip {
+		width:100%;
+		@include mixins.font_size_sm;
+		font-weight:variables.$fontWeightBold;
+	}
+
+	.delivery_address_list {
+		margin-top:24px;
+		> ul {
+			> li {
+				margin-top:8px;
+				&:first-child {
+					margin-top:0;
+				}
+			}
+		}
+	}
+}
+
+// 매장 선택 박스
+.store_setting_box {
+	.store_list_box {
+		margin-top:24px;
+		&:first-child {
+			margin-top:0;
+		}
+
+		> ul {
+			> li {
+				margin-top:8px;
+				&:first-child {
+					margin-top:0;
+				}
+			}
+		}
+	}
+
+	.tab_wrap {
+		margin-top:24px;
+
+		&.type_tag{
+			> .tab_list_wrap {
+				margin-bottom:20px;
+			}
+		}
+	}
+}
+
+// 주소지 선택 박스
+.address_item {
+	position:relative;
+
+	.form_rdo {
+		display:block;
+		border-radius:10px;
+		border:1px solid variables.$colorGray03;
+
+		label {
+			display:block;
+			padding:20px 130px 20px 54px;
+			@include mixins.font_size_xs;
+			&:before {
+				left:20px;
+				top:50%;
+				width:22px;
+				height:22px;
+				margin:-11px 0 0;
+			}
+			&:after {
+				left:26px;
+				top:50%;
+				margin:-5px 0 0;
+			}
+		}
+	}
+
+	.address_row {
+		display:block;
+		margin-top:8px;
+		&:first-child {
+			margin-top:0;
+		}
+
+		> span {
+			margin-right:6px;
+			&:last-child{
+				margin-right:0;
+			}
+		}
+
+		.nick_name {
+			display:inline-block;
+			color:variables.$textColorPurple;
+			font-weight:variables.$fontWeightBold;
+
+			&.ico_pin {
+				@include mixins.justify_width(start, start, row, true);
+				&:before {
+					display:block;
+					content:"";
+					width:15px;
+					height:20px;
+					margin-right:4px;
+					@include mixins.ratio_images('../images/ico_address_pin', 'png', 15px, 20px);
+				}
+			}
+		}
+		.store_name {
+			display:inline-block;
+			font-weight:variables.$fontWeightBold;
+		}
+		.name {
+			display:inline-block;
+			font-weight:variables.$fontWeightMedium;
+		}
+		.phone {
+			display:inline-block;
+		}
+	}
+
+	.address_util_btn {
+		position:absolute;
+		right:20px;
+		top:50%;
+		@include mixins.transform(translateY(-50%));
+
+		.btn_xs {
+			margin-right:2px;
+			&:last-child {
+				margin-right:0;
+			}
+		}
+
+		.btn_favorite {
+			width:16px;
+			height:15px;
+			@include mixins.ratio_images('../images/btn_my_favorite_h15', 'png', 16px, 15px);
+			&.active {
+				@include mixins.ratio_images('../images/btn_my_favorite_h15_active', 'png', 16px, 15px);
+			}
+		}
+	}
+}
+
+// 이미 구매한 사품 확인
+.already_purchase_box {
+	.text_box {
+		@include mixins.font_size_xxs;
+		@include mixins.multi_ellipsis( variables.$fontSizeXxsLineHeight, 2, false);
+		strong {
+			font-weight: variables.$fontWeightMedium;
+		}
+	}
+}

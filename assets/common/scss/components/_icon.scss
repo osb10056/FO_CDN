@@ -1,0 +1,361 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+/* 아이콘 */
+.ico_trash {
+	width: 15px;
+	height: 18px;
+	margin-right: 5px;
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+	@include mixins.ratio_images('../images/ico_trash_mok', 'png', 15px, 18px);
+}
+
+// 타이틀 왼쪽 말풍선 아이콘
+.ico_speech{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+	@include mixins.ratio_images('../images/ico_title_message_mok', 'png', 16px, 16px);
+	vertical-align: top;
+}
+
+// 주요 공지 아이콘
+.ico_admin_notice {
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	@include mixins.ratio_images('../images/ico_admin_notice_mok', 'png', 21px, 21px);
+	vertical-align: top;
+}
+
+
+/* 아이콘 - 상품 */
+// 상품상세 > 구매방법별 아이콘
+.ico_step_store_guide,
+.ico_step_store_visit,
+.ico_step_delivery,
+.ico_step_store_pickup,
+.ico_step_store_pickup_order,
+.ico_step_store_pickup_box,
+.ico_step_store_phone_order,
+.ico_step_store_pickup_box_ok {
+	display: inline-block;
+	width: 58px;
+	height: 58px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+}
+.ico_step_store_guide {
+	@include mixins.ratio_images('../images/ico_step_store_guide_mok', 'png', 58px, 58px);
+}
+.ico_step_store_visit {
+	@include mixins.ratio_images('../images/ico_step_store_visit_mok', 'png', 58px, 58px);
+}
+.ico_step_delivery {
+	@include mixins.ratio_images('../images/ico_step_delivery_mok', 'png', 58px, 58px);
+}
+.ico_step_store_pickup {
+	@include mixins.ratio_images('../images/ico_step_store_pickup_mok', 'png', 58px, 58px);
+}
+.ico_step_store_pickup_order {
+	@include mixins.ratio_images('../images/ico_step_store_pickup_order_mok', 'png', 58px, 58px);
+}
+.ico_step_store_pickup_box {
+	@include mixins.ratio_images('../images/ico_step_store_pickup_box_mok', 'png', 58px, 58px);
+}
+.ico_step_store_phone_order {
+	@include mixins.ratio_images('../images/ico_step_store_phone_order_mok', 'png', 58px, 58px);
+}
+.ico_step_store_pickup_box_ok {
+	@include mixins.ratio_images('../images/ico_step_store_pickup_box_ok_mok', 'png', 58px, 58px);
+}
+
+// 숙박정보 & 장소안내 아이콘
+.ico_room_period {
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+	@include mixins.ratio_images('../images/ico_period_mok', 'png', 15px, 20px);
+}
+.ico_room_type {
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+	@include mixins.ratio_images('../images/ico_room_type_mok', 'png', 15px, 20px);
+}
+.ico_place_pin {
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+	@include mixins.ratio_images('../images/ico_place_pin_mok', 'png', 15px, 20px);
+}
+.ico_place_tel {
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+	@include mixins.ratio_images('../images/ico_place_tel_mok', 'png', 15px, 20px);
+}
+
+
+/* 아이콘 - 회원 */
+// 회원 > 로그인 아이콘
+.ico_member_restore {
+	display: inline-block;
+	width: 56px;
+	height: 46px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+	@include mixins.ratio_images('../images/ico_member_restore_mok', 'png', 56px, 46px);
+}
+.ico_cert_adult {
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+	@include mixins.ratio_images('../images/ico_cert_adult_mok', 'png', 52px, 52px);
+}
+.ico_dormant_lock {
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+	@include mixins.ratio_images('../images/ico_dormant_lock_mok', 'png', 52px, 52px);
+}
+
+.ico_phone{
+	display: inline-block;
+	width: 16px;
+	height: 19px;
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+	@include mixins.ratio_images('../images/ico_phone_mok', 'png', 16px, 19px);
+	vertical-align: top;
+}
+.ico_mail{
+	display: inline-block;
+	width: 22px;
+	height: 16px;
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+	@include mixins.ratio_images('../images/ico_mail_mok', 'png', 22px, 16px);
+	vertical-align: top;
+}
+
+/* 아이콘 - 회원 등급 */
+.ico_grade_platinum,
+.ico_grade_gold,
+.ico_grade_silver,
+.ico_grade_friends {
+	display: inline-block;
+	width: 50px;
+	height: 57px;
+	background: {
+		repeat: no-repeat;
+		position: center;
+	}
+	vertical-align: top;
+}
+.ico_grade_platinum {
+	@include mixins.ratio_images('../images/ico_grade_platinum_mok', 'png', 50px, 57px);
+}
+.ico_grade_gold {
+	@include mixins.ratio_images('../images/ico_grade_gold_mok', 'png', 50px, 57px);
+}
+.ico_grade_silver {
+	@include mixins.ratio_images('../images/ico_grade_silver_mok', 'png', 50px, 57px);
+}
+.ico_grade_friends {
+	@include mixins.ratio_images('../images/ico_grade_friends_mok', 'png', 50px, 57px);
+}
+
+/* 아이콘 - 전시 */
+.ico_purchase_inquiry {
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	@include mixins.ratio_images('../images/ico_purchase_inquiry_mok', 'png', 38px, 38px);
+	vertical-align: top;
+}
+.ico_book_search {
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	@include mixins.ratio_images('../images/ico_books_search_mok', 'png', 38px, 38px);
+	vertical-align: top;
+}
+.ico_bulk_order {
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	@include mixins.ratio_images('../images/ico_bulk_order_mok', 'png', 38px, 38px);
+	vertical-align: top;
+}
+
+// 베스트 테마
+.ico_them_all,
+.ico_them_online,
+.ico_them_real_time,
+.ico_them_store,
+.ico_them_age,
+.ico_them_special,
+.ico_them_year,
+.ico_them_person {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+}
+.ico_them_all {
+	@include mixins.ratio_images('../images/ico_them_all_mok', 'png', 24px, 24px);
+}
+.ico_them_online {
+	@include mixins.ratio_images('../images/ico_them_online_mok', 'png', 24px, 24px);
+}
+.ico_them_real_time {
+	@include mixins.ratio_images('../images/ico_them_real_time_mok', 'png', 24px, 24px);
+}
+.ico_them_store {
+	@include mixins.ratio_images('../images/ico_them_store_mok', 'png', 24px, 24px);
+}
+.ico_them_age {
+	@include mixins.ratio_images('../images/ico_them_age_mok', 'png', 24px, 24px);
+}
+.ico_them_special {
+	@include mixins.ratio_images('../images/ico_them_special_mok', 'png', 24px, 24px);
+}
+.ico_them_year {
+	@include mixins.ratio_images('../images/ico_them_year_mok', 'png', 24px, 24px);
+}
+.ico_them_person {
+	@include mixins.ratio_images('../images/ico_them_person_mok', 'png', 24px, 24px);
+}
+
+// 신상품 tab
+.ico_prod_recommend,
+.ico_prod_reservation,
+.ico_prod_new {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: {
+		repeat: no-repeat;
+	}
+	vertical-align: top;
+}
+.ico_prod_recommend {
+	@include mixins.ratio_images('../images/ico_prod_recommend_mok', 'png', 40px, 40px);
+}
+.ico_prod_reservation {
+	@include mixins.ratio_images('../images/ico_prod_reservation_mok', 'png', 40px, 40px);
+}
+.ico_prod_new {
+	@include mixins.ratio_images('../images/ico_prod_new_mok', 'png', 40px, 40px);
+}
+
+/* 아이콘 - 국기 */
+.ico_korean_flag {
+	display: block;
+	width: 100%;
+	height: 100%;
+	@include mixins.ratio_images('../images/ico_korean_flag_mok', 'png', 25px, 17px);
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+}
+.ico_japanese_flag {
+	display: block;
+	width: 100%;
+	height: 100%;
+	@include mixins.ratio_images('../images/ico_japanese_flag_mok', 'png', 25px, 17px);
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+}
+.ico_american_flag {
+	display: block;
+	width: 100%;
+	height: 100%;
+	@include mixins.ratio_images('../images/ico_american_flag_mok', 'png', 44px, 23px);
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+}
+
+.ico_notice_alarm {
+	display: block;
+	width: 50px;
+	height: 50px;
+	@include mixins.ratio_images('../images/ico_notice_alarm_mok', 'png', 50px, 50px);
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+}
+
+.ico_alarm_bell {
+	display: block;
+	width: 50px;
+	height: 50px;
+	@include mixins.ratio_images('../images/ico_alarm_bell_mok', 'png', 50px, 50px);
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+}
+
+.ico_subscribe_complete {
+	display: block;
+	width: 50px;
+	height: 50px;
+	@include mixins.ratio_images('../images/ico_subscribe_complete_mok', 'png', 50px, 50px);
+	background: {
+		position: center;
+		repeat: no-repeat;
+	}
+}

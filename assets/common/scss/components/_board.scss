@@ -1,0 +1,1111 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+// 이벤트 상세
+.view_detail_wrap {
+	.btn_wrap.bottom {
+		margin-top: 40px;
+	}
+}
+.view_detail_header {
+	margin-bottom: 20px;
+	padding-top: 20px;
+	
+	.title_wrap {
+		@include mixins.font_size_xl;
+	}
+
+	.edit_header_util {
+		margin-top: 15px;
+		@include mixins.justify_width(center, between);
+
+		.edit_info_case {
+			@include mixins.justify_width(center, start);
+
+			.flag_state {
+				margin-right: 8px;
+
+				&:last-child {
+					margin: 0;
+				}
+
+				& ~ .date,
+				& ~ .publish {
+					margin-top: 2px;
+				}
+				& ~ .gap {
+					margin-top: 9px;
+				}
+			}
+			.desc,
+			.date {
+				display: inline-block;
+				@include mixins.font_size_sm;
+				color: variables.$textColorLightGray;
+				vertical-align: top;
+			}
+
+			.gap {
+				display: inline-block;
+				font-size: 0;
+				width: 1px;
+				height: 7px;
+				background-color: rgba(0,0,0,0.2);
+				margin: 0 8px;
+				box-sizing: border-box;
+				vertical-align: top;
+			}
+			.dot {
+				display: inline-block;
+				margin: 0 8px;
+				font-size: 0;
+				width: 2px;
+				height: 2px;
+				background-color: variables.$textColorGray;
+			}
+
+			.publish {
+				display: inline-block;
+				padding-top: 1px;
+				@include mixins.font_size_xs;
+				color: variables.$textColorGray;
+				vertical-align: top;
+			}
+			.view {
+				@include mixins.justify_width(start, start, row, true);
+				align-items: center;
+				color: variables.$textColorLightGray;
+	
+				&:before {
+					display: block;
+					flex-shrink: 0;
+					content: "";
+					width: 14px;
+					height: 10px;
+					margin: 0 2px 0 0;
+					background: {
+						repeat: no-repeat;
+						position: center;
+					}
+					@include mixins.ratio_images('../images/ico_item_view_mok', 'png', 14px, 10px);
+				}
+			}
+		}
+
+		.edit_util_case {
+			margin-left: 10px;
+		}
+	}
+	.edit_header_state {
+		@include mixins.justify_width;
+		margin-top: 5px;
+
+		[class^=badge] {
+			margin-left: 4px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}
+.view_detail_body {
+	position: relative;
+	
+	.title_wrap.title_size_xl {
+		margin-top: 50px;
+	}
+	.no_data {
+		padding: 60px 0;
+	}
+	.imgs {
+		.inner {
+			display: inline-block;
+			position: relative;
+		}
+		.img_box {
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			vertical-align: top;
+		}
+	}
+
+	.detail_img_box {
+		display: block;
+		margin: 40px 0 30px;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	// 다운로드 파일
+	.download_list {
+		// @include mixins.justify_width;
+		// flex-wrap: wrap;
+		// margin: -4px;
+
+		li {
+			margin: 4px 0;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.event_end {
+		.inner {
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				z-index: 1;
+				background-color: rgba(variables.$textColorBlack, .5);
+			}
+		}
+	}
+
+	&.has_line {
+		padding: 20px 0 20px;
+		border: 1px solid variables.$colorGray04;
+		border-width: 1px 0;
+	}
+}
+.view_detail_footer {
+	position: relative;
+	border-bottom: 1px solid variables.$colorGray04;
+
+	.board_item {
+		@include mixins.justify_width(center);
+		overflow: hidden;
+		height: 60px;
+		padding: 0 10px;
+
+		.prev_board, .next_board {
+			flex-shrink: 0;
+			display: inline-block;
+			margin-right: 14px;
+			@include mixins.font_size_sm;
+			vertical-align: top;
+
+			[class^=ico_board] {
+				display: inline-block;
+				width: 8px;
+				height: 5px;
+				margin-top: 8px;
+				background: {
+					position: center;
+					repeat: no-repeat;
+				}
+				vertical-align: top;
+
+				@include mixins.ratio_images('../images/ic_event_noti_detail_arr_mok', 'png', 8px, 5px);
+
+
+				&.ico_board_next {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		.board_title {
+			flex: 1 1 auto;
+			@include mixins.ellipsis();
+			@include mixins.font_size_sm;
+		}
+
+		.desc {
+			flex: 1 1 auto;
+			@include mixins.font_size_sm;
+			color: variables.$textColorLightGray;
+		}
+
+		+ .board_item {
+			border-top: 1px solid variables.$colorGray04;
+		}
+	}
+
+	&:before{
+		content: '';
+		position: absolute;
+		top: -1px;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 1px;
+		background-color: variables.$colorGray03;
+	}
+}
+.view_detail_append {
+	margin-top: 20px;
+
+	.text {
+		line-height: 22px;
+	}
+	.btn_wrap {
+		margin-top: 12px;
+	}
+}
+
+// BO 등록 컨텐츠
+.bo_contents {
+	margin-top: 60px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	.imgs {
+		overflow: hidden;
+		.inner {
+			display: inline-block;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		img {
+			max-width: 220%;
+		}
+	}
+
+	.btn_wrap {
+		margin-top: 60px;
+	}
+
+	.event_end_text {
+		position: absolute;
+		right: 30px;
+		top: 30px;
+		z-index: 2;
+		@include mixins.font_size_xs;
+		color: #fff;
+
+		[class^=ico_] {
+			margin-right: 6px;
+			@include mixins.transform(translateY(-1px));
+		}
+	}
+}
+
+// 에디터 상세
+.edit_write_case {
+	margin: 30px 0 0;
+	@include mixins.font_size_sm;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	& + .book_survey_area {
+		margin-top: 50px;
+	}
+
+	& + .info_text_box {
+		margin-top: 20px;
+	}
+}
+
+// 이벤트 상세 에디터
+.winner_content_box {
+	margin: 20px 0;
+	@include mixins.font_size_sm;
+	color: variables.$textColorBlack;
+
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+// 당첨자 발표
+.winner_list_box {
+	margin: 30px 0 40px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.edit_write_case {
+		margin-bottom: 14px;
+		word-break: break-all;
+
+		.fw_bold {
+			display: inline-block;
+		}
+	}
+	
+	.winner_list {
+		@include mixins.justify_width(center, between);
+		flex-wrap: wrap;
+		padding: 6px 0;
+		border-top: 1px solid variables.$textColorBlack;
+		border-bottom: 1px solid variables.$colorGray04;
+
+		.winner_item {
+			flex: 0 0 50%;
+			@include mixins.justify_width(center);
+			box-sizing: border-box;
+			padding: 12px 0;
+
+			.user_name {
+				flex-shrink: 0;
+				width: 63px;
+				padding-right: 10px;
+				@include mixins.font_size_sm;
+				color: variables.$textColorBlack;
+				font-weight: variables.$fontWeightMedium;
+				box-sizing: border-box;
+			}
+
+			.user_id {
+				padding-left: 10px;
+				@include mixins.font_size_sm;
+				color: variables.$textColorLightGray;
+				box-sizing: border-box;
+				word-break: break-all;
+			}
+		}
+	}
+
+	@include mixins.respond-to(mobileSm) {
+		.winner_list {
+			display: block;
+		}
+	}
+
+
+	&:first-child {
+		margin: 0;
+	}
+}
+
+/* quiz 정답, 설문 등 선택 리스트 */
+.btn_check_wrap {
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px;
+
+	li {
+		~ li {
+			margin-top: 8px;
+		}
+	}
+
+	.finish_box {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		@include mixins.justify_width(center, center, column);
+		@include mixins.font_size_def;
+		font-weight: variables.$fontWeightBold;
+		text-align: center;
+		color: #fff;
+		background-color: rgba(variables.$textColorGray, .5);
+
+		.desc {
+			margin-top: 8px;
+		}
+	}
+}
+
+// 버튼형식 check
+.form_chk, .form_rdo {
+	&.type_btn {
+		display: block;
+
+		input:checked + label {
+			font-weight: variables.$fontWeightBold;
+			color: variables.$textColorPurple;
+			border: 1px solid #5157ab;
+			background-color: #f8f8fc;
+
+			&:after {
+				background-color: transparent;
+				@include mixins.ratio_images('../images/ico_quiz_check_active_mok', 'png', 16px, 12px);
+			}
+		}
+
+		input[disabled] {
+			& + label {
+				.text, .copy {
+					opacity: .3;
+				}
+
+				&:after {
+					background-color: transparent;
+					@include mixins.ratio_images('../images/ico_quiz_check_mok', 'png', 16px, 12px);
+				}
+			}
+
+			&[checked] {
+				& + label {
+					.text, .copy {
+						opacity: 1;
+					}
+
+					&:after {
+						@include mixins.ratio_images('../images/ico_quiz_check_active_mok', 'png', 16px, 12px);
+					}
+				}
+			}
+		}
+
+		label {
+			display: block;
+			padding: 21px 55px 19px 23px;
+			border: 1px solid #fff;
+			border-radius: 10px;
+			@include mixins.font_size_def;
+			font-weight: variables.$fontWeightMedium;
+			background-color: #fff;
+			text-align: left;
+
+			.text {}
+
+			.copy {
+				display: block;
+				margin-top: 5px;
+				@include mixins.font_size_sm;
+				color: variables.$textColorGray;
+				font-weight: variables.$fontWeightRegular;
+			}
+
+			&:before {
+				display: none;
+			}
+
+			&:after {
+				width: 16px;
+				height: 12px;
+				left: auto;
+				right: 24px;
+				top: 50%;
+				border-radius: 0;
+				@include mixins.transform(translateY(-50%));
+				@include mixins.ratio_images('../images/ico_quiz_check_mok', 'png', 16px, 12px);
+				background-position: center center;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.type_gray {
+		label {
+			padding: 23px 55px 23px 23px;
+			border: 1px solid variables.$colorGray06;
+			background-color: variables.$colorGray06;
+		}
+	}
+}
+
+/* 우리가 만드는 책 */
+// 설문 진행 상태
+.survey_status_box {
+	display: block;
+	padding: 20px;
+	background-color: variables.$colorGray06;
+	border-radius: 10px;
+	text-align: center;
+	box-sizing: border-box;
+
+	.survey_status {
+		display: block;
+		vertical-align: top;
+		font-size: 0;
+
+		.ico_survey_status {
+			display: inline-block;
+			width: 25px;
+			height: 24px;
+			margin-top: 2px;
+			margin-right: 4px;
+			vertical-align: top;
+			background: {
+				repeat: no-repeat;
+			}
+			@include mixins.ratio_images('../images/ico_survey_ing_mok', 'png', 25px, 24px);
+		}
+
+		.status {
+			display: inline-block;
+			padding-top: 2px;
+			@include mixins.font_size_lg;
+			color: variables.$textColorBlack;
+			font-weight: variables.$fontWeightBold;
+			vertical-align: top;
+		}
+
+		& ~ .join_num_box {
+			margin-top: 12px;
+		}
+	}
+
+	.join_num_box {
+		display: block;
+		font-size: 0;
+
+		.join_num {
+			display: inline-block;
+			@include mixins.font_size_xs;
+			color: variables.$textColorBlack;
+			font-weight: variables.$fontWeightMedium;
+			background: {
+				repeat: no-repeat;
+				position: right center;
+			}
+			vertical-align: top;
+
+			&.up {
+				padding-right: 14px;
+				@include mixins.ratio_images('../images/ico_num_up_mok', 'png', 8px, 5px);
+
+				.val {
+					color: variables.$textColorRed;
+				}
+			}
+
+			&.down {
+				padding-right: 14px;
+				@include mixins.ratio_images('../images/ico_num_down_mok', 'png', 8px, 5px);
+
+
+				.val {
+					color: variables.$textColorBlue;
+				}
+			}
+
+			& ~ .join_subject {
+				margin-left: 10px;
+			}
+		}
+
+		.join_subject {
+			display: inline-block;
+			@include mixins.font_size_xs;
+			color: variables.$textColorLightGray;
+			vertical-align: top;
+		}
+	}
+
+	&.end {
+		.survey_status {
+			.ico_survey_status {
+				@include mixins.ratio_images('../images/ico_survey_end_mok', 'png', 25px, 24px);
+			}
+		}
+	}
+	&.closed {
+		background-color: variables.$textColorLightGray;
+
+		.survey_status {
+			.status {
+				color: #fff;
+			}
+
+			.ico_survey_status {
+				@include mixins.ratio_images('../images/ico_survey_closed_mok', 'png', 25px, 24px);
+			}
+		}
+
+		.join_num_box {
+			.join_num {
+				color: #fff;
+			}
+			.join_subject {
+				color: rgba(#fff, 0.9);
+			}
+		}
+	}
+
+	& + .edit_write_case,
+	& + .book_survey_area {
+		margin-top: 20px;
+	}
+}
+
+// 설문 컨텐츠 그리드
+.book_survey_area {
+	display: block;
+	box-sizing: border-box;
+
+	.title_wrap {
+		justify-content: center;
+		text-align: center;
+	}
+
+	& ~ .book_survey_area {
+		margin-top: 50px;
+	}
+
+	& ~ .edit_write_case {
+		margin-top: 50px;
+	}
+
+	& + .info_text_box {
+		margin-top: 20px;
+	}
+}
+
+// 설문 컨텐츠 영역
+.book_survey_box {
+	display: block;
+	padding: 23px 23px;
+	border: 1px solid variables.$colorGray03;
+	border-radius: 16px;
+	box-sizing: border-box;
+
+	.btn_wrap {
+		margin-top: 30px;
+	}
+}
+
+// 결과 순위
+.result_rank_list {
+	@include mixins.justify_width(end, center);
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	text-align: left;
+	font-size: 0;
+
+	.result_item {
+		display: inline-block;
+		position: relative;
+		width: calc((100% - 38px) / 2);
+		margin: 0 10px 0 9px;
+		vertical-align: top;
+		text-align: center;
+		box-sizing: border-box;
+
+		&:nth-child(n+2) {
+			margin-top: 30px;
+		}
+
+		.result_rank {
+			display: block;
+			position: relative;
+			margin-bottom: 10px;
+			@include mixins.font_size_def;
+			color: variables.$textColorBlack;
+			font-weight: variables.$fontWeightMedium;
+			text-align: center;
+			box-sizing: border-box;
+
+			.val {
+				font-weight: variables.$fontWeightBold;
+			}
+		}
+
+		.prod_area {
+			display: inline-block;
+			position: relative;
+			max-width: 134px;
+			vertical-align: top;
+
+			.prod_thumb_box {
+				width: 100%;
+			}
+		}
+
+		img	{
+			width: 100%;
+		}
+
+		.result_info_box {
+			margin-top: 10px;
+			box-sizing: border-box;
+
+			.result_title {
+				@include mixins.font_size_sm;
+				color: variables.$textColorBlack;
+				font-weight: variables.$fontWeightMedium;
+
+				& + .rate_bar {
+					margin-top: 10px;
+				}
+			}
+			.copy {
+				margin-top: 5px;
+				@include mixins.font_size_sm;
+				color: variables.$textColorGray;
+
+				& + .rate_bar {
+					margin-top: 20px;
+				}
+			}
+
+			.rate_bar {
+				display: block;
+				position: relative;
+				width: 100%;
+				height: 6px;
+				overflow: hidden;
+				border-radius: 10px;
+				background-color: rgba(variables.$kyoboPurple, 0.06);
+
+				.bar {
+					display: inline-block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					max-width: 100%;
+					height: 100%;
+					border-radius: 10px;
+					background-color: variables.$kyoboPurple;
+				}
+
+				& + .rate_info {
+					margin-top: 8px;
+					margin-bottom: 0;
+				}
+			}
+
+			.rate_info {
+				@include mixins.justify_width(center);
+				margin-bottom: 10px;
+
+				.rate {
+					display: inline-block;
+					flex-shrink: 0;
+					@include mixins.font_size_xs;
+					color: variables.$textColorBlack;
+					font-weight: variables.$fontWeightBold;
+					vertical-align: top;
+				}
+
+				.vote_num {
+					display: inline-block;
+					margin-left: auto;
+					@include mixins.font_size_xs;
+					color: variables.$textColorLightGray;
+					vertical-align: top;
+				}
+			}
+		}
+
+		.my_select {
+			display: inline-block;
+			position: absolute;
+			right: -11px;
+			bottom: 57px;
+			z-index: 1;
+			width: 56px;
+			height: 56px;
+			line-height: 56px;
+			padding-top: 4px;
+			color: #fff;
+			font-size: variables.$fontSizeXxs;
+			font-weight: variables.$fontWeightBold;
+			letter-spacing: variables.$letterSpacing;
+			text-align: center;
+			background-color: rgba(variables.$kyoboPurple, 0.9);
+			border-radius: 50%;
+			box-shadow: 0 5px 10px rgba(variables.$kyoboPurple, 0.4);
+			box-sizing: border-box;
+
+			&:before {
+				content: '';
+				display: inline-block;
+				position: absolute;
+				left: 50%;
+				top: 13px;
+				width: 10px;
+				height: 7px;
+				@include mixins.ratio_images('../images/ico_checkbox_active_mok', 'png', 10px, 7px);
+				@include mixins.transform(translateX(-50%));
+			}
+		}
+
+		&.top {
+			width: 100%;
+			padding: 0 0 31px 0;
+			border-bottom: 1px solid variables.$colorGray04;
+
+			.result_rank {
+				padding-bottom: 2px;
+				margin: 5px 0 14px;
+				@include mixins.font_size_md;
+				color: variables.$textColorPurple;
+				font-weight: variables.$fontWeightBold;
+
+				.val {
+					font-size: 30px;
+					vertical-align: -2px;
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: 0;
+					width: 53px;
+					height: 21px;
+					background: {
+						repeat: no-repeat;
+						position: center bottom;
+					};
+					@include mixins.ratio_images('../images/ico_champion_mok', 'png', 53px, 21px);
+					@include mixins.transform(translateX(-50%));
+				}
+			}
+
+			.prod_area {
+				max-width: 160px;
+
+				.prod_thumb_box {
+					//box-shadow: 0 5px 10px rgba(#000, 0.1);
+
+					.img_box {
+						img {
+							max-height: calc(160px * 1.618 - 10px);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.type_row {
+		display: block;
+
+		.result_item {
+			display: block;
+			width: 100%;
+			margin-left: 0;
+			text-align: left;
+
+			& ~ .result_item {
+				margin-top: 20px;
+			}
+
+			.result_rank {
+				margin-bottom: 12px;
+			}
+			.result_info_box {
+				margin-top: 0;
+				padding: 23px 23px;
+				border-radius: 10px;
+				background-color: #fff;
+				border: 1px solid variables.$colorGray04;
+
+				.rate_bar {
+					height: 8px;
+					margin-top: 12px;
+					border-radius: 8px;
+					background-color: variables.$colorGray04;
+
+					.bar {
+						background-color: variables.$colorGray02;
+					}
+
+					& + .rate_info {
+						margin-top: 6px;
+					}
+				}
+
+				.rate_info {
+					display: block;
+
+					.rate {
+						& ~ .vote_num {
+							margin-left: 3px;
+						}
+					}
+				}
+			}
+
+			.my_select {
+				top: 7px;
+				bottom: auto;
+				right: 20px;
+			}
+
+			&.top {
+				padding-bottom: 0;
+				margin: 10px 0 12px;
+				border-bottom: none;
+
+				.result_info_box {
+					border: 1px solid variables.$kyoboPurple;
+
+					.rate_bar {
+						background-color: rgba(variables.$kyoboPurple, 0.06);
+					}
+
+					.bar {
+						background-color: variables.$kyoboPurple;
+					}
+				}
+
+				.my_select {
+					top: 17px;
+				}
+			}
+		}
+	}
+
+	&:not(.type_row){
+		.result_item {
+			@include mixins.respond-to(mobileLandscape){
+				width: calc((100% - 57px) / 3);
+
+				&:nth-child(n+3){
+					margin-top: 0;
+				}
+
+				&:nth-child(n+4){
+					margin-top: 40px;
+				}
+
+				&.top {
+					width: 100%;
+				}
+			}
+
+			@include mixins.respond-to(tablet){
+				width: calc((100% - 76px) / 4);
+
+				&:nth-child(n+3), &:nth-child(n+4){
+					margin-top: 0;
+				}
+
+				&:nth-child(n+5){
+					margin-top: 40px;
+				}
+
+				&.top {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+// 출간된 도서
+.publish_book_box {
+	.prod_area {
+		.prod_thumb_box {
+			width: 100%;
+			max-width: 160px;
+			margin: 0 auto;
+			box-shadow: 0px 5px 20px rgba(#000, 0.12);
+
+			.img_box {
+				img {
+					max-height: calc(160px * 1.618 - 10px);
+				}
+			}
+		}
+
+		.prod_info_box {
+			text-align: center;
+
+			& + .btn_wrap {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+//이벤트 참여 내역 SCR-BIZ08-06-M001 | SCR-BIZ08-06-M401
+.board_list_item {
+	.info_area {
+		display: block;
+		margin-bottom: 10px;
+		
+		[class^=badge_] {
+			margin-right: 6px;
+		}
+		.date {
+			display: inline-block;
+			@include mixins.font_size_xs;
+			color: variables.$textColorLightGray;
+			vertical-align: top;
+		}
+	}
+
+	.btn_text_link {
+		+ .period {
+			margin-top: 5px;
+		}
+
+		~ .btn_more_view {
+			margin-top: 12px;
+		}
+	}
+
+	.period {
+		display: block;
+		@include mixins.font_size_xs;
+		color: variables.$textColorGray;
+
+		.state {
+			display: inline-block;
+			@include mixins.font_size_xs;
+			color: variables.$textColorGray;
+			vertical-align: top;
+		}
+		.gap {
+			position: relative;
+			display: inline-block;
+			width: 1px;
+			height: 9px;
+			margin: 5px 6px 0;
+			background-color: variables.$colorGray03;
+			font-size: 0;
+			vertical-align: top;
+			box-sizing: border-box;
+		}
+		.date {
+			display: inline-block;
+			@include mixins.font_size_xs;
+			color: variables.$textColorLightGray;
+			vertical-align: top;
+		}
+
+		+ .desc {
+			margin-top: 10px;
+		}
+	}
+
+	.desc {
+		@include mixins.font_size_xs;
+		color: variables.$textColorLightGray;
+
+		&.size_xxs {
+			@include mixins.font_size_xxs;
+		}
+	}
+}
+
+.winning_result {
+	.result_text {
+		@include mixins.font_size_xs;
+		font-weight: variables.$fontWeightMedium;
+		color: variables.$textColorLightGray;
+	}
+	&.winner {
+		.result_text {
+			color: variables.$kyoboGreen;
+		}
+	}
+}

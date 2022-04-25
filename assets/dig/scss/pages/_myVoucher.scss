@@ -1,0 +1,334 @@
+.my_voucher{    
+    &_header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        h4{
+            font-size: 24px;
+            color: #000;
+        }
+        button + button{
+            margin-left: 2px;
+        }
+    }
+    &_no_ing{
+        width: 100%;
+        height: 150px;
+        box-sizing: border-box;
+    }
+    h6{
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+        position: relative;
+        height: 38px;
+
+        em,
+        span{
+            color: #3c9a17;
+            line-height: 38px;
+        }
+    }
+
+    &_box{
+        &_header{
+            border-top: 1px solid #d5d5d5;
+            border-left: 1px solid #d5d5d5;
+            border-right: 1px solid #d5d5d5;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            strong{
+                font-size: 16px;
+                color: #000;
+                font-weight: 500;
+            }
+            &>button{
+                font-size: 13px;
+                color: #595959;
+                margin-left: 10px;
+                padding-right: 14px;
+                position: relative;
+                cursor: pointer;
+                &::after{
+                    position: absolute;
+                    top: 4px;
+                    display: inline-block;
+                    width: 9px;
+                    height: 9px;
+                    background: url(../../common/images/arw_info_more@1.5x.png) no-repeat;
+                    background-size: 9px;
+                    content: "";
+                }
+            }
+            &>div{
+                margin-left: auto;
+                button{
+                    color: #474c98;
+                    & + button{
+                        margin-left: 2px;
+                    }
+                }
+            }
+        }
+        &_contents{
+            background-color: #f8f8fc;
+            border: 1px solid #d5d5d5;
+            border-radius: 0 0 12px 12px;
+            padding: 24px;
+            dl{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 24px 0;
+                width: 100%;
+                dt{
+                    width: 92px + 69px;
+                    color: #000;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+                dd{
+                    color: #767676;
+                    font-size: 14px;
+                    width: calc(100% / 2 - 92px - 69px);
+                    display: inline-flex;
+                    align-items: center;
+                    
+                    em{
+                        color: #000;
+                        font-weight: 500;
+                        padding-left: 3px;
+                    }
+                    & > .btn_line_gray{
+                        margin-left: 6px;
+                    }
+                }
+            }
+        }
+
+        & + .my_voucher_box{
+            margin-top: 30px;
+        }
+    }
+
+    &_tab{
+        margin-top: 60px;
+
+        .no_voucher{
+            background-color: #f7f7f7;
+            border-radius: 12px;
+            padding-top: 50px; 
+            padding-bottom: 40px;
+            p{
+                color: #767676;
+                text-align: center;
+            }
+            .btn_wrap{
+                margin-top: 20px;
+                button{
+                    min-width: 108px;
+                    font-weight: 500;
+                    padding-left: 24px;
+                    padding-right: 24px; 
+                }
+            }
+        }
+
+        .voucher_list {               
+            &_wrap{
+                position: relative;
+                
+                .form_sel{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }   
+
+            border-radius: 20px;
+            overflow: hidden;            
+            border: 1px solid #d5d5d5;
+            &_item {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding: 30px 30px 0 30px;
+    
+                &>strong {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #000;
+                    width: 332px;
+                    em{
+                        color: #474c98;
+                    }
+                }
+                dl{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 24px 0;
+                    width: calc(100% - 332px - 20px);
+                    padding-bottom: 30px;
+                    dt{
+                        width: 141px;
+                        font-size: 14px;
+                        color: #767676;
+                    }
+                    dd{
+                        width: calc(50% - 141px);
+                        font-size: 14px;
+                        color: #000;
+                    }
+                }
+                > button {
+                    width: 20px;
+                    height: 20px;
+                    text-indent: -1000px;
+                    background: url(../../common/images/arw_fold_toggle@1.5x.png) no-repeat center;
+                    background-size: 17px 10px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: all ease .2s;
+    
+                    &.current {      
+                        transform: rotate(-180deg);
+                    }
+                }
+    
+                &:last-child{
+                    border-bottom: 0;
+                }
+
+                .item {
+                    display: none;
+                    background-color: #fbfbfb;
+                    border-top: 1px solid #eaeaea;
+                    padding: 30px;
+                    margin: 0 -30px 0 -30px;
+                    height: auto;
+                    overflow: auto;
+                    width: 100%;
+
+                    table{
+                        tbody{
+                            tr{
+                                & + tr{
+                                    border-top: 1px solid #eaeaea;
+                                }
+                                &:first-child{
+                                    padding-top: 0;
+                                }
+                                td{
+                                    padding: 28px 0;
+                                    &:nth-child(5){
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+                                        gap: 5px;
+                                        .btn_line_primary{
+                                            width: 149px;
+                                        }
+                                        em{
+                                            color: #3c9a17;
+                                            font-weight: 500;
+                                        }
+                                        strong{
+                                            font-weight: 500;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & + .voucher_list_item{
+                    border-top: 1px solid #eaeaea;
+                }
+
+                span.state{
+                    font-size: 12px;
+                    font-weight: 500;
+                    letter-spacing: -0.01em;
+                    padding: 0 8px;
+                    display: inline-block;
+                    height: 19px;
+                    line-height: 19px;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    &.waiting{
+                        color: #474c98;
+                        background-color: 
+                        rgba(80, 85, 177, 0.06);
+                    }
+                    &.ing{
+                        color: #474c98;
+                        background-color: #fff;
+                        border: 1px solid #5055b1
+                    }
+                    &.expired{
+                        color: #595959;
+                        background-color: 
+                        #f0f0f0;
+                    }
+                }
+            }
+            
+            & + .area_list {
+                margin-top: 10px;
+            }        
+        }
+
+        .tbl_col_line.buy_tbl{
+            tbody tr{
+                td{
+                    &:not(:nth-child(2)){
+                        color: #767676;                    
+                        padding: 28px 0;
+                        strong{
+                            font-size: 16px;
+                            color: #000;
+                            span{
+                                font-size: 14px;
+                                font-weight: normal;
+                            }
+                            &.cancel{
+                                color: #ff0000;                            
+                            }
+                        }
+                    }
+                    &:nth-child(2){
+                        color: #000;
+                        padding: 28px 0 28px 20px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn_line_gray.arrow{
+        padding-right: 14px;
+        position: relative;
+        &::after{
+            position: absolute;
+            right: 6px;
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-image: url(../../common/images/arw_info_more.png);
+            background-size: 6px;
+            content: "";
+        }
+    }
+}

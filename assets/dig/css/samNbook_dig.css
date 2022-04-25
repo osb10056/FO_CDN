@@ -1,0 +1,20 @@
+.sam_n_book_visual {width: 100%; height: 400px; background: #d6dede url(../images/sam/img_sam_n_ekook.png) no-repeat center top; text-align: center; box-sizing: border-box; margin-bottom: 50px;}
+.sam_n_book_visual span {display: block; padding-top: 149px; font-size: 20px; color: #000;}
+.sam_n_book_visual strong {display: block; font-size: 50px; color: #000; margin-top: 2px;}
+.sam_n_book .eBook_list>.header .form_search_box {width: 400px; margin-left: auto;}
+.sam_n_book .eBook_list_header strong {font-size: 20px; display: block; width: 1200px; margin: 50px auto 0;}
+.sam_n_book .eBook_list_body {border-top: 0; padding-top: 20px;}
+.sam_n_book .eBook_list_body .prodDt strong {font-size: 16px;}
+.sam_n_book .eBook_list_body .prodDt_info span {font-size: 14px;}
+.sam_n_book .eBook_list_body:last-child {border-bottom: 0;}
+.sam_n_book_info {display: flex; flex-wrap: wrap; align-items: center; border-top: 1px solid #d8d8d8; width: 1200px; margin: 30px auto 50px;}
+.sam_n_book_info div {padding: 30px 0;}
+.sam_n_book_info div strong {font-size: 15px; color: #000; font-weight: 700;}
+.sam_n_book_info div ul {margin-top: 12px;}
+.sam_n_book_info div ul li {font-size: 14px; color: #595959; position: relative; padding-left: 9px;}
+.sam_n_book_info div ul li::before {position: absolute; left: 0; top: 8px; display: inline-block; width: 3px; height: 3px; border-radius: 50%; background-color: #767676; content: "";}
+.sam_n_book_info div ul li+li {margin-top: 10px;}
+.sam_n_book_info div:nth-child(1) {position: relative; width: 50%;}
+.sam_n_book_info div:nth-child(3) {width: 100%; border-top: 1px solid #eaeaea; position: relative; overflow: hidden; list-style: none; z-index: 1;}
+.sam_n_book_banner {width: 100%; height: 150px; background: url(../images/sam/img_sam_n_ekook_bottom.png) no-repeat center top; box-sizing: border-box;}
+/*# sourceMappingURL=samNbook_dig.css.map */

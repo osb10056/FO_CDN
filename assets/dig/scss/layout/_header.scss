@@ -1,0 +1,385 @@
+// 헤더.wrapper .header_wrapper.sps.sps-blw
+.wrapper {
+	.header_wrapper {
+		// 서비스 몰 이동
+		.service_mall_wrap {
+			.service_mall_inner {
+				&:before {
+					background-color: #2951cc;
+				}
+			}
+		}
+
+        .header_inner {
+            .gnb_search_wrap {
+                .logo_box {
+                    .logo_link {
+                        background-image: url(../../dig/images/common/img_logo_eBook.png);
+                        background-size: 174px 51px;
+                    }
+                }
+
+                .user_menu_list {
+                    .user_menu_item {
+                        &.cart {
+                            margin-left: 20px;
+                        }
+                        &.note {
+                            width: 31px;
+                            height: 33px;
+                            .user_menu_link:before {
+                                content: "";
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                background: url(../../dig/images/common/ico_top_note.png) no-repeat center;
+                                background-size: 100% 100%;
+                            }
+                        }
+                        &.cash {
+                            margin-left: 20px;
+                            width: 31px;
+                            height: 32px;
+                            .user_menu_link:before {
+                                content: "";
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                background: url(../../dig/images/common/ico_top_cash.png) no-repeat center;
+                                background-size: 100% 100%;
+                            }
+                        }
+                        &.library {
+                            margin-left: 20px;
+                            width: 31px;
+                            height: 32px;
+                            .user_menu_link:before {
+                                content: "";
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                background: url(../../dig/images/common/ico_top_library.png) no-repeat center;
+                                background-size: 100% 100%;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .gnb_wrap {
+                .tab_list_wrap {
+                    .tab_item {
+                        &.ui-state-active {
+                            background-color: #fff;
+                        }
+                    }
+                }
+                
+                .tab_wrap.category {
+                    width: 100% !important;
+                    .tab_item.ui-state-active {
+                        background-color: transparent !important;
+                        .tab_link {
+                            .tab_text {
+                                color: #3a7dd3 !important;
+                            }
+
+                            &:after {
+                                top: 7px !important;
+                                background-image: url(../../dig/images/common/ico_gnb_tab_arrow.png) !important;
+                            }
+                        }
+                    }
+                    .tab_link {
+                        padding: 0 !important;
+                    }
+                }
+
+                .recommend_service_link {
+                    span {
+                        margin: 0 auto;
+                    }
+                } 
+
+                .gnb_list {
+                    .gnb_item {
+                        
+                        div {
+                            display: none;
+
+                        }
+                        &.active {
+                            position: relative;
+                            > a {
+                                position: relative;
+                                color: #474c98;
+
+                                &:after {
+                                    position: absolute;
+                                    left: 50%;
+                                    bottom: -26px;
+                                    width: calc(100% - 16px);
+                                    height: 3px;
+                                    background-color: #5055b1;
+                                    transform: translateX(-50%);
+                                    content: "";
+                                }
+                            }
+
+                            div {
+                                display: block;
+                                position: absolute;
+                                left: 50%;
+                                bottom: -65px;
+                                display: flex;
+                                align-items: center;
+                                width: max-content;
+                                transform: translateX(-50%);
+                                z-index: 2;
+                                a {
+                                    font-size: 16px;
+                                    color: #444;
+                                    & + a {
+                                        margin-left: 17px;
+                                    }
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .anb_category {
+            padding: 0 !important;
+            &_inner {
+                display: flex;
+                height: 370px;
+                padding: 0 39px;
+                font-size: unset !important;
+    
+                .category {
+                    &_tab {
+                        width: 180px;
+                        li {                                
+                            button {
+                                font-weight: 500;
+                                font-size: 14px;
+                                color: #595959;
+                                cursor: pointer;
+    
+                                &:hover {
+                                    color: #3a7dd3;
+                                }
+                            }
+    
+                            &.current {
+                                button {
+                                    color: #3a7dd3;
+        
+                                    &:after {
+                                        display: inline-block;
+        
+                                        margin-left: 10px;
+                                        width: 10px;
+                                        height: 10px;
+                                        background: url(../../dig/images/common/arrow_gnbBtn_blue.png) no-repeat center;
+                                        content: "";
+                                    }
+                                }
+                            }
+                            
+                            & + li {
+                                margin-top: 16px;
+                            }
+                        }
+
+                        & + .category_wrap {
+                            display: flex;
+                        }
+                    }
+                    
+                    &_wrap {
+                        display: none;
+                        max-height: 370px;
+                        overflow: auto;
+                        overflow-x: hidden;
+                        
+                        &::-webkit-scrollbar {width: 2px;}
+                        &::-webkit-scrollbar-thumb {background-color: #000;}
+                        &::-webkit-scrollbar-track {background-color: #ececec;}
+                    }
+                    &_inner {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px 0;
+                        width: 155px;
+                        
+                        > div {
+                            h6 {
+                                margin-bottom: 16px;
+                                font-weight: 600;
+                                font-size: 14px;
+                                color: #000;
+                            }
+                        }
+                         
+                        &.first {
+                            width: 310px;
+                            .category_menu{
+                                display: flex;
+                                flex-direction: column;
+                                flex-wrap: wrap;
+                                justify-content: flex-start;
+                                align-content: flex-start;
+                                gap: 10px 50px;
+                                width: 276px !important;
+                                overflow: hidden;
+
+                                li {
+                                    margin-top: 0;
+                                    width: 113px;
+                                }
+                            }
+                        }
+
+                    }
+                    
+                    &_menu {
+                        li {
+                            > a {
+                                display: block;
+                                width: 100%;
+                                font-size: 13px;
+                                color: #000;
+                                background: url(../../dig/images/common/ico_gnb_cat_open.png) no-repeat right center;
+
+                                &.open {
+                                    text-decoration: underline;
+                                    background: url(../../dig/images/common/ico_gnb_cat_close.png) no-repeat right center;
+                                }
+
+                                &:only-child {
+                                    background: none;
+                                }
+
+                                em {
+                                    display: inline-block;
+                                    width: 12px;
+                                    height: 12px;
+                                    background: url(../../dig/images/common/ico_gnbN.png) no-repeat;
+                                    transform: translate(4px, -4px);
+                                }
+
+                            }
+
+                            > div {
+                                display: none;
+                                margin: 10px 0 20px;
+                                a {
+                                    display: block;
+                                    font-size: 13px;
+                                    color: #767676;
+                                    & + a {
+                                        margin-top: 6px;
+                                    }
+                                }
+                            }
+
+                            & + li {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+
+                }
+    
+            }
+
+            .quick_service {
+                display: flex;
+                gap: 0 36px;
+                margin: 40px 0 0 219px;
+
+                li {
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+
+                        .title {
+                            margin-top: auto;
+                            font-size: 13px;
+                            color: #767676;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &.sps-blw {
+            .gnb_bg {
+                display: none;
+            }
+        }
+
+        .gnb_bg {
+            position: absolute;
+            left: 0;
+            top: 208px;
+            display: block;
+            width: 100%;
+            height: 55px;
+            border-bottom: 1px solid #f4f4f4;
+            background-color: #fff;
+            z-index: 1;
+        }
+	}
+}
+
+.mall_tab {
+    display: flex;
+    gap: 0 40px;
+    margin: 20px 0 40px;
+    padding-left: 40px;
+    border-bottom: 1px solid #d5d5d5;
+
+    button {
+        position: relative;
+        padding-bottom: 13px;
+        font-size: 14px;
+        color: #767676;
+        cursor: pointer;
+
+        &.current {
+            font-weight: 600;
+            color: #000;
+
+            &:after {
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                width: 100%;
+                height: 2px;
+                background-color: #000;
+                content: "";
+            }
+        }
+    }
+}
+
+
+.breadcrumb_item {
+    a:only-child {
+        &:after {
+            display: none !important;
+        }
+    }
+}

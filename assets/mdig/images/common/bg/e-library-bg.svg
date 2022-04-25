@@ -1,0 +1,35 @@
+<svg id="그룹_50411" data-name="그룹 50411" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="297" viewBox="0 0 375 297">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_19168" data-name="사각형 19168" width="375" height="297" transform="translate(-1382 -18299)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#448ae2"/>
+      <stop offset="1" stop-color="#70c7db"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.09" y1="0.105" x2="1.048" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a08aea"/>
+      <stop offset="0.512" stop-color="#8e6ed6" stop-opacity="0.467"/>
+      <stop offset="1" stop-color="#79c3de"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.163" y1="0.799" x2="0.766" y2="0.245" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="마스크_그룹_114" data-name="마스크 그룹 114" transform="translate(1382 18299)" clip-path="url(#clip-path)">
+    <g id="_top" data-name="++top" transform="translate(-1382 -18299)">
+      <g id="bg">
+        <g id="bg-2" data-name="bg">
+          <rect id="bg-3" data-name="bg" width="375" height="336" fill="url(#linear-gradient)"/>
+          <rect id="bg-4" data-name="bg" width="375" height="336" fill="url(#linear-gradient-2)"/>
+          <circle id="타원_1172" data-name="타원 1172" cx="111.935" cy="111.935" r="111.935" transform="translate(256 -74.131)" opacity="0.12" fill="url(#linear-gradient-3)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="graphic" transform="translate(20 57.477)">
+    <circle id="타원_1166" data-name="타원 1166" cx="12.935" cy="12.935" r="12.935" fill="#fff" opacity="0.3"/>
+    <circle id="타원_1167" data-name="타원 1167" cx="4.59" cy="4.59" r="4.59" transform="translate(38.387 25.869)" fill="#fff" opacity="0.3"/>
+  </g>
+</svg>

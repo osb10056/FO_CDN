@@ -1,0 +1,145 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+
+
+.slide-wrap {
+  &.type-banner {
+	.swiper-wrapper {
+	  .swiper-slide {
+		width: 100%;
+		img {
+		  width: 100%;
+		}
+	  }
+	}
+  }
+  &.type-main-bnr{
+	overflow:visible;
+	.swiper-wrapper {
+	  .swiper-slide {
+		width: 100%;
+		margin-right: 20px;
+		img {
+		  width: 100%;
+		  border-radius: 16px 16px 16px 0;
+		}
+	  }
+	}
+  }
+  &.type-line-bnr-01{
+	overflow: visible;
+	.swiper-wrapper {
+	  .swiper-slide {
+		width: 100%;
+		margin-right:20px;
+		img {
+		  width: 100%;
+		  border-radius:16px;
+		}
+	  }
+	}
+  }
+  &.type-line-bnr-02{
+	overflow: hidden;
+	width:calc(100% + 20px);
+	.swiper-wrapper {
+	  .swiper-slide {
+		width: 89.55%;
+		margin-right:12px;
+		img {
+		  width: 100%;
+		  border-radius:16px;
+		}
+	  }
+	}
+  }
+
+  &.gap-type-00 {
+	.swiper-wrapper {
+	  .swiper-slide {
+		margin-right: 16px;
+	  }
+	}
+
+	&[swipe-loop='false'] {
+	  .swiper-wrapper {
+		.swiper-slide {
+		  &:last-child {
+			margin-right: 0;
+		  }
+		}
+	  }
+	}
+  }
+  &.gap-type-01 {
+	.swiper-wrapper {
+	  .swiper-slide {
+		margin-right: 20px;
+	  }
+	}
+  }
+  &[swipe-loop='false'] {
+	.swiper-wrapper {
+	  .swiper-slide {
+		&:last-child {
+		  margin-right: 0;
+		}
+	  }
+	}
+  }
+  &.view-type-visible {
+	overflow: visible;
+  }
+  //item-size-l : width 159px
+  &.item-size-l {
+	.swiper-wrapper {
+	  .swiper-slide {
+		width: 47.46%
+	  }
+	}
+  }
+  &.swiper_navigation{
+	.navi_btn{
+	  width:30px;
+	  height:30px;
+	  background:url("/assets/mdig/images/common/btn/btn_swiper_navi.png") no-repeat left top;
+	  background-size:100% auto;
+	  &.swiper-button-disabled{
+		opacity:1;
+		background-position-y:-30px;
+	  }
+	}
+  }
+  .swiper-pagination {
+	&.swiper-pagination-fraction {
+	  &.position_right {
+		transform: none;
+		left: auto;
+		right: 12px;
+		bottom: 12px;
+	  }
+	}
+
+	.type-round {
+	  border-radius: 10px;
+	  overflow: hidden;
+	}
+  }
+  .swiper-wrapper{
+	.swiper-slide{
+	  &:first-child{
+		.product_item{
+		  .rank {
+			//background-color: #4dac27;
+		  }
+		}
+	  }
+	}
+  }
+}

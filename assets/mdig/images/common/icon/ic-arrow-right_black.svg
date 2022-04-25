@@ -1,0 +1,14 @@
+<svg data-name="icon/arrow-right_12" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+    <defs>
+        <clipPath id="a8smh5ajga">
+            <path d="M2.793 3.5.146 6.146a.5.5 0 0 0 .707.707l3-3a.5.5 0 0 0 0-.707l-3-3a.5.5 0 0 0-.707.708z"/>
+        </clipPath>
+    </defs>
+    <path data-name="사각형 3404" style="fill:none" d="M0 0h12v12H0z"/>
+    <g data-name="그룹 590">
+        <path data-name="Shape" d="M6.793 6.5 4.146 9.146a.5.5 0 0 0 .707.707l3-3a.5.5 0 0 0 0-.707l-3-3a.5.5 0 0 0-.707.708z"/>
+        <g data-name="마스크 그룹 203" style="clip-path:url(#a8smh5ajga)" transform="translate(4 3)">
+            <path d="M-4-2.5H8v12H-4z" data-name="COLOR/ black"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,54 @@
+@use './assets/common/scss/abstracts/variables';
+@use '../abstracts/var';
+
+//  product_list_title
+@mixin product_list_title-lg {
+    font-weight: var.$fontWeightBold;
+	font-size: var.$fontBodyTitleLg;
+	line-height: var.$fontBodyTitleLineLg;
+	letter-spacing: var.$letterSpacing;
+}
+@mixin product_list_title-md {
+    font-weight: var.$fontWeightMedium;
+	font-size: var.$fontBodyTitleMd;
+	line-height: var.$fontBodyTitleLineMd;
+	letter-spacing: var.$letterSpacing;
+}
+@mixin product_list_title-sm {
+    font-weight: var.$fontWeightMedium;
+	font-size: var.$fontBodyTitleSm;
+	line-height: var.$fontBodyTitleLineSm;
+	letter-spacing: var.$letterSpacing;
+}
+
+@mixin font_type_subcopy {
+  font-size: var.$fontSizeTypeSubCopy;
+  line-height: var.$lineHeightTypeSubCopy;
+  letter-spacing: var.$letterSpacingTypeSubCopy;
+}
+@mixin font_type_b0 {
+  font-size: var.$fontSizeType00;
+  letter-spacing: var.$letterSpacingType00;
+  line-height: var.$lineHeightType00;
+}
+@mixin font_type_b1 {
+  font-size: var.$fontSizeType01;
+  line-height: var.$lineHeightType01;
+  letter-spacing: var.$letterSpacingType01;
+}
+@mixin font_type_b2 {
+  font-size: var.$fontSizeType02;
+  letter-spacing: var.$letterSpacingType01;
+  line-height: var.$lineHeightType01;
+}
+@mixin font_type_info {
+  font-size: var.$fontSizeTypeInfo;
+  letter-spacing: var.$letterSpacingTypeInfo;
+  line-height: var.$lineHeightTypeInfo;
+  color: var.$fontColorTypeInfo;
+}
+.ft_sub{}
+.ft_b0{}
+.ft_b1{}
+.ft_b2{}
+.ft_info{}

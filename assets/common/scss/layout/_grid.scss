@@ -1,0 +1,213 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+html,
+body {
+	width: 100%;
+	height: var(--reVh, 1vh);
+	height: calc(constant(safe-area-inset-bottom) + constant(safe-area-inset-top) + var(--reVh, 1vh) );
+	height: calc(env(safe-area-inset-bottom) + env(safe-area-inset-top) + var(--reVh, 1vh) );
+}
+
+body {
+	position: relative;
+	background: #fff;
+}
+
+.wrapper{
+	.header_wrapper {
+		.gnb_wrap{
+			position: relative;
+			padding-top: 50px;
+			box-sizing: border-box;
+
+			.gnb_list_wrap{
+				@include mixins.scrollX;
+				//border-bottom: 1px solid variables.$colorGray03;
+				top: 0;
+				left: 0;
+				height: 50px;
+				box-sizing: border-box;
+
+				.gnb_list{
+					height: 100%;
+					white-space: nowrap;
+
+					.gnb_item{
+						display: inline-block;
+						height: 100%;
+						padding: 0 7px;
+						vertical-align: top;
+						box-sizing: border-box;
+
+						.gnb_link{
+							display: block;
+							height: 100%;
+							padding: 14px 7px 0;
+							@include mixins.font_size_def;
+							font-weight: variables.$fontWeightBold;
+							box-sizing: border-box;
+
+							&.picks{
+								padding-top: 12px;
+								font-size: 0;
+								width: 54px;
+
+								img{
+									width: 100%;
+								}
+							}
+						}
+
+						&.active{
+							.gnb_link{
+								color: variables.$textColorPurple;
+
+								&.picks{
+									position: relative;
+
+									&:after{
+										content: '';
+										position: absolute;
+										left: 50%;
+										bottom: 8px;
+										display: block;
+										width: 5px;
+										height: 5px;
+										border-radius: 100%;
+										background-color: variables.$kyoboPurple;
+										@include mixins.transform(translateX(-50%));
+									}
+								}
+							}
+						}
+
+						&:first-child{
+							padding-left: 13px;
+						}
+
+						&:last-child{
+							padding-right: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.container_wrapper{
+		padding-top: 60px;
+		box-sizing: border-box;
+	}
+
+	.contents_wrap{
+		.contents_inner{
+			padding: 0 20px;
+		}
+
+		.gap_first{
+			margin-top: 20px;
+		}
+
+
+
+		.breadcrumb_wrap{
+			position: relative;
+			margin-bottom: 20px;
+
+			.breadcrumb_list{
+				padding: 0 20px;
+				font-size: 0;
+				@include mixins.scrollX;
+				white-space: nowrap;
+
+				.breadcrumb_item{
+					display: inline-block;
+					vertical-align: top;
+
+					.btn_sub_depth{
+						border: 1px solid variables.$colorGray03;
+						border-radius: 18px;
+						padding: 8px 15px 7px;
+						@include mixins.font_size_xs;
+						color: variables.$textColorLightGray;
+					}
+
+					~ .breadcrumb_item{
+						&:before{
+							content: '';
+							display: inline-block;
+							width: 6px;
+							height: 8px;
+							margin: 14px 4px 0;
+							@include mixins.ratio_images('../images/ico_breadcrumb_gap_mok', 'png', 6px, 8px);
+							vertical-align: top;
+						}
+					}
+				}
+			}
+
+			&.active{
+				.breadcrumb_list {
+					.breadcrumb_item {
+						.btn_category_dropdown {
+							.ico_category_more {
+								@include mixins.ratio_images('../images/arw_category_more_active_mok', 'png', 22px, 22px);
+							}
+						}
+					}
+				}
+
+				.category_dropdown_area{
+					position: fixed;
+					display: block;
+					top: 115px;
+					height: calc(var(--reVh, 1vh) - 115px);
+					z-index: 101;
+				}
+			}
+
+			+ .tag_wrap{
+				margin-top: 16px;
+			}
+		}
+	}
+}
+
+.contents_wrap, .dialog_contents {
+	.contents_gap_area{
+		margin-top: 50px;
+
+		&:before{
+			content: '';
+			display: block;
+			height: 10px;
+			margin-bottom: 50px;
+			background-color: variables.$colorGray06;
+		}
+
+		&.gap_sm{
+			margin-top: 24px;
+
+			&:before{
+				margin-bottom: 24px;
+			}
+
+			&.fold_box_wrap{
+				&:before{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&.no_gap_top{
+			margin-top: 0;
+		}
+
+	}
+}
+
+// ios 가로모드에서 폰트사이즈 커짐 이슈관련 소스
+@media only screen and (min-width : 320px) and (max-width : 560px) { body {-webkit-text-size-adjust: none;} }

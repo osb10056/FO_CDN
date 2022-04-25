@@ -1,0 +1,93 @@
+@use 'sass:map';
+@use '../../common/scss/abstracts/variables';
+@use '../../common/scss/abstracts/functions';
+@use '../../common/scss/abstracts/mixins';
+@use '../../common/scss/abstracts/placeholders';
+
+.top_visual {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.benefit {
+    &_tabMenu {
+        display: flex;
+        align-items: center;
+
+        button {
+            flex-grow: 1;
+            height: 54px;
+            font-size: 15px;
+            color: #767676;
+            box-sizing: border-box;
+            border: 1px solid #d5d5d5;
+            cursor: pointer;
+
+            &.current {
+                font-weight: 600;
+                color: #fff;
+                border: 1px solid #5055b1;
+                background-color: #5055b1;
+            }
+
+            & + button {
+                margin-left: -1px;
+            }
+
+            &:first-of-type {
+                border-radius: 6px 0 0 6px;
+            }
+            &:last-of-type {
+                border-radius: 0 6px 6px 0;
+            }
+        }
+
+        & + .benefit_list {
+            display: flex;
+        }
+    }
+
+    &_list {
+        display: none;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        gap: 36px;
+
+        li {
+            padding: 30px 20px;
+            width: 273px;
+            height: 350px;
+            box-sizing: border-box;
+            border-radius: 16px;
+            border: 1px solid #eaeaea;
+
+            .tit {
+                height: 48px;
+                font-weight: 600;
+                font-size: 16px;
+                text-align: center;
+                line-height: 24px;
+
+                span {
+                    display: block;
+                    font-weight: bold;
+                    color: #474c98;
+                }
+            }
+
+            .img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 176px;
+                text-align: center;
+            }
+            .cont {
+                font-size: 15px;
+                color: #000;
+                line-height: 23px;
+                text-align: center;
+            }
+        }
+    }
+}

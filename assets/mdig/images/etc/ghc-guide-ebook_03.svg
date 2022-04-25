@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88.116" height="82.081" viewBox="0 0 88.116 82.081">
+    <g data-name="그룹 1917">
+        <g data-name="그룹 1910">
+            <g data-name="그룹 1909">
+                <path data-name="패스 14544" d="M1860.036 672.748h10.7l-10.7-10.705z" transform="translate(-1793.992 -659.627)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+            </g>
+        </g>
+        <g data-name="그룹 1911">
+            <path data-name="선 167" transform="translate(15.043 60.844)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h11.65"/>
+            <path data-name="선 168" transform="translate(14.831 65.903)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h27.666"/>
+            <path data-name="선 169" transform="translate(14.831 70.963)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h27.666"/>
+            <path data-name="선 170" transform="translate(14.831 76.022)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h27.666"/>
+            <path data-name="선 171" transform="translate(14.831 81.081)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h17.904"/>
+        </g>
+        <path data-name="사각형 3426" transform="translate(0 15.246)" style="fill:#a9ff88" d="M0 0h57.17v39.962H0z"/>
+        <path data-name="사각형 3427" transform="translate(59.936 33.803)" style="fill:#ffd23d" d="M0 0h20.8v12.87H0z"/>
+        <g data-name="그룹 1912">
+            <path data-name="패스 14545" d="M1761.568 681.915h-20.7v38.468h20.7a4.047 4.047 0 0 1 4.049 4.048v-38.467a4.047 4.047 0 0 0-4.049-4.049z" transform="translate(-1736.92 -669.145)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+            <path data-name="패스 14546" d="M1805.277 720.383h-13.3a4.049 4.049 0 0 0-4.05 4.048v-38.467a4.049 4.049 0 0 1 4.05-4.049h20.7v8.07" transform="translate(-1759.458 -669.145)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+        </g>
+        <g data-name="그룹 1913">
+            <path data-name="선 172" transform="translate(8.069 18.106)" style="stroke-linejoin:round;stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h9.633"/>
+            <path data-name="선 173" transform="translate(8.069 24.365)" style="stroke-linejoin:round;stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h16.225"/>
+            <path data-name="선 174" transform="translate(8.069 28.959)" style="stroke-linejoin:round;stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h16.225"/>
+            <path data-name="선 175" transform="translate(8.069 33.554)" style="stroke-linejoin:round;stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h11.587"/>
+        </g>
+        <g data-name="그룹 1915">
+            <path data-name="패스 14547" d="M1865.427 704.984h-33.244a4.884 4.884 0 0 0-4.883 4.788h-.005v38.194h.013c-.006-.092-.013-.182-.013-.276a4.888 4.888 0 0 1 4.888-4.888h33.244z" transform="translate(-1778.311 -680.194)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+            <g data-name="그룹 1914">
+                <path data-name="패스 14548" d="M1865.427 777.563h-33.244a4.888 4.888 0 1 0 0 9.776h33.244z" transform="translate(-1778.311 -714.955)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+            </g>
+            <path data-name="패스 14549" d="m1848.433 796.143-3.547-2.249-3.544 2.249v-8.39h7.091z" transform="translate(-1785.038 -719.835)" style="fill:#ffd23d"/>
+            <path data-name="선 176" transform="translate(53.508 67.775)" style="fill:#fff;stroke:#282d33;stroke-width:2px" d="M0 0h33.61"/>
+            <path data-name="선 177" transform="translate(53.508 25.261)" style="fill:#fff;stroke:#282d33;stroke-width:2px" d="M0 37.044V0"/>
+            <path data-name="선 178" transform="translate(62.787 42.494)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h15.03"/>
+            <path data-name="선 179" transform="translate(64.551 37.763)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h11.505"/>
+        </g>
+        <g data-name="그룹 1916">
+            <path data-name="패스 14550" d="m1799.244 729.755 5.083 5.08 5.083-5.08" transform="translate(-1764.876 -692.058)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+            <path data-name="선 180" transform="translate(39.449 8.437)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M.002 34.054 0 0"/>
+        </g>
+    </g>
+</svg>

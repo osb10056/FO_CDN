@@ -1,0 +1,351 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+
+.audioPlayer {
+  position: fixed;
+  right: 10px;
+  bottom: 160px;
+  z-index: 9;
+
+  .inner {
+	position: relative;
+	height: auto;
+	width: 78px;
+	background-color: #fff;
+	transition: width 0.4s ease-in-out;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12);
+	border-radius: 20px;
+	z-index: 10;
+	//overflow: hidden;
+	button {
+	  border: 0;
+	  background-color: transparent;
+	  padding: 0;
+	  margin: 0;
+	  cursor: pointer;
+	  font-size: 0;
+	  font-family: "Nanum Gothic",Dotum,arial,sans-serif;
+	}
+	.miniPlayer {
+	  position: relative;
+	  width: 78px;
+	  height: 78px;
+	  padding: 14px;
+	  z-index: 4;
+	  transition: height 0.4s ease-in-out;
+	  box-sizing: border-box;
+	  border-radius: 20px 20px 0 0;
+	  background-color:#fff;
+	  .thumb {
+		position: relative;
+		float: left;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		&:after {
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  width: 50px;
+		  height: 50px;
+		  z-index: 2;
+		}
+
+		img {
+		  position: relative;
+		  top: 50%;
+		  width: 100%;
+		  transform: translateY(-50%);
+		}
+
+		.equalizer {
+		  position: absolute;
+		  left: 0;
+		  bottom: 15px;
+		  font-size: 0;
+		  line-height: 0;
+		  width: 100%;
+		  text-align: center;
+
+		  span {
+			margin: 0 1px;
+			display: inline-block;
+			height: 20px;
+			width: 3px;
+			background-color: #fff;
+			border-radius: 3px;
+		  }
+		}
+	  }
+	  .contorlBox {
+		display: flex;
+		position: relative;
+		float: left;
+		width: 0;
+		height: 50px;
+		overflow: hidden;
+		transition: height 0.4s ease-in-out;
+		.info {
+		  position: relative;
+		  display: flex;
+		  align-items: center;
+		  flex-direction: column;
+		  text-align: left;
+		  width: calc(100% - 100px);
+		  height: 100%;
+		  padding: 0px 8px;
+		  box-sizing: border-box;
+
+		  .tit {
+			display: inline-block;
+			width: 100%;
+			font-size: 14px;
+			color: #000;
+			line-height: 24px;
+			letter-spacing: -0.14px;
+			font-weight: 500;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		  }
+
+		  .reading {
+			display: inline-block;
+			width: 100%;
+			font-size: 12px;
+			color: #767676;
+			line-height: 24px;
+			letter-spacing: -0.12px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			width: 100%;
+			padding: 0;
+		  }
+		}
+		.pannel {
+		  display: flex;
+		  width: 100px;
+		  height: 50px;
+		  align-items: center;
+		  justify-content: end;
+
+		  .btn_play {
+			button {
+			  background: transparent url("/assets/mdig/images/common/btn/btn_audio_play.png") 0 0 no-repeat;
+			  background-size: 24px 50px;
+			  width: 24px;
+			  height: 24px;
+			  overflow: hidden;
+			  text-indent: -9999px;
+			  outline: 0;
+			}
+
+			&.stop button {
+			  background-position: center bottom;
+			}
+		  }
+
+		  .btn_playList {
+			background: transparent url("/assets/mdig/images/common/btn/btn_audio_playlist.png") 0 0 no-repeat;
+			background-size: 24px 24px;
+			width: 24px;
+			height: 24px;
+			overflow: hidden;
+			text-indent: -9999px;
+			outline: 0;
+			margin-left: 20px;
+		  }
+		}
+	  }
+	  .progress_box {
+		position: relative;
+		width: 100%;
+		height: 0px;
+		opacity: 0;
+		overflow: hidden;
+		transition: all 0.4s ease-in-out;
+	  }
+	}
+	.btn_close {
+	  position: relative;
+	  width: 100%;
+	  height: 38px;
+	  background-color: #d5d5d5;
+	  text-align: center;
+	  border-radius: 0 0 20px 20px;
+	  overflow: hidden;
+
+	  button {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		margin-top: 9px;
+		background: url("/assets/mdig/images/common/btn/btn_close_20x20_fff.png") 0 0 no-repeat;
+		text-indent: -9999px;
+		overflow: hidden;
+		background-size: 20px 20px;
+	  }
+	}
+  }
+
+  &.open .inner {
+	height: auto;
+	width: calc(100vw - 20px);
+	overflow: visible;
+	.miniPlayer {
+	  height: 121px;
+	  width: 100%;
+	  .contorlBox {
+		width: calc(100% - 50px);
+	  }
+	  .progress_box {
+		height: 57px;
+		opacity: 1;
+		.progress {
+		  position: relative;
+		  text-align: left;
+		  width: 100%;
+		  z-index: 4;
+		  height: 4px;
+		  padding-top: 18px;
+		  margin-bottom: 6px;
+		  cursor: pointer;
+
+		  strong {
+			background: url("/assets/mdig/images/common/bg/audio_progress_bg_0.png") 0 0 no-repeat;
+			display: block;
+			cursor: pointer;
+			background-size: 100%;
+			border-radius: 25px;
+			overflow: hidden;
+		  }
+
+		  span {
+			display: block;
+			background: url("/assets/mdig/images/common/bg/audio_progress_bg_1.png") 0 0 no-repeat;
+			height: 100%;
+			width: 0;
+			font-size: 0;
+			line-height: 0;
+			overflow: hidden;
+			text-indent: -9999px;
+			height: 4px;
+			cursor: pointer;
+			background-size: 100% 4px;
+		  }
+		}
+		.progress_dot {
+		  position: absolute;
+		  left: 0;
+		  top: 14px;
+		  width: 12px;
+		  height: 12px;
+		  background-color: #ad35ff;
+		  border-radius: 50%;
+		}
+		.time {
+		  float: left;
+		  font-size: 13px;
+		  color: #000;
+		  line-height: 24px;
+		  letter-spacing: -.13px;
+		  font-weight: bold;
+		  font-family: Roboto, sans-serif;
+		}
+		.total {
+		  float: right;
+		  font-size: 13px;
+		  color: #767676;
+		  line-height: 24px;
+		  letter-spacing: -.13px;
+		  font-family: Roboto, sans-serif;
+		}
+	  }
+	}
+  }
+  .playList {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	top: 0;
+	overflow: hidden;
+	display: none;
+
+	ul {
+	  width: 100%;
+	  z-index: 1;
+	  height: 50px;
+
+	  li {
+		height: 50px;
+		padding-left: 4px;
+		float: left;
+		width: 50px;
+
+		&:first-child {
+		  padding-left: 3px;
+		}
+	  }
+
+	  .thumb {
+		position: relative;
+		float: left;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		&:after {
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  width: 50px;
+		  height: 50px;
+		  z-index: 2;
+		}
+
+		img {
+		  position: relative;
+		  top: 50%;
+		  width: 100%;
+		  transform: translateY(-50%);
+		}
+	  }
+	}
+
+	.btn_inPlay {
+	  overflow: hidden;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  z-index: 2;
+	  outline: 0;
+	  width: 50px;
+	  height: 50px;
+
+	  &.stop:after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		content: "";
+		width: 50px;
+		height: 50px;
+		background: rgba(0, 0, 0, 0.7) url("/assets/mdig/images/common/icon/ico_audio_eq.png") center center no-repeat;
+		display: block !important;
+		background-size: 20px 18px;
+	  }
+	}
+  }
+}

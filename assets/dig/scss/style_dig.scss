@@ -1,0 +1,7 @@
+// DESC : import 이외 다른 코드 사용하지 말 것!
+@import url(/assets/common/css/style_ink.css);
+@import url(/assets/dig/css/components_dig.css);
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'components/banner';

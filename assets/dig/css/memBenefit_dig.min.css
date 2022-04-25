@@ -1,0 +1,88 @@
+.top_visual {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.benefit_tabMenu {
+  display: flex;
+  align-items: center;
+}
+
+.benefit_tabMenu button {
+  flex-grow: 1;
+  height: 54px;
+  font-size: 15px;
+  color: #767676;
+  box-sizing: border-box;
+  border: 1px solid #d5d5d5;
+  cursor: pointer;
+}
+
+.benefit_tabMenu button.current {
+  font-weight: 600;
+  color: #fff;
+  border: 1px solid #5055b1;
+  background-color: #5055b1;
+}
+
+.benefit_tabMenu button+button {
+  margin-left: -1px;
+}
+
+.benefit_tabMenu button:first-of-type {
+  border-radius: 6px 0 0 6px;
+}
+
+.benefit_tabMenu button:last-of-type {
+  border-radius: 0 6px 6px 0;
+}
+
+.benefit_tabMenu+.benefit_list {
+  display: flex;
+}
+
+.benefit_list {
+  display: none;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 36px;
+}
+
+.benefit_list li {
+  padding: 30px 20px;
+  width: 273px;
+  height: 350px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid #eaeaea;
+}
+
+.benefit_list li .tit {
+  height: 48px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.benefit_list li .tit span {
+  display: block;
+  font-weight: bold;
+  color: #474c98;
+}
+
+.benefit_list li .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 176px;
+  text-align: center;
+}
+
+.benefit_list li .cont {
+  font-size: 15px;
+  color: #000;
+  line-height: 23px;
+  text-align: center;
+}
+/*# sourceMappingURL=memBenefit_dig.min.css.map */

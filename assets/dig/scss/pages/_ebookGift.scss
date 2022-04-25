@@ -1,0 +1,495 @@
+@use 'sass:map';
+@use '../../common/scss/abstracts/variables';
+@use '../../common/scss/abstracts/functions';
+@use '../../common/scss/abstracts/mixins';
+@use '../../common/scss/abstracts/placeholders';
+
+button {
+    cursor: pointer;
+}
+
+.top_visual {
+    height: 400px;
+    background: #6AE1BC url(../../dig/images/etc/bg_ebook_gift_top.png) no-repeat center;
+    .contents_inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        color: #fff;
+
+        b {
+            position: relative;
+            font-size: 18px;
+            line-height: 28px;
+
+            &:after {
+                position: absolute;
+                left: 0;
+                bottom: 3px;
+                display: block;
+                width: 195px;
+                height: 7px;
+                background-color: rgba(192,255,237,33%);
+                z-index: 0;
+                content: "";
+            }
+        }
+        strong {
+            margin: 20px 0;
+            font-size: 40px;
+            line-height: 56px;
+        }
+        span {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+}
+
+.ebookGift {
+    &_tit {
+        display: flex;
+        align-items: center;
+        margin-top: 50px !important;
+
+        h1 {
+            margin-right: auto;
+            font-size: 30px;
+            color: #000;            
+        }
+
+        a, button {
+            margin-left: 6px;
+            padding: 0 20px;
+            border-radius: 19px;
+        }
+    }
+}
+.ebook_write {
+    padding-bottom: 100px;
+    .swiper {
+        margin-left: calc(50% - 600px);
+    }
+    .ebook {
+        position: relative;
+        width: 211px;
+        height: 349px;
+        box-sizing: border-box;
+
+        .cover {
+            width: 211px;
+            border: 1px solid #eaeaea;
+            border-radius: 16px 16px 16px 0;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        strong {
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 15px;
+            @include mixins.multi_ellipsis(22px, 2, false);
+        }
+
+        .btn {
+            display: none;
+        }
+
+        &.hover, &:hover {
+            padding: 40px 45px;
+            text-align: center;
+            .cover {
+                width: 118px;
+                position: relative;
+                z-index: 2;
+            }
+            strong {
+                display: block;
+                font-size: 14px;
+                color: #fff;
+                position: relative;
+                z-index: 2;
+                @include mixins.multi_ellipsis(22px, 2, false);
+            }
+
+            .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0 20px;
+                margin-top: 40px;
+                position: relative;
+                z-index: 2;
+
+                a, button {
+                    width: 20px;
+                    height: 20px;
+                    text-indent: -1000px;
+                    overflow: hidden;
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    &.view {
+                        background-image: url(../../dig/images/etc/btn_prod.png);
+                    }
+                    &.gift {
+                        background-image: url(../../dig/images/etc/btn_gift.png);
+                    }
+                    &.like {
+                        background-image: url(../../dig/images/etc/btn_like.png);
+                    }
+                }
+            }
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                opacity: .6;
+                background-color: #000;
+                z-index: 0;
+                content: "";
+            }
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                backdrop-filter: blur(50px);
+                z-index: 1;
+                content: "";
+            }
+        }
+    }
+    .swiper-scrollbar {
+        left: calc(50% - 600px);
+        bottom: -50px;
+        width: 1200px;
+        height: 2px;
+        background-color: rgba(0,0,0,6%);
+    }
+    .swiper-scrollbar-drag {
+        background-color: #000;
+    }
+}
+
+.catrecom {
+    position: relative;
+    margin: 80px auto 0;
+    width: 1200px;
+    h4 {
+        display: inline-block;
+        font-size: 20px;
+        color: #000;
+    }
+
+    .tab {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 24px;
+        line-height: 28px;
+        vertical-align: bottom;
+
+        button {
+            font-size: 14px;
+            color: #757575;
+            &.current {
+                font-weight: 600;
+                color: #474c98;
+            }
+
+            & + button:before {
+                display: inline-block;
+                margin: 0 13px 0 10px;
+                width: 1px;
+                height: 10px;
+                background-color: #eaeaea;
+                content: "";
+            }
+        }
+    }
+
+    .swiper {
+        margin-top: 25px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .swiper-button-prev {
+        left: calc(50% - 664px);
+    }
+    .swiper-button-next {
+        right: calc(50% - 664px);
+    }
+    .swiper-button-prev, .swiper-button-next {
+        margin-top: 8px;
+    }
+    
+    .swiper-slide {
+        padding-top: 73px;
+        .prodDt_detail {
+            padding-top: 15px;
+            .prodDt_info, .prodDt_price {
+                display: none;
+                opacity: 0;
+            }
+        }
+
+        &-active {
+            display: flex;
+            gap: 0 50px;
+            padding-top: 0;
+            padding-left: 30px;
+            box-sizing: border-box;
+            .prodDt_cover {
+                position: relative;
+                width: 250px;
+                height: 365px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:after {
+                    position: absolute;
+                    left: -30px;
+                    top: 50%;
+                    width: 308px;
+                    height: 308px;
+                    border-radius: 50%;
+                    background-color: #f7f7f7;
+                    transform: translateY(-50%);
+                    z-index: -1;
+                    content: "";
+                }
+            }
+            .prodDt_detail {
+                flex: 1;
+                display: block;
+                width: 296px;
+                padding-top: 120px;
+                .prodDt_info, .prodDt_price {
+                    display: block;
+                    opacity: 1;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
+
+.eBook_list {
+    margin-top: 100px;
+    &_header {
+        h4 {
+            font-size: 20px;
+            color: #000;
+            span {
+                display: inline-block;
+                margin-left: 18px;
+                font-weight: 400;
+                font-size: 14px;
+                color: #767676;
+                vertical-align: middle;
+            }
+        }
+
+        .sort {
+            margin-right: 0;
+        }
+    }
+    &_body {
+        padding-top: 15px !important;
+        border-top: 0;
+
+        .prodDt_event {
+            display: block !important;
+
+            span {
+                display: inline-block;
+                padding-left: 22px;
+                font-size: 13px;
+                color: #000;
+                background: url(../../dig/images/common/icon_event_box.png) no-repeat left center;
+                em {
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3c9a17;
+                }
+            }
+        }
+    }
+}
+
+.gift_useinfo {
+    margin-top: 80px;
+    padding: 80px 0;
+    background-color: #f7f7f7;
+
+    h4 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .conts {
+        position: relative;
+        margin-top: 20px;
+        padding: 40px;
+        height: 490px;
+        border-radius: 16px;
+        box-sizing: border-box;
+        background-color: #fff;
+
+        button {
+            position: relative;
+            margin-left: 26px;
+            font-size: 14px;
+            color: #767676;
+            z-index: 1;
+
+            &.current {
+                position: relative;
+                font-weight: 600;
+                color: #000;
+
+                &:after {
+                    position: absolute;
+                    left: 50%;
+                    bottom: -13px;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #000;
+                    transform: translateX(-50%);
+                    animation: sort .10s linear;
+                    content: "";
+                }
+                & + .box {
+                    display: block;
+                }
+            }
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .box {
+            position: absolute;
+            left: 40px;
+            top: 120px;
+            display: none;
+            padding-left: 256px;
+            height: 330px;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+
+            &.type01 {
+                background-image: url(../../dig/images/etc/bg_ebook_gift_use_01.png);
+            }
+
+            &.type02 {
+                background-image: url(../../dig/images/etc/bg_ebook_gift_use_02.png);
+            }
+
+            &.type03 {
+                background-image: url(../../dig/images/etc/bg_ebook_gift_use_03.png);
+            }
+
+            &.type04 {
+                background-image: url(../../dig/images/etc/bg_ebook_gift_use_04.png);
+            }
+
+            ol > li {
+                display: flex;
+                em {
+                    position: relative;
+                    margin-right: 8px;
+                    font-weight: 500;
+                    font-size: 15px;
+                    color: #474c98;
+                    line-height: 22px;
+                    z-index: 1;
+
+                    &:after {
+                        content: ".";
+                    }
+
+                    &:before {
+                        position: absolute;
+                        left: -3px;
+                        top: 12px;
+                        width: 120%;
+                        height: 6px;
+                        background-color: #eaeaea;
+                        z-index: -1;
+                        content: "";
+                    }
+                }
+
+                div {
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #000;
+                    line-height: 22px;
+
+                    p {
+                        margin-top: 6px;
+                        color: #595959;
+                    }
+                }
+
+                & + li {
+                    margin-top: 20px;
+                }
+
+                ul > li {
+                    position: relative;
+                    padding-left: 9px;
+                    font-weight: 400;
+                    color: #595959;
+
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        top: 9px;
+                        display: block;
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 50%;
+                        background-color: #999;
+                        content: "";
+                    }
+
+                    &:first-child {
+                        margin-top: 10px;
+                    }
+
+                    & + li {
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+
+        &:after {
+            position: absolute;
+            left: 40px;
+            top: 72px;
+            display: block;
+            width: 1120px;
+            height: 1px;
+            background-color: #d5d5d5;
+            z-index: 0;
+            content: "";
+        }
+    }
+}

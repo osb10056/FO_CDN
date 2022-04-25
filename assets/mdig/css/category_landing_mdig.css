@@ -1,0 +1,17 @@
+.category_landing_wrap .slide_menu_wrap.type-capsule {
+	border-top: 1px solid #eaeaea;
+}
+.category_landing_wrap .banner_box {
+	margin: 20px 0 50px;
+}
+.category_landing_wrap .hot_recom {
+	margin-bottom: 20px;
+}
+.category_landing_wrap .hot_recom .swiper-container .swiper-wrapper .swiper-slide {
+	opacity: 0.5;
+	transition: opacity 0.3s;
+}
+.category_landing_wrap .hot_recom .swiper-container .swiper-wrapper .swiper-slide.swiper-slide-active {
+	opacity: 1;
+}
+/*# sourceMappingURL=category_landing_mdig.css.map */

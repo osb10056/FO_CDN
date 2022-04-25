@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="479.869" height="410.131" viewBox="0 0 479.869 410.131">
+    <defs>
+        <linearGradient id="ruvaqkyosa" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#448ae2"/>
+            <stop offset="1" stop-color="#70c7db"/>
+        </linearGradient>
+        <linearGradient id="b3talk4q2b" x1=".09" y1=".105" x2="1.048" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#a08aea"/>
+            <stop offset=".512" stop-color="#8e6ed6" stop-opacity=".467"/>
+            <stop offset="1" stop-color="#79c3de"/>
+        </linearGradient>
+        <linearGradient id="7mzr4434zc" x1=".163" y1=".799" x2=".766" y2=".245" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+    <g data-name="bg" transform="translate(0 74.131)">
+        <path data-name="bg" style="fill:url(#ruvaqkyosa)" d="M0 0h375v336H0z"/>
+        <path data-name="bg" style="fill:url(#b3talk4q2b)" d="M0 0h375v336H0z"/>
+        <circle data-name="타원 1172" cx="111.935" cy="111.935" r="111.935" transform="translate(256 -74.131)" style="opacity:.12;fill:url(#7mzr4434zc)"/>
+    </g>
+</svg>

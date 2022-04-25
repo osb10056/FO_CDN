@@ -1,0 +1,138 @@
+.event_header {display: flex; align-items: center;}
+.event_header h4 {margin-right: auto; font-weight: 600; font-size: 30px; color: #000;}
+.event_header a {width: 112px; font-weight: 500; font-size: 12px; color: rgba(0,0,0,.9); border-radius: 15px;}
+.event_header a+a {margin-left: 3px;}
+.event_tab {display: flex; align-items: center; margin-top: 40px; width: 100%;}
+.event_tab li {flex-grow: 1; margin-left: -1px; height: 44px; font-size: 14px; color: #767676; box-sizing: border-box; border-radius: 6px 6px 0 0; border: 1px solid #d5d5d5; border-bottom: 1px solid #000;}
+.event_tab li a,.event_tab li button {display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; line-height: 44px; cursor: pointer;}
+.event_tab li.current {font-weight: 500; color: #000; border: 1px solid #000; border-bottom-color: transparent; z-index: 1;}
+.event_tab.calendar {position: relative;}
+.event_tab.calendar li {flex-grow: 0; width: 160px;}
+.event_tab.calendar:after {position: absolute; right: 0; bottom: 0; width: calc(100% - 476px); height: 1px; background-color: #000; z-index: -1; content: "";}
+.event_tab.calendar+.event_tab_sub {display: block!important;}
+.event_tab_sub {display: none; margin-top: 40px;}
+.event_tab_sub button {padding: 0 16px; height: 36px; font-size: 13px; color: #595959; border-radius: 18px; background-color: #f7f7f7; cursor: pointer;}
+.event_tab_sub button+button {margin-left: 2px;}
+.event_tab_sub button.current {color: #fff; background-color: #595959;}
+.event_tab_sub+.weekly {margin-top: 50px;}
+.event_list_header {display: flex; align-items: center; margin: 40px 0 0; padding-bottom: 10px;}
+.event_list_header strong {margin-right: auto; font-size: 30px; color: #000;}
+.event_list_header p {margin-right: auto; font-weight: 600; font-size: 16px; color: #000;}
+.event_list_header p em {color: #4dac27;}
+.event_list_header>.form_chk {outline: unset;}
+.event_list_header>.form_chk label {display: flex; align-items: center; justify-content: center; position: relative; padding: 0; width: 52px; height: 38px; font-weight: 400; color: #767676; line-height: 37px; border: 1px solid #d5d5d5; box-sizing: border-box; border-radius: 6px 0 0 6px;}
+.event_list_header>.form_chk label:after,.event_list_header>.form_chk label:before {display: none;}
+.event_list_header>.form_chk+.form_chk {margin-left: -1px;}
+.event_list_header>.form_chk+.form_chk label {border-radius: 0 6px 6px 0;}
+.event_list_header>.form_chk input:checked+label {color: #5055b1; border-color: #5055b1; z-index: 1;}
+.event_list_header .tag {position: relative; margin-left: 6px;}
+.event_list_header .tag>button {position: relative; padding-left: 14px; width: 152px; height: 38px; font-size: 13px; color: #000; text-align: left; line-height: 38px; border: 1px solid #d5d5d5; border-radius: 6px; box-sizing: border-box; cursor: pointer;}
+.event_list_header .tag>button:after {position: absolute; right: 14px; top: 15px; width: 9px; height: 8px; background: url(../../common/images/arw_select_sm.png) no-repeat center; transition: all .2s ease-out; content: "";}
+.event_list_header .tag>button.current {border: 1px solid #000; border-radius: 6px 6px 0 0;}
+.event_list_header .tag>button.current:after {-webkit-transform: rotate(180deg); transform: rotate(180deg);}
+.event_list_header .tag>button.current+div {display: flex!important;}
+.event_list_header .tag div {position: absolute; left: 0; top: 37px; display: none; flex-wrap: wrap; justify-content: center; width: 152px; padding-bottom: 13px; border: 1px solid #000; border-radius: 0 0 6px 6px; box-sizing: border-box; background-color: #fff; z-index: 10;}
+.event_list_header .tag div .form_chk {padding: 8px 13px; width: 100%; box-sizing: border-box;}
+.event_list_header .tag div .form_chk.chk {background-color: #f5f5f5;}
+.event_list_header .tag div .form_chk label {color: #767676;}
+.event_list_header .tag div .form_chk input:checked+label {color: #474c98;}
+.event_list_header .tag div button {margin-top: 10px; width: 60px;}
+.event_list_header .tag div button+button {margin-left: 6px;}
+.event_list_header.calendar {margin-bottom: 40px; border-bottom: 1px solid #d5d5d5;}
+.event_list_body {display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px 20px; padding: 30px 0 10px; border-top: 1px solid #d5d5d5;}
+.event_list_body div {width: 582px;}
+.event_list_body div a {display: block; width: 590px; height: 340px; margin-bottom: 15px; border-radius: 25px 25px 25px 0; overflow: hidden; background-color: rgba(0,0,0,.3);}
+.event_list_body div a img {width: 100%; height: 100%;}
+.event_list_body div p {font-size: 15px; color: #595959;}
+.event_list_body div.noneData {display: flex; align-items: center; justify-content: center; padding: 232px 0 180px; width: 100%; font-size: 14px; color: #767676; text-align: center; border-bottom: 1px solid #eaeaea; background: url(../../common/images/ico_nodata.png) no-repeat center top 180px;}
+.event_calendar {margin-top: 10px;}
+.event_calendar .calendar_wrap_head {display: flex; align-items: center;}
+.event_calendar .calendar_wrap_head span {flex-grow: 1; font-weight: 500; font-size: 13px; color: #767676; text-align: center;}
+.event_calendar .calendar_wrap_head span:nth-child(7) {color: #ec1f2d;}
+.event_calendar .calendar_wrap_day {display: flex; flex-wrap: wrap; align-items: center; margin-top: 20px; border-radius: 20px; border: 1px solid #ccc; overflow: hidden;}
+.event_calendar .calendar_wrap_day li {position: relative; padding-top: 45px; width: 14.2857142857%; height: 160px; box-sizing: border-box; border: 1px solid #ccc; border-bottom: 0;}
+.event_calendar .calendar_wrap_day li:nth-child(1n) {border-left: 0;}
+.event_calendar .calendar_wrap_day li:nth-child(7n) {border-right: 0;}
+.event_calendar .calendar_wrap_day li:nth-child(-n+7) {border-top: 0;}
+.event_calendar .calendar_wrap_day li.this i {color: #000;}
+.event_calendar .calendar_wrap_day li.today {background-color: #f5f5fb;}
+.event_calendar .calendar_wrap_day li i {position: absolute; left: 15px; top: 15px; font-style: normal; font-weight: 500; font-size: 14px; color: #ccc; z-index: 1;}
+.event_calendar .calendar_wrap_day li div {position: absolute; left: 0; width: calc(100% + 1px); height: 22px;}
+.event_calendar .calendar_wrap_day li div span {position: absolute; left: 0; top: 0; padding-left: 2px; width: 100%; font-weight: 500; font-size: 12px; line-height: 22px; letter-spacing: -.12px; box-sizing: border-box; z-index: 2;}
+.event_calendar .calendar_wrap_day li div.type_lv01 {top: 45px;}
+.event_calendar .calendar_wrap_day li div.type_lv02 {top: 68px;}
+.event_calendar .calendar_wrap_day li div.type_lv03 {top: 91px;}
+.event_calendar .calendar_wrap_day li div.type_lv04 {top: 114px;}
+.event_calendar .calendar_wrap_day li div.type_01 {background-color: #ebf7f1;}
+.event_calendar .calendar_wrap_day li div.type_01 span {color: #6cc892;}
+.event_calendar .calendar_wrap_day li div.type_02 {background-color: #f4f2fe;}
+.event_calendar .calendar_wrap_day li div.type_02 span {color: #9d8cf5;}
+.event_calendar .calendar_wrap_day li div.type_03 {background-color: #fef5ec;}
+.event_calendar .calendar_wrap_day li div.type_03 span {color: #efa563;}
+.event_calendar .calendar_wrap_day li div.type_04 {background-color: #fdeff0;}
+.event_calendar .calendar_wrap_day li div.type_04 span {color: #e7787f;}
+.event_calendar .calendar_wrap_day li button {position: absolute; left: 50%; bottom: 3px; font-weight: 500; font-size: 12px; color: #474c98; cursor: pointer; -webkit-transform: translateX(-50%); transform: translateX(-50%);}
+.event_calendar .calendar_wrap_day li button:after {display: inline-block; margin-left: 5px; width: 16px; height: 16px; vertical-align: middle; background: url(../../common/images/btn_more_detail.png) no-repeat center; content: "";}
+.event_news {display: flex; align-items: flex-start; justify-content: space-between; margin-top: 70px;}
+.event_news div {padding: 20px 25px; width: 580px; border-radius: 20px; box-sizing: border-box; background-color: #e9f2f4;}
+.event_news div h5 {padding-bottom: 15px; font-size: 17px; color: #000; border-bottom: 1px solid #d5d5d5;}
+.event_news div ul {margin-top: 12px;}
+.event_news div ul li a {position: relative; display: block; padding-left: 12px;}
+.event_news div ul li a:before {position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background-color: #000; content: "";}
+.event_news div ul li a:hover:before {background-color: #55a536;}
+.event_news div ul li a:hover span {color: #55a536; text-decoration: underline;}
+.event_news div ul li span {display: block!important; font-weight: 500; font-size: 15px; color: #000; overflow: hidden; display: inline-block; width: 100%; max-width: 100%; height: auto; max-height: none; -webkit-box-orient: inherit; -webkit-line-clamp: inherit; text-overflow: ellipsis; white-space: nowrap;}
+.event_news div ul li em {display: block!important; margin-top: 5px; font-size: 14px; color: #767676; overflow: hidden; display: inline-block; width: 100%; max-width: 100%; height: auto; max-height: none; -webkit-box-orient: inherit; -webkit-line-clamp: inherit; text-overflow: ellipsis; white-space: nowrap;}
+.event_news div ul li+li {margin-top: 16px;}
+.event_notice {margin-top: 60px; padding: 20px; border-radius: 10px; background-color: #f7f7f7;}
+.event_notice dt {margin-bottom: 2px; padding-left: 20px; font-weight: 600; font-size: 14px; color: #000; background: url(../../common/images/ico_title_message.png) no-repeat left center;}
+.event_notice dd {position: relative; padding-left: 20px; margin-top: 6px; font-size: 14px; color: #595959;}
+.event_notice dd:before {position: absolute; left: 10px; top: 7px; display: inline-block; width: 3px; height: 3px; border-radius: 50%; background-color: #999; content: "";}
+.calendar_line {position: relative; margin: 10px 0 40px; height: 100px; padding: 0 90px; border-radius: 20px; border: 1px solid #ccc; box-sizing: border-box;}
+.calendar_line .swiper-container {margin: 0 auto; width: 100%; height: 100px;}
+.calendar_line .swiper-container .swiper-slide {position: relative; width: 27px; cursor: pointer;}
+.calendar_line .swiper-container .swiper-slide span {font-weight: 500; font-size: 12px; color: #767676;}
+.calendar_line .swiper-container .swiper-slide span.sun {color: #ec1f2d;}
+.calendar_line .swiper-container .swiper-slide em {margin-top: 6px; display: inline-block; font-weight: 500; font-size: 14px; color: #000;}
+.calendar_line .swiper-container .swiper-slide.today:after {position: absolute; left: 0; bottom: 1px; width: 100%; height: 3px; background-color: #474c98; content: "";}
+.calendar_line .swiper-button-next,.calendar_line .swiper-button-prev {margin-top: -12px; width: 24px; height: 24px;}
+.calendar_line .swiper-button-prev {left: 38px;}
+.calendar_line .swiper-button-next {right: 38px;}
+.calendar_line .swiper-button-next.type_white,.calendar_line .swiper-button-prev.type_white {background-size: 24px 24px;}
+.daily {position: relative; display: flex; align-items: flex-start; padding-bottom: 60px;}
+.daily:before {position: absolute; left: 4px; top: 20px; width: 1px; height: calc(100% - 20px); border-left: 1px dashed #ccc; content: "";}
+.daily b {position: relative; margin-right: 40px; padding-left: 35px; width: 77px; font-weight: 600; font-size: 20px; color: #000; line-height: 30px; box-sizing: border-box;}
+.daily b:before {position: absolute; left: 0; top: 50%; width: 10px; height: 10px; border-radius: 50%; background-color: #5055b1; -webkit-transform: translateY(-50%); transform: translateY(-50%); content: "";}
+.daily .swiper-container {width: 1084px;}
+.daily .swiper-container .swiper-slide {width: 118px;}
+.daily .swiper-container .swiper-slide img {display: block; margin-bottom: 16px; width: 118px; height: 172px; border-radius: 20px 20px 20px 0;}
+.daily .swiper-container .swiper-slide strong {font-weight: 500; font-size: 15px; color: #000; display: block; display: -webkit-box; overflow: hidden; max-height: 44px; line-height: 22px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; text-overflow: -o-ellipsis-lastline; white-space: normal;}
+.daily .swiper-container .swiper-slide span {margin-top: 6px; font-size: 13px; color: #767676; overflow: hidden; display: inline-block; width: 100%; max-width: 100%; height: auto; max-height: none; -webkit-box-orient: inherit; -webkit-line-clamp: inherit; text-overflow: ellipsis; white-space: nowrap;}
+.daily .swiper-container .swiper-slide em {font-size: 14px; color: #000;}
+.daily .swiper-container .swiper-slide em+em {margin-left: 8px;}
+.daily .swiper-button-next,.daily .swiper-button-prev {margin-top: -95px;}
+.daily .swiper-button-prev {left: 92px;}
+.daily .swiper-button-next {right: -24px;}
+.daily.weekly {flex-wrap: wrap; padding-bottom: 0;}
+.daily.weekly+.weekly {padding-top: 50px;}
+.daily.weekly::before {height: 100%;}
+.daily.weekly b {width: 100%; margin-right: 0; margin-bottom: 20px;}
+.daily.weekly .weekly_list {position: relative; display: flex; flex-wrap: wrap; gap: 60px; padding-left: 35px;}
+.daily.weekly .weekly_item {display: inline-block;}
+.daily.weekly .weekly_item>span {display: block; font-size: 16px; margin-bottom: 12px; color: #000; font-weight: 500;}
+.daily.weekly .weekly_item>span::before {content: "[ ";}
+.daily.weekly .weekly_item>span::after {content: " ]";}
+.daily.weekly .weekly_item a {width: 118px; display: inline-block; vertical-align: top;}
+.daily.weekly .weekly_item a img {display: block; margin-bottom: 16px; width: 118px; height: 172px; border-radius: 20px 20px 20px 0;}
+.daily.weekly .weekly_item a strong {font-weight: 500; font-size: 15px; color: #000; margin-bottom: 5px; display: block; display: -webkit-box; overflow: hidden; max-height: 44px; line-height: 22px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; text-overflow: -o-ellipsis-lastline; white-space: normal;}
+.daily.weekly .weekly_item a span {display: inline; white-space: normal; position: relative; line-height: 22px; font-size: 13px; color: #767676;}
+.daily.weekly .weekly_item a span+span {padding-left: 10px;}
+.daily.weekly .weekly_item a span+span::before {position: absolute; left: 3px; top: 6px; width: 2px; height: 2px; background-color: #767676; content: "";}
+.daily.weekly .weekly_item a+a {margin-left: 16px;}
+.pop_event_list li {padding-bottom: 14px; border-bottom: 1px solid #eaeaea;}
+.pop_event_list li a {display: block!important; margin-bottom: 10px; font-weight: 500; font-size: 16px; color: #000; overflow: hidden; display: inline-block; width: 100%; max-width: 100%; height: auto; max-height: none; -webkit-box-orient: inherit; -webkit-line-clamp: inherit; text-overflow: ellipsis; white-space: nowrap;}
+.pop_event_list li em {color: #000;}
+.pop_event_list li em+em {margin-left: 6px;}
+.pop_event_list li span {margin-top: 5px; display: block; font-size: 13px; color: #767676;}
+.pop_event_list li+li {margin-top: 14px;}
+/*# sourceMappingURL=event_dig.css.map */

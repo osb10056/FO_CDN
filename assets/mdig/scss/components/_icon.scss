@@ -1,0 +1,86 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+.ico_sam{
+  display:inline-block;
+  font-size:0;
+  color:rgba(0,0,0,0);
+  background-position:left top;
+  background-repeat: no-repeat;
+  background-size:100%;
+  &.size-s{
+
+  }
+  &.size-m{
+    width:44px;
+    height:12px;
+    &.white{
+      background-image:url("/assets/mdig/images/common/icon/ico_sam_txt_white_88x24.png");
+    }
+    &.blue{
+      background-image:url("/assets/mdig/images/common/icon/ico_sam_txt.png");
+    }
+    &.gray{
+      background-image:url("/assets/mdig/images/common/icon/ico_sam_txt_gray_88x24.png");
+    }
+  }
+  &.size-l{
+    width:46px;
+    height:13px;
+    &.cyan{
+      background-image:url("/assets/mdig/images/common/icon/ico_sam_txt_cyan_92x26.png");
+    }
+    &.purple{
+      background-image:url("/assets/mdig/images/common/icon/ico_sam_txt_purple_92x26.png");
+    }
+    &.black{
+      background-image:url("/assets/mdig/images/common/icon/ico_sam_txt_black_92x26.png");
+    }
+  }
+}
+
+.ico_ticket{
+  display:inline-block;
+  width:22px;
+  height:17px;
+  font-size:0;
+  color:rgba(0,0,0,0);
+  background-position:left center;
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-image:url("/assets/mdig/images/common/icon/ico_ticket_gift.png");
+}
+
+.ico_question{
+  display:inline-block;
+  width:16px;
+  height:16px;
+  font-size:0;
+  color:rgba(0,0,0,0);
+  background-position:left center;
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-image:url("/assets/mdig/images/common/icon/ico_q_16x16_fff.png");
+  &.ico_gray{
+    background-image:url("/assets/mdig/images/common/icon/ico_q_16x16_gray.png");
+  }
+}
+
+
+a.btn_file_down .ico_link, button.btn_file_down .ico_link {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  margin-top:2px;
+  background-size: 100%;
+  background-image: url("/assets/mdig/images/common/icon/ico_link_20x20.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}

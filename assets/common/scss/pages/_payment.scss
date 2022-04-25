@@ -1,0 +1,2954 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+
+
+a.btn_xs, button.btn_xs {
+	
+	&.btn_line_primary {
+		.ico_download_primary {//payment > packaging
+			display: inline-block;
+			width: 12px;
+			height: 13px;
+			margin: {
+				top: 2px;
+				right: 5px;
+			}
+			background: {
+				position: center;
+				repeat: no-repeat;
+			}
+			@include mixins.ratio_images('../images/ico_download_h10_primary_mok', 'png', 12px, 13px);
+			vertical-align: top;
+		}
+		.ico_change_arrow_primary {//payment > packaging
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin: {
+				top: 3px;
+				right: 5px;
+			}
+			background: {
+				position: center;
+				repeat: no-repeat;
+			}
+			@include mixins.ratio_images('../images/ico_change_arrow_h10_primary_mok', 'png', 10px, 10px);
+			vertical-align: top;
+		}
+	}
+	
+	&.btn_line_gray {
+		.ico_plus {
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			margin: {
+				top: 2px;
+				right: 5px;
+			}
+			background: {
+				position: center;
+				repeat: no-repeat;
+			}
+			font-size: 0;
+			@include mixins.ratio_images('../images/ico_subscribe', 'png', 14px, 14px);
+		}
+	}
+}
+
+.prod_area {
+	// 책 선물포장
+	&.type_packaging {
+		
+		.prod_info_box {
+			
+			.prod_price {
+				.price_normal {
+					display: block;
+					.val {
+						@include mixins.font_size_xxs;
+					}
+				}
+			}
+			
+			.price_apply {
+				margin-top: 3px;
+				@include mixins.font_size_xxs;
+			}
+		}
+		
+	}
+}
+
+
+//따옴표 text
+.quotes_status_box {
+	text-align: center;
+	padding: 10px 0 0;
+	
+	+.bottom_btn_area {
+		margin-top: 20px;
+		padding-bottom: 10px;
+		text-align: center;
+		
+		.btn_sm {
+			&.auto {
+				padding-left: 24px;
+				padding-right: 24px;
+				min-width: auto;
+			}
+		}
+	}
+}
+//따옴표 text
+.quotes_status_text {
+	display: inline-block;
+	position: relative;
+	color: variables.$textColorBlack;
+	@include mixins.font_size_sm;
+	font-weight: variables.$fontWeightMedium;
+	padding: 0 18px;
+	word-break: keep-all;
+
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 10px;
+		height: 9px;
+		background: {
+			position: center;
+			repeat: no-repeat;
+		}
+		@include mixins.ratio_images('../images/ico_quotes_gray_mok', 'png', 10px, 9px);
+	}
+	
+	&:before {
+		top: 4px;
+		left: 0;
+	}
+	
+	&:after {
+		top: 2px;
+		right: 0;
+		@include mixins.transform(rotate(180deg));
+	}
+}
+
+
+//common new
+.ico_location_primary {
+	display: inline-block;
+	width: 10px;
+	height: 20px;
+	@include mixins.ratio_images('../images/ico_location_primary_mok', 'png', 10px, 20px);
+	vertical-align: top;
+}
+
+.ico_location_primary_green {
+	display: inline-block;
+	width: 10px;
+	height: 20px;
+	@include mixins.ratio_images('../images/ico_location_primary_green_mok', 'png', 10px, 20px);
+	vertical-align: top;
+}
+
+.ico_check_green {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	@include mixins.ratio_images('../images/ico_posibble_green_mok', 'png', 14px, 14px);
+}
+
+.ico_check_green_md {
+	display: inline-block;
+	width: 13px;
+	height: 11px;
+	@include mixins.ratio_images('../images/ico_check_green_md_mok', 'png', 13px, 11px);
+}
+
+._payment_Start________________________new {}
+
+$paymentPurple: #2B1DD6;
+$paymentPurple2: #474C98;
+$paymentGreen: #3C9A17;
+$paymentGreen2: #4DAC27;
+$paymentBlue: #0057BE;
+
+
+.fc_payment_blue {
+	color: $paymentBlue;
+}
+
+.badge_payment_line_purple {
+	color: $paymentPurple2;
+	border: 1px solid $paymentPurple2;
+	background: #fff;
+}
+.badge_payment_line_blue {
+	color: $paymentBlue;
+	border: 1px solid $paymentBlue;
+	background: #fff;
+}
+.badge_payment_line_black {
+	color: variables.$textColorBlack;
+	border: 1px solid variables.$textColorBlack;
+	background: #fff;
+}
+
+//주문서 쪽에서 숫자 unit 을 쓰려고 공통으로 만듬
+.number_value_box {
+	color: #000;
+	text-align: right;
+	word-break: keep-all;
+	font-size: 0;
+	line-height: 0;
+	
+	.label {
+		@include mixins.font_size_sm;
+		padding-right: 6px;
+	}
+	.point {
+		font-size: 0;
+		line-height: 0;
+		word-break: keep-all;
+		.val {
+			font-weight: variables.$fontWeightBold;
+			font-size: variables.$fontSizeMd;
+		}
+		.unit {
+			margin-left: 2px;
+			@include mixins.font_size_sm;
+			font-weight: variables.$fontWeightRegular;
+		}
+		
+		+.label {
+			padding-left: 3px;
+		}
+	}
+	
+	&.size_md {
+		.val,
+		.unit {
+			@include mixins.font_size_md;
+		}
+		
+	}
+	&.size_def {
+		.val,
+		.unit {
+			@include mixins.font_size_def;
+		}
+		
+		.point {
+			.unit {
+				font-weight: variables.$fontWeightRegular;
+				@include mixins.font_size_xs;
+			}
+		}
+	}
+	
+	+.number_value_box {
+		&:before {
+			content: '/';
+			display: inline-block;
+			padding: 0 3px;
+			@include mixins.font_size_sm;
+			font-weight: variables.$fontWeightRegular;
+		}
+	}
+}
+
+//주문에서 단일로 이름/연락처 마크업
+.person_info {
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+	color: variables.$textColorBlack;
+	font-weight: variables.$fontWeightMedium;
+	
+	.name,
+	.gap,
+	.phone_number {
+		@include mixins.font_size_sm;
+	}
+	.gap,
+	.phone_number {
+		margin-left: 3px;
+	}
+}
+
+//주문상품 배송별 정보 및 설정
+.delivery_info_list {
+	padding: 20px 0;
+	.delivery_info_item {
+		@include mixins.justify_width(center, start, row);
+		
+		.label{
+			display: inline-block;
+			font-size: 0;
+			line-height: 0;
+			width: 129px;
+			padding-left: 20px;
+			box-sizing: border-box;
+			.text {
+				@include mixins.font_size_sm;
+				font-weight: variables.$fontWeightMedium;
+			}
+			
+			.btn_tooltip_sm {
+				margin-top: 3px;
+				margin-left: 4px;
+			}
+		}
+		.text_body{
+			width: auto;
+			vertical-align: top;
+			color: variables.$textColorLightGray;
+			font-weight: variables.$fontWeightMedium;
+			
+			.opt {
+				@include mixins.font_size_xs;
+				font-weight: variables.$fontWeightRegular;
+			}
+		}
+		
+		~.delivery_info_item {
+			margin-top: 16px;
+			&.full_info {
+				margin-top: 10px;
+			}
+		}
+
+		&.full_info {
+			padding: 0 20px;
+		}
+	}
+	~ .info_item {
+		padding-top: 15px;
+	}
+	
+	+.delivery_days_wrap {
+		margin-top: -4px;
+		padding-top: 0;
+	}
+}
+
+//배송별 정보 및 설정
+.delivery_days_wrap {
+	display: block;
+	vertical-align: top;
+	padding: 20px;
+	
+	.chk_col_list {
+		.chk_col_item {
+			position: relative;
+			
+			.bubble_speech_desc {
+				position: relative;
+				display: inline-block;
+				margin-top: -4px;
+				margin-left: 10px;
+				margin-right: -15px;
+				margin-bottom: -4px;
+			}
+		}
+	}
+	
+	+.delivery_info_list {
+		padding-top: 5px;
+	}
+}
+
+//배송불가 지역 & 신용카드결제 불가
+.valid_check_box {
+	padding: 18px 0 17px;
+	background: rgba(236,31,45,.04);
+	text-align: center;
+	
+	.valid_desc {
+		position: relative;
+		display: inline-block;
+		@include mixins.font_size_xs;
+		font-weight: variables.$fontWeightMedium;
+		color: variables.$textColorRed;
+		padding: 0 20px;
+		
+		button {
+			cursor: pointer;
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 5px;
+				height: 9px;
+				margin-left: 4px;
+				@include mixins.ratio_images('../images/arw_shop_mok', 'png', 5px, 9px);
+			}
+		}
+		
+		&:before, &:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 10px;
+			height: 9px;
+			background: {
+				position: center;
+				repeat: no-repeat;
+			}
+			@include mixins.ratio_images('../images/ico_member_secession_guide_text_mok', 'png', 10px, 9px);
+		}
+		
+		&:before {
+			top: 3px;
+			left: 0;
+		}
+		
+		&:after {
+			top: 2px;
+			right: 0;
+			@include mixins.transform(rotate(180deg));
+		}
+	}
+}
+
+
+.prod_row_list {
+	&.type_payment {
+		.prod_item {
+			margin-top: 0;
+			padding: 20px;
+			border-top: dashed 1px variables.$colorGray03;
+			
+			&:first-child {
+				border-top: 0;
+			}
+		}
+		
+		~.btn_wrap {
+			padding-top: 10px;
+			padding-bottom: 20px;
+		}
+	}
+	
+}
+
+.payment_box_wrap {
+	border: solid 1px variables.$colorGray03;
+	border-radius: 10px;
+	background-color: #fff;
+	
+	+.payment_box_wrap {
+		margin-top: 10px;
+	}
+	+.fold_box_wrap {
+		margin-top: 10px;
+	}
+	
+	&:first-child {
+		margin-top: 0;
+	}
+	
+	.payment_header_wrap {
+		position: relative;
+		padding: 20px 20px 20px 0;
+		@include mixins.font_size_def;
+		
+		.payment_header_inner {
+			@include mixins.justify_width(center);
+			padding-left: 20px;
+			
+			.badge_line_primary {
+				background: transparent;
+			}
+			
+			.form_rdo {
+				label {
+					font-size: variables.$fontSizeDef;
+					font-weight: variables.$fontWeightRegular;
+				}
+				input:checked {
+					& + label {
+							font-weight: variables.$fontWeightBold;
+						}
+				}
+				~ [class^=badge_]  {
+					margin-left: 6px;
+					font-weight: variables.$fontWeightBold;
+				}
+			}
+
+			
+			.right_area {
+				margin-left: auto;
+				font-size: 0;
+				
+				[class^=btn_] {
+					&.btn_xs {
+						margin-top: -4px;
+						margin-bottom: -4px;
+						margin-left: 12px;
+					}
+					&.btn_icon_sm,
+					&.btn_tooltip_sm {
+						margin-top: 3px;
+					}
+					
+					+[class^=btn_] {
+						margin-left: 16px;
+					}
+				}
+			}
+		}
+		
+		//최근결제
+		&.active {
+			background: rgba(80,85,177,0.06);
+			
+			+ .payment_body_wrap {
+				.form_wrap {
+					&:first-child {
+						padding-top: 20px;
+					}
+				}
+			}
+		}
+		&:last-child {
+			border-bottom: 0;
+		}
+		&:first-child {
+			border-top: 0;
+		}
+		
+		~ .payment_header_wrap {
+			border-top: solid 1px variables.$colorGray05;
+		}
+		+ .payment_body_wrap {
+			border-top: solid 1px variables.$colorGray05;
+			
+			.payment_info_list {
+				&:first-child {
+					padding-top: 0;
+				}
+			}
+			
+			.form_wrap {
+				&:first-child {
+					padding-top: 0;
+				}
+			}
+		}
+		
+		.title_wrap {
+			margin-top: 0;
+			padding-bottom: 0;
+			.title_heading {
+				font-size: 0;
+				line-height: 0;
+			}
+			.right_area {
+				.btn_xxs {
+					margin-top: -4px;
+					margin-bottom: -4px;
+				}
+			}
+		}
+		
+		.header_text {
+			display: inline-block;
+			min-width: 129px;
+			padding-left: 20px;
+			box-sizing: border-box;
+			font-weight: variables.$fontWeightBold;
+			@include mixins.font_size_sm;
+			
+			.sub_text {
+				display: block;
+				@include mixins.font_size_sm;
+				font-weight: variables.$fontWeightRegular;
+				color: variables.$textColorGray;
+			}
+			.title {
+				font-weight: variables.$fontWeightMedium;
+			}
+			.count {
+				font-weight: variables.$fontWeightBold;
+				font-size: variables.$fontSizeDef;
+			}
+			
+			
+			.btn_tooltip_sm {
+				margin-top: 2px;
+				margin-left: 4px;
+			}
+			
+		}
+		.header_text_body {
+			display: inline-block;
+			font-weight: variables.$fontWeightMedium;
+		}
+		
+		.number_value_box {
+			.label {
+				font-weight: variables.$fontWeightRegular;
+			}
+		}
+	}
+	
+	.payment_body_wrap {
+		&.no_line_top {
+			border-top: 0;
+		}
+		
+		.payment_info_list {
+			+.form_wrap {
+				padding-top: 0;
+				
+				+.payment_info_list {
+					padding-top: 0;
+				}
+			}
+			
+			.bubble_speech_box {
+				.bubble_speech_desc {
+					&.arw_left_top {
+						width: 100%;
+						text-align: center;
+						word-break: keep-all;
+					}
+				}
+			}
+		}
+		.payment_etc_wrap {
+			padding-top: 20px;
+			border-top: 1px solid #F2F2F2;
+		}
+	}//payment_body_wrap
+	
+	.payment_foot_wrap {
+		border-top: 1px solid variables.$colorGray05;
+		text-align: center;
+		
+		.payment_foot_inner {
+			padding: 20px;
+		}
+		
+		&.top_line_dashed {
+			border-top: 1px dashed variables.$colorGray02;
+			
+		}
+		.btn_more_view {
+			padding: 16px 0 20px;
+			font-weight: variables.$fontWeightMedium;
+			color: variables.$textColorBlack;
+			.ico_arw {
+				margin-left: 6px;
+			}
+		}
+		
+		&.valid_check_box {
+			border-top: 0;
+			background-color: #fef1f2;
+		}
+		
+	}//payment_foot_wrap
+	
+	.payment_box_inner {
+		padding: 20px;
+	}
+	
+	.btn_text_payment_method_wrap {
+		font-size: 0;
+		line-height: 0;
+		.btn_text {
+			display: inline-block;
+			@include mixins.font_size_xs;
+			color: variables.$textColorGray;
+			vertical-align: top;
+			
+			&:hover, &:focus, &:active {
+				.text {
+					text-decoration: underline;
+				}
+			}
+		}
+		.gap {
+			display: inline-block;
+			font-size: 0;
+			width: 1px;
+			height: 9px;
+			background-color: variables.$colorGray03;
+			margin: 5px 12px 0 12px;
+			vertical-align: top;
+			box-sizing: border-box;
+		}
+	}
+
+	// 임직원
+	.payment_employees_info_group {
+		@include mixins.justify_width(center);
+		padding: 20px;
+		border-bottom: 1px solid #F2F2F2;
+
+		.val {
+			flex: 1;
+			text-align: right;
+		}
+		.badge_employees {
+			min-height: 28px;
+			padding: 4px 6px 0;
+
+			.employees_text {
+				display: block;
+				position: relative;
+				@include mixins.font_size_xs;
+				padding-left: 15px;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 3px;
+					left: 0;
+					display: inline-block;
+					width: 13px;
+					height: 13px;
+					@include mixins.ratio_images('../images/ico_employees_mok', 'png', 13px, 13px);
+					vertical-align: top;
+					@include mixins.transform(translateY(-1px));
+				}
+			}
+		}
+
+	}
+
+	// 임직원 바로드림
+	.payment_today_employees_wrap {
+		padding: 2px;
+		.payment_employees_info_group {
+			border: {
+				bottom: 0;
+				top: 1px solid #EAEAEA;
+			}
+			padding: 20px 0 0;
+			margin-top: 20px;
+			.badge_line_primary {
+				background-color: transparent;
+			}
+			.label {
+				padding-right: 17px;
+			}
+			.val {
+				text-align: left;
+			}
+		}
+	}
+}
+
+// 교보e캐시 안내 팝업
+.cash_info_box {
+	@include mixins.justify_width(center);
+	padding: 17px 18px 16px;
+	margin: {
+		top: 10px;
+		bottom: 20px;
+	}
+	background-color: rgba(variables.$kyoboPurple, 0.06);
+	border-radius: 6px;
+	box-sizing: border-box;
+
+	.label {
+		width: 150px;
+		margin-top: 2px;
+		@include mixins.font_size_sm;
+	}
+	.right_area {
+		width: auto;
+		margin-left: auto;
+
+		.price {
+			.text, .unit {
+				display: inline-block;
+				margin-top: 1px;
+				@include mixins.font_size_sm;
+				vertical-align: top;
+			}
+			.val {
+				display: inline-block;
+				font-size: 18px;
+				line-height: 22px;
+				letter-spacing: variables.$letterSpacing;
+				font-weight: variables.$fontWeightBold;
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+
+/* Desc ::
+fold_box 타입추가 주문서에서만 사용
+주문서는 라인이 없으며
+주문완료쪽엔 라인이 있음 */
+.fold_box_wrap {
+	&.type_box {
+		border-radius: 10px;
+		border: solid 1px variables.$colorGray03;
+		
+		+.fold_box_wrap.type_box {
+			margin-top: 10px;
+		}
+		
+		.fold_box {
+			border: 0;
+			border-radius: 0;
+			background-color: #fff;
+			
+			&:first-child {
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			&:last-child {
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				
+			}
+			
+			.fold_box_header {
+				position: relative;
+				border-top: solid 1px variables.$colorGray04;
+				padding: 20px 40px 20px 0;
+				@include mixins.font_size_def;
+				
+				&.delivery_info_header {
+					padding: 18px 0;
+					background: variables.$colorGray06;
+					
+					.header_text {
+						min-width: auto;
+						padding-right: 10px;
+						font-weight: variables.$fontWeightRegular;
+					
+						@include mixins.font-size_xs;
+						+.header_text_body{
+							@include mixins.font-size_xs;
+						}
+					}
+					.header_text_body {
+						.person_info {
+							.name,
+							.gap,
+							.phone_number {
+								@include mixins.font-size_xs;
+							}
+						}
+					}
+				}
+				
+				&.size_xs {
+					@include mixins.font_size_xs;
+					font-weight: variables.$fontWeightRegular;
+				}
+				
+				.title_wrap {
+					margin-top: 0;
+					padding-bottom: 0;
+					.title_heading {
+						font-size: 0;
+						line-height: 0;
+						.right_area {
+						
+						}
+						.header_text_body {
+							&:first-child {
+								padding-left: 20px;
+								.text {
+									@include mixins.font_size_sm;
+									padding-right: 6px;
+								}
+							}
+						}
+						+ .btn_tooltip_sm {
+							margin-bottom: 4px;
+						}
+					}
+				}
+				
+				.header_text {
+					display: inline-block;
+					min-width: 129px;
+					padding-left: 20px;
+					box-sizing: border-box;
+					font-weight: variables.$fontWeightBold;
+					@include mixins.font_size_sm;
+					
+					&.auto {
+						min-width: auto;
+					}
+					
+					.sub_text {
+						display: block;
+						@include mixins.font_size_sm;
+						font-weight: variables.$fontWeightRegular;
+						color: variables.$textColorGray;
+					}
+					.title {
+						font-weight: variables.$fontWeightMedium;
+					}
+					.count {
+						font-weight: variables.$fontWeightBold;
+						font-size: variables.$fontSizeDef;
+					}
+					
+					
+					.btn_tooltip_sm {
+						z-index: 5;
+						margin-top: 3px;
+						margin-left: 4px;
+					}
+					
+				}
+				.header_text_body {
+					display: inline-block;
+					font-weight: variables.$fontWeightMedium;
+				}
+				
+				.number_value_box {
+					.label {
+						font-weight: variables.$fontWeightRegular;
+					}
+				}
+				
+				[class^=btn_]{
+					.text {
+						margin-left: 0;
+					}
+				}
+				
+				.btn_wrap {
+					&.full {
+						margin-top: 20px;
+						padding: 0 20px;
+					}
+				}
+				.btn_tooltip_sm {
+					z-index : 4;
+					margin-left: 6px;
+				}
+				.btn_fold {
+					z-index: 1;
+					left: auto;
+					
+				}
+				
+				
+			}
+			.fold_box_contents {
+				padding: 0;
+				
+			}
+			
+			+.fold_box {
+				margin-top: 0;
+				border-top:0;
+			}
+			
+			&:first-child {
+				.fold_box_header {
+					border-top: 0;
+				}
+			}
+			
+			&.expanded {
+				
+				.fold_box_contents {
+					border-top: solid 1px variables.$colorGray05;
+					padding-bottom: 0;
+					
+					&.no_line_top {
+						border-top: 0;
+					}
+				}
+				
+				.delivery_info_header {
+					+.fold_box_contents {
+						border-top: solid 1px variables.$colorGray04;
+					}
+				}
+				
+			}
+			
+			
+			&.no_fold {
+				&.has_btn {
+					.fold_box_header {
+						padding-right: 40px;
+						
+						&:after {
+							content: '';
+							position: absolute;
+							display: block;
+							width: 11px;
+							height: 7px;
+							right: 20px;
+							top: 50%;
+							background: {
+								repeat: no-repeat;
+							}
+							@include mixins.ratio_images('../images/arw_fold_toggle_mok', 'png', 11px, 7px);
+							@include mixins.transform(translateY(-50%) rotate(-90deg));
+						}
+					}
+				}
+				
+				.fold_box_header {
+					padding-right: 0;
+					&.top_line_dashed {
+						border-top-style: dashed;
+					}
+					&.top_line_dashed_btn {
+						border-top-style: dashed;
+						padding-top: 16px;
+						
+						.btn_more_view {
+							width: 100%;
+							text-align: center;
+							
+							&.size_lg {
+								.ico_arw {
+									margin-top: 6px;
+								}
+
+								.ico_check_green_md {
+									height: 11px;
+									margin-top: 5px;
+									margin-right: 6px;
+								}
+							}
+
+						}
+					}
+				}
+				
+				.fold_box_fixed {
+					border-top: solid 1px variables.$colorGray04;
+				}
+				
+			}
+		}
+		
+		
+	}
+	
+	//주문동의
+	&.payment_type_agree {
+		.fold_box_list {
+			.fold_box {
+				
+				+ .fold_box {
+					margin-top: 0;
+					border-top: 0;
+				}
+				
+				&:first-child {
+					.fold_box_header {
+						padding-top: 20px;
+					}
+				}
+				&:last-child {
+					.fold_box_contents {
+						/*padding-bottom: 20px;*/
+					}
+				}
+				
+				.fold_box_header {
+					padding-right: 20px;
+				}
+				
+				&.no_fold {
+					&:last-child {
+						.fold_box_header {
+							margin-top: 12px;
+							padding: 20px;
+							border-top: solid 1px variables.$colorGray05;
+						}
+					}
+					
+					.payment_info_list {
+						padding: 0;
+						
+						.payment_info_item {
+							.label {
+								font-weight: variables.$fontWeightRegular;
+							}
+							.right_area {
+								.point {
+									.val {
+										@include mixins.font_size_def;
+									}
+									.unit {
+										font-weight: variables.$fontWeightRegular;
+									}
+								}
+							}
+							
+							.form_sel {
+								height: 44px;
+								select {
+									height: 44px;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			+.fold_box_list {
+				position: relative;
+				border-top: solid 6px #fff;
+				margin-top: -6px;
+				padding-top: 4px;
+				.fold_box {
+					&:first-child {
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
+					}
+				}
+				&:before {
+					content: '';
+					position: relative;
+					top: -4px;
+					height: 4px;
+					width:100%;
+					border-bottom: solid 4px variables.$colorGray05;;
+				}
+			}
+		}
+		.fold_box {
+			
+			
+			.fold_box_header, .fold_box_contents {
+				padding: 0 20px;
+			}
+			
+			.fold_box_header {
+				position: relative;
+				padding: 8px 20px 8px;
+				cursor: pointer;
+				@include mixins.font_size_sm;
+				font-weight: variables.$fontWeightRegular;
+				border-top: 0;
+				
+				.btn_fold {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 1;
+				}
+			}
+			
+			.fold_box_contents {
+				height: 0;
+				overflow: hidden;
+				box-sizing: border-box;
+				border-top: 0;
+				
+				.fold_contents_inner {
+					padding: 8px 24px 12px;
+					@include mixins.font_size_xs;
+					color: variables.$textColorGray;
+				}
+			}
+			
+			&.expanded {
+				/*border-color: variables.$colorGray03;*/
+				
+				.fold_box_header {
+				
+				}
+				
+				> .fold_box_contents {
+					height: auto;
+					padding: 0 0;
+				}
+			}
+		}
+		&.no_fold_line_first {
+			.fold_box {
+				&.no_fold {
+					&:first-child {
+						.fold_box_header {
+							margin-bottom: 12px;
+							padding: 20px;
+							border-bottom: solid 1px variables.$colorGray05;
+						}
+					}
+					&:last-child {
+						.fold_box_header {
+							margin-top: 0;
+							padding: 8px 20px 20px;
+							border-top: 0;
+						}
+					}
+
+				}
+			}
+		}
+		&.no_fold_line {
+			.fold_box {
+				&.no_fold {
+					&:first-child {
+						.fold_box_header {
+							/*margin-bottom: 12px;
+							padding: 20px;*/
+							border-bottom: 0;
+						}
+					}
+					&:last-child {
+						.fold_box_header {
+							margin-top: 0;
+							padding: 20px;
+							border-top: 0;
+						}
+					}
+
+				}
+			}
+		}
+	}
+}
+
+
+//기부금
+.agree_donation_info_box {
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+	.bar_text {
+		display: inline-block;
+		@include mixins.font_size_sm;
+		color: variables.$textColorBlack;
+		font-weight: variables.$fontWeightRegular;
+		
+		+ .bar_text {
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 1px;
+				height: 9px;
+				margin: 6px 12px 0;
+				background-color: variables.$colorGray03;
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+//바로드림
+.payment_today_delivery_wrap {
+	padding: 20px;
+	
+	.round_green_box {
+		margin: 16px 0;
+		border: 0 !important;
+		
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	
+	.btn_wrap {
+		padding-top: 10px;
+		.btn_xxs {
+			margin-left: auto;
+		}
+	}
+}
+
+//바로드림 선택 노출박스 element
+.payment_today_delivery_group {
+	@include mixins.justify_width(center, start, row);
+	
+	.label {
+		@include mixins.font_size_sm;
+		padding-right: 17px;
+		color: variables.$textColorBlack;
+		font-weight: variables.$fontWeightMedium;
+	}
+	.val {
+		[class^=ico_] {
+			margin-right: 3px;
+		}
+		
+		font-weight: variables.$fontWeightBold;
+		@include mixins.font_size_def;
+		
+		.store {
+			color: $paymentGreen;
+		}
+	}
+}
+
+//비회원 주문 광고 배너
+.guest_benefit_banner_wrap {
+	@include mixins.justify_width(start, start, column);
+	font-size: 0;
+	line-height: 0;
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 10px;
+	
+	.banner_item {
+		@include mixins.justify_width(center);
+		width: 100%;
+		@include mixins.font_size_sm;
+		color: variables.$textColorBlack;
+		padding: 18px;
+		background: rgba(variables.$kyoboGreen, .06);
+		border-radius: 6px;
+		
+		.text_area {
+			display: inline-block;
+			margin-left: 10px;
+			
+			.sub_text {
+				color: variables.$textColorLightGray;
+			}
+		}
+		
+		.ico_guest_benefit_e {//비회원주문결재 배너
+			display: inline-block;
+			width: 26px;
+			height: 20px;
+			background: {
+				repeat: no-repeat;
+				position: center top;
+			}
+			@include mixins.ratio_images('../images/ico_guest_benefit_e_mok', 'png', 26px, 20px);
+		}
+		.ico_guest_benefit_car {//비회원주문결재 배너
+			display: inline-block;
+			width: 26px;
+			height: 20px;
+			background: {
+				repeat: no-repeat;
+				position: center top;
+			}
+			@include mixins.ratio_images('../images/ico_guest_benefit_car_mok', 'png', 24px, 20px);
+		}
+		.ico_guest_benefit_member {//비회원주문결재 배너
+			display: inline-block;
+			width: 26px;
+			height: 20px;
+			background: {
+				repeat: no-repeat;
+				position: center top;
+			}
+			@include mixins.ratio_images('../images/ico_guest_benefit_member_mok', 'png', 26px, 20px);
+		}
+		
+		+.banner_item{
+			margin-top: 6px;
+		}
+		
+	}
+}
+
+//배송지별 상품
+.payment_shipping_wrap {
+	.address_item {
+		border-bottom: solid 1px variables.$colorGray05 !important;
+	}
+	
+	.payment_total_price_info_wrap {
+		border-top: solid 1px variables.$colorGray04;
+		.total_price_info {
+			padding: 20px;
+			background-color: rgba($paymentBlue, .04);
+			border-bottom: 0;
+			.delivery_fee {
+				margin-left: 3px;
+				@include mixins.font_size_xs;
+				color: variables.$textColorLightGray;
+			}
+			.delivery_schedule {
+				display: block;
+				margin-top: 8px;
+				@include mixins.font_size_sm;
+				font-weight: variables.$fontWeightMedium;
+				color: $paymentBlue;
+			}
+		}
+		
+	}
+}
+
+//책그리고포장꽃
+.payment_packaging_wrap {
+	padding: 0 20px 0;
+	
+	.packaging_prod_wrap {
+		margin-top: 20px;
+		padding-bottom: 20px;
+		
+		.prod_item {
+			.form_chk {
+				z-index: 1;
+				margin-bottom: 10px;
+				label {
+					width: 22px;
+					height: 22px;
+					padding-left: 22px;
+				}
+				.btn_check_prod_packaging {
+					position: absolute;
+					display: inline-block;
+					width: 100px;
+					height: 100px;
+					top: 32px;
+					left: 0;
+				}
+			}
+			margin-top: 0;
+		}
+		
+		.packaging_prod_swiper_wrap {
+			margin-left: -20px;
+			margin-right: -20px;
+			&.swiper-container {
+				padding-bottom: 22px;
+			}
+			
+			.swiper-wrapper {
+				.swiper-slide {
+					width: auto;
+					height: auto;
+					
+					&.prod_item {
+						width: 100px;
+						margin: 0 16px 0 0;
+						
+						.form_chk {
+							margin-bottom: 10px;
+						}
+					}
+					
+					&:first-child{
+						margin-left: 20px;
+					}
+					
+					&:last-child {
+						margin-right: 20px;
+					}
+				}
+			}
+			>.swiper-scrollbar {
+				width: calc(100% - 40px);
+				left: 20px;
+				height: 2px;
+			}
+		}
+	}
+}
+
+//책선물포장 > 엽서 SCR-BIZ06-07-M001 SCR-BIZ06-07-M005
+.payment_packaging_postcard_chk_wrap {
+	border-top: dashed 1px variables.$colorGray02;
+	padding: 16px 20px 20px;
+	text-align: center;
+}
+
+//주문완료
+.payment_complete_header_wrap {
+	
+	font-weight: variables.$fontWeightBold;
+	@include mixins.font_size_lg;
+	text-align: center;
+	
+	+.text_group,
+	+.text {
+		margin-top: 24px;
+	}
+	
+	~.round_purple_box {
+		margin-top: 24px;
+	}
+	~.round_blue_box {
+		margin-top: 24px;
+	}
+}
+
+//결제완료 > 무통장입금 정보
+.bank_info_group {
+	font-size: variables.$fontSizeSm;
+	letter-spacing: variables.$letterSpacing;
+	line-height: 20px;
+	text-align: center;
+	
+	.text {
+		@include mixins.justify_width(center, center, row);
+		
+		+.text {
+			margin-top: 6px;
+		}
+		
+		[class^=ico_] {
+			&.ico_location_primary {
+				margin-right: 4px;
+			}
+		}
+		
+		&.bank_info {
+			@include mixins.font_size_def;
+			font-weight: variables.$fontWeightBold;
+			
+			.bank_account {
+				color: $paymentBlue;
+				padding-left: 3px;
+			}
+		}
+		
+		&.desc {
+			@include mixins.font_size_xs;
+			color: variables.$textColorBlack;
+		}
+		
+	}
+}
+
+//결제수단 > 교보페이 가입전 동의
+.payment_agree_before_wrap {
+	padding: 0 20px 20px;
+	
+	.inner_box {
+		+.inner_box {
+			margin-top: 16px;
+		}
+		
+		.info_text {
+			border-radius: 6px;
+			background-color: variables.$colorGray06;
+			padding: 18px;
+		}
+		
+		.chk_col_list {
+			.chk_col_item {
+				+.chk_col_item {
+					margin-top: 17px;
+				}
+			}
+		}
+		
+		+.btn_wrap {
+			margin-top: 20px;
+			
+			.btn_sm {
+				font-weight: variables.$fontWeightRegular;
+			}
+		}
+	}
+}
+
+//결제수단 하단 배너 스와이퍼
+.payment_banner_swiper_wrap {
+	padding: 20px 0;
+	
+	.swiper-slide {
+		width: auto;
+		padding: 0 20px 0 20px;
+		box-sizing: border-box;
+	}
+	
+	.swiper_control_box {
+		.swiper-pagination {
+			margin-top: 12px;
+		}
+	}
+	
+	.payment_banner_box {
+		@include mixins.justify_width(center, start);
+		height: 86px;
+		padding: 0 15px 0 24px;
+		border-radius: 6px;
+		background-color: #f4f4f4;
+		
+		.banner_text {
+			text-align: left;
+			@include mixins.font_size_sm;
+			
+			.title {
+				font-weight: variables.$fontWeightRegular;
+			}
+			
+			.fc_purple{
+				color: variables.$textColorPurple;
+				font-weight: variables.$fontWeightBold;
+			}
+		}
+		
+		img {
+			margin-left: auto;
+		}
+		
+		&.bg_gray {
+			border: 1px solid variables.$colorGray04;
+		}
+	}
+}
+
+//결제 수단 선택중 신용카드 최근결제일때 (신용카드정보노출로 인해) UI 가 달라서 별도 생성
+.recent_payment {
+	width: 100%;
+	@include mixins.justify_width(center, center);
+	
+	input {
+		+label {
+			&:before {
+				top: 50%;
+				@include mixins.transform(translateY(-50%));
+			}
+			&:after {
+				top: 50%;
+				@include mixins.transform(translateY(-50%));
+			}
+		}
+	}
+	
+	.recent_info_box {
+		display: inline-block;
+		@include mixins.justify_width(start, center, column);
+		
+		.left_area {
+			font-size: 0;
+			line-height: 0;
+			.name {
+				font-size: variables.$fontSizeDef;
+				line-height: 22px;
+				letter-spacing: variables.$letterSpacing;
+			}
+		}
+		
+		.card_name {
+			margin-top: 6px;
+			display: block;
+			color: $paymentPurple2;
+			font-weight: variables.$fontWeightBold;
+			@include mixins.font_size_sm;
+		}
+		[class^=badge_]  {
+			margin-left: 6px;
+			font-weight: variables.$fontWeightBold;
+			
+			&:first-child {
+				margin-left: 0;
+			}
+			
+		}
+		
+	}
+	
+	.right_area {
+		display: inline-block;
+		margin-left: auto;
+		
+		[class^=btn_] {
+			&.btn_xs {
+				margin-top: -4px;
+				margin-bottom: -4px;
+				margin-left: 12px;
+			}
+		}
+	}
+}
+
+//결제수단 > 카드선택
+.payment_card_item {
+	position: relative;
+	height: 216px;
+	
+	.form_sel{
+		margin-top: 10px;
+		width: 260px;
+		visibility: hidden;
+	}
+	
+	.card_box {
+		opacity: .5;
+		position: relative;
+		width: 260px;
+		height: 170px;
+		border-radius: 16px;
+		box-sizing: border-box;
+		padding: 16px 16px;
+		color: #fff;
+		
+		.logos {
+			font-size: variables.$fontSizeDef;
+			height: 20px;
+			background-color: rgba(255, 0, 0, .4);
+			text-align: right;
+		}
+		
+		.brand_name {
+			font-size: variables.$fontSizeDef;
+			font-weight: variables.$fontWeightBold;
+			margin-top: 33px;
+			text-align: left;
+		}
+		
+		.card_number {
+			font-size: variables.$fontSizeXs;
+			font-weight: variables.$fontWeightRegular;
+			margin-top: 6px;
+			text-align: left;
+		}
+	}
+
+	.form_point_chk {
+		display: block;
+		visibility: hidden;
+		position: absolute;
+		top: 124px;
+		left: 20px;
+		z-index: 2;
+		
+		input {
+			+ label {
+				color: #fff;
+				font-size: variables.$fontSizeXs;
+			}
+		}
+	}
+	.btn_check_payment_card {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 70px;
+		height: 50px;//모바일은 드래그이슈로 선택영역 축소시킴
+		z-index: 1;
+		
+		.text {
+			display: block;
+			visibility: hidden;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 23px;
+			padding: 6px 10px 0 18px;
+			color: #fff;
+			font-size: variables.$fontSizeXxs;
+			line-height: 1;
+			font-weight: variables.$fontWeightMedium;
+			background-color: rgba(0, 0, 0, 0.8);
+			border-radius: 16px 0 10px 0;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+			vertical-align: top;
+			box-sizing: border-box;
+			
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 8px;
+				top: 9px;
+				width: 8px;
+				height: 6px;
+				background: {
+					repeat: no-repeat;
+				};
+				@include mixins.ratio_images('../images/ico_check_white_mok', 'png', 8px, 6px);
+			}
+		}
+	}
+	
+	&.active {
+		.card_box {
+			opacity: 1;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: 1;
+				border: 2px solid #000;
+				border-radius: 12px;
+			}
+		}
+		.form_point_chk {
+			visibility: visible;
+		}
+		
+		.btn_check_payment_card {
+			.text {
+				visibility: visible;
+			}
+		}
+		.form_sel{
+			visibility: visible;
+		}
+	}
+	
+	.btn_check_payment_card_add {
+		position: relative;
+		width: 100%;
+		height: 170px;
+		border-radius: 12px;
+		box-sizing: border-box;
+		border: 1px dashed #e5e5e5;
+		background-color: variables.$colorGray06;
+		cursor: pointer;
+		text-align: center;
+		@include mixins.font_size_xs;
+		color: variables.$textColorLightGray;
+		
+		&:before {
+			content: '';
+			display: block;
+			width: 16px;
+			height: 16px;
+			margin: 0 auto 10px;
+			@include mixins.ratio_images('../images/btn_attached_add_mok', 'png', 16px, 16px);
+			background: {
+				position: center;
+				repeat: no-repeat;
+			}
+		}
+	}
+
+	// 사용불가
+	&.unserviceability {
+		.unserviceability_box {
+			@include mixins.justify_width(center, center, column);
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 170px;
+			z-index: 3;
+			background-color: rgba(variables.$textColorBlack, .7);
+			border-radius: 16px;
+			color: #fff;
+			text-align: center;
+
+			.unserviceability_msg {
+				@include mixins.font_size_xl;
+				font-weight: variables.$fontWeightBold;
+			}
+			.unserviceability_info {
+				margin-top: 6px;
+				@include mixins.font_size_xs;
+				color: rgba(#fff, .8);
+			}
+		}
+	}
+}
+
+//결제수단
+.payment_method_wrap {
+	padding: 0 0;
+	
+	~ .payment_method_wrap {
+		border-top: 1px dashed variables.$colorGray02;
+	}
+	
+	.payment_method_inner {
+		padding: 0 10px 20px;
+	}
+	.payment_card_swiper_wrap {
+		position: relative;
+		padding-bottom: 20px;
+		
+		.swiper-container {
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-left: 0 -20px;
+			
+			.swiper-slide {
+				width: auto;
+				width: 260px;
+				margin-right: 16px;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	
+	//카드결제 하단옵션
+	.payment_card_option_wrap {
+		border-top: dashed 1px variables.$colorGray02;
+		padding-top: 20px;
+		
+		.form_wrap {
+			
+			.form_box {
+				&.payment_smile {
+					.form_title {
+						.label_box {
+							@include mixins.justify_width();
+							width: calc(100% - 105px);
+							
+							.title {
+							
+							}
+							
+							.number_value_box {
+								margin-left: auto;
+								display: inline-block;
+							}
+						}
+						
+						.right_area {
+							margin-left: auto;
+						}
+					}
+					
+					.form_cont {
+						.input_btn_box {
+							.input_price_box {
+								/*width: 209px;*/
+								
+								width: calc(100% - 105px);
+								
+								+ .btn_ip {
+									width: 100px;
+									margin-left: 5px;
+									
+								}
+							}
+						}
+					}
+				}
+				
+				.form_cont {
+					
+					.form_chk {
+						
+						input[type=checkbox] {
+							+ label {
+								font-weight: variables.$fontWeightMedium;
+							}
+						}
+						
+						+.btn_tooltip_sm {
+							margin-left: 6px;
+							margin-top: 1px;
+						}
+					}
+					
+					.prepaid_receipt_box {
+						margin-top: 10px;
+						color: variables.$textColorGray;
+						@include mixins.font_size_xs;
+						
+						&.business {
+						
+						}
+					}
+					+.form_cont {
+						margin-top :16px;
+					}
+				}
+			}
+			//form_box
+		}//form_wrap
+		
+	}
+}
+
+// 다른결제수단 > 리스트
+.payment_etc_wrap {
+	padding: 0 20px 20px;
+	
+	.title_wrap {
+		margin-top: 30px;
+		&.title_size_sm {
+			padding-bottom: 30px;
+			.title_heading {
+				font-weight: variables.$fontWeightRegular;
+			}
+		}
+	}
+	
+	.form_chk {
+		input[type=checkbox] {
+			+ label {
+				font-weight: variables.$fontWeightMedium !important;
+			}
+		}
+	}
+	
+	.payment_item_row_group {
+		font-size: 0;
+		@include mixins.justify_width(start, between);
+		
+		~.payment_item_row_group {
+			margin-top: 5px;
+		}
+	}
+	.payment_item_option_wrap {
+		margin-top: 8px;
+		margin-bottom: 24px;
+		
+		
+		.info_text_box {
+			padding: 20px;
+			.form_wrap {
+				padding: 0;
+				
+				.form_chk {
+					margin-top: 10px;
+					
+					+.form_chk {
+						display: block;
+						margin-top: 16px;
+					}
+				}
+				
+				.form_box {
+					.form_cont {
+						.form_chk {
+							&:only-child {
+								margin-top: 0;
+							}
+						}
+					}
+				}
+			}
+			
+			+.btn_text_payment_method_wrap {
+				margin-top: 19px;
+			}
+		}
+	}
+	
+	.btn_payment_etc {
+		width: calc(50% - 2.5px);
+		text-align: center;
+		margin-right: 5px;
+		min-width: initial;
+		
+		&.btn_lg {
+			padding-left:0;
+			padding-right:0;
+			height: 54px;
+			.text {
+				
+				@include mixins.font_size_sm;
+				font-weight: variables.$fontWeightMedium;
+			}
+		}
+		
+		&.active {
+			background: rgba(80,85,177,0.06);
+			border: 1px solid variables.$kyoboPurple;
+			
+			.text {
+				color: variables.$kyoboPurple;
+				font-weight: variables.$fontWeightBold;
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		
+		[class^=ico_payment_] {
+			display: inline-block;
+			margin-right: 0;
+			width: 105px;
+			height: 18px;
+			
+			&.ico_payment_npay {
+				@include mixins.ratio_images('../images/ico_payment_npay_mok', 'png', 105px, 18px);
+			}
+			&.ico_payment_kakaopay {
+				@include mixins.ratio_images('../images/ico_payment_kakaopay_mok', 'png', 105px, 18px);
+			}
+			&.ico_payment_samsungpay {
+				@include mixins.ratio_images('../images/ico_payment_samsungpay_mok', 'png', 105px, 18px);
+			}
+			&.ico_payment_payco {
+				@include mixins.ratio_images('../images/ico_payment_payco_mok', 'png', 105px, 18px);
+			}
+			&.ico_payment_toss {
+				@include mixins.ratio_images('../images/ico_payment_toss_mok', 'png', 105px, 18px);
+			}
+			&.ico_payment_chai {
+				@include mixins.ratio_images('../images/ico_payment_chai_mok', 'png', 105px, 18px);
+			}
+			&.ico_payment_skpay {
+				@include mixins.ratio_images('../images/ico_payment_skpay_mok', 'png', 105px, 18px);
+			}
+		}
+		
+		
+	}
+	
+	.info_text_box {//급여공제 케이스
+		+.btn_text_payment_method_wrap {
+			margin-top: 19px;
+		}
+	}
+}
+
+
+//주문서/주문완료 공통
+.order_payment_wrap {
+	.contents_inner {
+		
+		.title_wrap {
+			&.payment_complete {
+		
+				margin-top: 30px;
+				margin-bottom: 10px;
+				@include mixins.font_size_sm;
+				color: variables.$textColorGray;
+				
+				.title_heading {
+					font-weight: variables.$fontWeightRegular;
+				}
+			}
+			
+			~.payment_complete {
+				margin-top: 24px;
+			}
+			
+			+.fold_box_wrap.type_box {
+				margin-top: 0;
+			}
+			+.payment_box_wrap {
+				margin-top: 0;
+			}
+		}
+		
+		.point {
+			.val {
+				font-weight: variables.$fontWeightBold;
+				font-size: variables.$fontSizeMd;
+			}
+			&.size_xxs {
+				.val,
+				.unit {
+					font-size: variables.$fontSizeXxs;
+				}
+			}
+		}
+		
+		.address_item {
+			border: 0;
+			border-radius: 0;
+			padding: 20px;
+			background-color: transparent;
+			
+			.address_info_box {
+				padding: {
+					left: 0;
+					right: 0;
+				}
+				
+				.address_name {
+					.name {
+						color: $paymentPurple;
+						@include mixins.font_size_def;
+						
+						[class^=ico_]{
+							margin-right: 3px;
+						}
+					}
+					[class^=badge_] {
+						font-weight: variables.$fontWeightMedium;
+						
+						+[class^=badge_] {
+							margin-left: 3px;
+						}
+					}
+					
+					+.btn_wrap {
+						margin-top: 14px;
+					}
+				}
+				.address_person {
+					.phone_number ~ .btn_tooltip_sm {
+						margin-left: 6px;
+						margin-bottom: 4px;
+					}
+				}
+				.address {
+					font-weight: variables.$fontWeightRegular;
+					+.address_person {
+						margin-top: 8px;
+						
+						+.msg {
+							margin-top: 5px;
+						}
+					}
+				}
+				
+				.valid_check_box {
+					margin-top: 16px;
+					margin-left: -20px;
+					margin-right: -20px;
+					
+					.valid_desc {
+						button {
+							@include mixins.font_size_sm;
+						}
+					}
+				}
+				
+				.msg {
+					@include mixins.justify_width();
+					margin-top: 20px;
+					.label {
+						min-width: 80px;
+						padding-right: 6px;
+						color: variables.$textColorGray;
+						font-weight: variables.$fontWeightRegular;
+						@include mixins.font-size_sm;
+					}
+					>.text {
+						padding-right: 10px;
+						color: variables.$textColorBlack;
+						font-weight: variables.$fontWeightMedium;
+						@include mixins.font-size_sm;
+					}
+					.right_area {
+						margin-left: auto;
+						.btn_xxs {
+							margin-top: -5px;
+							margin-bottom: -5px;
+						}
+					}
+				}
+				.call {
+					margin-top: 6px;
+					font-weight: variables.$fontWeightRegular;
+					@include mixins.font-size_sm;
+				}
+				
+				.btn_wrap.full {
+					
+					&:first-child {
+						margin-top: 0;
+					}
+					
+					margin-top: 16px;
+					margin-left: 0;
+					width: 100%;
+				}
+			}
+			.form_wrap {
+				padding: 29px 0 0;
+				.bottom_chk_box {
+					margin-top: 10px;
+				}
+			}
+		}
+		
+		.prod_area {
+			&.horizontal {
+				@include mixins.justify_width(start);
+				.prod_info_box {
+					.delivery_info {
+						@include mixins.justify_width(center);
+						flex-wrap: wrap;
+
+						&:first-child {
+							margin-top: 0;
+							
+							~.prod_info {
+								margin-top: 8px;
+							}
+						}
+						.badge_sm ~ .badge_sm {
+							margin-left: 3px;
+						}
+					}
+					
+					.prod_option {
+						margin-top: 5px;
+						.text,
+						.val {
+							@include mixins.font_size_xs;
+						}
+					}
+					
+					.prod_price {
+						.price {
+							.val,
+							.unit {
+								@include mixins.font_size_xs;
+							}
+						}
+						.count {
+							padding-top: 2px;
+							margin-left: 5px;
+							@include mixins.font_size_xxs;
+							color: variables.$textColorGray;
+						}
+					}
+					.delivery_opt {
+						margin-top: 3px;
+						@include mixins.font_size_xxs;
+						color: variables.$textColorGray;
+					}
+				}
+			}
+		}//prod_area
+		
+		
+		.form_wrap {
+			padding: 20px;
+			
+			.form_box {
+				.form_title {
+					.form_label {
+						&.font_size_def {
+							@include mixins.font_size_def;
+							font-weight: variables.$fontWeightBold;
+							+ .btn_tooltip_sm {
+								margin: {
+									top: 2px;
+									bottom: 0;
+								}
+							}
+						}
+					}
+				}
+				.form_cont {
+					
+					&:first-child {
+						margin-top: 0;
+					}
+					
+					.form_desc {
+						margin-top: 6px;
+						@include mixins.font_size_xs;
+						color: variables.$textColorLightGray;
+					}
+					
+					.input_btn_box {
+						&.btn_w_75 {
+							.form_ip {
+								&.type_sm {
+									+.btn_ip {
+										height: 44px;
+									}
+								}
+							}
+							.btn_ip {
+								width: 75px;
+								margin-left: 5px;
+							}
+						}
+						&.btn_w_120 {
+							.form_ip {
+								&.type_sm {
+									+.btn_ip {
+										height: 44px;
+									}
+								}
+							}
+							.btn_ip {
+								width: 120px;
+								margin-left: 5px;
+							}
+						}
+					}
+				}
+			}
+			
+			&.cash_receipts {
+				.form_box {
+					margin-top: 16px;
+					
+					&:first-child {
+						margin-top: 20px;
+					}
+					
+					+.form_box {
+						margin-top: 16px;
+					}
+				}
+			}
+		}
+		
+		.fold_box_wrap {
+			&.type_box {
+				
+				.fold_box_contents {
+					&.no_line_top {
+						border-top: 0;
+						.form_wrap {
+							&:first-child{
+								padding-top: 0;
+							}
+						}
+					}
+					
+					>.btn_wrap {
+						padding: 0 20px;
+						
+						&:last-child {
+							padding-bottom: 20px;
+						}
+					}
+					
+					
+					
+					.form_wrap {
+						padding: 20px;
+						
+						+.payment_info_list {
+							padding-top: 0;
+						}
+						
+						&.coupon {
+							.form_box {
+								.form_title {
+									.label_box {
+										@include mixins.justify_width();
+										width: calc(100% - 105px);
+										.title {
+										
+										}
+										.number_value_box {
+											margin-left: auto;
+											display: inline-block;
+										}
+									}
+									
+									.right_area {
+										margin-left: auto;
+									}
+								}
+								
+								.form_cont {
+									.input_btn_box {
+										.input_price_box {
+											width: calc(100% - 105px);
+											
+											+.btn_ip {
+												width: 100px;
+												margin-left: 5px;
+												
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				+.payment_box_wrap {
+					margin-top: 10px;
+				}
+			}
+		}
+		
+		.payment_info_box {
+			margin: 20px;
+			
+			.payment_info_list {
+				padding: 0;
+			}
+			
+			+.payment_info_box {
+				border-top: solid 1px variables.$colorGray04;
+				padding-top: 20px;
+				
+			}
+		}
+		// 주문서/완료 리스트
+		.payment_info_list {
+			padding: 20px;
+			
+			.payment_info_item {
+				@include mixins.justify_width();
+				
+				& ~ .payment_info_item {
+					margin-top: 16px;
+				}
+				
+				&.recipient_info{//주문완료 받는분
+					.label {
+						width: 90px;
+						font-weight: variables.$fontWeightRegular;
+					}
+				}
+				
+				&.cash_receipts_info {
+					margin-top: -5px;
+					.label {
+						width: auto;
+						padding-right: 0;
+					}
+					.person_info {
+						font-weight: variables.$fontWeightRegular;
+					}
+				}
+				
+				&.size_xxs {
+					margin-top: 10px;
+					~ .payment_info_item.size_xxs {
+						margin-top: 6px;
+					}
+					
+					.label {
+						@include mixins.font_size_xxs;
+					}
+					.right_area {
+						@include mixins.font_size_xxs;
+						color: variables.$textColorGray;
+					}
+				}
+				
+				
+				
+				>.label {
+					width: 109px;
+					padding-right: 10px;
+					@include mixins.font_size_sm;
+					color: variables.$textColorBlack;
+					font-weight: variables.$fontWeightMedium;
+					box-sizing: border-box;
+					
+					&.has_ip_sm {
+						padding-top: 11px;
+					}
+					
+					&.auto {
+						width: auto;
+					}
+					&.fc_gray {
+						width: auto;
+						color: variables.$textColorGray;
+						font-weight: variables.$fontWeightRegular;
+					}
+				}
+				.text_body {
+					
+					&.bar {
+						&:before {
+							content: '';
+							display: inline-block;
+							width: 1px;
+							height: 9px;
+							margin: 6px 10px 0;
+							background-color: variables.$colorGray03;
+							vertical-align: top;
+						}
+					}
+				}
+				
+				.right_area {
+					margin-left: auto;
+					@include mixins.font_size_sm;
+					
+					.btn_xxs {
+						margin-top: -5px;
+						margin-bottom: -5px;
+					}
+				}
+				
+				
+			}
+			
+			&.total_payment {
+				.payment_info_item {
+					@include mixins.justify_width(center);
+					+.payment_info_item {
+						margin-top: 12px;
+					}
+					.label {
+						width: auto;
+						padding-right: 0;
+						font-weight: variables.$fontWeightRegular;
+						
+						+.btn_tooltip_sm {
+							margin-top: -3px;
+							margin-left: 6px;
+						}
+					}
+					.price {
+						.val {
+							@include mixins.font_size_md;
+							/*@include mixins.font_size_def;*/
+							&.sale {
+								font-weight: variables.$fontWeightBold;
+								color: variables.$kyoboPurple;
+							}
+						}
+					}
+					&.total {
+						.label {
+							font-weight: variables.$fontWeightBold;
+						}
+						.price {
+							.val {
+								@include mixins.font_size_xl;
+								font-weight: variables.$fontWeightBold;
+							}
+						}
+					}
+					&.point {
+						margin-top: 6px;
+						.label {
+							@include mixins.font_size_xs;
+							color: variables.$textColorGray;
+							font-weight: variables.$fontWeightRegular;
+						}
+						.price {
+							.val,
+							.unit {
+								@include mixins.font_size_xs;
+								color: variables.$textColorGray;
+								font-weight: variables.$fontWeightRegular;
+							}
+						}
+						.btn_tooltip_sm {
+							margin-top: -2px;
+						}
+					}
+					&.method {
+						margin-top: 6px;
+						.right_area {
+							@include mixins.font_size_sm;
+							color: variables.$textColorBlack;
+						}
+					}
+				}
+			}
+			
+			&.address_info {
+				.payment_info_item {
+					.label {
+						width: 97px;
+						flex-shrink: 0;
+						padding-right: 0;
+						font-weight: variables.$fontWeightRegular;
+					}
+					.right_area {
+						margin-left: 0;
+					}
+				}
+			}
+			
+			//선물받는분
+			&.gift_recipient {
+				.label {
+					width: 100px;
+					color: variables.$textColorBlack;
+					font-weight: variables.$fontWeightRegular;
+					
+					.fc_black {
+						font-weight: variables.$fontWeightBold;
+						color: variables.$textColorBlack;
+					}
+				}
+				
+				.auto_overflow_wrap {
+					position: relative;
+					float: left;
+					&:after {
+						content: '';
+						clear:both;
+						display: block;
+					}
+					
+					.auto_overflow_contents {
+						position: relative;
+						max-height: calc( (22px + 8px) * 5 - 8px );
+						display: inline-block;
+						
+						.auto_overflow_inner {
+							position: relative;
+							padding-right: 24px;
+						}
+						
+						.info_item {
+							color: variables.$textColorBlack;
+							@include mixins.font_size_xs;
+							
+							.person_info {
+								font-weight: variables.$fontWeightRegular;
+							}
+							
+							.phone_number {
+								word-break: keep-all;
+							}
+							
+							&.size_sm {
+								@include mixins.font_size_sm;
+							}
+							
+							~ .info_item{
+								margin-top: 8px;
+							}
+						}
+					}//auto_overflow_contents
+					.auto_overflow_footer {
+						margin-top:0;
+						display: inline-block;
+						
+						&.floating {
+							position: absolute;
+							right: 0;
+							bottom: 6px;
+						}
+					}//auto_overflow_footer
+				}//auto_overflow_wrap
+			}
+			
+			
+			.text_sub_spot {
+				@include mixins.font_size_xs;
+				color: variables.$kyoboPurple;
+				font-weight: variables.$fontWeightMedium;
+			}
+			.bubble_speech_box {
+				@include mixins.justify_width();
+				position: relative;
+				
+				.bubble_speech_desc {
+					&.type_static {
+						margin-top: 0;
+					}
+					
+					&.arw_right_bottom {
+						width: 100%;
+						text-align: center;
+						margin-bottom: 12px;
+						margin-top: -4px;
+					}
+					&.arw_left_top {
+						margin-top: 12px;
+						margin-bottom: -4px;
+					}
+				}
+			}
+			
+			
+			
+			+.form_col_group {
+				padding-top: 0;
+				margin-top: -4px;
+			}
+			
+		}
+		
+		.round_purple_box {
+			display: block;
+			padding: 18px;
+			border-radius: 6px;
+			background: rgba($paymentPurple2, .06);
+			box-sizing: border-box;
+			text-align: center;
+			
+			.fc_purple {
+				color: $paymentPurple;
+				font-weight: variables.$fontWeightBold;
+				font-size: variables.$fontSizeDef;
+			}
+			.text {
+				+.text {
+					display: block;
+				}
+			}
+		}
+
+		.round_green_box {
+			display: block;
+			padding: 18px;
+			border-radius: 6px;
+			background: rgba($paymentGreen2, .04);
+			box-sizing: border-box;
+			text-align: center;
+
+			.fc_green {
+				color: $paymentGreen;
+				font-weight: variables.$fontWeightBold;
+				font-size: variables.$fontSizeDef;
+			}
+			.text {
+				+.text {
+					display: block;
+				}
+			}
+		}
+		
+		.round_blue_box {
+			display: block;
+			padding: 18px;
+			border-radius: 6px;
+			background: rgba($paymentBlue, .04);
+			box-sizing: border-box;
+			text-align: center;
+		}
+		
+		.bubble_speech_desc {
+			font-weight: variables.$fontWeightMedium;
+		}
+		
+	}//contents_inner
+}//order_payment_wrap
+
+//주문서
+.wrapper.payment {
+	.order_payment_wrap {
+		
+		.fold_box_wrap {
+			&.type_box {
+				border:0;
+				
+				.fold_box {
+
+					&:last-child {
+						border-bottom-left-radius: 6px;
+						border-bottom-right-radius: 6px;
+						
+						.fold_box_header {
+							&.delivery_info_header {
+								border-bottom: solid 1px variables.$colorGray04;
+								border-bottom-left-radius: 6px;
+								border-bottom-right-radius: 6px;
+							}
+						}
+					}
+					
+					.fold_box_header {
+						
+						.header_text {
+							@include mixins.font_size_def;
+							+.header_text_body{
+								@include mixins.font_size_def;
+							}
+							.ico_check_green_md {
+								margin-right: 6px;
+							}
+						}
+					
+						
+						&.delivery_info_header {
+							
+							.header_text {
+								@include mixins.font-size_sm;
+							}
+							.header_text_body {
+								.person_info {
+									.name,
+									.gap,
+									.phone_number {
+										@include mixins.font_size_sm;
+									}
+								}
+							}
+							
+							
+							border-left: solid 1px variables.$colorGray04;
+							border-right: solid 1px variables.$colorGray04;
+							
+							+.fold_box_contents {
+								border-left: solid 1px variables.$colorGray04;
+								border-right: solid 1px variables.$colorGray04;
+							}
+						}
+					}
+					
+					.fold_box_contents {
+					
+					}
+					
+					&.expanded {
+						
+						&:last-child {
+							.fold_box_header {
+								
+								&.delivery_info_header {
+									border-bottom: 0;
+									border-bottom-left-radius: 0;
+									border-bottom-right-radius: 0;
+									+.fold_box_contents {
+										border-bottom: solid 1px variables.$colorGray04;
+										border-bottom-left-radius: 6px;
+										border-bottom-right-radius: 6px;
+									}
+								}
+							}
+						}
+					}
+					
+				}//fold_box
+				
+			}
+		}
+		
+		.payment_box_wrap {
+			border: 0;
+			
+			.header_text {
+				@include mixins.font_size_def;
+			}
+		}
+		
+		.payment_info_list {
+			
+			//선물받는분
+			&.gift_recipient {
+				.label {
+					color: variables.$textColorGray;
+					
+					.fc_black {
+						font-weight: variables.$fontWeightBold;
+					}
+				}
+				
+				.auto_overflow_wrap {
+					.auto_overflow_contents {
+						
+						.info_item {
+							.person_info {
+								font-weight: variables.$fontWeightMedium;
+							}
+						}
+					}
+				}
+				//auto_overflow_wrap
+			}
+			
+			&.total_payment {
+				.payment_info_item {
+					
+					.price {
+						.val {
+							@include mixins.font_size_def;
+						}
+					}
+					
+					&.total {
+						.price {
+							.val {
+								@include mixins.font_size_lg;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	.info_text_box {
+		border-radius: 6px;
+	}
+}

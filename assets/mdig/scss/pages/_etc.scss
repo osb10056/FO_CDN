@@ -1,0 +1,470 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+// 회원혜택
+.benefit_wrap {
+  .top_visual_box {
+	.bnr_img {
+	  display: block;
+	  img {
+		display: block;
+		width: 100%;
+	  }
+	}
+  }
+  .tab_wrap {
+	margin-top: 25px;
+	.tab_list_wrap {
+	  margin-bottom: 0;
+	}
+  }
+  .benefit_area {
+	padding: 0 20px;
+	.benefit_box {
+	  padding: 24px 20px;
+	  text-align: center;
+	  border: 1px solid #eaeaea;
+	  border-radius: 16px;
+	  margin-top: 24px;
+	  .tit {
+		height: 48px;
+		font-size: 16px;
+		color: #000;
+		line-height: 24px;
+		letter-spacing: -0.16px;
+		font-weight: bold;
+	  }
+	  .img_box {
+		width: 100%;
+		margin-top: 28px;
+	  }
+	  .img_box.coupon {
+		img {
+		  width: 73.22%;
+		}
+	  }
+	  .img_box.cash {
+		img {
+		  width: 40.67%;
+		}
+	  }
+	  .img_box.etc {
+		img {
+		  width: 40.67%;
+		}
+	  }
+	  .desc {
+		margin-top: 28px;
+		font-size: 15px;
+		color: #000;
+		line-height: 23px;
+		letter-spacing: -0.15px;
+	  }
+	}
+  }
+}
+
+
+// 키워드 검색
+.title_box {
+	padding: 20px;
+	&.has-rightbox {
+		justify-content: space-between;
+		.right_box {
+			margin: auto;
+		}
+	}
+}
+.assel_wrap {
+	display: flex;
+	overflow-x: auto;
+	padding: 20px;
+	.assel {
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		padding: 8px 14px;
+		border: 1px solid #DDD;
+		border-radius: 6px;
+		.seled {
+			display: block;
+			margin: 0 10px;
+			color: #156cdd;
+			font-weight: variables.$fontWeightMedium;
+			@include mixins.font_size_xs;
+		}
+		&:after {
+			content: "";
+			display: inline-block;
+			font-size: 0;
+			width: 10px; height: 10px;
+			@include mixins.ratio_images('/assets/common/images/arw_select_mok', 'png', 9px, 5px);
+			background: {
+				position: center;
+				repeat: no-repeat;
+			}
+			vertical-align: top;
+		}
+		& + .assel {
+			margin-left: 4px;
+		}
+	}
+}
+
+
+// 페이지 상단 제목 영역
+.page-title {
+	margin: 24px 20px;
+
+	&.has-right {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.title {
+		font: {
+			weight: variables.$fontWeightBold;
+			size: 24px;
+		};
+		line-height: 40px;
+		color: variables.$textColorBlack;
+	}
+}
+
+
+//제휴문의
+.partnership_wrap {
+  .tit_highlight {
+	.text {
+	  display: inline-block;
+	  position: relative;
+	  color: #474c98;
+	  &:before {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		bottom: 4px;
+		width: calc(100%);
+		height: 12px;
+		background-color: rgba(80, 85, 177, 0.1);
+	  }
+	}
+  }
+  .ps_top {
+	background: url("/assets/mdig/images/etc/ps_bg_top.jpg") no-repeat left top;
+	background-size: 100%;
+	.conner_inner {
+	  height: 163vw;
+	}
+	.text_box {
+	  text-align: center;
+	  padding-top: 70px;
+	  .top_text {
+		font-size: 18px;
+		color: #474c98;
+		line-height: 24px;
+		letter-spacing: -0.18px;
+		font-weight: bold;
+	  }
+	  .main_text {
+		font-size: 32px;
+		color: #000;
+		line-height: 38px;
+		letter-spacing: -0.32px;
+		font-weight: bold;
+		margin-top: 11px;
+	  }
+	  .sub_text {
+		font-size: 15px;
+		color: #292929;
+		line-height: 24px;
+		letter-spacing: -0.15px;
+		margin-top: 22px;
+	  }
+	}
+  }
+  .ps_introduce {
+	.conner_inner {
+	  padding-bottom: 70px !important;
+	}
+	.title_box {
+	  margin-bottom: 30px;
+	  .text_box {
+		.main_tit {
+		  font-size: 26px;
+		  color: #000;
+		  line-height: 38px;
+		  letter-spacing: -0.26px;
+		  font-weight: bold;
+		}
+	  }
+	}
+	.intro_box {
+	  padding: 0 20px;
+	  ~ {
+		.intro_box {
+		  margin-top: 70px;
+		}
+	  }
+	  .img_box {
+		padding: 0 18px;
+		img {
+		  display: block;
+		  width: 100%;
+		}
+	  }
+	  .text_box {
+		text-align: center;
+		margin-top: 9px;
+		.top_text {
+		  display: inline-block;
+		  font-size: 15px;
+		  color: #474c98;
+		  line-height: 21px;
+		  letter-spacing: -0.15px;
+		  font-weight: bold;
+		  &:after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: #474c98;
+		  }
+		}
+		.main_text {
+		  font-size: 22px;
+		  color: #000;
+		  line-height: 34px;
+		  letter-spacing: -0.22px;
+		  font-weight: bold;
+		  margin-top: 11px;
+		}
+		.sub_text {
+		  font-size: 14px;
+		  color: #767676;
+		  line-height: 22px;
+		  letter-spacing: -0.14px;
+		  margin-top: 16px;
+		}
+	  }
+	  .button_box {
+		text-align: center;
+		margin-top: 12px;
+		button {
+		  .ico_arr {
+			display: inline-block;
+			width: 10px;
+			background: url("/assets/mdig/images/common/icon/ico_arr_right_blue_20x20.png") no-repeat left center;
+			background-size: 100%;
+		  }
+		}
+	  }
+	}
+  }
+  .ps_inq {
+	background: url("/assets/mdig/images/etc/ps_bottom_bg.png") no-repeat left top;
+	background-size: cover;
+	padding: 50px 0 70px;
+	.title_box {
+	  .text_box {
+		.sub_tit {
+		  font-size: 15px;
+		  color: #292929;
+		  line-height: 23px;
+		  letter-spacing: -0.15px;
+		  font-weight: initial;
+		  margin-top: 16px;
+		}
+	  }
+	}
+	.button_box {
+	  text-align: center;
+	}
+  }
+  .ps_pin {
+	.conner_inner {
+	  padding-bottom: 70px !important;
+	}
+	.pin_box {
+	  text-align: center;
+	  background-color: #fff;
+	  border-radius: 30px;
+	  padding: 40px 0 0;
+	  + {
+		.pin_box {
+		  margin-top: 20px;
+		}
+	  }
+	  .text_box {
+		padding-bottom: 30px;
+		.top_text {
+		  display: inline-block;
+		  font-size: 15px;
+		  color: #474c98;
+		  line-height: 15px;
+		  letter-spacing: -0.15px;
+		  font-weight: bold;
+		  background-color: rgba(80, 85, 177, 0.06);
+		  border-radius: 14px;
+		  padding: 7px 12px;
+		}
+		.main_text {
+		  font-size: 22px;
+		  color: #000;
+		  line-height: 30px;
+		  letter-spacing: -0.22px;
+		  font-weight: bold;
+		  margin-top: 14px;
+		}
+		.sub_text {
+		  font-size: 14px;
+		  color: #767676;
+		  line-height: 22px;
+		  letter-spacing: -0.14px;
+		  margin-top: 6px;
+		}
+	  }
+	  .img_box {
+		img {
+		  display: block;
+		  width: 100%;
+		}
+	  }
+	  .guide_text {
+		font-size: 13px;
+		color: #767676;
+		line-height: 19px;
+		letter-spacing: -0.13px;
+		padding: 30px 37px 50px;
+	  }
+	}
+  }
+  .tab_wrap {
+	.tab_list_wrap {
+	  .tabs {
+		.tab_item {
+		  .tab_text {
+			font-size: 14px;
+		  }
+		}
+	  }
+	}
+	.tab_content {
+	  padding-bottom: 20px;
+	  .title_box {
+		padding-bottom: 0;
+		.sub_tit {
+		  font-size: 15px;
+		  color: #767676;
+		  line-height: 23px;
+		  letter-spacing: -0.15px;
+		  font-weight: initial;
+		  margin-top: 16px;
+		}
+	  }
+	  .button_box {
+		text-align: center;
+		margin-top: 26px;
+		button {
+		  .ico_arr {
+			display: inline-block;
+			width: 10px;
+			background: url("/assets/mdig/images/common/icon/ico_arr_right_blue_20x20.png") no-repeat left center;
+			background-size: 100%;
+		  }
+		}
+	  }
+	  .guide_text {
+		font-size: 13px;
+		color: #767676;
+		line-height: 19px;
+		letter-spacing: -0.13px;
+		border-radius: 10px;
+		background-color: #f7f7f7;
+		padding: 18px;
+		margin-top: 30px;
+	  }
+	  .slide-wrap {
+		margin-top: 40px;
+		.swiper-wrapper {
+		  .swiper-slide {
+			width: 100%;
+			text-align: center;
+			.btn_pin {
+			  position: absolute;
+			  left: 50%;
+			  top: 20px;
+			  transform: translateX(-50%);
+			  .ico_arw {
+				width: 8px;
+				height: 8px;
+				background-size: 100%;
+				background-image: url("/assets/mdig/images/common/icon/ico_arr_8x8_fff.png");
+			  }
+			}
+			.img_box {
+			  width: 100%;
+			  padding: 0 18px;
+			  box-sizing: border-box;
+			  img {
+				width: 100%;
+			  }
+			}
+			p {
+			  font-size: 14px;
+			  color: #000;
+			  line-height: 22px;
+			  letter-spacing: -0.14px;
+			  text-align: center;
+			  margin-top: 4px;
+			}
+			.btn_info {
+			  width: auto;
+			  margin-top: 12px;
+			  .text {
+				font-size: 13px;
+				color: #474c98;
+				line-height: 20px;
+				letter-spacing: -0.13px;
+				font-weight: 500;
+			  }
+			  .ico_info {
+				display: inline-block;
+				position: relative;
+				top: 1px;
+				width: 16px;
+				height: 16px;
+				background: url("/assets/common/images/btn_tooltip_sm_active_mok@2x.png");
+				background-size: 16px 16px;
+				margin-left: 6px;
+			  }
+			}
+		  }
+		}
+		.navi_btn {
+		  margin-top: -45px;
+		}
+	  }
+	}
+  }
+}
+
+
+.keyword-selected ~ .product-list-wrap {
+	.product_list {
+		.product_item {
+			.thum {
+				a {
+					.img_box {
+						overflow: hidden;
+						border-radius: 16px 16px 16px 0;
+					}
+				}
+			}
+		}
+	}
+}

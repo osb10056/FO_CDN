@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="21" viewBox="0 0 45 21">
+    <defs>
+        <linearGradient id="j4t3vocwra" x1="1" y1=".5" x2=".122" y2=".5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#4500e6"/>
+            <stop offset="1" stop-color="#01b6bb"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(7.458 2.875)">
+        <rect data-name="사각형 147" width="45" height="21" rx="10.5" transform="translate(-7.458 -2.875)" style="fill:url(#j4t3vocwra)"/>
+        <text transform="translate(-1.457 13.125)" style="fill:#fff;font-size:12px;font-family:NotoSansCJKkr-Medium,Noto Sans CJK KR;font-weight:500;letter-spacing:-.01em"><tspan x="0" y="0">더드림</tspan></text>
+    </g>
+</svg>

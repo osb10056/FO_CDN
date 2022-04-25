@@ -1,0 +1,8 @@
+.bestEbook .eBook_list.rental .eBook_list_header .sort .form_search_box {
+  width: 250px !important;
+}
+
+.bestEbook .eBook_list.rental .prodDt_info span:nth-child(3) {
+  display: none;
+}
+/*# sourceMappingURL=bestEbook_dig.min.css.map */

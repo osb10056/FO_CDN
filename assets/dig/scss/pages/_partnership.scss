@@ -1,0 +1,463 @@
+@use 'sass:map';
+@use '../../common/scss/abstracts/variables';
+@use '../../common/scss/abstracts/functions';
+@use '../../common/scss/abstracts/mixins';
+@use '../../common/scss/abstracts/placeholders';
+.wrapper .container_wrapper .contents_wrap {
+    padding-top: 0;
+}
+
+.partnership{
+    $tootip_row5: 175px;
+    $tootip_row3: 137px;
+    $tootip_margin: 8px;
+
+    h1,h2{
+        font-size: 42px;
+        letter-spacing: -0.01em;        
+        span{
+            color: #5055b1;
+            position: relative;
+            z-index: 0;
+            &::before{
+                content: "";
+                display: inherit;
+                position: absolute;
+                bottom: 0;
+                left: -1px;
+                width: 101%;
+                height: 16px;
+                background-color: rgba(80, 85, 177, 0.1);    
+                z-index: -1;
+                animation-name: highlighter;
+                animation-duration: 0.35s;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+    button::after{
+        content: url(../images/common/arrow_btn_h22.png);
+        padding-left: 3px;
+    }
+    &_visual{
+        width: 100%;
+        height: 400px;
+        background: url(../images/partnership/bg_top.png) no-repeat center top;
+        background-size: cover;
+        box-sizing: border-box;
+        &_text{
+            width: 1200px;
+            text-align: left;
+            margin: 0 auto;
+            padding-top: 82px;
+    
+            span{
+                font-size: 24px;
+                line-height: 36px;
+                letter-spacing: -0.01em;
+                font-weight: 700;
+                color: #474c98;
+                padding-bottom: 6px;
+            }
+            h1{
+                line-height: 62px;
+                margin-bottom: 30px;
+            }
+            p{
+                font-size: 16px;
+                line-height: 26px;
+                letter-spacing: -0.01em;
+                font-weight: 500;
+                color: #292929;
+            }
+        }
+    }
+    &_contents{
+        background-color: rgba(80, 85, 177, 0.06);    
+        padding: 100px 0;
+        h2{
+            text-align: center;
+            margin: 0 auto 80px;
+        }
+        &_list{
+            width: 970px;
+            margin: 0 auto;
+        }
+        &_item{
+            &:nth-child(1){
+                background-image: url(../images/partnership/img_dgcon_01.png);                      
+                background-position: top left;
+            }
+            &:nth-child(2){
+                background-image: url(../images/partnership/img_dgcon_02.png);                      
+                background-position: top right;
+            }
+            &:nth-child(3){
+                background-image: url(../images/partnership/img_dgcon_03.png);                      
+                background-position: top left;
+            }
+            &:nth-child(4){
+                background-image: url(../images/partnership/img_dgcon_04.png);                      
+                background-position: top right;
+            }
+            padding: 89px 0;                
+            background-repeat: no-repeat;
+            background-size: 394px 394px;
+            margin-bottom: 80px;
+            span{
+                font-size: 16px;
+                letter-spacing: -0.01em;
+                font-weight: 700;
+                color: #474c98;
+                text-decoration: underline;
+                display: block;
+                margin-bottom: 11px;
+            }
+            strong{
+                font-size: 28px;
+                line-height: 40px;
+                letter-spacing: -0.01em;
+            }
+            p{
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.01em;
+                color: #767676;
+                margin: 24px 0;
+            }
+            button{                
+                width: 153px;
+            }
+            &.left{
+                text-align: left;
+                padding-left: 394px + 90px;
+            }
+            &.right{
+                text-align: right;
+                padding-right: 394px + 90px;
+            }
+        }
+    }
+    &_tab{
+        box-sizing: border-box;
+        
+        &.tab_wrap>.tab_list_wrap{
+            justify-content: center;
+            margin-bottom: 0 !important;
+        }
+        .tab_list_inner{
+            width: 1200px;
+            margin: 0 auto;
+            height: 100%;
+        }
+        &_con{
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            .swiper-slide{
+                height: 778px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 60px;
+            }
+            .left{
+                width: 400px;
+                height: 100%;
+                display: inline-flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                p{
+                    font-size: 20px;
+                    line-height: 30px;
+                    letter-spacing: -0.01em;
+                    color: #767676;
+                    margin-top: 20px;
+                }
+                div{
+                    width: 350px;
+                    box-sizing: border-box;
+                    background-color: #f7f7f7;
+                    padding: 18px 20px 18px 18px;
+                    border-radius: 10px;
+                    font-size: 14px;
+                    line-height: 19px;
+                    letter-spacing: -0.01em;
+                    word-break: keep-all;
+                    color: #767676;
+                    margin-top: 34px;
+                }
+                button{
+                    margin-top: 34px;
+                    padding: 12px 24px;
+                }
+            }
+            .right{
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 100px;
+                text-align: center;
+                position: relative;
+                .tip_round{
+                    position: absolute;
+                    top: 124px;
+                    font-size: 12px;
+                    line-height: 18px;
+                    letter-spacing: -0.01em;
+                    color: #fff;
+                    background-color: #5055b1;
+                    border-radius: 15px;
+                    padding: 6px 12px;
+                    display: inline-block;
+                    &::after{
+                        content: url(../../common/images/arw_anb_category_tab.png);
+                        padding-left: 6px;
+                    }
+                }
+                img{
+                    width: 500px;
+                    height: 500px;
+                }
+                span{
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: -0.01em;
+                }
+                .point_text{
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: -0.01em;
+                    font-weight: 500;
+                    color: #474c98;
+                    padding-top: 10px;
+                }
+                .tooltip_wrap{
+                    margin-left: 6px;
+                    button::after{
+                        display: none;
+                    }
+                }
+                .tooltip_inner{
+                    
+                    margin-top: 0;
+                    .tooltip_contents{
+                        font-size: 13px;
+                        line-height: 19px;
+                        letter-spacing: -0.01em;
+                        color: #292929;
+                    }
+                }
+            }
+            .slide_ebook .tooltip_inner{
+                top: calc(-#{$tootip_row5} - 8px);
+                left: -230px;
+            }
+            .slide_sam .tooltip_inner{
+                top: calc(-#{$tootip_row3} - 8px);
+                left: -224px;
+            }
+            .slide_ecash .tooltip_inner{
+                top: calc(-#{$tootip_row5} - 8px);
+                left: -240px;
+            }
+        }
+        .swiper-button-prev {
+            top: calc(50% - 36px);
+            left: 0px;
+            margin-top: 0;
+            width: 20.6px;
+            height: 36px;
+            background-image: url(../images/common/icon_arrow_line.png);
+            background-size: 20.6px 36px;
+            background-color: transparent;
+            border-radius: 0;        
+        }
+    
+        .swiper-button-next {
+            top: calc(50% - 36px);
+            right: 0x;
+            margin-top: 0;   
+            width: 20.6px;
+            height: 36px;
+            background-image: url(../images/common/icon_arrow_line.png);
+            background-size: 20.6px 36px;
+            background-color: transparent;
+            border-radius: 0;                     
+        }
+        
+        .swiper-pagination{
+            left: calc(50% - 60px / 2);
+            bottom: 60px;
+        }
+        .swiper-pagination-bullet{
+            width: 12px;
+            height: 12px;            
+            & + .swiper-pagination-bullet{
+                margin-left: 12px;
+            }
+        }
+        .swiper-pagination-bullet-active{
+            background-color: #595959;
+        }
+    }
+    &_tip{
+        padding: 100px 0;
+        background-color: #f7f7f7;
+        text-align: center;
+        h2{
+            margin-bottom: 80px;
+        }
+        &_con{
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .box{
+                width: calc(100% / 3 - 50px / 3);
+                height: 590px;
+                padding-top: 50px;
+                box-sizing: border-box;
+                background-color: #fff;
+                border-radius: 40px;
+                display: inline-block;
+                text-align: center;
+                position: relative;
+                .num{
+                    font-size: 18px;
+                    letter-spacing: -0.01em;
+                    font-weight: 700;
+                    color: #474c98;
+                    background-color: rgba(80, 85, 177, 0.06); 
+                    padding: 5px 14px 4px;
+                    border-radius: 25px;
+                    display: inline-block;
+                    margin-bottom: 20px;
+                }
+                .tit{
+                   font-size: 24px;
+                   letter-spacing: -0.01em;
+                    font-weight: 700;
+                    &>span{
+                        color: #474c98;
+                    }
+                }
+            }
+            .box1{
+                .tit20{
+                    font-size: 20px;
+                    letter-spacing: -0.2px;
+                    font-weight: 700;
+                    display: inline-block;
+                    margin: 214px auto 16px;
+                }
+                .pwbox{
+                    width: 238px;
+                    height: 51px;
+                    margin: 0 auto;
+                    background-color: #f5f5fb;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    line-height: 51px;
+                    letter-spacing: -0.01em;
+                }
+                &::after{
+                    content: '이용권 교환번호를 발급받았다면?';
+                    font-size: 17px;
+                    font-weight: 700;
+                    letter-spacing: -0.01em;
+                    color: #474c98;
+                    width: 359px;
+                    height: 133px;
+                    background: url(../images/partnership/tip_02.png)no-repeat;
+                    background-size: 359px 133px;
+                    position: absolute;
+                    left: calc(50% - (359px / 2));
+                    bottom: 47.5px;       
+                    display: inline-flex; 
+                    align-items: center;
+                    justify-content: center;
+                }    
+                &::before{
+                    content: '';
+                    display: inline-block;
+                    width: 140px;
+                    height: 140px;
+                    background: url(../images/partnership/tip_01.png)no-repeat;
+                    background-size: 140px 140px;
+                    position: absolute;
+                    left: calc(50% - (140px / 2));
+                    top: 100px;                    
+                } 
+            }
+            .box2{
+                &::after{
+                    content: '';
+                    display: inline-block;
+                    width: 331px;
+                    height: 388px;
+                    background: url(../images/partnership/tip_03.png)no-repeat;
+                    background-size: 331px 388px;
+                    position: absolute;
+                    left: calc(50% - (331px / 2));
+                    bottom: 0;                    
+                }                
+                p{
+                    font-size: 14px;
+                    line-height: 22px;
+                    letter-spacing: -0.01em;
+                    color: #767676;
+                    margin-top: 10px;
+                }
+            }
+            .box3{
+                &::after{
+                    content: '';
+                    display: inline-block;
+                    width: 337px;
+                    height: 209px;
+                    background: url(../images/partnership/tip_04.png)no-repeat;
+                    background-size: 337px 209px;
+                    position: absolute;
+                    left: calc(50% - (337px / 2));
+                    top: 172px;                    
+                }    
+                p{
+                    font-size: 13px;
+                    line-height: 20px;
+                    letter-spacing: -0.13px;
+                    color: #767676;
+                    margin-top: 269px;
+                }
+            }
+        }
+    }
+    &_bottom{
+        height: 395px;    
+        padding: 100px 0;
+        box-sizing: border-box;
+        background: url(../images/partnership/bg_bottom.png) center top no-repeat;
+        text-align: center;
+        h2{
+            margin-bottom: 14px;
+        }
+        p{
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.01em;
+            color: #292929;
+            margin-bottom: 40px;
+        }    
+        button{
+            width: 236px;
+            &::after{
+                display: none;
+            }
+        }
+    }
+}
+

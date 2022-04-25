@@ -1,0 +1,10 @@
+.samRegist {width: 100%; background-color: #f5f5fa; border: 1px solid #eaeaea; border-radius: 16px; padding: 116px 0 115px; text-align: center;}
+.samRegist p {font-size: 16px; font-weight: 500; color: #000; margin-bottom: 12px;}
+.samRegist small {font-size: 13px; color: #767676;}
+.samRegist .input_box {margin-top: 30px; display: flex; align-items: flex-start; justify-content: center;}
+.samRegist .input_box .form_ip {width: 400px;}
+.samRegist .input_box .valid_desc {text-align: left;}
+.samRegist .input_box button {padding: 0 24px; font-size: 14px; font-weight: 500; height: 44px; min-width: 99px; border-radius: 6px; margin-left: 6px;}
+.samRegist+.info_text_box {margin-top: 40px; padding: 16px;}
+.samRegist+.info_text_box [class^=bul_item_] {color: #767676;}
+/*# sourceMappingURL=samRegist_dig.css.map */

@@ -1,0 +1,985 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+.contents_wrap {
+	.contents_inner {
+		.tab_wrap {
+			.tab_list_wrap {
+				.tabs {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+/* tab */
+.tab_wrap {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	box-sizing: border-box;
+
+	// tab - tab_list_wrap
+	.tab_list_wrap {
+		position: relative;
+		@include mixins.justify_width(center);
+		width: 100%;
+		height: 48px;
+		margin-bottom: 40px;
+		background-color: #fff;
+		border-bottom: 1px solid variables.$colorGray03;
+		box-sizing: border-box;
+
+		.tabs {
+			position: relative;
+			@include mixins.justify_width;
+			height: calc(100% + 1px);
+			flex: 1;
+			padding: 0 20px;
+			@include mixins.scrollX;
+			box-sizing: border-box;
+
+			.tab_item {
+				position: relative;
+				flex: 0 auto;
+				height: 100%;
+				margin: 0;
+				padding: 0 14px;
+				background: none;
+				box-sizing: border-box;
+				white-space: nowrap;
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+
+					&.has_data {
+						&:after {
+							right: -7px;
+						}
+					}
+				}
+
+				.tab_link {
+					@include mixins.justify_width(center, center);
+					position: relative;
+					height: 100%;
+					padding: 0;
+					float: none;
+					text-align: center;
+					box-sizing: border-box;
+
+					&:after {
+						content: '';
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						z-index: 2;
+						width: 100%;
+						height: 2px;
+						background-color: transparent;
+						@include mixins.transition(background-color .2s ease-out);
+					}
+
+					.tab_text {
+						position: relative;
+						display: block;
+						width: 100%;
+						color: variables.$textColorLightGray;
+						@include mixins.font_size_def;
+						font-weight: variables.$fontWeightRegular;
+						font-family: variables.$fontKor;
+						box-sizing: border-box;
+						@include mixins.transition(color .2s ease-out, font-weight .2s ease-out);
+
+						.num {
+							margin-left: 1px;
+							font-size: 11px;
+						}
+
+						.desc {
+							display: block;
+							@include mixins.font_size_xxs;
+						}
+					}
+					.ico_link {
+						display: inline-block;
+						position: absolute;
+						width: 7px;
+						height: 7px;
+						background: {
+							position: center;
+							repeat: no-repeat;
+						}
+						@include mixins.ratio_images('../images/ico_tab_link_mok', 'png', 7px, 7px);
+						font-size: 0;
+						top: 18px;
+						right: 0;
+					}
+
+					&.tab_disabled {
+						cursor: default;
+						pointer-events: none;
+
+						.tab_text {
+							color: variables.$colorGray02; // TODO 추후 디자인 가이드 나오면 수정 필요
+						}
+					}
+				}
+
+				&.ui-state-active, &.active {
+					z-index: 2;
+					margin-bottom: 0;
+					padding-bottom: 0;
+
+					.tab_link {
+						cursor: pointer;
+
+						&:after {
+							background-color: #000;
+						}
+
+						.tab_text {
+							color: variables.$textColorBlack;
+							font-weight: variables.$fontWeightBold;
+						}
+					}
+				}
+
+				&.has_data {
+					&:after {
+						content: '';
+						position: absolute;
+						display: inline-block;
+						width: 5px;
+						height: 5px;
+						background: variables.$kyoboGreen;
+						border-radius: 50%;
+						top: 12px;
+						right: 7px;
+
+					}
+				}
+			}
+		}
+
+		.right_area {
+			display: inline-block;
+			flex: 0 auto;
+			margin-left: 30px;
+		}
+
+		&:after {
+			content: none;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: variables.$colorGray03;
+		}
+	}
+
+	.tab_list_wrap {
+		&.no_margin {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	// tab - content
+	.tab_content {
+		padding: 0;
+		background: #fff;
+		box-sizing: border-box;
+	}
+}
+
+/* tab - sm 타입 */
+.tab_wrap.type_sm {
+	.tab_list_wrap {
+		@include mixins.justify_width(start);
+		height: 37px;
+		padding: 0;
+
+		.tabs {
+			.tab_item {
+				padding: 0 12px;
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+				}
+
+				.tab_link {
+					align-items: stretch;
+
+					&:after {
+						height: 3px;
+					}
+
+					.tab_text {
+						@include mixins.font_size_sm;
+					}
+				}
+			}
+		}
+
+		.right_area {
+			.form_sel.type_no_line {
+				margin-top: 2px;
+			}
+		}
+	}
+}
+
+/* tab - fill 타입 */
+.tab_wrap.type_fill {
+	> .tab_list_wrap {
+		height: 48px;
+		border-bottom: 0;
+
+		.tabs {
+			height: 100%;
+
+			.tab_item {
+				flex: 1;
+				border: 1px solid variables.$colorGray03;
+				padding: 0;
+				@include mixins.transition(background .2s ease-out, border-color .2s ease-out);
+
+				.tab_link {
+					padding: 0 14px; // TODO :: 추후 디자인 나오면 좌우 여백 값 수정 필요
+
+					&:after {
+						display: none;
+					}
+
+					.tab_text {
+						padding-bottom: 1px;
+					}
+				}
+
+				&.ui-tabs-active {
+					background-color: variables.$kyoboPurple;
+					border-color: variables.$kyoboPurple;
+
+					.tab_text {
+						color: #fff;
+					}
+				}
+
+				& ~ .tab_item {
+					margin-left: -1px;
+				}
+			}
+		}
+	}
+}
+
+/* tab - line 타입 */
+.tab_wrap.type_line_primary {
+	.tab_list_wrap {
+		position: relative;
+		height: 44px;
+		border-bottom: none;
+		margin-bottom: 24px;
+
+		/*&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 2px;
+			//background-color: variables.$kyoboPurple;
+		}*/
+
+		.tabs {
+			height: 100%;
+			box-sizing: border-box;
+
+			.tab_item {
+				padding: 0;
+				background: #fff;
+				border: 1px solid variables.$colorGray03;
+				border-bottom: 0;
+				border-radius: 6px 6px 0 0;
+				@include mixins.transition(border-color .23s);
+
+				.tab_link {
+					padding: 0 10px;
+
+					.tab_text {
+						padding-bottom: 2px;
+						@include mixins.font_size_sm;
+					}
+
+					&:after {
+						bottom: 0;
+						background-color: variables.$kyoboPurple;
+						@include mixins.transition(none);
+					}
+				}
+
+				&.ui-state-active {
+					border: 2px solid variables.$kyoboPurple;
+					border-bottom: 0;
+					z-index: 2;
+
+					.tab_link {
+						.tab_text {
+							color: variables.$textColorPurple;
+						}
+
+						&:after {
+							background: #fff;
+							z-index: 2;
+						}
+					}
+				}
+
+				& ~ .tab_item {
+					margin-left: -1px;
+				}
+			}
+		}
+	}
+}
+
+/* tab - line round 타입 */
+.tab_wrap.type_line_round {
+	.tab_list_wrap {
+		height: auto;
+		margin-bottom: 20px;
+		border-bottom: none;
+
+		.tabs {
+			align-items: stretch;
+
+			.tab_item {
+				height: 56px;
+				padding: 0;
+				background: #fff;
+				border: 1px solid variables.$colorGray02;
+				border-radius: 6px;
+
+				.tab_link {
+					width: 100%;
+					padding: 0 10px;
+					align-content: center;
+					flex-wrap: wrap;
+
+					.tab_ico {
+						display: inline-block;
+						position: relative;
+						z-index: 1;
+						margin-bottom: 10px;
+						vertical-align: top;
+					}
+
+					.tab_text {
+						color: variables.$textColorGray;
+						@include mixins.font_size_sm;
+						@include mixins.transition(color 0.3s ease-out, font-weight 0.3s ease-out);
+					}
+
+					&:after {
+						display: none;
+					}
+				}
+
+				&.ui-state-active {
+					border: 1px solid variables.$colorGray02;
+
+					.tab_link {
+						.tab_text {
+							color: variables.$textColorPurple;
+							font-weight: variables.$fontWeightBold;
+						}
+
+						&:after {
+							display: block;
+							position: absolute;
+							left: -1px;
+							right: -1px;
+							top: -1px;
+							bottom: -1px;
+							width: auto;
+							height: auto;
+							background-color: transparent;
+							border: 1px solid variables.$kyoboPurple;
+							border-radius: 6px;
+						}
+					}
+				}
+
+				& ~ .tab_item {
+					margin-left: 5px;
+				}
+			}
+		}
+
+		&.col2 {
+			.tabs {
+				flex-wrap: wrap;
+
+				.tab_item {
+					flex-shrink: 0;
+					width: calc((100% - 10px) / 2);
+					white-space: normal;
+
+					&:nth-child(2n+1) {
+						margin-left: 0;
+					}
+
+					&:nth-child(n+3) {
+						margin-top: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	.tab_content {
+		&.has_line {
+			padding-top: 20px;
+			border-top: 1px solid variables.$colorGray04;
+		}
+	}
+
+	&.size_md {
+		> .tab_list_wrap {
+			height: auto;
+			padding: 0 20px;
+
+			> .tabs {
+				.tab_item {
+					height: auto;
+					border-radius: 16px;
+
+					.tab_link {
+						padding: 18px 10px;
+
+						.tab_text {
+							@include mixins.font_size_xs;
+							color: variables.$textColorDarkGray;
+							font-weight: variables.$fontWeightMedium;
+						}
+					}
+
+					&.ui-state-active {
+						.tab_link {
+							.tab_text {
+								color: variables.$textColorPurple;
+							}
+
+							&:after {
+								border: 2px solid variables.$kyoboPurple;
+								border-radius: 16px;
+							}
+						}
+					}
+
+					& ~ .tab_item {
+						margin-left: 6px;
+					}
+				}
+			}
+		}
+	}
+
+	+ .info_text_box{
+		margin-top: 20px;
+	}
+}
+
+.contents_inner{
+	.tab_wrap.type_line_round {
+		&.size_md {
+			> .tab_list_wrap {
+				padding: 0;
+			}
+		}
+	}
+}
+
+/* tab - 태그 타입 */
+.tab_wrap.type_tag {
+	>.tab_list_wrap {
+		height: auto;
+		border-bottom: none;
+		margin-bottom: 24px;
+
+		.tabs {
+			.tab_item {
+
+				.tab_link {
+					background-color: variables.$colorGray06;
+					border: 1px solid variables.$colorGray06;
+					border-radius: 20px;
+					box-sizing: border-box;
+					@include mixins.transition(background-color .23s, border-color .23s);
+
+					.tab_text {
+						@include mixins.font_size_xs;
+						padding: 7px 14px 8px;
+						@include mixins.transition(color .23s);
+					}
+
+					&:after {
+						content: none;
+					}
+				}
+
+				&.ui-state-active {
+					.tab_link {
+						background-color: variables.$textColorGray;
+						border-color: variables.$textColorGray;
+
+						.tab_text {
+							font-weight: variables.$fontWeightRegular;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.scroll {
+		.tab_list_wrap {
+			.tabs {
+				.tab_item {
+					padding: 0;
+
+					~ .tab_item {
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	&:not(.scroll) {
+		.tab_list_wrap {
+			display: block;
+			padding: 0;
+			margin: -2px -3px 20px -2px;
+
+			.tabs {
+				overflow: visible;
+				display: block;
+				height: auto;
+
+				.tab_item {
+					padding: 2px 3px 3px 2px;
+				}
+			}
+
+			&.no_margin{
+				~ .tab_content{
+					.list_result_wrap{
+						&:first-child{
+							margin-top: 7px;
+						}
+					}
+				}
+			}
+		}
+
+		&.size_sm {
+			.tab_list_wrap {
+				margin: -2px -3px 16px -2px;
+			}
+		}
+	}
+
+	&.size_sm {
+		.tab_list_wrap {
+			margin-bottom: 20px;
+
+			.tabs {
+				.tab_link {
+					.tab_text {
+						padding: 5px 14px 6px;
+					}
+				}
+			}
+		}
+	}
+	
+	&.type_black {//장바구니/주문 팝업에서 사용돰 SCR-BIZ06-01-M012 by han
+		>.tab_list_wrap {
+			
+			.tabs {
+				.tab_item {
+					&.ui-state-active {
+						.tab_link {
+							background-color: variables.$textColorBlack;
+							border-color: variables.$textColorBlack;
+							
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* tab - fill round 타입 - 회원(로그인) 사용중 */
+.tab_wrap.type_fill_round {
+	.tab_list_wrap {
+		height: 44px;
+		border-bottom: none;
+		margin-bottom: 30px;
+
+		.tabs {
+			.tab_item {
+				border: 1px solid variables.$colorGray03;
+				border-bottom-color: variables.$kyoboPurple;
+				border-radius: 10px 10px 0 0;
+				background-color: variables.$colorGray06;
+				padding: 0;
+				@include mixins.transition(background .3s ease-out, border-color .3s ease-out);
+
+				.tab_link {
+					padding: 0 14px; // TODO :: 추후 디자인 나오면 좌우 여백 값 수정 필요
+
+					.tab_text {
+						padding-bottom: 1px;
+						@include mixins.font_size_sm;
+					}
+
+					&:after {
+						display: none;
+					}
+				}
+
+				&.ui-state-active {
+					background-color: variables.$kyoboPurple;
+					border-color: variables.$kyoboPurple;
+
+					.tab_text {
+						color: #fff;
+						font-weight: variables.$fontWeightBold;
+					}
+				}
+
+				& ~ .tab_item {
+					margin-left: -1px;
+				}
+			}
+		}
+	}
+}
+
+/* tab - 균등형 */
+.tab_wrap.justify {
+	> .tab_list_wrap {
+		.tabs {
+			width: 100%;
+			padding: 0;
+
+			.tab_item {
+				flex: 1;
+				text-align: center;
+				padding: 0;
+				margin: 0 10px;
+
+				.tab_link {
+					display: inline-flex;
+					width: auto;
+					padding: 0 10px;
+				}
+
+				/*&:first-child {
+					margin-left: 0;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}*/
+			}
+		}
+	}
+
+	&.type_fill,
+	&.type_fill_round {
+		> .tab_list_wrap {
+			> .tabs {
+				.tab_item {
+					margin: 0;
+
+					.tab_link {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	&.type_line_round {
+		> .tab_list_wrap {
+			> .tabs {
+				.tab_item {
+					margin: 0;
+					white-space: normal;
+
+					.tab_link {
+						width: 100%;
+					}
+
+					& ~ .tab_item {
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	&.type_fill_round {
+		> .tab_list_wrap {
+			> .tabs {
+				.tab_item {
+					margin: 0;
+
+					.tab_link {
+						width: 100%;
+					}
+
+					& ~ .tab_item {
+						margin-left: -1px;
+					}
+				}
+			}
+		}
+	}
+
+	&.type_line_primary {
+		> .tab_list_wrap {
+			> .tabs {
+				.tab_item {
+					margin: 0;
+					white-space: normal;
+
+					.tab_link {
+						width: 100%;
+					}
+
+					& ~ .tab_item {
+						margin-left: -1px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 상단 고정 탭 */
+.tab_wrap {
+	&.type_fixed {
+		> .tab_list_wrap {
+			//margin-bottom: 0;
+			border: none;
+
+			&:after {
+				content: none;
+			}
+
+			> .tab_list_inner {
+				height: 100%;
+				border-bottom: 1px solid variables.$colorGray03;
+				box-sizing: border-box;
+
+				&.sps {
+					position: relative;
+
+					.sps_inner {
+						height: 100%;
+					}
+
+					&.sps-blw {
+						position: fixed;
+						width: 100%;
+						height: 48px;
+					}
+				}
+			}
+		}
+	}
+
+	&.type_fixed_tag {
+		> .tab_list_wrap {
+			//margin-bottom: 0;
+			height: 36px;
+			border: none;
+
+			> .tab_list_inner {
+				height: 36px;
+				box-sizing: border-box;
+
+				&.sps {
+					position: relative;
+
+					.sps_inner {
+						height: 100%;
+					}
+
+					&.sps-blw {
+						position: fixed;
+						width: 100%;
+						height: 56px;
+						padding: 10px 0;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+.tab_wrap {
+	&.type_fixed {
+		.tab_content{
+			.tab_wrap {
+				&.type_fixed_tag {
+					margin-top: -4px;
+
+					> .tab_list_wrap{
+						.tab_list_inner {
+							&.sps-blw {
+								height: 76px;
+								padding: 20px 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 탭 컨텐츠영역 그레이라인 10px 있는 경우 */
+.tab_wrap {
+	&.type_cont_divide {
+		> .tab_list_wrap{
+			margin-bottom: 0;
+		}
+
+		> .tab_content {
+			&:before {
+				content: '';
+				display: block;
+				height: 10px;
+				background-color: variables.$colorGray06;
+			}
+
+			> .tab_wrap{
+				&.type_tag{
+					&:first-child{
+						margin-top: 20px;
+					}
+				}
+			}
+
+			> .contents_inner{
+				&:first-child{
+					.prod_row_list{
+						&.has_line{
+							&:first-child{
+								margin-top: 30px;
+							}
+						}
+					}
+				}
+			}
+
+			> .title_wrap{
+				&.title_size_xl{
+					&:first-child{
+						margin-top: 40px;
+					}
+				}
+
+				&.title_size_md {
+					&:first-child{
+						margin-top: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+.contents_wrap{
+	.contents_inner{
+		.tab_wrap{
+			&:not(&.type_sm, &.type_fill){
+				.tab_list_wrap {
+					.tabs {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}*/
+
+.tab_wrap {
+	&.tab_category {
+		.tab_list_wrap {
+			height: 85px;
+			margin-bottom: 0;
+
+			.tabs {
+				.tab_item {
+					margin: 0;
+
+					.tab_link {
+						width: 100%;
+						height: auto;
+						padding: {
+							top: 46px;
+							bottom: 20px;
+						}
+						background: {
+							position: top center;
+							repeat: no-repeat;
+						}
+
+						&.tab_domestic {
+							@include mixins.ratio_images('../images/ico_menu_tab_domestic_mok', 'png', 36px, 36px);
+						}
+
+						&.tab_foreign {
+							@include mixins.ratio_images('../images/ico_menu_tab_foreign_mok', 'png', 36px, 36px);
+						}
+
+						&.tab_casting {
+							@include mixins.ratio_images('../images/ico_menu_tab_casting_mok', 'png', 36px, 36px);
+						}
+
+						&.tab_kyobo_only {
+							@include mixins.ratio_images('../images/ico_menu_tab_kyobo_only_mok', 'png', 36px, 36px);
+						}
+
+						.tab_text {
+							@include mixins.font_size_xs;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,410 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+.sort_range_wrap{
+	height: 204px;
+	padding: 35px;
+	border: 1px solid variables.$colorGray03;
+	border-radius: 16px;
+	box-sizing: border-box;
+	margin-bottom: 50px;
+
+	.info_text{
+		font-weight: variables.$fontWeightBold;
+		color: variables.$textColorBlack;
+	}
+
+	.sort_range_inner{
+		margin-top: 20px;
+	}
+
+	.gender_sort_box{
+		display: inline-block;
+		font-size: 0;
+		vertical-align: top;
+
+		.btn_sort_gender{
+			display: inline-block;
+			width: 110px;
+			height: 93px;
+			border: 1px solid variables.$colorGray03;
+			border-radius: 10px;
+			background-color: variables.$colorGray06;
+			vertical-align: top;
+			@include mixins.transition(border .23s, background-color .23s);
+
+			[class^=ico_]{
+				display: block;
+				width: 26px;
+				height: 29px;
+				margin: 0 auto 4px;
+			}
+
+			.ico_men{
+				@include mixins.ratio_images('../images/ico_gender_men', 'png', 26px, 29px);
+			}
+
+			.ico_women{
+				@include mixins.ratio_images('../images/ico_gender_women', 'png', 26px, 29px);
+			}
+
+			.text{
+				position: relative;
+				@include mixins.font_size_sm;
+				@include mixins.transition(font-weight .23s, color .23s);
+			}
+
+			&.active{
+				border: 2px solid variables.$kyoboPurple;
+				background-color: #fff;
+
+				.text{
+					font-weight: variables.$fontWeightBold;
+					color: variables.$kyoboPurple;
+				}
+			}
+
+			+ .btn_sort_gender{
+				margin-left: 16px;
+			}
+		}
+	}
+
+	.range_slider_wrap{
+		display: inline-block;
+		margin: 36px 0 0 61px;
+		width: 584px;
+		vertical-align: top;
+	}
+}
+
+.range_slider_wrap{
+	position: relative;
+
+	.range_slider{
+		height: 12px;
+		padding: 4px;
+		box-sizing: border-box;
+
+		.range_slider_inner{
+			display: block;
+			width: 100%;
+			height: 4px;
+			background-color: variables.$colorGray04;
+
+			.ui-slider-range{
+				background-color: variables.$kyoboPurple;
+				top: -4px;
+				height: 12px;
+				@include mixins.transition(width .23s, left .23s);
+			}
+
+			.ui-slider-handle{
+				top: -13px;
+				width: 30px;
+				height: 30px;
+				margin-left: -15px;
+				@include mixins.transition(left .23s);
+
+				&:before{
+					content: '';
+					position: absolute;
+					top: 9px;
+					left: 9px;
+					display: block;
+					width: 12px;
+					height: 12px;
+					border-radius: 100%;
+					background-color: variables.$kyoboPurple;
+				}
+
+				&:after{
+					content: '';
+					position: absolute;
+					top: 11px;
+					left: 11px;
+					display: block;
+					width: 8px;
+					height: 8px;
+					border-radius: 100%;
+					background-color: #fff;
+				}
+				
+				&:hover, &:focus, &:active{
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.range_slider_val{
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		@include mixins.justify_width(start, between);
+
+		.val{
+			position: relative;
+			width: 12px;
+			padding-bottom: 25px;
+			text-align: center;
+			white-space: nowrap;
+
+			.text{
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				@include mixins.transform(translateX(-50%));
+				@include mixins.font_size_xs;
+				font-weight: variables.$fontWeightMedium;
+				color: variables.$textColorGray;
+				@include mixins.transition(color .23s);
+			}
+
+			&:before{
+				content: '';
+				display: block;
+				width: 12px;
+				height: 12px;
+				border-radius: 100%;
+				box-sizing: border-box;
+				border: 1px solid variables.$colorGray02;
+				background-color: #fff;
+				@include mixins.transition(all .23s);
+			}
+
+			&.active{
+				&:before{
+					border-color: transparent;
+					background-color: transparent;
+				}
+
+				.text{
+					color: variables.$kyoboPurple;
+				}
+			}
+		}
+	}
+}
+
+
+.container_wrapper{
+	&.spec_compare{
+		.breadcrumb_wrap{
+			~ .contents_wrap{
+				padding-top: 0;
+				margin-top: -47px;
+			}
+		}
+
+		.spec_compare_intro{
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.tbl_spec_compare_wrap{
+	border-top: 1px solid variables.$textColorBlack;
+
+	.tbl_spec_compare{
+		width: 100%;
+		table-layout: fixed;
+
+		tbody{
+			tr{
+				th{
+					padding: 24px 10px;
+					@include mixins.font_size_xs;
+					font-weight: variables.$fontWeightMedium;
+					color: variables.$textColorLightGray;
+					border-bottom: 1px solid variables.$colorGray04;
+					text-align: left;
+				}
+
+				td{
+					padding: 24px 14px 24px 15px;
+					border-bottom: 1px solid variables.$colorGray04;
+					@include mixins.font_size_xs;
+					color: variables.$textColorGray;
+					text-align: center;
+
+					.btn_text_link{
+						color: variables.$textColorBlack;
+						text-decoration: underline;
+						text-align: center;
+					}
+
+					.prod_price{
+						font-size: 0;
+						line-height: 1;
+
+						.percent {
+							display: inline-block;
+							margin-right: 3px;
+							@include mixins.font_size_xs;
+							font-weight: variables.$fontWeightBold;
+							color: variables.$kyoboGreen;
+							vertical-align: top;
+						}
+
+						.price {
+							display: inline-block;
+							font-size: 0;
+							vertical-align: top;
+
+							.val, .unit {
+								@include mixins.font_size_xs;
+								color: variables.$textColorBlack;
+							}
+
+							.val {
+								font-weight: variables.$fontWeightBold;
+							}
+						}
+
+						.price_normal {
+							display: inline-block;
+							margin: 3px 0 0 2px;
+							font-size: 0;
+							vertical-align: top;
+
+							.val {
+								@include mixins.font_size_min;
+								color: variables.$textColorLightGray;
+							}
+						}
+
+						.point {
+							display: block;
+							margin-top: 5px;
+							@include mixins.font_size_min;
+							color: variables.$textColorGray;
+							vertical-align: top;
+						}
+					}
+
+					.review_summary_wrap{
+						.review_klover_box{
+							display: block;
+						}
+
+						.review_quotes_text{
+							margin: 5px 0 0;
+						}
+					}
+
+					&:last-child{
+						padding-right: 10px;
+					}
+				}
+
+				&.prod{
+					td{
+						padding: {
+							top: 30px;
+							bottom: 30px;
+						};
+						vertical-align: top;
+						color: variables.$textColorBlack;
+
+						.prod_num{
+							display: block;
+							margin-bottom: 12px;
+							text-align: center;
+						}
+
+						.prod_thumb_box{
+							position: relative;
+							width: 194px;
+							margin: 0 auto;
+
+							.img_box{
+								display: block;
+								border: 1px solid variables.$colorGray04;
+
+								img{
+									width: 100%;
+									max-height: calc(194px * 1.618 - 10px);
+								}
+							}
+
+							.btn_prod_delete{
+								position: absolute;
+								top: 0;
+								right: 0;
+								width: 22px;
+								height: 22px;
+								@include mixins.ratio_images('../images/btn_spec_del', 'png', 22px, 22px);
+							}
+						}
+
+						.prod_btn_wrap{
+							@include mixins.justify_width;
+							margin-top: 16px;
+							font-size: 0;
+
+							.btn_wrap{
+								flex: 1;
+								margin-left: 2px;
+							}
+						}
+
+						.prod_compare{
+							.btn_prod_compare{
+								@include mixins.justify_width(center, center, column);
+								width: 194px;
+								height: 280px;
+								border: 1px dashed variables.$colorGray03;
+								background-color: variables.$colorGray06;
+								@include mixins.font_size_xxs;
+								color: variables.$textColorLightGray;
+
+								&:before{
+									content: '';
+									display: block;
+									width: 16px;
+									height: 16px;
+									margin-bottom: 10px;
+									@include mixins.ratio_images('../images/ico_prod_compare', 'png', 16px, 16px);
+								}
+							}
+
+							.btn_sm{
+								margin-top: 16px;
+								width: 100%;
+							}
+						}
+
+					}
+				}
+
+				&.name{
+					td{
+						color: variables.$textColorBlack;
+					}
+				}
+
+				&.rank{
+					td{
+						font-weight: variables.$fontWeightBold;
+						color: variables.$textColorBlack;
+					}
+				}
+
+				&:last-child{
+					tr{
+						&:not(.prod){
+							th, td{
+								padding-bottom: 40px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

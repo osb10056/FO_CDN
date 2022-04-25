@@ -1,0 +1,39 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+.conner_box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+  &.first-box{
+	margin-top:0;
+  }
+  .conner_inner {
+	position: relative;
+	width: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+  }
+
+  &.type-wide .conner_inner {
+	padding: 0;
+  }
+
+  &.has-bg .conner_inner {
+	padding: 40px 20px;
+  }
+
+  &.type-wide.has-bg .conner_inner {
+	padding: 40px 0;
+  }
+
+  &.has-blurbg .conner_inner {
+	backdrop-filter: blur(2px);
+  }
+}

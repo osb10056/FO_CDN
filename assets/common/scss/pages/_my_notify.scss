@@ -1,0 +1,115 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+// 알림신청내역
+.notify_apply_wrap {
+	margin-top: 20px;
+
+	.notify_apply_list_wrap {
+		.notify_apply_list {
+			.notify_apply_item {
+				width: 100%;
+				height: 70px;
+				padding: 20px 26px 20px 30px;
+				border: 1px solid variables.$colorGray04;
+				border-radius: 10px;
+				box-sizing: border-box;
+				@include mixins.justify_width(center, between);
+
+				.item_name {
+					@include mixins.font_size_sm;
+					color: variables.$textColorBlack;
+				}
+
+				.btn_more_view {
+					margin-right: 4px;
+				}
+
+				+.notify_apply_item {
+					margin-top: 10px;
+				}
+
+			}
+		}
+	}
+
+	~ .info_text_box {
+		margin-top: 20px;
+
+		.bul_list {
+			.bul_item_dot {
+				.btn_wrap {
+					@include mixins.justify_width(start);
+					margin-top: 6px;
+
+					[class^=btn_] {
+						flex: inherit;
+
+						+ [class^=btn_] {
+							margin-top: 0;
+							margin-left: 16px;
+						}
+					}
+
+					@include mixins.respond-to(mobileMin){
+						[class^=btn_] {
+							+ [class^=btn_] {
+								margin-left: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// 정기 메일
+.regular_mail_wrap {
+	.regular_mail_header {
+		.form_chk {
+			input {
+				+ label {
+					@include mixins.font_size_def;
+					color: variables.$textColorBlack;
+					font-weight: variables.$fontWeightBold;
+				}
+			}
+		}
+	}
+
+	.regular_mail_list_wrap {
+		margin-top: 20px;
+	}
+
+	.regular_mail_list {
+		.regular_mail_item {
+			width: 100%;
+			height: 70px;
+			padding: 25px 30px;
+			border: 1px solid variables.$colorGray04;
+			border-radius: 10px;
+			font-size: 0;
+			box-sizing: border-box;
+
+			+.regular_mail_item {
+				margin-top: 10px;
+			}
+
+			.btn_tooltip_sm {
+				margin: 4px 0 0 6px;
+			}
+		}
+	}
+
+	~ .btn_wrap {
+		margin-top: 34px;
+	}
+
+	~ .info_text_box {
+		margin-top: 20px;
+	}
+}

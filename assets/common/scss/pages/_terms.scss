@@ -1,0 +1,238 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+// pc, mo 공통 소스
+// font-size, line-height pc/mo 디자인 동일하여 공통적용하는 scss는 한벌로 관리.
+// pc/mo 폰트 선언 mixins 네이밍이 다른 관계로 직접 px로 선언.
+
+.terms_wrap{
+	font-size: 15px;
+	letter-spacing: variables.$letterSpacing;
+	line-height: 23px;
+
+	// 대타이틀
+	.terms_head_title{
+		display: block;
+		font-size: 24px;
+		letter-spacing: variables.$letterSpacing;
+		line-height: 36px;
+		font-weight: variables.$fontWeightBold;
+		margin-bottom: 30px;
+
+		&.has_sub{
+			margin-bottom: 0;
+
+			+ .terms_title_desc{
+				margin: 10px 0 30px;
+			}
+		}
+
+		~ .terms_head_title{
+			margin-top: 70px;
+		}
+
+		+ .terms_title{
+			margin-top: 0;
+		}
+	}
+
+	// 타이틀
+	.terms_title{
+		display: block;
+		margin-bottom: 20px;
+		font-size: 20px;
+		line-height: 30px;
+		letter-spacing: variables.$letterSpacing;
+		font-weight: variables.$fontWeightBold;
+
+		&.has_sub{
+			margin-bottom: 0;
+
+			+ .terms_title_desc{
+				margin: 6px 0 20px;
+			}
+		}
+
+		~ .terms_title{
+			margin-top: 50px;
+		}
+
+		~ .terms_head_title{
+			+ .terms_title{
+				margin-top: 0;
+			}
+		}
+	}
+
+	// 타이틀 하단 텍스트
+	.terms_title_desc{
+		display: block;
+		font-size: 14px;
+		letter-spacing: variables.$letterSpacing;
+		line-height: 22px;
+		color: variables.$textColorLightGray;
+	}
+
+	// 목차
+	p {
+		+ .terms_anchor_box{
+			margin-top: 20px;
+		}
+
+		+ .terms_title{
+			margin-top: 50px;
+		}
+	}
+
+	// 리스트
+	.terms_list{
+		> li{
+			// 2depth, 3dpeth
+			> ol, > ul, > .sub_desc_box{
+				margin-top: 8px;
+				padding-left: 10px;
+
+				.tbl_col_wrap {
+					&.type_th_gray {
+						width: calc(100% + 10px);
+						margin-left: -10px;
+					}
+				}
+
+				> li{
+					.tbl_col_wrap {
+						&.type_th_gray {
+							&:last-child{
+								margin-bottom: 15px;
+							}
+						}
+					}
+				}
+			}
+
+			.sub_desc_box{
+				.fw_medium{
+					display: block;
+				}
+			}
+
+			.bul_item_asterisk{
+				margin-top: 6px;
+			}
+
+			.tbl_col_wrap{
+				&.type_th_gray{
+					margin-top: 20px;
+				}
+			}
+
+			br{
+				+ .btn_more_view{
+					margin-top: 6px;
+				}
+			}
+
+			+ li{
+				margin-top: 15px;
+			}
+		}
+	}
+
+	// 별표 리스트
+	.bul_item_asterisk{
+		font-size: 14px;
+		letter-spacing: variables.$letterSpacing;
+		line-height: 22px;
+	}
+
+	// 화살표 있는 링크
+	.btn_more_view{
+		font-size: 15px;
+		letter-spacing: variables.$letterSpacing;
+		line-height: 23px;
+
+		.ico_arw{
+			margin-top: 6px;
+		}
+	}
+
+	// 공통 여백
+	p{
+		+ .terms_list{
+			margin-top: 15px;
+		}
+
+		+ .bul_item_asterisk{
+			margin-top: 6px;
+		}
+	}
+}
+
+// only mo
+.terms_wrap {
+	padding-top: 20px;
+
+	.terms_anchor_box{
+		margin: 20px 0 50px;
+
+		.anchor_list{
+			li{
+				a{
+					font-size: 14px;
+					letter-spacing: variables.$letterSpacing;
+					line-height: 22px;
+					color: variables.$textColorPurple;
+
+					&:hover, &:active{
+						text-decoration: underline;
+					}
+
+					&:before{
+						content: '';
+						display: inline-block;
+						width: 3px;
+						height: 3px;
+						margin: 9px 6px 0 0;
+						background-color: variables.$colorGray01;
+						border-radius: 100%;
+						vertical-align: top;
+					}
+				}
+
+				~ li{
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+
+	.tbl_col_wrap{
+		@include mixins.scrollX;
+
+		.tbl_col{
+			min-width: 1200px;
+		}
+	}
+}
+
+.tab_wrap{
+	~ .contents_inner{
+		.terms_wrap{
+			padding-top: 0;
+		}
+	}
+}
+
+.terms_bottom_wrap{
+	margin-top: 40px;
+
+	.form_sel{
+		width: 100%;
+	}
+}
+
+// as-is
+@import '../pages/legacy_terms';

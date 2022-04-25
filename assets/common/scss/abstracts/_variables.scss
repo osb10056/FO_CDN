@@ -1,0 +1,77 @@
+// 폰트 기본
+$fontDefault: 'Roboto', 'Noto Sans KR', 'PingFang SC', 'Apple SD Gothic Neo', 'Microsoft YaHei UI', 'Malgun Gothic', sans-serif;
+$fontKor: 'Noto Sans KR', sans-serif;
+$fontEng: 'Roboto', sans-serif;
+$letterSpacing: -.01em;
+
+// s : 폰트 컬러
+$kyoboPurple: #5055b1;
+$kyoboGreen: #4dac27;
+
+$textColorBlack: #000;
+$textColorDarkGray: #292929;
+$textColorGray: #595959;
+$textColorLightGray: #767676;
+$textColorPurple: #474c98;
+$textColorGreen: #3c9a17;
+$textColorRed: #ec1f2d;
+$textColorBlue: #1976e3;
+// e : 폰트 컬러
+
+// s : 그레이 컬러
+$colorGray01: #999;
+$colorGray02: #ccc;
+$colorGray03: #d5d5d5;
+$colorGray04: #eaeaea;
+$colorGray05: #f2f2f2;
+$colorGray06: #f7f7f7;
+// e : 그레이 컬러
+
+// s : 폰트 굵기
+$fontWeightRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightBold: 700;
+// e : 폰트 굵기
+
+// s : 텍스트 레벨
+$fontSizeXxl: 22px;
+$fontSizeXxlLineHeight: 34px;
+$fontSizeXl: 20px;
+$fontSizeXlLineHeight: 32px;
+$fontSizeLg: 18px;
+$fontSizeLgLineHeight: 28px;
+$fontSizeMd: 16px;
+$fontSizeMdLineHeight: 26px;
+$fontSizeDef: 15px;
+$fontSizeDefLineHeight: 23px;
+$fontSizeSm: 14px;
+$fontSizeSmLineHeight: 22px;
+$fontSizeXs: 13px;
+$fontSizeXsLineHeight: 19px;
+$fontSizeXxs: 12px;
+$fontSizeXxsLineHeight: 18px;
+// e : 텍스트 레벨
+
+// background-image url prefix
+//$imgUrlPrefix: '../images';
+
+// 트렌지션
+$transEaseBounceBack: cubic-bezier(.17, .67, .29, 1.32);
+
+// 상품 썸네일 공통 사이즈
+$prodProps: (
+		// horizontal
+		'thumb-h-min': 46px, // 상품정보 size_sm, 라운드 6
+		'thumb-h-xs': 64px, // 상품정보 size_sm, 라운드 8
+		'thumb-h-sm': 84px, // 상품정보 기본 사이즈, 라운드 10
+		'thumb-h-def': 100px, // 상품정보 기본 사이즈, 라운드 10
+
+		// 북캐스트 썸네일 사이즈
+		'bc-thumb-h-def': 140px,
+
+		// vertical
+		'thumb-v-min': 84px, // 상품정보 기본 사이즈, 라운드 10
+		'thumb-v-xs': 100px, // 상품정보 기본 사이즈, 라운드 10
+		'thumb-v-sm': 134px, // 상품정보 기본 사이즈, 라운드 12
+		'thumb-v-def': 159px, // 상품정보 기본 사이즈, 라운드 16
+);

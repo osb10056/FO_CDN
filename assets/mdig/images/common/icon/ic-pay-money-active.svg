@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37" height="37" viewBox="0 0 37 37">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_3358" data-name="사각형 3358" width="20" height="11.754" fill="#5055b1"/>
+    </clipPath>
+  </defs>
+  <g id="pay-icon_money" data-name="pay-icon/money" transform="translate(0.5 0.5)">
+    <g id="vuesax_broken_percentage-circle" data-name="vuesax/broken/percentage-circle">
+      <g id="percentage-circle">
+        <path id="Vector" d="M36,0V36H0V0Z" fill="none" stroke="#5055b1" stroke-width="1" opacity="0"/>
+        <path id="Vector-2" data-name="Vector" d="M3,6A15,15,0,1,0,15,0,14.8,14.8,0,0,0,8.955,1.275" transform="translate(3.5 3.5)" fill="none" stroke="#5055b1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0 0"/>
+        <g id="그룹_501" data-name="그룹 501" transform="translate(8 12)">
+          <g id="그룹_500" data-name="그룹 500" clip-path="url(#clip-path)">
+            <path id="패스_13929" data-name="패스 13929" d="M16.856,11.722a.222.222,0,0,1-.131.032H15.1a.223.223,0,0,1-.131-.032.4.4,0,0,1-.1-.16L12.705,3.53,10.52,11.562a.34.34,0,0,1-.1.16.269.269,0,0,1-.14.032H8.668a.232.232,0,0,1-.123-.032.267.267,0,0,1-.087-.16L5.347.235A.251.251,0,0,1,5.338.064C5.355.022,5.428,0,5.556,0H7.077a.262.262,0,0,1,.149.032A.284.284,0,0,1,7.3.171L9.471,8.528l2.2-8.357A.193.193,0,0,1,11.884,0h1.626a.193.193,0,0,1,.209.171l2.2,8.357L18.088.171A.193.193,0,0,1,18.3,0h1.556c.116,0,.186.022.21.064a.216.216,0,0,1,0,.171L16.935,11.562a.31.31,0,0,1-.079.16" transform="translate(-2.704 0)" fill="#5055b1"/>
+            <rect id="사각형_3357" data-name="사각형 3357" width="20" height="1.699" transform="translate(0 5.096)" fill="#5055b1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

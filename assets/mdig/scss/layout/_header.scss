@@ -1,0 +1,103 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+.wrapper{
+  .header_wrapper{
+	padding-bottom:16px;
+	.header_left{
+	  &.single{min-width:30px;}
+	}
+	.header_right{
+	  &.single{min-width:30px;}
+	}
+	.header_center{
+	  .btn_category_dropdown{
+		.text{
+			.count{font-size:14px;color:#3c9a17;line-height:22px;letter-spacing:-0.14px;font-weight:bold;vertical-align: middle;}
+		}
+	  }
+	  &.has-category{
+		overflow: visible;
+		width: calc(100% - 150px);
+		.page_title {
+		  overflow: visible;
+		  .category_menu_box {
+			.category_list_box {
+			  display: none;
+			  position: absolute;
+			  left: 0;
+			  top: 60px;
+			  width: 100%;
+			  border-top: 1px solid #eaeaea;
+			  background-color: rgba(0,0,0,0.5);
+			  .category_list {
+				width: 100%;
+				background-color: #fff;
+				padding-bottom: 30px;
+				li {
+				  height: 62px;
+				  text-align: left;
+				  padding: 20px;
+				  box-sizing: border-box;
+				  a {
+					span {
+					  font-size: 15px;
+					  color: #767676;
+					  line-height: 23px;
+					  letter-spacing: -0.15px;
+					  font-weight: 500;
+					}
+				  }
+				}
+				li.active {
+				  a {
+					span {
+					  color: #000;
+					  font-weight: bold;
+					  &:after {
+						content: '';
+						display: inline-block;
+						position: relative;
+						top: -2px;
+						width: 18px;
+						height: 18px;
+						margin-left: 4px;
+						vertical-align: middle;
+						background: url("/assets/mdig/images/common/icon/ico_check_blue_18x18.png") no-repeat left top;
+						background-size: 100%;
+					  }
+					}
+				  }
+				}
+			  }
+			}
+		  }
+		  .category_menu_box.active {
+			.category_list_box {
+			  display: block;
+			}
+			.btn_category_dropdown {
+			  .ico_category_more {
+				transform: rotate(180deg);
+			  }
+			}
+		  }
+		}
+	  }
+	}
+	&.header_main{
+	  padding-bottom:16px;
+	  .header_top_wrap{
+		.service_mall_wrap{
+		  .brand_more_list_box{z-index:20;}
+		}
+	  }
+	}
+  }
+}
+

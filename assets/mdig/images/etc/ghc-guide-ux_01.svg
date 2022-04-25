@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72.049" height="74.892" viewBox="0 0 72.049 74.892">
+    <g data-name="그룹 1842">
+        <path data-name="사각형 3397" transform="translate(21.332 22.821)" style="fill:#a9ff88" d="M0 0h35.507v39.996H0z"/>
+        <path data-name="패스 14501" d="M1430.928 121.587h-35.637a5.238 5.238 0 0 0-5.235 5.133h-.006v40.943h.015c-.006-.1-.015-.2-.015-.3a5.241 5.241 0 0 1 5.241-5.24h35.637z" transform="translate(-1376.612 -101.921)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+        <g data-name="그룹 1044">
+            <path data-name="패스 14502" d="M1430.928 194.166h-35.637a5.24 5.24 0 1 0 0 10.48h35.637z" transform="translate(-1376.612 -133.96)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+        </g>
+        <path data-name="패스 14503" d="m1411.7 213.35-3.8-2.411-3.8 2.411v-8.994h7.6z" transform="translate(-1382.813 -138.458)" style="fill:#ffd23d"/>
+        <path data-name="선 104" transform="translate(18.289 65.744)" style="fill:#fff;stroke:#282d33;stroke-width:2px" d="M0 0h36.028"/>
+        <path data-name="선 105" transform="translate(18.289 20.171)" style="fill:#fff;stroke:#282d33;stroke-width:2px" d="M0 39.71V0"/>
+        <path data-name="선 106" transform="translate(28.236 38.645)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h16.112"/>
+        <path data-name="선 107" transform="translate(30.127 33.572)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0h12.333"/>
+        <g data-name="그룹 1045">
+            <path data-name="선 108" transform="translate(65.961 31.005)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0v10.826"/>
+            <path data-name="선 109" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0v3.608" transform="translate(65.961 25.335)"/>
+        </g>
+        <g data-name="그룹 1046">
+            <path data-name="패스 14504" d="m1474.493 182.073 5.358 5.746 5.354-5.746" transform="translate(-1413.888 -128.622)" style="stroke:#282d33;stroke-width:2px;fill:none"/>
+            <path data-name="선 110" transform="translate(65.961 44.293)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 14.291V0"/>
+        </g>
+        <g data-name="그룹 1055">
+            <g data-name="그룹 1053">
+                <g data-name="그룹 1047">
+                    <path data-name="선 111" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0v2.914" transform="translate(41.79 .661)"/>
+                </g>
+                <g data-name="그룹 1048">
+                    <path data-name="선 112" style="stroke:#282d33;stroke-width:2px;fill:none" d="m0 0 2.524 1.458" transform="translate(34.676 4.619)"/>
+                </g>
+                <g data-name="그룹 1049">
+                    <path data-name="선 113" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 1.457 2.524 0" transform="translate(34.549 11.301)"/>
+                </g>
+                <g data-name="그룹 1050">
+                    <path data-name="선 114" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 2.914V0" transform="translate(41.534 14.024)"/>
+                </g>
+                <g data-name="그룹 1051">
+                    <path data-name="선 115" style="stroke:#282d33;stroke-width:2px;fill:none" d="M2.524 1.458 0 0" transform="translate(46.123 11.522)"/>
+                </g>
+                <g data-name="그룹 1052">
+                    <path data-name="선 116" style="stroke:#282d33;stroke-width:2px;fill:none" d="M2.523 0 0 1.456" transform="translate(46.251 4.841)"/>
+                </g>
+            </g>
+            <path data-name="선 117" transform="translate(5.639 16.484)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0v2.739"/>
+            <path data-name="선 118" transform="translate(5.642 25.614)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 2.739V0"/>
+            <path data-name="선 119" transform="translate(.5 19.452)" style="stroke:#282d33;stroke-width:2px;fill:none" d="m0 0 2.372 1.369"/>
+            <path data-name="선 120" transform="translate(8.409 24.015)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M2.372 1.369 0 0"/>
+            <path data-name="선 121" transform="translate(.5 24.015)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 1.369 2.372 0"/>
+            <path data-name="선 122" transform="translate(8.409 19.452)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M2.372 0 0 1.369"/>
+            <g data-name="그룹 1054">
+                <path data-name="선 123" transform="translate(19.909)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M0 0v8.033"/>
+                <path data-name="선 124" transform="translate(15.892 4.016)" style="stroke:#282d33;stroke-width:2px;fill:none" d="M8.032 0H0"/>
+            </g>
+        </g>
+    </g>
+</svg>

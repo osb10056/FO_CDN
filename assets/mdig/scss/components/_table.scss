@@ -1,0 +1,65 @@
+@use 'sass:map';
+@use './assets/common/scss/abstracts/variables';
+@use './assets/common/scss/abstracts/functions';
+@use './assets/common/scss/abstracts/mixins';
+@use './assets/common/scss/abstracts/placeholders';
+
+@use './assets/mdig/scss/abstracts/var';
+
+/* Table Column Wrap */
+.tbl_col_wrap {
+  /* Table Column Type */
+  &.type-notice{
+	.tbl_col {
+		tbody{
+		  tr{
+			border-bottom:1px solid #eaeaea;
+			td:first-child{
+			  font-size:12px;
+			  color: variables.$textColorLightGray;
+			  vertical-align: top;
+			  padding:20px 0 16px;
+			}
+		  }
+		}
+	}
+  }
+}
+
+.line_list_wrap {
+  .line_list_box {
+	.line_list_title{
+	  .title{
+		.btn_text_link{
+		  .text{
+			text-decoration: none;
+		  }
+		  .ico_new{display:inline-block;width:20px;height:20px;background:url("/assets/mdig/images/common/icon/ico_new_20x20.png") no-repeat left top;background-size:100%;}
+		}
+	  }
+	}
+	.line_list_cont {
+	  .prod_info_box {
+		.prod_info {
+		  .cate_txt {
+			display: inline-block;
+			position: relative;
+			padding-right: 8px;
+			margin-right: 8px;
+
+			&:after {
+			  content: '';
+			  display: inline-block;
+			  position: absolute;
+			  right: 0;
+			  top: 5px;
+			  width: 1px;
+			  height: 9px;
+			  background-color: #d5d5d5;
+			}
+		  }
+		}
+	  }
+	}
+  }
+}

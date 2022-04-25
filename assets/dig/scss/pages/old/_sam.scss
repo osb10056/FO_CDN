@@ -1,0 +1,444 @@
+@use 'sass:map';
+@use '../../common/scss/abstracts/variables';
+@use '../../common/scss/abstracts/functions';
+@use '../../common/scss/abstracts/mixins';
+
+.sam {
+    padding-top: 0 !important;
+
+    &_visual {
+        position: relative;
+        width: 100%;
+        height: 802px;
+        overflow: hidden;
+
+        &_wrap {
+            position: relative;
+            top: 0;
+        }
+
+
+        &_top {
+            position: relative;
+            width: 100%;
+            height: 802px;
+            text-align: center;
+            overflow: hidden;
+
+            &.type01 {
+                background: url(../images/sam/img_sam_visual_01.png) repeat 50% 0;
+                animation: slideTop 3s linear forwards;
+
+                .text {
+                    height: 802px;
+                    animation: visualTxt 2s forwards;
+                }
+                .dim {
+                    position: absolute;
+                    left: 0;top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0, .4);
+                    z-index: 0;
+                }
+            }
+            
+            &.type02 {
+                
+                .text {
+                    height: 802px;
+                }
+                .dim {
+                    position: absolute;
+                    left: 50%;top: 50%;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &.type03 {
+                background: url(../images/sam/img_sam_visual_03.png) repeat 50% 0;
+
+                .text {
+                    height: 802px;
+                }
+                .dim {
+                    position: absolute;
+                    left: 0;top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0, .4);
+                    z-index: 0;
+                }
+            }
+
+            .text {
+                position: relative;
+                padding-top: 170px;
+                font-weight: 600;
+                font-size: 70px;
+                color: #fff;
+                box-sizing: border-box;
+                z-index: 1;
+                //opacity: 0;
+            }
+        }
+
+        &_btn{
+            position: absolute;
+            left: 50%;
+            bottom: 130px;
+            transform: translateX(-150px);
+            text-align: center;
+            z-index: 10;
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 13px;
+                width: 300px;
+                height: 100px;
+                font-size: 20px;
+                color: #fff;
+                background-color: #e271a4;
+                box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2);
+
+                b {
+                    font-size: 25px;
+                }
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 20px;
+                color: #fff;
+
+            }
+        }
+    }
+
+    &_best {
+        margin-top: 130px;
+        h6 {
+            margin: 0 auto;
+            width: 1200px;
+            font-size: 40px;
+            color: #000;
+        }
+
+        &_list {
+            margin-top: 40px;
+        }
+
+        &_book {
+            width: 197px;
+            img {width: 100%;}
+        }
+    }
+
+    &_info {
+        margin-top: 150px;
+        padding: 0 100px;
+        background-color: #f7f7f7;
+
+        ul {
+            margin: 0 auto;
+            padding: 100px 0;
+            width: 1200px;
+
+            li {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-content: space-between;
+                justify-content: center;
+                height: 350px;
+
+                & + li {
+                    margin-top: 100px;
+                }
+
+                &:nth-child(even) {
+                    > div { order: 0; }
+                    > span { order: 1;text-align: right;}
+                    > i { order: 2;background-position: 100% 0; }
+                    > strong { order: 3;text-align: right; }
+                    > a { order: 4;text-align: right; }
+                }
+                &:nth-child(1) > div {background-image: url(../images/sam/img_samInfo_01.png);}
+                &:nth-child(2) > div {background-image: url(../images/sam/img_samInfo_02.png);}
+                &:nth-child(3) > div {background-image: url(../images/sam/img_samInfo_03.png);}
+                &:nth-child(4) > div {background-image: url(../images/sam/img_samInfo_04.png);}
+
+                > span {
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: #595959;
+                }
+
+                > i {
+                    margin-top: 30px;
+                    width: 322px;
+                    height: 60px;
+                    background: url(../images/sam/txt_sam_lg.png) no-repeat 0 0;
+                }
+                strong {
+                    margin-top: 7px;
+                    font-size: 40px;
+                    color: #000;
+                }
+                > a {
+                    font-size: 15px;
+                    color: #595959;
+
+                    &:after {
+                        display: inline-block;
+                        margin-left: 20px;
+                        width: 28px;
+                        height: 12px;
+                        background: url(../images/sam/btn_go.png);
+                        content: "";
+                    }
+                }
+
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 750px;
+                    height: 350px;
+                    color: #fff;
+
+                    p {
+                        margin-top: 60px;
+                        font-size: 20px;
+                        color: #fff;
+                        text-align: center;
+                    }
+
+                    a {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 23px;
+                        width: 200px;
+                        height: 80px;
+                        color: #fff;
+                        border-radius: 6px;
+                        background-color: #e271a4;
+                        font-size: 16px;
+                        span {
+                            line-height: 100%;
+                                
+                            &:nth-child(2) {
+                                margin-top: 5px;
+                                font-size: 18px;
+                                b {
+                                    font-size: 25px;
+                                }
+                            }
+                        }
+
+                        &.sale:after {
+                            position: absolute;
+                            left: -40px;top: -10px;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            padding-top: 4px;
+                            width: 60px;
+                            height: 60px;
+                            font-size: 15px;
+                            color: #fff784;
+                            line-height: 120%;
+                            letter-spacing: -0.38px;
+                            box-sizing: border-box;
+                            background-image: url(../images/sam/icon_sale.png);
+                            z-index: 1;
+                            content: "첫 30일 특가";
+                        } 
+                    }
+
+                    em {
+                        margin-top: 14px;
+                        font-size: 15px;
+                        color: rgba(255,255,255, .7);
+                    }
+                }
+            }
+        }
+    }
+
+    &_banner {
+        margin: 150px auto 0;
+        width: 1200px;
+    }
+
+    &_wrap {
+        margin-top: 150px;
+
+        &_title {
+            span {
+                font-weight: 300;
+                font-size: 24px;
+                color: #000;
+            }
+            h6 {
+                font-weight: 600;
+                font-size: 40px;
+            }
+        }
+    }
+
+    &_benefit {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 61px;
+
+            li {
+                padding-top: 334px;
+                width: 275px;
+                text-align: center;
+                background-position: 0 20px;
+                background-repeat: no-repeat;
+
+                strong {
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: #000;
+                }
+
+                p {
+                    margin-top: 12px;
+                    font-size: 14px;
+                    color: #595959;
+                }
+
+                &:nth-child(1) {
+                    background-image: url(../images/sam/img_samUse_01.png);
+                    background-position: 0 0;
+                }
+
+                &:nth-child(2) {
+                    background-image: url(../images/sam/img_samUse_02.png);
+                }
+
+                &:nth-child(3) {
+                    background-image: url(../images/sam/img_samUse_03.png);
+                }
+
+                &:nth-child(4) {
+                    background-image: url(../images/sam/img_samUse_04.png);
+                }
+            }
+        }
+    }
+
+    &_use {
+        &_visual {
+            margin-top: 40px;
+            width: 100%;
+            height: 608px;
+
+            background: rgba(0,0,0, .3);
+        }
+
+        &_tab {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            border: 1px solid #e271a4;
+
+            li {
+                width: 20%;
+                height: 145px;
+                box-sizing: border-box;
+                button {
+                    width: 100%;
+                    height: 100%;
+                    font-size: 20px;
+                    color: #e271a4;
+                    cursor: pointer;
+
+                    em {
+                        display: block;
+                    }
+
+                    &.current {
+                        font-weight: 600;
+                        color: #fff;
+                        background-color: #e271a4;
+                    }
+                }
+
+                & + li {
+                    border-left: 1px solid #e271a4;
+                }
+            }
+        }
+    }
+
+    &_floating {
+        position: relative;
+        left: 0;bottom: 0;
+        width: 100%;
+        color: #fff;
+        height: 120px;
+        background-color: rgba(34,34,34, .8);
+        z-index: 10;
+
+        div {
+            position: relative;
+            left: 50%;
+            top: 35px;
+            display: inline-block;
+            height: 120px;
+            line-height: 30px;
+            letter-spacing:  -0.5px;
+            transform: translateX(-600px);
+            p {
+                font-size: 20px;
+            }
+        }
+
+        a {
+            position: relative;
+            right: 0;top: -6px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 247px;
+            height: 120px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #e271a4;
+            transform: translateX(612px);
+            b {
+                display: block;
+                font-size: 30px;
+            }
+        }
+
+        &.fixed {
+            position: fixed;
+        }
+    }
+}
+
+// @keyframes slideTop {
+//     from {background-position-y: 0}
+//     to {background-position-y: -638px}
+// }
+// @keyframes visualTxt {
+//     0% {transform:translate3d(0,50%,0);opacity:0}
+//     to {transform:translateZ(0);opacity:1}
+// }
